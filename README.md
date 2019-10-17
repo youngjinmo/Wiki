@@ -1,6 +1,6 @@
 # TIL
 
-*Today's I learned.*
+*Today I learned.*
 
 오늘 제가 배운 내용을 정리하는 공간입니다.
 
@@ -36,7 +36,7 @@
 
 Wrapper Class는 다음과 같은 기능을 수행한다.
 
-<img src="http://www.mediafire.com/convkey/f9f7/mifo8skczv2pdhpzg.jpg" style="zoom:50%;" />
+<img src="http://www.mediafire.com/convkey/e0bf/3kqk5j823suxigbzg.jpg" />
 
 **오토 박싱 (Auto Boxing)**
 
@@ -76,13 +76,13 @@ Thymeleaf는 잘 모르지만, 느리다는 성능 상의 이슈가 있는 편�
 
 Hibernate를 알기 앞서 JPA와 ORM에 대해 정리하려고 한다.
 
-**JPA(Java Persistent API)**는 자바 진영의 ORM 기술 표준 명세라고 한다.
+<b>JPA(Java Persistent API)</b>는 자바 진영의 ORM 기술 표준 명세라고 한다.
 
-**ORM(Object Relational Mapping)**은 객체 관계형 매핑을 돕는데, 객체를 DB 테이블이 되도록 매핑시켜주는 것을 의미한다.
+<b>ORM(Object Relational Mapping)</b>은 객체 관계형 매핑을 돕는데, 객체를 DB 테이블이 되도록 매핑시켜주는 것을 의미한다.
 
 객체는 객체대로 설계를 하고, 관계형 데이터베이스는 DB대로 설계하면 ORM 프레임워크가 중간에서 매핑하는 구조이다.
 
-<a name="structure-of-jpa"></a><img src="http://www.mediafire.com/convkey/de04/v69h3y5lvm18jqtzg.jpg" style="zoom:60%;" />
+<a name="structure-of-jpa"></a><img src="http://www.mediafire.com/convkey/76fe/4uc9nqw8rls40b7zg.jpg" />
 
 Java 애플리케이션에서 DB를 통신하려면 JDBC API를 사용해야하는데, JPA가 중간에 개입하는 구조이다. JPA는 Java 애플리케이션의 DAO 영역에서 전달받은 객체를 분석해서 SQL을 생성하고, JDBC API를 사용해서 쿼리를 DB에 전송하는 역할을 한다.
 
