@@ -11,6 +11,8 @@
 - [Language](#language)
   - [Java](#)
 - [Backend](#backend)
+  - [HTTP](#http)
+    - [GET/POST](#get-n-post)
   - [Template Engines](#template-engines)
     - [Mustache](#mustache)
   - [JPA](#jpa)
@@ -54,9 +56,63 @@ Wrapper Class는 다음과 같은 기능을 수행한다.
 
 <br>
 
-## <a name="mustache"></a>Mustache
+# <a name="http"></a>HTTP
 
-[템플릿 엔진](https://en.wikipedia.org/wiki/Web_template_system)이란, 데이터 모델에 따른 문서를 합성하여 웹 문서를 만들어주는 소프트웨어라고 한다.
+HTTP는 클라이언트와 서버간의 통신을 위한 프로토콜이다. HyperText Transfer Protocol의 약자이다.
+
+클라이언트와 서버가 request-response할 수 있도록 역할을 수행하는 프로토콜이다.
+
+<br>
+
+## GET/POST
+
+GET은 전달하는 데이터를 url 주소에 붙여서 전달하는 HTTP 메서드이다. 반면에 POST는 url 주소에 붙이지 않고 전달할 수 있는 HTTP 메서드이다.
+
+일반적으로 게시판의 id값을 통해 게시글 상세보기 할 때엔 url뒤에 ?을 붙여서 게시글 id값을 GET 메서드로 서버에 전달한다. 반면 사용자의 아이디나 비밀번호와 같은 민간한 정보는 POST 메서드로 서버에 전달한다.
+
+Outsider님이 블로그에 정리하신 <a href="https://blog.outsider.ne.kr/312" target="_blank">글</a>을 보면, GET과 POST의 차이를 다음과 같이 설명한다.
+
+> **GET은 가져오는 것**이고, **POST는 (서버)수행하는 것**입니다.
+>
+> GET은 Select적인 성향을 가지고 있으며, POST는 서버의 값이나 상태를 바꾸기 위해서 사용한다.
+
+w3school에서도 GET 메서드에 대해 *"GET is used to request data from a specified resource"* 라고 설명한다. POST 메서드에 대해선 *"POST is used to send data to a server to create/update a resource"* 정리했다. Outsider님의 정리와 정확히 일치한다.
+
+
+
+w3scool에서는 다음처럼 GET/POST를 비교하였다.
+
+| HTTP Methods | requests                                                     |
+| ------------ | ------------------------------------------------------------ |
+| GET          | GET 메서드의 요청은 캐싱될 수 있다.<br />GET 메서드의 요청은 브라우저 히스토리에 기록된다.<br />민감한 데이터를 다룰땐 이용해서는 안된다.<br />GET 메서드의 요청은 길이 제한을 받는다. 긴 데이터는 GET 메서드로 요청할 수 없다. |
+| POST         | POST 메서드의 요청은 캐싱되지 않는다.<br />또한 브라우저 히스토리에도 기록되지 않는다.<br />POST 메서드의 요청은 GET 메서드 요청과 달리 길이에 제한을 받지 않는다. |
+
+<br>**References**
+
+- [Outsider - GET과 POST의 차이](https://blog.outsider.ne.kr/312)
+- [w3school - HTTP Request Methods](https://www.w3schools.com/tags/ref_httpmethods.asp)
+
+<br>
+
+# <a name="template-engines"></a>Template Engines
+
+[템플릿 엔진](https://en.wikipedia.org/wiki/Web_template_system)이란, 데이터 모델에 따른 문서를 합성하여 웹 문서를 만들어주는 소프트웨어라고 한다. 
+
+템플릿 엔진은 목적에 따라 다양한 템플릿 엔진을 사용할 수 있다. `include` 코드를 이용하여 html의 중복 코드를 제외하고 싶을 때에는 Apache Tiles와 같은 레이아웃 템플릿 엔진을 사용할 수 있다.
+
+또 View에서 데이터를 출력하고 싶을 때는 Thymeleaf, JSP 같은 텍스트 템플릿 엔진을 쓸 수 있다. 
+
+위 두 템플릿은 서로 베타적이지 않고, 동시에 사용이 가능하다.
+
+<br>
+
+**Reference**
+
+- [gmlwjd9405 - [Template Engine] 템플릿엔진이란](https://gmlwjd9405.github.io/2018/12/21/template-engine.html)
+
+<br>
+
+## <a name="mustache"></a>Mustache
 
 JSP도 있고, Spring Boot에서는 Thymeleaf를 미는것도 같은데 왜 Mustache를 알아야 할까.
 
@@ -69,6 +125,12 @@ Thymeleaf는 잘 모르지만, 느리다는 성능 상의 이슈가 있는 편�
 또 Mustache는 [심플한 문법](https://mustache.github.io/mustache.5.html)을 갖고 있다고 한다. 이 부분은 직접 경험해야 알 수 있을 것 같다.
 
 일단 대략적으로 이정도만 알고 있는데, 향후 써보면서 계속 업데이트 해보겠다.
+
+<br>
+
+**Reference**
+
+- [Baeldung - Spring Boot Mustache](https://www.baeldung.com/spring-boot-mustache)
 
 <br>
 
@@ -94,7 +156,7 @@ JPA 탄생 이전까지는 데이터 중심의 모델링을 우선시 했다고 
 
 <br>
 
-**References**
+**Reference**
 
 - [김영한 - JPA 소개](https://youtu.be/U2s2JhzPZf4)
 
@@ -129,7 +191,7 @@ Hibernate는 JPA를 구현한 프레임워크이다. 국내에선 Hibernate보�
 
 <br>
 
-**References**
+**Reference**
 
 - [victolee93 - [Spring JPA] ORM과 JPA 그리고 Hibernate](https://victorydntmd.tistory.com/195)
 
