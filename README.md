@@ -1,5 +1,7 @@
 # TIL
 
+![HitCount](http://hits.dwyl.io/youngjinmo/youngjinmo/TIL.svg)
+
 *Today I learned.*
 
 오늘 제가 배운 내용을 정리하는 공간입니다.
@@ -19,6 +21,8 @@
     - [Hibernate](#hibernate)
 - [Git](#git)
 - [DevOps](#devops)
+- [Linux](#linux)
+  - [명령어](#command-of-linux)
 - [Others](#others)
 
 <br>
@@ -134,7 +138,7 @@ Thymeleaf는 잘 모르지만, 느리다는 성능 상의 이슈가 있는 편�
 
 <br>
 
-## <a name="jpa"></a>JPA
+# <a name="jpa"></a>JPA
 
 Hibernate를 알기 앞서 JPA와 ORM에 대해 정리하려고 한다.
 
@@ -194,5 +198,43 @@ Hibernate는 JPA를 구현한 프레임워크이다. 국내에선 Hibernate보�
 **Reference**
 
 - [victolee93 - [Spring JPA] ORM과 JPA 그리고 Hibernate](https://victorydntmd.tistory.com/195)
+
+<br>
+
+# <a name="git"></a>Git
+
+
+
+<br>
+
+## 원격 저장소 변경내용을 로컬 저장소로 가져오기
+
+
+
+<br>
+
+# <a name="linux"></a>Linux
+
+리눅스는 <a href="https://github.com/torvalds" target="_blank">리누스 토발스</a>가 개발한 컴퓨터 운영체제(OS)이다. <a href="https://github.com/torvalds/linux" target="_blank">오픈소스 운영체제</a>이며, 다중 사용자, 다중 작업(멀티태스킹), 다중 스레드를 지원하는 네트워크 운영체제라고 한다.
+
+리눅스를 운영체제라고 했지만, 정확히는 운영체제라기보다 리눅스 커널이라고 하는게 맞다. 그러나 통상적으로 리눅스 커널과 우분투, 페도라와 같은 운영체제들도 리눅스라고 칭하고 있다.
+
+리눅스의 역사나 배경에 대해서도 차후 더 알아보고 정리해야 할 것 같다.
+
+<br>
+
+## <a name="command-of-linux"></a>명령어
+
+- **find**
+
+**리눅스에서 파일이나 디렉토리를 검색**할 때 사용하는 명령어이다.
+
+경로 Desktop/test 에서 용량 3mb 미만의 파일을 콘솔에 출력할 때 다음과 같이 명령한다.
+
+`$ find Desktop/test -size -3M -type f`
+
+경로 Desktop/test 에서 용량 10mb이상의 디렉토리를 `ls -l` 형태로 출력할 때 다음과 같이 명령한다.
+
+`$ find Desktop/test -size +10M -type d -exec ls -l {} \;`
 
 <br>
