@@ -10,8 +10,14 @@
 
 ## ToC
 
-- [Language](#language)
+- [Programming Language](#language)
   - [Java](#)
+    - [Wrapper Class](#wrapper-class)
+  - [SQL](#sql)
+    - [AND 조건 조회](#order-and)
+    - [LIMIT](#limit)
+    - [DISTINCT](#distinct)
+    - [연산처리](#sql-math)
 - [Backend](#backend)
   - [HTTP](#http)
     - [GET/POST](#get-n-post)
@@ -27,11 +33,11 @@
 
 <br>
 
-<a name="java"></a>
+# <a name="java"></a> Java
 
 <img src="https://cdn.vox-cdn.com/thumbor/FDD76YJZJFPyNUfT3ZBHcnMA0Ec=/43x0:593x367/1200x800/filters:focal(43x0:593x367)/cdn.vox-cdn.com/uploads/chorus_image/image/48667835/dbgxt2rvpd26udoyzcqn.0.0.jpg" width="400" />
 
-## Wrapper Class
+## <a name="wrapper-class"></a>Wrapper Class
 
 기본형 데이터타입의 객체화를 가능하게 도와주는 클래스. `java.lang` 패키지 안에 포함되어있다.
 
@@ -57,6 +63,104 @@ Wrapper Class는 다음과 같은 기능을 수행한다.
 ### References
 
 - [프로그래머스 - [자바 중급] java.lang 패키지/오토박싱](https://youtu.be/Eofo8_xZbfk)
+
+<br>
+
+# <a name="sql"></a>SQL
+
+### <a name="order-and"></a>AND 조건으로 조회할 때
+
+이름(`NAME`) 순으로 조회할 때, 이름이 같을 경우, 생일(`BIRTH_DATE`)이 빠른 순으로 조회할 때 사용하는 쿼리이다.
+
+```SQL
+SELECT
+  NAME, BIRTH_DATE
+FROM
+  ANIMAL_INS
+ORDER BY
+  NAME ASC,
+  DATETIME DESC; 
+```
+
+위의 이미지처럼 작성하면 `ORDER BY` 에서 먼저 작성한 이름순(`ASC`)으로 정렬되고, 이름이 같을 경우 날짜(`DATETIME`)를 역순으로 정렬해서 조회하는 쿼리이다.
+
+<br>
+
+### <a name="limit"></a>LIMIT
+
+조회하는 데이터의 갯수를 결정할 때 사용하는 쿼리이다.
+
+```SQL
+SELECT NAME
+FROM ANIMAL_INS
+ORDER BY DATATIME ASC
+LIMIT 1;
+```
+
+날짜(`DATETIME`)순으로 정렬했을 때, 데이터를 하나만 조회하는 쿼리이다. 즉 가장 최신 데이터를 조회한 것이다. `LIMIT`을 활용하면 최대값, 최소값도 구할 수 있다.
+
+<br>
+
+### <a name="distinct"></a>DISTINCT
+
+조회 조건에서 중복을 제거하고 조회할 때 사용하는 쿼리이다.
+
+```sql
+SELECT DISTINCT NAME
+FROM ANIMAL_INS;
+```
+
+`DISTINCT` 는 `SELECT` 에서 사용하는 쿼리이다. 중복을 제거해서 조회하고 싶은 컬럼 앞에 `DISTINCT` 를 붙이면 해당 컬럼은 중복이 제거되어 조회된다.
+
+<br>
+
+### <a name="sql-math"></a>연산 처리
+
+현재까지 내가 알고있는 SQL에서 연산하는 방법은 세가지이다.
+
+1) 컬럼을 연산해서 새로운 컬럼으로 조회하기
+
+```sql
+SELECT DATA1 * DATA2 AS NEW_DATA
+FROM ANIMAL_INS
+ORDER BY DATETIME ASC;
+```
+
+`DATA1`과 `DATA2`를 각각 곱해서 `NEW_DATA` 라는 새로운 컬럼명으로 조회하는 쿼리이다.
+
+
+
+2) 조회되는 데이터의 수 조회
+
+```sql
+SELECT COUNT(NAME)
+FROM ANIMAL_INS
+ORDER BY DATETIME ASC;
+```
+
+`NAME` 컬럼의 데이터 수를 조회하는 쿼리이다.
+
+
+
+3) 데이터 합계 구하기
+
+```sql
+SELECT SUM(WEIGHT)
+FROM ANIMAL_INS;
+```
+
+
+
+4) 데이터 평균 조회하기
+
+```sql
+SELECT AVG(AGE)
+FROM ANIMAL_INS;
+```
+
+<br>
+
+# <a name="backend"></a>Backend
 
 <br>
 
@@ -207,9 +311,25 @@ Hibernate는 JPA를 구현한 프레임워크이다. 국내에선 Hibernate보�
 
 <br>
 
-## 원격 저장소 변경내용을 로컬 저장소로 가져오기
+# <a name="devops"></a>DevOps
 
 
+
+<br>
+
+## <a name="aws"></a>AWS
+
+**우분투 EC2 인스턴스에 jdk 설치하기**
+
+- `sudo apt install default-jdk`
+
+  - 구버전 설치할 경우, [Oracle Java Archive](https://www.oracle.com/technetwork/java/archive-139210.html)에서 버전을 찾아서 설치.
+
+- `ssh -i [aws-public-key].pem ubuntu@[ip-port@aws]`
+
+  - AWS 서버를 실행할 때마다 ip주소가 바뀐다. 바뀐 ip주소를 입력해야 정상적으로 AWS 웹서버에 접속할 수 있다.
+
+    
 
 <br>
 
@@ -238,3 +358,11 @@ Hibernate는 JPA를 구현한 프레임워크이다. 국내에선 Hibernate보�
 `$ find Desktop/test -size +10M -type d -exec ls -l {} \;`
 
 <br>
+
+- **심볼릭 링크 생성/사용하기**
+
+심볼릭 링크는 디렉토리 또는 파일에 더 빠르게 접근하기 위한 별명을 설정하는 일과 같다. `디렉토리 --심볼릭링크`
+
+`ln -s [target] [symbolic_link_name]`
+
+<img src="http://www.mediafire.com/convkey/1fa6/at0glqvdxyrry4czg.jpg" width="700" />
