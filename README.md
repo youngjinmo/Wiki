@@ -12,6 +12,7 @@
 
 - [Programming Language](#language)
   - [Java](#)
+    - [IDE없이 컴파일하고, 실행하기](#run-compile-without-ide)
     - [Wrapper Class](#wrapper-class)
   - [SQL](#sql)
     - [AND 조건 조회](#order-and)
@@ -36,6 +37,32 @@
 # <a name="java"></a> Java
 
 <img src="https://cdn.vox-cdn.com/thumbor/FDD76YJZJFPyNUfT3ZBHcnMA0Ec=/43x0:593x367/1200x800/filters:focal(43x0:593x367)/cdn.vox-cdn.com/uploads/chorus_image/image/48667835/dbgxt2rvpd26udoyzcqn.0.0.jpg" width="400" />
+
+## <a name="run-compile-without-ide"></a>IDE없이 컴파일 하고, 실행하기
+
+운영체제에 jdk를 설치했고, 환경변수 설정까지 마쳤다면 IDE없이도 자바 파일을 컴파일해서 클래스 파일을 생성할 수 있다. 물론 실행까지도 할 수 있다. 
+
+**1. 자바 파일 생성(코딩)**
+
+![](http://www.mediafire.com/convkey/b82c/qze1hsgyvs1863gzg.jpg)
+
+
+
+**2. `javac` 이용해서 컴파일**
+
+![](http://www.mediafire.com/convkey/b82c/qze1hsgyvs1863gzg.jpg)
+
+
+
+**3. 실행**
+
+![](http://www.mediafire.com/convkey/2006/qriceyec0qlbmtfzg.jpg)
+
+실행할 땐 `java JavaYahac` 처럼 파일 포맷없이 클래스 파일명으로 명령을 한다. 그럼 현재 디렉토리에서 이름이 일치하는 클래스를 찾아서 실행한다. 
+
+실행 순서는 `main()`를 먼저 수행하고, `main()`에서 호출하는 메서드들을 수행하는 순서로 수행된다.
+
+<br>
 
 ## <a name="wrapper-class"></a>Wrapper Class
 
