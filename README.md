@@ -14,6 +14,7 @@
   - [Java](#)
     - [IDE없이 컴파일하고, 실행하기](#run-compile-without-ide)
     - [Wrapper Class](#wrapper-class)
+    - [Date](#java-date)
   - [SQL](#sql)
     - [AND 조건 조회](#order-and)
     - [LIMIT](#limit)
@@ -92,6 +93,51 @@ Wrapper Class는 다음과 같은 기능을 수행한다.
 ### References
 
 - [프로그래머스 - [자바 중급] java.lang 패키지/오토박싱](https://youtu.be/Eofo8_xZbfk)
+
+<br>
+
+## <a name="java-date"></a>Date 객체
+
+날짜를 출력하는 객체이다.
+
+기본 객체 사용법은 다음과 같다.
+
+```java
+import java.util.Date;
+
+class date_tutorial {
+  public static void main(String[] args){
+    Date date = new Date();
+    System.out.println(date);
+  }
+}
+```
+
+이렇게 `Date` 객체를 그대로 사용할 경우 출력결과는 다음과 같다.
+
+<img src="http://www.mediafire.com/convkey/ff9e/ltldv7wa674l88lzg.jpg" />
+
+포맷을 내가 커스터마이징 하고자 할 경우 `SimpleDateFormat` 객체를 사용하면 된다.
+
+```java
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+class date_tutorial {
+  public static void main(String[] args){
+    Date day = new Date();
+    SimpleDateFormat date = 
+      new SimpleDateFormat("yyyy년 MM월 dd일");
+    SimpleDateFormat clock = 
+      new SimpleDateFormat("a hh시 mm분 ss초");
+    
+    System.out.println("서버 실행한 날짜는 "+date.format(day));
+    System.out.println("서버 실행한 시각은 "+clock.format(day));
+  }
+}
+```
+
+![](http://www.mediafire.com/convkey/78db/kx7v4ezlus1w9xnzg.jpg)
 
 <br>
 
@@ -257,7 +303,7 @@ JSP도 있고, Spring Boot에서는 Thymeleaf를 미는것도 같은데 왜 Must
 
 Thymeleaf는 잘 모르지만, 느리다는 성능 상의 이슈가 있는 편이다.
 
-**Mustache는 템플릿 엔진중 가장 많은 언어를 지원한다.** [위키](https://en.wikipedia.org/wiki/Web_template_system#Server-side_systems)를 열어보면, C++, 커피스크립트, Go, 자바, .NET, PHP, Pyhton중 내가 아는 프로그래밍언어는 거의 다 지원되는듯하다.
+**Mustache는 템플릿 엔진중 가장 많은 언어를 지원한다.** [위키](https://en.wikipedia.org/wiki/Web_template_system#Server-side_systems)를 열어보면, C++, 커피스크립트, Go, Java, .NET, PHP, Pyhton중 내가 아는 프로그래밍언어는 거의 다 지원되는듯하다.
 
 또 Mustache는 [심플한 문법](https://mustache.github.io/mustache.5.html)을 갖고 있다고 한다. 이 부분은 직접 경험해야 알 수 있을 것 같다.
 
