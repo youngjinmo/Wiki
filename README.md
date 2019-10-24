@@ -15,6 +15,7 @@
     - [IDE없이 컴파일하고, 실행하기](#run-compile-without-ide)
     - [Wrapper Class](#wrapper-class)
     - [Date](#java-date)
+    - [Javadoc](#javadoc)
   - [SQL](#sql)
     - [AND 조건 조회](#order-and)
     - [LIMIT](#limit)
@@ -138,6 +139,59 @@ class date_tutorial {
 ```
 
 ![](http://www.mediafire.com/convkey/78db/kx7v4ezlus1w9xnzg.jpg)
+
+<br>
+
+## <a name="javadoc"></a>Javadoc
+
+주석은 프로그램에 반영되는 코드가 아니다. 코드를 설명하는 문구이다.
+
+내가 작성한 코드일지라도 며칠 지나서 코드를 다시보면, *'진정 내가 짠 코드란 말인가?'* 하는게 사실이다. 작성자 본인도 그런데, 함께 프로젝트를 할때 다른 동료들은 오죽할까. 
+
+적절하게 코드를 설명하는 주석을 남기는 것이 좋다.
+
+자바에서 주석을 남기는 방법은 두 가지가 있다.
+
+**1. 한 줄 짜리 주석**
+
+```java
+// 이게 한 줄 짜리 주석이다.
+```
+
+**2. 두 줄 이상의 주석**
+
+```java
+/*
+보통 IDE에서 /* 입력하고 엔터만 치면 자동으로 완성이 된다. 
+위아래 기호 사이에 이렇게 작성하면 장문의 주석도 작성이 가능하다.
+그러나 주석은 장황하지 않게 깔끔하게 쓰도록 하자.
+\*
+```
+
+그리고 주석의 역할을 하면서 주석만 따로 뽑아서 문서로 만들어주는 **Javadoc**이라는게 있다.
+
+**3. javadoc**
+
+```java
+/**
+ * @author DevAndy
+ * @return 매핑된 URI에 해당하는 문서를 반환
+*/
+@GetMapping("/login")
+public String login(){
+   return login;
+}
+```
+
+Javadoc에서 자주 사용하는 구문은 다음과 같다고 한다.
+
+그래서 이걸 문서로 만드려면 터미널에서 클래스 파일이 디렉토리로 이동후 아래의 명령어를 입력해야한다.
+
+```bash
+javadoc -d docs [file.java]
+```
+
+그런데 아직 이 문서를 보는 방법을 모르겠다.. 궁금한데 내일 찾아보고 정리해야겠다..
 
 <br>
 
