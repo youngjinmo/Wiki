@@ -21,7 +21,7 @@
     - [LIMIT](#limit)
     - [DISTINCT](#distinct)
     - [연산처리](#sql-math)
-- [Backend](#backend)
+- [Web Development](#web)
   - [HTTP](#http)
     - [GET/POST](#get-n-post)
   - [Template Engines](#template-engines)
@@ -29,10 +29,15 @@
   - [JPA](#jpa)
     - [Hibernate](#hibernate)
 - [Git](#git)
+  - [Fork](#git-fork)
   - [PR](#git-pull-request)
 - [DevOps](#devops)
 - [Linux](#linux)
   - [명령어](#command-of-linux)
+  - [Vi Editor](#linux-vi)
+    - [입력 명령어](#vi-input)
+    - [이동 명령어](#vi-move)
+    - [파일 상태 명령어](#vi-filestatus)
 - [MacOS](#osx)
   - [Homebrew](#homebrew)
   - [tree 패키지](#osx-package-tree)
@@ -241,13 +246,39 @@ Javadoc에서 자주 사용하는 구문은 다음과 같다고 한다.
 
 - `@since`
 
+  - 클래스나 메서드의 작성 시점을 알려주는 키워드. 
+  - API일 경우, API사용자가 어느 버전의 라이브러리에서 지원하는 기능인지를 알 수 있음.
+
 - `@param`
+
+  - Parameter의 이름과 용도를 알려주는 키워드.
 
 - `@return`
 
+  - 반환되는 데이터와 데이터 타입을 기술
+
 - `@throws`
 
+  - exception-class를 기술
+
 - `{@code}`
+
+  - 예제 코드를 첨부할 경우 사용하는 키워드.
+
+  - HTML의 `<pre>` 키워드와 함께 사용해야 한다.
+
+  - ```java
+    /**
+     * 클래스 설명
+     * <pre>
+     * {@code
+     * Car car = new Car();
+     * }
+     * </pre>
+     */
+    ```
+
+    
 
 그래서 이걸 문서로 만드려면 터미널에서 클래스 파일이 디렉토리로 이동후 아래의 명령어를 입력해야한다.
 
@@ -353,7 +384,7 @@ FROM ANIMAL_INS;
 
 <br>
 
-# <a name="backend"></a>Backend
+# <a name="web"></a>Web Development
 
 <br>
 
@@ -605,6 +636,62 @@ Upstream 저장소의 어떤 브랜치에 내 커밋을 병합(merge)할 것인�
 `ln -s [target] [symbolic_link_name]`
 
 <img src="http://www.mediafire.com/convkey/1fa6/at0glqvdxyrry4czg.jpg" width="700" />
+
+<br>
+
+## <a name="linux-vi"></a>Vi Editor
+
+### <a name="vi-input"></a>입력 명령어
+
+| 입력키 | 작업                                                |
+| ------ | --------------------------------------------------- |
+| i      | 커서의 **<u>현재 위치</u>**에서 **입력** 시작       |
+| a      | 현재 커서보다 **<u>한 칸 뒤</u>**에서 **입력**시작  |
+| A      | 현재 커서 위치의 **<u>줄의 끝</u>**에서 **입력** 시 |
+| o      | 현재 커서의 **<u>다음줄</u>**에서부터 **입력시작**  |
+| u      | 직전 작업 되돌리기(undo)                            |
+| U      | 전체 변경사항 되돌리기                              |
+| ESC    | 입력모드 종료                                       |
+| dd     | 커서가 가리키는 **<u>한 줄</u>** **삭제**           |
+| 3dd    | 커서가 가리키는 줄부터 **<u>3줄</u>** **삭제**      |
+| dw     | 커서가 가리키는 **<u>단어 하나</u>** **삭제**       |
+| 4dw    | 커서가 가리키는 **<u>단어 4개</u>** **삭제**        |
+| D      | 현재 커서로부터 **<u>뒤의 컨텐츠</u>** **삭제**     |
+| x      | 한 문자형(char) **<u>삭제</u>**                     |
+| r      | 한 문자형(char) **<u>변경</u>**                     |
+| yw     | 커서가 가리키는 **<u>한 단어</u>** **복사**         |
+| y$     | 커서가 가리키는 **<u>줄의 끝까지</u>** **복사**     |
+| yy     | 커서가 가리키는 **<u>줄 전체</u>** **복사**         |
+| yj     | 커서가 가리키는 **<u>줄과 다음 줄</u>** 복사        |
+| yk     | 커서가 가리키는 **<u>줄과 앞의 줄</u>** **복사**    |
+| p      | 붙여넣기 (paste)                                    |
+
+
+
+### <a name="vi-move"></a>이동 명령어
+
+| 입력키 | 작업 |
+| ------ | ---- |
+| k      | ↑    |
+| j      | ↓    |
+| h      | ←    |
+| l      | →    |
+
+
+
+### <a name="vi-filestatus"></a>파일 상태 변경 명령어
+
+| 입력키 | 작업              |
+| ------ | ----------------- |
+| :w     | 파일 저장         |
+| :q     | 종료하기          |
+| :wq    | 저장하고 종료하기 |
+
+
+
+**References**
+
+- [VI Text Edito with Commonds: Linux/Unix Tutorial](https://www.guru99.com/the-vi-editor.html)
 
 <br>
 
