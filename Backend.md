@@ -5,7 +5,7 @@
 
 
 - [HTTP](#http)
-  - [GET/POST](#get-n-post)
+  - [GET/POST](#getpost)
 - [Template Engines](#template-engines)
   - [Mustache](#mustache)
 - [JPA](#jpa)
@@ -21,7 +21,7 @@ HTTP는 클라이언트와 서버간의 통신을 위한 프로토콜이다. Hyp
 
 <br>
 
-## GET/POST
+## <a name="getpost"></a>GET/POST
 
 GET은 전달하는 데이터를 url 주소에 붙여서 전달하는 HTTP 메서드이다. 반면에 POST는 url 주소에 붙이지 않고 전달할 수 있는 HTTP 메서드이다.
 
