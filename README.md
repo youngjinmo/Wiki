@@ -33,7 +33,10 @@
   - [PR](#git-pull-request)
 - [DevOps](#devops)
 - [Linux](#linux)
-  - [명령어](#command-of-linux)
+  - [명령어](#linux-commands)
+    - [find](#linux-find)
+    - [Symbolic Link](#linux-symboliclink)
+    - [grep](#linux-grep)
   - [Vi Editor](#linux-vi)
     - [입력 명령어](#vi-input)
     - [이동 명령어](#vi-move)
@@ -615,7 +618,7 @@ Upstream 저장소의 어떤 브랜치에 내 커밋을 병합(merge)할 것인�
 
 ## <a name="command-of-linux"></a>명령어
 
-### find
+### <a name="linux-find"></a>find
 
 **리눅스에서 파일이나 디렉토리를 검색**할 때 사용하는 명령어이다.
 
@@ -629,13 +632,54 @@ Upstream 저장소의 어떤 브랜치에 내 커밋을 병합(merge)할 것인�
 
 <br>
 
-### 심볼릭 링크 생성/사용하기
+### <a name="linux-symboliclink"></a>심볼릭 링크 생성/사용하기
 
 심볼릭 링크는 디렉토리 또는 파일에 더 빠르게 접근하기 위한 별명을 설정하는 일과 같다. `디렉토리 --심볼릭링크`
 
 `ln -s [target] [symbolic_link_name]`
 
 <img src="http://www.mediafire.com/convkey/1fa6/at0glqvdxyrry4czg.jpg" width="700" />
+
+<br>
+
+### <a name="linux-grep"></a>grep
+
+유닉스를 위해 만들어진 텍스트 검색 기능의 명령어이다. <i>**g**rep | **r**egular **e**xpression | **p**rint</i>의 약자라고 한다.
+
+`grep [pattern] [file]` 포맷으로 입력하면 [file]에서 [pattern]이 어디있는지를 알려준다.
+
+![](http://www.mediafire.com/convkey/0dc1/t7dwrw36pfdc0l2zg.jpg)
+
+
+
+`grep`은 옵셥으로 검색할 수도 있다.
+
+[lorem-ipsum](https://www.lipsum.com/)에서 텍스트를 가져와서 lorem-ipsum.txt라는 파일을 만들었다. 여기서 **There**를 검색하면 다음과 같이 출력된다.
+
+![](http://www.mediafire.com/convkey/c3d8/9azmf260ppue6huzg.jpg)
+
+그런데 자세히 보면 대문자가 없을뿐 중간에 there가 쓰인 다른 문장도 찾을 수 있다. 이럴 때 `-i` 옵션을 사용해서 검색하면, 대소문자를 구분하지 않고 검색결과를 출력해준다.
+
+![](http://www.mediafire.com/convkey/fff7/75me6ct6gtfe6odzg.jpg)
+
+`grep` 의 옵션은 다음과 같다.
+
+옵션은 중복해서 사용할 수 있다. 대소문자를 구별하지 않으면, 패턴이 일치하는 라인의 수를 출력하고 싶다면, `grep -ic "PATTERN" FILE` 형식으로 검색하면 된다.
+
+| option | description                             | example                    |
+| ------ | --------------------------------------- | -------------------------- |
+| -i     | 비교시 대소문자를 구별 안함             | `grep -i "PATTERN" FILE `  |
+| -c     | 패턴이 일치하는 라인의 수를 출력        | `grep -c "PATTERN" FILE`   |
+| -v     | 지정한 패턴과 일치하지 않는 라인만 출력 | `grep -v "PATTERN" FILE`   |
+| -n     | 행의 번호를 함께 출력                   | `grep -n "PATTERN" FILE`   |
+| -w     | 패턴이 전체 단어와 일치하는 행만 출력   | `grep -w "PATTERN" FILE`   |
+| -m     | 최대 검색 결과 갯수 제한                | `grep -m 1 "PATTERN" FILE` |
+
+
+
+**References**
+
+- [개발자를 위한 레시피 - 리눅스 grep 명령어 사용법](https://recipes4dev.tistory.com/157)
 
 <br>
 
@@ -754,8 +798,6 @@ Upstream 저장소의 어떤 브랜치에 내 커밋을 병합(merge)할 것인�
 현재 디렉토리를 터미널에서 계층적으로 구분해서 편하게 보려면 `tree .` 을 입력하면 된다.
 
 <img src="http://www.mediafire.com/convkey/0813/u5n9x04o217pgqezg.jpg" width="500" />
-
-
 
 <br>
 
