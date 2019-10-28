@@ -6,6 +6,7 @@
 - [Wrapper Class](#wrapper-class)
 - [Date](#java-date)
 - [Javadoc](#javadoc)
+- [Math](#math)
 
 <br>
 
@@ -271,5 +272,54 @@ javadoc -d docs [file.java]
 ```
 
 그런데 아직 이 문서를 보는 방법을 모르겠다.. 궁금한데 내일 찾아보고 정리해야겠다..
+
+<br>
+
+## <a name="math"></a>Math
+
+수학 연산 기능을 갖고있는 클래스이다. `Math` 클래스가 갖고있는 함수 목록이다.
+
+- <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#abs-int-" target="_blank">abs(double num)</a>
+
+  - `abs` 함수는 모든 숫자 데이터타입을 지원한다. (int, long, float, double)
+  - 절대값을 구하는 함수
+
+- <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#ceil-double-" target="_blank">ceil(double num)</a>
+
+  - 반올림 함수
+
+- <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#floor-double-" target="_blank">floor(double num)</a>
+
+  - 내림 함수
+
+- <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#round-double-" target="_blank">round(double num)</a>
+
+  - 올림 함수
+
+- <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#max-double-double-" target="_blank">max(double num1, double num2)</a>
+
+  - 두 수중 큰 수 구하는 함수
+
+- <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#min-double-double-" target="_blank"> min(double num1, double num2)</a>
+
+  - 두 수중 작은 수 구하는 함수
+
+- <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#pow-double-double-" target="_blank">pow(double num1, double num2)</a>
+
+  - num1의 num2 제곱.
+
+  - ```java
+    public static main(String[] args){
+      int num1 = 5;
+      System.out.println(Math.pow(num1, 2));
+    }
+    // 25.0 출력
+    ```
+
+- <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--" target="_blank">random()</a>
+
+  - 1부터 10까지 수중 랜덤 수 출력하는 함수
+
+<br>
 
 <br>

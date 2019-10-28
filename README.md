@@ -1,7 +1,5 @@
 # TIL
 
-![HitCount](http://hits.dwyl.io/youngjinmo/youngjinmo/TIL.svg)
-
 *Today I learned.*
 
 오늘 제가 배운 내용을 정리하는 공간입니다.
@@ -10,7 +8,7 @@
 
 ## ToC
 
-- [Programming Language](/programming%20language)
+- [Programming Language](https://github.com/youngjinmo/TIL/tree/master/programming%20languages)
   - [Java](programming%20languages/Java.md)
     - [Java의 특징](/programming%20languages/Java.md#feature)
     - [Java의 철학](/programming%20languages/Java.md#philosophy)
@@ -23,13 +21,13 @@
     - [LIMIT](/programming%20language/SQL.md#limit)
     - [DISTINCT](/programming%20language/SQL.md#distinct)
     - [연산처리](/programming%20language/SQL.md#sql-math)
-- [Backend](/Backend.md)
-  - [HTTP](/Backend.md#http)
-    - [GET/POST](/Backend.md#getpost)
-  - [Template Engines](/Backend.md#template-engines)
-    - [Mustache](/Backend.md#mustache)
-  - [JPA](/Backend.md#jpa)
-    - [Hibernate](/Backend.md#hibernate)
+- [Backend](https://github.com/youngjinmo/TIL/tree/master/backend)
+  - [HTTP](/backend/HTTP.md)
+    - [GET/POST](/backend/HTTP.md#getpost)
+  - [Template Engines](/backend/template-engines)
+    - [Mustache](/backend/template-engines#mustache)
+  - [JPA](/backend/jpa)
+    - [Hibernate](/backend/jpa#hibernate)
 - [Git](/Git.md)
   - [Fork](/Git.md#git-fork)
   - [PR](/Git.md#git-pull-request)
