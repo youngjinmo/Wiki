@@ -13,6 +13,7 @@ Git은 버전/브랜치 별로 프로젝트의 형상을 관리할 수 있기 �
 - [Fork](#git-fork)
 - [PR](#git-pr)
 - [.gitignore](#git-gitignore)
+- [원격 저장소/브랜치 가져오기](#git-checkout-upstream-branch)
 
 <br>
 
@@ -85,5 +86,13 @@ vi에디터로 `.gitignore` 파일을 생성한다. 그리고 버전관리 하�
 ![](http://www.mediafire.com/convkey/1712/ut4pr6bajecoodtzg.jpg)
 
 더 이상 `.DS_Store` 파일이 보이지 않는 것을 확인할 수 있다.
+
+<br>
+
+## <a name="git-checkout-upstream-branch"></a>원격 저장소/브랜치 가져오기
+
+
+
+<br>
 
 <br>
