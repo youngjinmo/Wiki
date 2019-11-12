@@ -6,7 +6,7 @@
 
 - [도커 설치](#installation)
 - [이미지 생성](#create-image)
-- [bash모드로 컨테이너 진입 ](#exec-imageid-bash)
+- [bash모드로 컨테이너 진입](#exec-imageid-bash)
 - [이미지 배포](#deploy-image)
 - [이미지 이름 변경](#rename-image)
 
@@ -120,13 +120,3 @@ docker tag [image-ID] [new-image-name:tag]
 ```
 
 <br>
-
-<br>
-
-<script src="https://utteranc.es/client.js"
-        repo="youngjinmo/githubpages-comment"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
