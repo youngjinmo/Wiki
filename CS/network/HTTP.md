@@ -37,3 +37,21 @@ w3scool에서는 다음처럼 GET/POST를 비교하였다.
 - [w3school - HTTP Request Methods](https://www.w3schools.com/tags/ref_httpmethods.asp)
 
 <br>
+
+## <a name="uri"></a>URI와 URL
+
+URI는 Uniform Resource Identifier. <u>인터넷에 있는 자원을 나타내는 고유한 주소</u>를 의미하는 규약이다.
+
+URL는 Uniform Resource Locator. <u>자원(파일)의 정확한 위치를 알려주는 URI 규약의 한 형태</u>이다.
+
+<img src="https://i.stack.imgur.com/FbaKm.png" alt="출처 : Stackoverflow What is the difference between a URI, a URL and a URN?" width="300px" />
+
+<br>
+
+우리가 브라우저 창에서 만드는 모든 형태의 웹 주소는 URI이며, 이 중 가장 많이 쓰이는 URI 형태가 URL인 것이다.
+
+URL은 단점이 있는데, 가리키는 자원이 이동할 경우 더 이상 URL이 유효하지 않다는 특징이 있다. 이를 보완하기 위해 등장한듯 URN(Uniform Resources Name)이 있는데, URN은 자원의 위치가 아닌 자원의 이름을 가리킴으로써 자원의 경로가 바뀌어도 URN이 유효하다는 특징이 있다고 한다.
+
+**관련 포스트 :** [URI와 URL](https://youngjinmo.github.io/2019/11/http-uri-url)
+
+<br>
