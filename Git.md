@@ -10,10 +10,106 @@ Git은 버전/브랜치 별로 프로젝트의 형상을 관리할 수 있기 �
 
 <br>
 
+- [Commit](#git-commit)
+- [Unstaging](#git-restore)
 - [Fork](#git-fork)
 - [PR](#git-pr)
 - [.gitignore](#git-gitignore)
-- [원격 저장소/브랜치 가져오기](#git-checkout-upstream-branch)
+
+<br>
+
+## <a name="git-commit"></a>Commit
+
+형상관리의 핵심인 커밋이다. 어떤 기능을 구현했는지, 어떤 버그를 잡았는지를 커밋 메세지와 함께 커밋하면, 나중에 해당 커밋으로 복귀할 수도 있다. 타임 스탬라고 생각하면 좋다. 지금까지 한 작업을 스탬프로 찍으면 언제든 지금 찍은 스탬프로 돌아올 수 있다는 이야기이다.
+
+<img src="https://d1lss44hh2trtw.cloudfront.net/assets/editorial/2018/02/kingdom-come-deliverance-how-to-save-your-game-re.jpg" style="zoom:80%;" />
+
+RPG 게임을 하다가 어려운 스테이지를 앞두고 미리 게임을 저장하는 일과도 같다.
+
+
+
+Git의 작업 흐름은 다음과 같다.
+
+![](http://www.mediafire.com/convkey/4508/4t5cxewkb7l4z48zg.jpg)
+
+Local과 Remote는 각각 개발자가 개발과 형상관리를 하고있는 곳을 Local, 형상관리한 파일이 저장된 원격저장소가 Remote에 해당한다. 즉 컴퓨터로 개발을 하고 Github에 형상관리를 저장해둔다면, 컴퓨터가 Local에 해당하고, Github이 Remote에 해당한다는 이야기이다.
+
+Local은 다시 3가지로 구분될 수 있는데, working directory와 staging area, local repo가 있다. 각각의 장소의 역할은 다음과 같다.
+
+| where                 | role                                                         |
+| --------------------- | ------------------------------------------------------------ |
+| **working directory** | 개발자가 작업을 하고 있는 프로젝트 디렉토리이다.<br /> `git init` 으로 버전관리되고 있는 로컬 작업환경이다. |
+| **staging area**      | 형상관리 될 파일들, 즉 커밋**할** 파일들이 머무르는 장소이다. <br />커밋을 위해 커밋할 파일들을 staging area에 올려두고 커밋 메세지와 함께 커밋을 하면, local repo로 이동한다. |
+| **local repo**        | 최종적으로 커밋이 보관되는 장소이다. <br />Github, Gitlab같은 원격 저장소(Remote)에 push할 수 있다. |
+| **remote repo**       | Github, Gitlab과 같은 Git 호스팅 서비스에서 제공하는 원격 저장소에 해당한다. |
+
+<br>
+
+음 조금 난해할 수 있는 설명인데, '장소' 라고 표현했다고 해서 파일이 실제로 이동하는건 아니다. 
+
+> 추상적으로 비유하면 다음과 같다. 서류관리를 하고 있다고 가정해보자. 사수, 부사수가 존재하며 이 둘은 서류관리 업무를 하고 있다. 
+>
+> 서류들을 특허서류 / 계약관련서류 / 증권 서류 3가지로 구분해서 각각 타임 스탬프로 찍어서 구분했다. 이후 이 들은 타임스탬프로 찍은 서류들을 다시 다른 노트에 작성해두었다. 날짜와 함께 어떤 카테고리의 어떤 서류들인지 작성해두었다. 
+>
+> 대표님이 오셔서 우리회사가 갖고있는 특허 목록을 확인하고 싶어한다고 하신다. 이때 부사수는 타임스탬프를 정리해둔 노트를 사수에게 전달하면, 다시 사수가 대표님께 해당 노트를 보고한다.
+>
+> 직접 서류를 전달하지 않고도 언제 어떤 특허를 갖고있는지 대표님은 알 수 있다.
+
+이게 적절한 비유인지 모르겠으나.. 일단 이렇게 상상해보고 계속 설명을 읽어내려가자.
+
+<br>
+
+그럼 직접 파일을 생성하고, 커밋을 해보자.
+
+일단 파일을 생성하고 명령어 `git init` 으로 디렉토리에 Git을 셋팅하였다.
+
+![](http://www.mediafire.com/convkey/b76d/r5n1ssmh8kx0xg2zg.jpg)
+
+<br>
+
+여기서 file_01.java 파일을 커밋하기 위해서 스테이지에 올려보겠다.
+
+![](http://www.mediafire.com/convkey/59ac/0h0th7tcljt5i4hzg.jpg)
+
+`git status` 명령어로 보니 파일들이 서로 다르게 표시된걸 확인할 수 있다. 녹색으로 표시되는 파일이 스테이지에 올라간 파일이며, 이 파일은 커밋 대상이 된다.
+
+만약 커밋하고 싶지 않은 파일이 staging area에 올라갔다면, `git restore --staged <file>` 로 working directory로 복귀시킬 수 있다. 아래 [내용](#git-restore)을 참고바란다.
+
+이제 staging area에 있는 파일을 커밋하고 확인해보겠다.
+
+![](http://www.mediafire.com/convkey/e69e/gusd02c4xmmcvelzg.jpg)
+
+file_01.java 파일을 커밋하고 `git status` 를 확인해보니 file_01.java 파일이 사라진걸 확인할 수 있다. 커밋에 file_01.java 파일의 최신 변경사항이 반영되었기 때문에 Untracked files 목록에서 사라진 것이다. 
+
+Untracked files들은 아직 커밋을 만들지않아서 git에서 추적(tracking)하지 못하는 파일들이다.
+
+만약 다시 file_01.java 파일을 수정한다면 `modified` 목록에 수정된 파일이 보여질 것이다. 
+
+![](http://www.mediafire.com/convkey/f37c/baki1lcse85ue0fzg.jpg)
+
+Tracking 되고 있는 파일중에 변경사항이 발생했으니 새로 staging area에 올려서 커밋하라는 메세지이다.
+
+다시 커밋을 하고, 커밋 목록만 따로 조회해보겠다. 명령어는 `git log` 를 사용한다.
+
+![](http://www.mediafire.com/convkey/6443/7fa1yu4gaofg6grzg.jpg)
+
+작성자와 날짜, 시간, 커밋에 포함된 파일목록 그리고 커밋 ID가 출력된다.
+
+<br>
+
+## <a name="git-restore"></a>Unstaging(staging area➡️working directory)
+
+staging area에서 working directory로 돌리는 방법에 관한 방법이다.
+
+`git add .` 명령어로 작업한 파일 전체를 staging area에 올려두었는데, 이 중 커밋되면 안되는 파일을 발견했다. 
+
+이 땐 `git restore --staged <file>` 명령어를 통해 staging된 파일을 working directory로 복귀시킬 수 있다.
+
+<br>
+
+file_02.java 파일을 staging area에 올려두었다가 다시 untracking file로 바꾼 상태이다.
+
+![](http://www.mediafire.com/convkey/54a7/pln9p0sn3f2bed1zg.jpg)
 
 <br>
 
@@ -73,7 +169,7 @@ git으로 버전관리를 하다보면, 버전관리할 필요가 없는 불필�
 
 vi에디터로 `.gitignore` 파일을 생성한다. 그리고 버전관리 하지않을 파일의 목록 또는 파일의 디렉토리명을 입력해두면, `git status`에서 확인되지 않는다.
 
-![](http://www.mediafire.com/convkey/61c2/o4f2knmibqcoi17zg.jpg)
+![](http://www.mediafire.com/convkey/5bf7/95y9yh7c0yhenfqzg.jpg)
 
 ### 2. 버전관리 제외할 파일 형식 추가
 

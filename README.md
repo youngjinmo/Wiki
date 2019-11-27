@@ -30,7 +30,7 @@
       - [Mustache](/server-side/spring/TemplateEngines.md#mustache)
     - [JPA](/server-side/spring/JPA.md)
       - [Hibernate](/server-side/spring/JPA.md#hibernate)
-  - [Django](/server-side/Django.md)
+  - [Django](/server-side/django.md)
 - [CS Knowledges](https://github.com/youngjinmo/TIL/tree/master/CS)
   - [HTTP](CS/network/HTTP.md)
     - [GET/POST](CS/network/HTTP.md#getpost)
