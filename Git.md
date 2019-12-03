@@ -215,6 +215,8 @@ Github Credential이란 Github의 계정정보를 말한다.
 
 `Password for 'https://your github email' : your github password`
 
+출처 : https://git-scm.com/docs/git-credential-store
+
 <br>
 
 <br>
