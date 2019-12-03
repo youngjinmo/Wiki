@@ -15,6 +15,7 @@ Git은 버전/브랜치 별로 프로젝트의 형상을 관리할 수 있기 �
 - [Fork](#git-fork)
 - [PR](#git-pr)
 - [.gitignore](#git-gitignore)
+- [credential](#git-credential)
 
 <br>
 
@@ -198,9 +199,21 @@ vi에디터로 `.gitignore` 파일을 생성한다. 그리고 버전관리 하�
 
 <br>
 
-## <a name="git-checkout-upstream-branch"></a>원격 저장소/브랜치 가져오기
+## <a name="git-cedential"></a>Github Credential 저장
 
+Github Credential이란 Github의 계정정보를 말한다. 
 
+저장소에 push/pull 하거나 private 저장소를 clone하기 위해서는 해당 저장소를 이용할 수 있는 권한이 필요한데 이 때 credential에 계정 정보를 저장해두면 저장소 이용시마다 로그인할 필요가 없다.
+
+터미널 명령어는 다음과 같다.
+
+`git config credential.helper store`
+
+`git push https://github.com/repo.git `
+
+`Username for 'https://github.com' : your github email`
+
+`Password for 'https://your github email' : your github password`
 
 <br>
 
