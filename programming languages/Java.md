@@ -8,6 +8,7 @@
 - [Javadoc](#javadoc)
 - [Math](#math)
 - [length, length(), size()](#length)
+- [==과 equals()](#equals)
 
 <br>
 
@@ -333,7 +334,24 @@ Java에서 길이를 반환하는 메서드 또는 프로퍼티는 `length`, `le
 | `length()` | 문자열                                 |
 | `size()`   | 컬렉션 프레임워크 타입 (ArrayList, ..) |
 
+더 자세히 알아보고자 한다면, 블로그를 참고할 것.
 
+- [DevAndy - length, length() 그리고 size()의 차이](https://youngjinmo.github.io/2019/12/java-length-size/)
+
+<br>
+
+##<a name="equals"></a>==과 equals()
+
+문자열을 비교할 때 사용하는 방법이 두가지가 있다. `==` 와 `equals()` 가 있는데, 이 둘은 어떤 차이가 있을까.
+
+|            |                                                     |
+| ---------- | --------------------------------------------------- |
+| `==`       | 비교하는 대상 객체들의 **주소값(reference)**을 비교 |
+| `equals()` | 비교하는 대상 객체들의 **값(value)**를 비교         |
+
+더 자세히 알아보고자 한다면, 블로그를 참고할 것.
+
+- [DevAndy - 문자열 비교, ==과 equals()의 차이](https://youngjinmo.github.io/2019/12/java-equals/)
 
 <br>
 

@@ -18,6 +18,7 @@
     - [Javadoc](/programming%20languages/Java.md#javadoc)
     - [Math](/programming%20languages/Java.md#math)
     - [length, length(), size()](/programming%20languages/Java.md#length)
+    - [==과 equals()](/programming%20languages/Java.md#equals)
   - [Python](programming%20languages/Python.md)
     - [파이썬의 특징](programming%20languages/Python.md#feature)
       - [인터프리터 언어](programming%20languages/Python.md#feature-interpretor)
