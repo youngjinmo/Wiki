@@ -16,6 +16,8 @@
     - [Wrapper Class](/programming%20languages/Java.md#wrapper-class)
     - [Date](/programming%20languages/Java.md#date)
     - [Javadoc](/programming%20languages/Java.md#javadoc)
+    - [Math](/programming%20languages/Java.md#math)
+    - [length, length(), size()](/programming%20languages/Java.md#length)
   - [Python](programming%20languages/Python.md)
     - [파이썬의 특징](programming%20languages/Python.md#feature)
       - [인터프리터 언어](programming%20languages/Python.md#feature-interpretor)

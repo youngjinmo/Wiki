@@ -7,6 +7,7 @@
 - [Date](#java-date)
 - [Javadoc](#javadoc)
 - [Math](#math)
+- [length, length(), size()](#length)
 
 <br>
 
@@ -319,6 +320,20 @@ javadoc -d docs [file.java]
 - <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--" target="_blank">random()</a>
 
   - 1부터 10까지 수중 랜덤 수 출력하는 함수
+
+<br>
+
+## <a name="length"></a>length, length(), size()
+
+Java에서 길이를 반환하는 메서드 또는 프로퍼티는 `length`, `length()`, `size()`가 있다. 이들은 데이터타입에 맞게 사용해줘야 한다. 필요한 데이터타입은 다음과 같다.
+
+| 함수       | 사용가능한 데이터타입                  |
+| ---------- | -------------------------------------- |
+| `length`   | 배열                                   |
+| `length()` | 문자열                                 |
+| `size()`   | 컬렉션 프레임워크 타입 (ArrayList, ..) |
+
+
 
 <br>
 
