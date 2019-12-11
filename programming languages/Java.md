@@ -9,6 +9,7 @@
 - [Math](#math)
 - [length, length(), size()](#length)
 - [==과 equals()](#equals)
+- [문자열 변환 함수](#touppercase)
 
 <br>
 
@@ -352,6 +353,24 @@ Java에서 길이를 반환하는 메서드 또는 프로퍼티는 `length`, `le
 더 자세히 알아보고자 한다면, 블로그를 참고할 것.
 
 - [DevAndy - 문자열 비교, ==과 equals()의 차이](https://youngjinmo.github.io/2019/12/java-equals/)
+
+<br>
+
+##<a name="touppercase"></a>문자열 변환 함수
+
+입력받은 문자열중 같은 문자가 몇번 나오는지를 파악하는 [문제](https://www.acmicpc.net/problem/1152)를 풀다가 자주 사용하는 문자열 변환 함수를 정리해보았다.
+
+위 문제에서 사용한 문자열 메서드는 `toUpperCase()` 이다. 문자열 전체를 대문자로 변환하는 메서드이다.
+
+| methods         | doing                            |
+| --------------- | -------------------------------- |
+| `toUpperCase()` | 문자열 전체를 대문자로 변환한다. |
+| `toLowerCase()` | 문자열 전체를 소문자로 변환한다. |
+| `trim()`        | 문자열 앞 뒤의 공백을 제거한다.  |
+
+문자열 메서드끼리는 중복 사용도 가능하다.
+
+![](http://www.mediafire.com/convkey/d469/mxdlxuexldnhqzmzg.jpg)
 
 <br>
 
