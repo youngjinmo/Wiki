@@ -10,6 +10,7 @@
 - [length, length(), size()](#length)
 - [==과 equals()](#equals)
 - [문자열 변환 함수](#touppercase)
+- [Lombok](#lombok)
 
 <br>
 
@@ -371,6 +372,67 @@ Java에서 길이를 반환하는 메서드 또는 프로퍼티는 `length`, `le
 문자열 메서드끼리는 중복 사용도 가능하다.
 
 ![](http://www.mediafire.com/convkey/d469/mxdlxuexldnhqzmzg.jpg)
+
+<br>
+
+## <a name="lombok"></a>Lombok
+
+자바에서 Model을 만들때, 멤버필드에 대한 Getter/Setter, toString과 멤버필드에 주입하는 생성자를 만드는 코드등 반복적으로 작성하게 되는 코드를 어노테이션으로 줄여주는 라이브러리이다.
+
+Maven/Gradle로 프로젝트를 진행하는 경우, MVNrepository에서 Dependency를 추가할 수 있다.
+
+**Lombok 적용 전**
+
+```java
+package devandy.domain;
+
+public class User {
+   private Integer id;
+   private String email;
+   private String password;
+
+   public Integer getId() {
+      return id;
+   }
+
+   public void setId(Integer id) {
+      this.id = id;
+   }
+
+   public String getEmail() {
+      return email;
+   }
+
+   public void setEmail(String email) {
+      this.email = email;
+   }
+
+   public String getPassword() {
+      return password;
+   }
+
+   public void setPassword(String password) {
+      this.password = password;
+   }
+}
+```
+
+<br>
+
+**Lombok 적용 후**
+
+```java
+package hello.domain;
+
+import lombok.Data;
+
+@Data
+public class User {
+   private Integer id;
+   private String email;
+   private String password;
+}
+```
 
 <br>
 
