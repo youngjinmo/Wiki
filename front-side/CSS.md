@@ -24,6 +24,14 @@
 
 아직 CSS에 대해 아는게 거의 없을정도로 무지하지만, 지금까지 배운 CSS 코드중 `display: flex;` 만큼 매력적인 코드였다.
 
+![](https://i.ytimg.com/vi/in9SX3enCHU/maxresdefault.jpg)
+
+아래 출처에 링크를 통해 알게 된 사실을 추가한다.
+
+ `word-break: keep-all;` 로만 하면, 텍스트가 박스를 벗어날 수 있다고 한다. 따라서 이를 방지하기 위해 `word-wrap: break-word;` 를 추가하면, 어떤 언어도 원하는대로 단어가 중간에 끊기지않고 줄을 띄울 수 있다.
+
+출처 : [김유리님 WIT블로그 - word-break 속성과 word-wrap 속성 알아보기](https://wit.nts-corp.com/2017/07/25/4675)
+
 <br>
 
 <br>
