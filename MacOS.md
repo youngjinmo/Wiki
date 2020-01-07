@@ -4,6 +4,7 @@
 
 - [Homebrew](#homebrew)
 - [tree 패키지](#osx-package-tree)
+- [xcrun error](#xcrun-error)
 
 <br>
 
@@ -64,5 +65,21 @@
 현재 디렉토리를 터미널에서 계층적으로 구분해서 편하게 보려면 `tree .` 을 입력하면 된다.
 
 <img src="http://www.mediafire.com/convkey/0813/u5n9x04o217pgqezg.jpg" width="500" />
+
+<br>
+
+##<a name="xcrun-error"></a>xcrun error
+
+[homebrew](#homebrew)를 사용하여 패키지를 설치하다가 발견한 에러 메세지이다. 
+
+![](http://www.mediafire.com/convkey/59f5/9b1hga2g4vm82znzg.jpg)
+
+CommanLineTools를 업데이트 하지 않아 발생한 에러같았다. X Code를 따로 안쓰다보니 지우고 가볍게 CommandLineTools만을 사용중인데, 따로 수동으로 업데이트를 해줘야하나보다.
+
+`xcode-select --install` 명령어로 CommanLineTools를 업데이트 하고 나서 다시 reinstall했더니 정상적으로 설치가 되었다.
+
+![](http://www.mediafire.com/convkey/e0a1/sfyajpnpwqt9ytbzg.jpg)
+
+<br>
 
 <br>

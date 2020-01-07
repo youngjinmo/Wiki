@@ -71,5 +71,6 @@
 - [MacOS](/MacOS.md)
   - [Homebrew](/MacOS.md#homebrew)
   - [tree 패키지](/MacOS.md#osx-package-tree)
+  - [xcrun error](/MacOS.md#xcrun-error)
 
 <br>
