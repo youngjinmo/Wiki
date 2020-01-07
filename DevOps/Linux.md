@@ -10,6 +10,8 @@
   - [find](#linux-find)
   - [Symbolic Link](#linux-symboliclink)
   - [grep](#linux-grep)
+  - [터미널 결과 출력 저장](#save-output)
+  - [명령어 동시실행](#combine-commands)
 - [Vi Editor](#linux-vi)
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
@@ -17,9 +19,9 @@
 
 <br>
 
-## <a name="command-of-linux"></a>명령어
+#<a name="linux-commands"></a>명령어
 
-### <a name="linux-find"></a>find
+## <a name="linux-find"></a>find
 
 **리눅스에서 파일이나 디렉토리를 검색**할 때 사용하는 명령어이다.
 
@@ -45,7 +47,7 @@
 
 <br>
 
-### <a name="linux-symboliclink"></a>심볼릭 링크 생성/사용하기
+## <a name="linux-symboliclink"></a>심볼릭 링크 생성/사용하기
 
 심볼릭 링크는 디렉토리 또는 파일에 더 빠르게 접근하기 위한 별명을 설정하는 일과 같다. `디렉토리 --심볼릭링크`
 
@@ -55,7 +57,7 @@
 
 <br>
 
-### <a name="linux-grep"></a>grep
+## <a name="linux-grep"></a>grep
 
 유닉스를 위해 만들어진 텍스트 검색 기능의 명령어이다. <i>**g**rep | **r**egular **e**xpression | **p**rint</i>의 약자라고 한다.
 
@@ -96,9 +98,25 @@
 
 <br>
 
-## <a name="linux-vi"></a>Vi Editor
+##<a name="save-output"></a>터미널 결과 출력
 
-### <a name="vi-input"></a>입력 명령어
+`ls -al > "file.txt"`
+
+![](https://www.mediafire.com/convkey/716d/zfjd6vv45y4m2xzzg.jpg)
+
+<br>
+
+##<a name="combine-commands"></a>명령어 동시실행
+
+`command1 && command2`
+
+![](https://www.mediafire.com/convkey/e96a/nunbbvezumvc1rxzg.jpg)
+
+<br>
+
+# <a name="linux-vi"></a>Vi Editor
+
+## <a name="vi-input"></a>입력 명령어
 
 | 입력키 | 작업                                                |
 | ------ | --------------------------------------------------- |
@@ -125,7 +143,7 @@
 
 <br>
 
-### <a name="vi-move"></a>이동 명령어
+## <a name="vi-move"></a>이동 명령어
 
 | 입력키 | 작업 |
 | ------ | ---- |
@@ -136,7 +154,7 @@
 
 <br>
 
-### <a name="vi-filestatus"></a>파일 상태 변경 명령어
+## <a name="vi-filestatus"></a>파일 상태 변경 명령어
 
 | 입력키 | 작업              |
 | ------ | ----------------- |
