@@ -71,6 +71,7 @@
 - [MacOS](/MacOS.md)
   - [Homebrew](/MacOS.md#homebrew)
   - [tree 패키지](/MacOS.md#osx-package-tree)
+  - [Xcode 대신 Command Line Tools 사용하기](/MacOS.md#commandlinetools)
   - [xcrun error](/MacOS.md#xcrun-error)
 
 <br>

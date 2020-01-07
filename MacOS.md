@@ -4,6 +4,7 @@
 
 - [Homebrew](#homebrew)
 - [tree 패키지](#osx-package-tree)
+- [Xcode 대신 Command Line Tools 사용하기](#commandlinetools)
 - [xcrun error](#xcrun-error)
 
 <br>
@@ -68,6 +69,16 @@
 
 <br>
 
+## <a name="commandlinetools"></a>Xcode대신 Command Line Tools 사용하기
+
+Mac에서 git, gcc같은 개발 관련 툴을 사용하기 위해서는 Command Line Tools가 먼저 설치되어 있어야 한다. X Code를 설치하면 X Code 메뉴탭에서 설치가 가능하긴 하지만, 굳이 X Code를 사용하지 않는 개발자가 이렇게 무거운 툴을 설치할 필요는 없다. 터미널에서 간단히 아래의 명령어를 입력하여 설치할 수 있다.
+
+`xcode-select --install`
+
+출처 : [백투더맥 - Xcode없이 맥에 '명령어 라인도구(Command Line Tools)'를 설치하는 방법](https://macnews.tistory.com/4243)
+
+<br>
+
 ##<a name="xcrun-error"></a>xcrun error
 
 [homebrew](#homebrew)를 사용하여 패키지를 설치하다가 발견한 에러 메세지이다. 
@@ -79,7 +90,5 @@ CommanLineTools를 업데이트 하지 않아 발생한 에러같았다. X Code�
 `xcode-select --install` 명령어로 CommanLineTools를 업데이트 하고 나서 다시 reinstall했더니 정상적으로 설치가 되었다.
 
 ![](http://www.mediafire.com/convkey/e0a1/sfyajpnpwqt9ytbzg.jpg)
-
-<br>
 
 <br>
