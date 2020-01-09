@@ -5,6 +5,7 @@
 <br>
 
 - [word-break](#word-break)
+- [복수의 id에 CSS 적용](#apply-style-to-multiple-ids)
 
 <br>
 
@@ -33,5 +34,13 @@
 출처 : [김유리님 WIT블로그 - word-break 속성과 word-wrap 속성 알아보기](https://wit.nts-corp.com/2017/07/25/4675)
 
 <br>
+
+##<a name="apply-style-to-multiple-ids"></a>복수의 id에 CSS 적용
+
+HTML 문서의 스타일 코드를 적용할 때 class, id로 구분해서 스타일을 따로 적용하는 편인데, 이 때 서로다른 id에 같은 스타일의 적용이 필요할 때가 있다. 이 땐 그냥 `,` 로 구분해서 복수의 id에 스타일을 적용할 수 있다.
+
+![](https://www.mediafire.com/convkey/f4a3/zi8orbpwx27e2g6zg.jpg)
+
+https://codepen.io/youngjinmo/pen/LYEdypN
 
 <br>

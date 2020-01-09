@@ -42,6 +42,7 @@
 - [Front-side](https://github.com/youngjinmo/TIL/tree/master/front-side)
   - [CSS](/front-side/CSS.md)
     - [word-break](/front-side/CSS.md#word-break)
+    - [복수의 id에 CSS 적용](/front-side/CSS.md#apply-style-to-multiple-ids)
 - [CS Knowledges](https://github.com/youngjinmo/TIL/tree/master/CS)
   - [HTTP](CS/network/HTTP.md)
     - [GET/POST](CS/network/HTTP.md#getpost)
