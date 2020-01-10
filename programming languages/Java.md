@@ -11,6 +11,9 @@
 - [==과 equals()](#equals)
 - [문자열 변환 함수](#touppercase)
 - [Lombok](#lombok)
+- [JavaBean](#javabean)
+  - [JavaBean 규칙은 무엇이며, 왜?](#rule-and-why)
+  - [Bean 생성하는 법](#create-javabean)
 
 <br>
 
@@ -435,5 +438,196 @@ public class User {
 ```
 
 <br>
+
+## <a name="javabean"></a>JavaBean
+
+프로젝트 코딩을 하다가 이런 에러 메세지가 인텔리J에 출력되어 알아보았다. 
+
+```
+Could not autowire. No beans of 'Principal' type found.
+```
+
+그 동안 모르면서 그냥 무턱대고 사용하고 있었는데, 이 기회에 제대로 알아야 할 것 같아 삐멜님 블로그에 들어가서 자바 빈을 설명한 [포스트](https://imasoftwareengineer.tistory.com/101)를 참고하여 옮겨적었다. 원래는 삐멜님의 포스트를 읽고 이해한 것을 바탕으로 정리하려고 했는데, 다 알아둬야 할 것 같아 그대로 옮겨적게되었다.. 그러다보니 길어져서 JavaBean 내용만을 정리한 ToC를 만들었다.
+
+**ToC**
+
+- [JavaBean 규칙은 무엇이며, 왜?](#rule-and-why)
+- [JavaBean 예제코드 (출처:삐멜님 블로그)](#example-code)
+- [왜 접근제한자 private에 getter/setter 메서드?](#why-getter-setter)
+- [왜 no-argument 생성자 사용?](#why-create-no-argument)
+- [왜 java.io.serializable 인터페이스 구현?](#why-create-interface)
+- [Bean 생성하는 법](#create-javabean)
+
+<br>
+
+---
+
+### <a name="rule-and-why"></a>JavaBean 규칙은 무엇이며, 왜?
+
+자바 빈은 데이터를 표현하는 것을 목적으로 하는 자바 클래스이다.
+
+자바 빈은 아래의 규칙을 따른다.
+
+- 모든 필드가 `private` 이며, `getter`/`setter` 메서드를 통해서만 접근이 가능
+- Argument가 없는(no-argument) 생성자가 존재
+- `java.io.Serializable` 인터페이스를 구현
+
+
+
+### 왜?
+
+자바 빈의 목적은 여러가지 서로다른 객체들을 하나의 객체(Bean)에 담기 위함이다. JavaBean의 규칙을 소프트웨어 프로토콜이라고 생각하면된다.
+
+<br>
+
+### <a name="example-code"></a>JavaBean 예제 코드
+
+[출처: 삐멜의 소프트웨어 엔지니어](https://imasoftwareengineer.tistory.com/101)
+
+```java
+import java.io.Serializable;
+
+public class SomeBean implements Serialzable {
+   private String beanName;
+   private int beanValue;
+  
+   public SomeBean(){
+      // no-argument constructor
+   }
+  
+   public String getBeanName(){
+      return beanName;
+   }
+  
+   public void setBeanName(String beanName){
+      this.beanName
+   }
+  
+   public void setBeanValue(int beanValue){
+      this.beanValue = beanValue;
+   }
+}
+```
+
+<br>
+
+### <a name="why-getter-setter"></a>왜 접근제한자 private에 getter/setter 메서드?
+
+JavaBeans는 `private` 필드와 `getter`/`setter` 를 지키는데, 이런 규칙을 지키는 클래스를 POJO(Plain Old Java Object)라고 부른다. `private` 필드와 `getter`/`setter` 메서드를 사용하는 이유는 **Encapsulation**을 위함이라고 한다.
+
+<br>
+
+### <a name="why-create-no-argument"></a>왜 no-argument 생성자 사용?
+
+위 [예제코드](#example-code)를 기반으로 생각해보자. 다른 곳에서 `SomeBean` 객체를 프로그램 내에서 생성하고자 한다면, 어떻게 될까?
+
+Argument가 몇개인지, 어떤 필드에 맵핑되는지를 찾아야한다. 그러나 Argument가 없는 생성자를 만들어두면 오브젝트를 런타임(Runtime)에 생성해주는 프로그램은 오브젝트 생성 -> getter/setter를 이용해 값 설정으로 단순하게 목적을 달성 할 수 있다.
+
+<br>
+
+### <a name="why-create-interface"></a>왜 ava.io.serializable 인터페이스 구현?
+
+[JavaBean의 목적](#rule-and-why)은 여러가지 객체들을 하나의 객체에 담기 위함이라고 했는데, 담아서 무엇을 하려는걸까. 메모리에 존재하는 오브젝트를 네트워크를 통해 전송하거나 파일에 저장하려면 `data stream`(e.g. `byte[]`)으로 이 오브젝트를 변환시켜줘야한다. 이 변환 작업을 Serialization이라고 부른다. JavaBean을 저장하거나 전송하는 일이 많기 때문에, Serializable가 스탠다드에 포함되는것으로 추정.
+
+<br>
+
+###<a name="create-javabean"></a>Bean 생성하는 법
+
+어노테이션을 이용해서 자바 빈을 생성할 수 있다.
+
+자바 빈에 사용되는 어노테이션은 다음과 같다.
+
+```java
+@Configuration
+@Bean
+```
+
+
+
+실제로 자바 빈을 생성하는 코드를 보자.
+
+`ApplicationConfg.java`
+
+```java
+@Configuration
+public class ApplicationConfig {
+  
+  // 생성자 메서드를 이용한 Bean 생성
+  @Bean
+  public Player player01(){
+    Player player = new Player("Rooney", 10);
+    return player;
+  }
+  
+  // setter 메서드를 이용한 Bean 생성
+  @Bean
+  public Player player02(){
+    Player player = new Player();
+    player.setName("Ji-sung");
+    player.setNumber(13);
+    return player;
+  }
+}
+```
+
+
+
+`Player.java`
+
+```java
+public class Player {
+  private String name;
+  private int age;
+  
+  // 생성자 Constructor
+  public Player(){
+    
+  }
+  
+  public Player(String name, int number){
+    this.name = name;
+    this.number = number;
+  }
+  
+  // getter/setter 메서드
+  public String getName(){
+    return name;
+  }
+  public void setName(String name){
+    this.name = name;
+  }
+  public int getAge(){
+    return age;
+  }
+  public void setAge(int age){
+    this.age = age;
+  }
+  
+  @Override
+  public String toString(){
+    return "Player [name="+name+", age="+age+"]";
+  }
+}
+```
+
+
+
+`Main.java`
+
+```java
+public class Main {
+  public static void Main(String[] args){
+    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicaionConfig.class);
+    
+    Player player01 = ctx.getBean("player01", Player.class);
+    System.out.println(player01.toString());
+    
+    Player player02 = ctx.getBean("player02", PLayer.class);
+    System.out.println(player02.toString());
+  }
+}
+```
+
+
 
 <br>
