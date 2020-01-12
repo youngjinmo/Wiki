@@ -37,7 +37,7 @@ print("\n".join(result))
 
 **출력결과**
 
-![](https://www.mediafire.com/convkey/659e/j9cufdbg9cq9wyczg.jpg)
+<img src="https://www.mediafire.com/convkey/659e/j9cufdbg9cq9wyczg.jpg" style="zoom:50%;" />
 
 `result` 라는 변수가 print 함수에 의해 출력되었는데, `result` 함수를 뜯어보면, `search_target` 에서 `regex` 가 일치하는 부분만 뽑아서 한글자씩 저장이 된거다.
 
@@ -55,7 +55,7 @@ print("\n".join(result))
 
 **출력결과**
 
-![](https://www.mediafire.com/convkey/449d/knqqzjdjoj0ky4gzg.jpg)
+<img src="https://www.mediafire.com/convkey/449d/knqqzjdjoj0ky4gzg.jpg" style="zoom:50%;" />
 
 숫자 대표문자 `\d` 와 마찬가지로 변수 `regex`에 `\w` 를 작성하고 실행했다.
 
@@ -69,7 +69,7 @@ print("\n".join(result))
 
 **출력결과**
 
-![](https://www.mediafire.com/convkey/f04a/2jfvjfj19cenouwzg.jpg)
+<img src="https://www.mediafire.com/convkey/f04a/2jfvjfj19cenouwzg.jpg" style="zoom:50%;" />
 
 숫자로 이루어진 글자를 한글자씩 떼네어 잘 출력이되었다. `\w+` 로 조회해보면, 마찬가지로 문자를 한 글자가 아닌 한 단어씩 조회가 된다.
 
@@ -83,7 +83,7 @@ print("\n".join(result))
 
 **출력결과**
 
-![](https://www.mediafire.com/convkey/103b/s7otvv0xifq1sy4zg.jpg)
+<img src="https://www.mediafire.com/convkey/103b/s7otvv0xifq1sy4zg.jpg" style="zoom:50%;" />
 
 ---
 
@@ -101,7 +101,7 @@ print("\n".join(result))
 
 **출력 결과**
 
-![](https://www.mediafire.com/convkey/a3cd/4oe6qltu2wxg1mtzg.jpg)
+<img src="https://www.mediafire.com/convkey/a3cd/4oe6qltu2wxg1mtzg.jpg" style="zoom:50%;" />
 
 ---
 
@@ -115,7 +115,7 @@ print("\n".join(result))
 
 **출력 결과**
 
-![](https://www.mediafire.com/convkey/a1d8/sh72klrp42subd0zg.jpg)
+<img src="https://www.mediafire.com/convkey/a1d8/sh72klrp42subd0zg.jpg" style="zoom:50%;" />
 
 ---
 
@@ -131,7 +131,7 @@ print("\n".join(result))
 
 **출력 결과**
 
-![](https://www.mediafire.com/convkey/052f/ks4es59h599itv0zg.jpg)
+<img src="https://www.mediafire.com/convkey/052f/ks4es59h599itv0zg.jpg" style="zoom:50%;" />
 
 ---
 
@@ -151,7 +151,7 @@ print("\n".join(result))
 
 **출력 결과**
 
-![](https://www.mediafire.com/convkey/a32a/isqket3qcmiswgwzg.jpg)
+<img src="https://www.mediafire.com/convkey/a32a/isqket3qcmiswgwzg.jpg" style="zoom:50%;" />
 
 ---
 
@@ -163,7 +163,7 @@ print("\n".join(result))
 
 **출력 결과**
 
-![](https://www.mediafire.com/convkey/fee4/gt4z8s38fo6721mzg.jpg)
+<img src="https://www.mediafire.com/convkey/fee4/gt4z8s38fo6721mzg.jpg" style="zoom:50%;" />
 
 ---
 
@@ -174,9 +174,9 @@ print("\n".join(result))
 
 **출력결과**
 
-![](https://www.mediafire.com/convkey/0a60/33og25h9rw5ux1vzg.jpg)
+<img src="https://www.mediafire.com/convkey/0a60/33og25h9rw5ux1vzg.jpg" style="zoom:50%;" />
 
-![](https://www.mediafire.com/convkey/8b12/eik0j7nqzqpz0hzzg.jpg)
+<img src="https://www.mediafire.com/convkey/8b12/eik0j7nqzqpz0hzzg.jpg" style="zoom:50%;" />
 
 ---
 
@@ -188,7 +188,7 @@ print("\n".join(result))
 
 **출력 결과**
 
-![](https://www.mediafire.com/convkey/7b11/r3nqdbjyvy4b6jizg.jpg)
+<img src="https://www.mediafire.com/convkey/7b11/r3nqdbjyvy4b6jizg.jpg" style="zoom:50%;" />
 
 ---
 
@@ -205,11 +205,9 @@ print("\n".join(result))
 
 숫자를 제외하고 조회
 
-![](https://www.mediafire.com/convkey/08c3/mt6k13b5u3jyd8nzg.jpg)
+<img src="https://www.mediafire.com/convkey/08c3/mt6k13b5u3jyd8nzg.jpg" style="zoom:50%;" />
 
 글자 대표문자 제외하고 조회
 
-![](https://www.mediafire.com/convkey/ab11/n5poizai60zj0eazg.jpg)
-
----
+<img src="https://www.mediafire.com/convkey/ab11/n5poizai60zj0eazg.jpg" style="zoom:50%;" />
 
