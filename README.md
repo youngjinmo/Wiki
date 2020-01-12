@@ -75,6 +75,8 @@
     - [bash모드로 컨테이너 진입](DevOps/Docker.md#exec-imageid-bash)
     - [이미지 배포](DevOps/Docker.md#deploy-image)
     - [이미지 이름 변경](DevOps/Docker.md#rename-image)
+- [Other](https://github.com/youngjinmo/TIL/tree/master/other)
+  - [정규표현식](/others/regex.md)
 - [MacOS](/MacOS.md)
   - [Homebrew](/MacOS.md#homebrew)
   - [tree 패키지](/MacOS.md#osx-package-tree)
