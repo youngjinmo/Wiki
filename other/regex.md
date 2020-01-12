@@ -1,6 +1,6 @@
 # 정규표현식
 
-[프로그래머스 정규표현식](https://programmers.co.kr/learn/courses/11/) 강의를 들으면서 작성한 노트이다. 강의는 Python으로 진행되었다.
+[프로그래머스 정규표현식](https://programmers.co.kr/learn/courses/11/) 강의를 들으면서 작성한 노트이다. 강의는 파이썬으로 진행되었다.
 
 ## ToC
 
@@ -21,7 +21,9 @@
 
 ### <a name="digit-single"></a>숫자 대표문자 (한 글자만)
 
-`\d` : 숫자를 대표하는 정규표현식 (d:digit)
+- `\d` : 숫자를 대표하는 정규표현식 (d:digit)
+
+강의에서 계속 아래의 예제코드를 사용하게 된다.
 
 ```python
 regex = r'\d'
