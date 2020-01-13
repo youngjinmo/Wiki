@@ -451,18 +451,18 @@ Could not autowire. No beans of 'Principal' type found.
 
 **ToC**
 
-- [JavaBean 규칙은 무엇이며, 왜?](#rule-and-why)
-- [JavaBean 예제코드 (출처:삐멜님 블로그)](#example-code)
-- [왜 접근제한자 private에 getter/setter 메서드?](#why-getter-setter)
-- [왜 no-argument 생성자 사용?](#why-create-no-argument)
-- [왜 java.io.serializable 인터페이스 구현?](#why-create-interface)
+- [JavaBean 규칙은 무엇이며, 왜?](#javabean-rule)
+- [JavaBean 예제코드 (출처:삐멜님 블로그)](#javabean-examplecode)
+- [왜 접근제한자 private에 getter/setter 메서드?](#how-to-use-javabean)
+- [왜 no-argument 생성자 사용?](#javabean-why-create-no-argument)
+- [왜 java.io.serializable 인터페이스 구현?](#javabean-why-create-interface)
 - [Bean 생성하는 법](#create-javabean)
 
 <br>
 
 ---
 
-### <a name="rule-and-why"></a>JavaBean 규칙은 무엇이며, 왜?
+### <a name="javabean-rule"></a>JavaBean 규칙은 무엇이며, 왜?
 
 자바 빈은 데이터를 표현하는 것을 목적으로 하는 자바 클래스이다.
 
@@ -480,7 +480,7 @@ Could not autowire. No beans of 'Principal' type found.
 
 <br>
 
-### <a name="example-code"></a>JavaBean 예제 코드
+### <a name="javabean-examplecode"></a>JavaBean 예제 코드
 
 [출처: 삐멜의 소프트웨어 엔지니어](https://imasoftwareengineer.tistory.com/101)
 
@@ -511,13 +511,13 @@ public class SomeBean implements Serialzable {
 
 <br>
 
-### <a name="why-getter-setter"></a>왜 접근제한자 private에 getter/setter 메서드?
+### <a name="how-to-use-javabean"></a>왜 접근제한자 private에 getter/setter 메서드?
 
 JavaBeans는 `private` 필드와 `getter`/`setter` 를 지키는데, 이런 규칙을 지키는 클래스를 POJO(Plain Old Java Object)라고 부른다. `private` 필드와 `getter`/`setter` 메서드를 사용하는 이유는 **Encapsulation**을 위함이라고 한다.
 
 <br>
 
-### <a name="why-create-no-argument"></a>왜 no-argument 생성자 사용?
+### <a name="javabean-why-create-no-argument"></a>왜 no-argument 생성자 사용?
 
 위 [예제코드](#example-code)를 기반으로 생각해보자. 다른 곳에서 `SomeBean` 객체를 프로그램 내에서 생성하고자 한다면, 어떻게 될까?
 
@@ -525,7 +525,7 @@ Argument가 몇개인지, 어떤 필드에 맵핑되는지를 찾아야한다. �
 
 <br>
 
-### <a name="why-create-interface"></a>왜 ava.io.serializable 인터페이스 구현?
+### <a name="javabean-why-create-interface"></a>왜 ava.io.serializable 인터페이스 구현?
 
 [JavaBean의 목적](#rule-and-why)은 여러가지 객체들을 하나의 객체에 담기 위함이라고 했는데, 담아서 무엇을 하려는걸까. 메모리에 존재하는 오브젝트를 네트워크를 통해 전송하거나 파일에 저장하려면 `data stream`(e.g. `byte[]`)으로 이 오브젝트를 변환시켜줘야한다. 이 변환 작업을 Serialization이라고 부른다. JavaBean을 저장하거나 전송하는 일이 많기 때문에, Serializable가 스탠다드에 포함되는것으로 추정.
 
