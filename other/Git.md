@@ -15,6 +15,7 @@ Git은 버전/브랜치 별로 프로젝트의 형상을 관리할 수 있기 �
 - [브랜치 생성하기](#create-branch)
 - [브랜치 이동하기](#move-branch)
 - [브랜치 삭제하기](#delete-branch)
+- [원격 저장소 브랜치 삭제하기](#delete-origin-branch)
 - [브랜치 이름 변경하기](#change-branch-name)
 - [Fork](#git-fork)
 - [PR](#git-pr)
@@ -163,6 +164,18 @@ git checkout master
 ```git
 git branch -D unit-Test
 ```
+
+<br>
+
+## <a name="delete-origin-branch"></a>원격 저장소 브랜치 삭제하기
+
+```git
+git push origin --delete unit-Test
+```
+
+원격 저장소에서 `unit-Test` 브랜치가 삭제된다.
+
+출처 : [정광섭 - git 원격지 브랜치 삭제](https://www.lesstif.com/pages/viewpage.action?pageId=20776547)
 
 <br>
 

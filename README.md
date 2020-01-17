@@ -85,6 +85,7 @@
     - [브랜치 생성하기](/others/Git.md#create-branch)
     - [브랜치 이동하기](/others/Git.md#move-branch)
     - [브랜치 삭제하기](/others/Git.md#delete-branch)
+    - [원격 저장소 브랜치 삭제하기](/others/Git.md#delete-origin-branch)
     - [브랜치 이름 변경하기](/others/Git.md#change-branch-name)
     - [Fork](/others/Git.md#git-fork)
     - [PR](/others/Git.md#git-pr)
