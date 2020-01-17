@@ -69,6 +69,7 @@
       - [grep](DevOps/Linux.md#linux-grep)
       - [터미널 결과 출력](DevOps/Linux.md#save-output)
       - [명령어 동시실행](DevOps/Linux.md#combine-commands)
+      - [슬립모드 진입방지 \(caffeinate)](DevOps/Linux.md##caffeinate)
     - [Vi Editor](DevOps/Linux.md#linux-vi)
       - [입력 명령어](DevOps/Linux.md#vi-input)
       - [이동 명령어](DevOps/Linux.md#vi-move)
