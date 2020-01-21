@@ -17,6 +17,9 @@
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
   - [파일 상태 명령어](#vi-filestatus)
+- 패키지 관리툴
+  - [apt-get](#apt-get)
+    - [update와 upgrade의 차이](#difference-between-update-upgrade)
 
 <br>
 
@@ -182,3 +185,17 @@ caffeinate
 - [VI Text Edito with Commonds: Linux/Unix Tutorial](https://www.guru99.com/the-vi-editor.html)
 
 <br>
+
+## <a name="apt-get"></a>apt-get
+
+Ubuntu에서 자주 사용하는 패키지 툴이다. `apt-get` 패키지 툴을 이용하여 git, apache 웹 서버등 필요한 패키지 들을 설치할 수 있다.
+
+### <a name="difference-between-update-upgrade"></a>apt-get update와 apt-get upgrade의 차이
+
+- `apt-get update`
+  - 설치가 가능한 패키지 리스트들을 업데이트. 
+    설치하는게 아니라 설치 가능한 리스트를 업데이트하는 것.
+- `apt-get upgrade`
+  - 설치된 패키지들을 최신 버전으로 재설치하는 것
+
+출처 : [ask ubuntu - What is the difference between apt-get update and upgrade?](https://askubuntu.com/questions/94102/what-is-the-difference-between-apt-get-update-and-upgrade)
