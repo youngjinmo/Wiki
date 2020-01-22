@@ -10,7 +10,8 @@ Git은 버전/브랜치 별로 프로젝트의 형상을 관리할 수 있기 �
 
 <br>
 
-- [Commit](#git-commit)
+- [Staging과 Commit](#git-staging-commit)
+- [파일단위 아닌 변경사항 단위로 Staging하기](#git-add-p)
 - [Unstaging](#git-restore)
 - [브랜치 생성하기](#create-branch)
 - [브랜치 이동하기](#move-branch)
@@ -24,9 +25,11 @@ Git은 버전/브랜치 별로 프로젝트의 형상을 관리할 수 있기 �
 
 <br>
 
-## <a name="git-commit"></a>Commit
+## <a name="git-staging-commit"></a>Staging과 Commit
 
-형상관리의 핵심인 커밋이다. 어떤 기능을 구현했는지, 어떤 버그를 잡았는지를 커밋 메세지와 함께 커밋하면, 나중에 해당 커밋으로 복귀할 수도 있다. 타임 스탬라고 생각하면 좋다. 지금까지 한 작업을 스탬프로 찍으면 언제든 지금 찍은 스탬프로 돌아올 수 있다는 이야기이다.
+형상관리의 핵심인 스테이징과 커밋이다. 
+
+어떤 기능을 구현했는지, 어떤 버그를 잡았는지를 커밋 메세지와 함께 커밋하면, 나중에 해당 커밋으로 복귀할 수도 있다. 타임 스탬라고 생각하면 좋다. 지금까지 한 작업을 스탬프로 찍으면 언제든 지금 찍은 스탬프로 돌아올 수 있다는 이야기이다.
 
 <img src="https://d1lss44hh2trtw.cloudfront.net/assets/editorial/2018/02/kingdom-come-deliverance-how-to-save-your-game-re.jpg" style="zoom:80%;" />
 
@@ -34,7 +37,7 @@ RPG 게임을 하다가 어려운 스테이지를 앞두고 미리 게임을 저
 
 
 
-Git의 작업 흐름은 다음과 같다.
+Git의 작업 흐름도와 각각 작업에 따른 명령어는 다음과 같다.
 
 ![](http://www.mediafire.com/convkey/4508/4t5cxewkb7l4z48zg.jpg)
 
@@ -48,20 +51,6 @@ Local은 다시 3가지로 구분될 수 있는데, working directory와 staging
 | **staging area**      | 형상관리 될 파일들, 즉 커밋**할** 파일들이 머무르는 장소이다. <br />커밋을 위해 커밋할 파일들을 staging area에 올려두고 커밋 메세지와 함께 커밋을 하면, local repo로 이동한다. |
 | **local repo**        | 최종적으로 커밋이 보관되는 장소이다. <br />Github, Gitlab같은 원격 저장소(Remote)에 push할 수 있다. |
 | **remote repo**       | Github, Gitlab과 같은 Git 호스팅 서비스에서 제공하는 원격 저장소에 해당한다. |
-
-<br>
-
-음 조금 난해할 수 있는 설명인데, '장소' 라고 표현했다고 해서 파일이 실제로 이동하는건 아니다. 
-
-> 추상적으로 비유하면 다음과 같다. 서류관리를 하고 있다고 가정해보자. 사수, 부사수가 존재하며 이 둘은 서류관리 업무를 하고 있다. 
->
-> 서류들을 특허서류 / 계약관련서류 / 증권 서류 3가지로 구분해서 각각 타임 스탬프로 찍어서 구분했다. 이후 이 들은 타임스탬프로 찍은 서류들을 다시 다른 노트에 작성해두었다. 날짜와 함께 어떤 카테고리의 어떤 서류들인지 작성해두었다. 
->
-> 대표님이 오셔서 우리회사가 갖고있는 특허 목록을 확인하고 싶어한다고 하신다. 이때 부사수는 타임스탬프를 정리해둔 노트를 사수에게 전달하면, 다시 사수가 대표님께 해당 노트를 보고한다.
->
-> 직접 서류를 전달하지 않고도 언제 어떤 특허를 갖고있는지 대표님은 알 수 있다.
-
-이게 적절한 비유인지 모르겠으나.. 일단 이렇게 상상해보고 계속 설명을 읽어내려가자.
 
 <br>
 
@@ -100,6 +89,46 @@ Tracking 되고 있는 파일중에 변경사항이 발생했으니 새로 stagi
 ![](http://www.mediafire.com/convkey/6443/7fa1yu4gaofg6grzg.jpg)
 
 작성자와 날짜, 시간, 커밋에 포함된 파일목록 그리고 커밋 ID가 출력된다.
+
+<br>
+
+## <a name="git-add-p"></a>파일단위 아닌 변경사항 단위로 Staging하기
+
+위에서 작성된 스테이징 방식(`git add file`)이 파일 단위라면, 여기서 언급되는 스테이징 방식은 작업의 변경사항 단위로 스테이징하는 방법이다.
+
+하나의 파일 안에서도 변경한 부분이 몇 가지가 될 수 있는데, 이 때 `git add file` 을 사용하면 파일이 통째로 스테이징된다. 그러나 `git add -p` 를 사용하면 **<u>변경사항 단위로만 스테이징</u>** 할 수 있다. 더 편하고 더 분명하게 버전관리 할 수 있다고 생각된다.
+
+이 때의 변경사항 단위를 **Hunk**라고 한다.
+
+test 폴더를 만들어서 실습을 해보았다.
+
+생성한 파일(test.html)에 세 줄의 코드를 추가하고, 명령어 `git add -p` 를 입력하였다.
+
+![](https://lh3.googleusercontent.com/nOsWLkb4d1cDxvd62YTU_k71_OJRwiiXYgItZ_xQJPXHMPGHUMtXT1TaSMN0DGK_YfnzfPuqLk9n8hCdH9UBY4knvRbldaOh2KiPcg8vCJQH7KzuODPwfKojcR3OABe83KdW9ralyr0EWLmapKfAxib8Y-qRTQxz--VqdNDuCgJpMPf-hD2kCBwzK5YITWEp80LEijQpbUhPqpWZmploBXtcA1tGqebeoFSQwuqkOnyHIh4xvn47BPJWJqIMS0BcOxFFhuP1OrQyvOkqL2FHXRS0gFKMs0of7D7aU00mKPVW8ABPb46TOMzZuHVfNRG2hmndTWzIsCZStEc3z3UTAIAdh2QzzZ4TbEmzOGXRZWKHKwHfkg6Qzsjktn-M7_RGtonRDKAuey_hQi0pW55Pxjq8gv10vFws-oKzEJrC2aA4mebdx3Rdoe6JzZ5sWJSSY50Jh0J2-mYuB4c7qw9ruGL1gRuO-vwrpG3a4QHn7-KqsP9nUaFCYYf1Ejcx_GrJYpuW5smq4vUYssQxsP9zb9pqAteUf5_ob4oCsQgGFhLulzVfFlpmsb1K3AaGKTI5ErZomdsSfhnT3Yqju8mGgn6bVItQT59ACegt-CHeB8Pa6uS0EgdsZXwe-72IgnZYHfQMplcAZ1Kdj-lwckGYItDMaPRRmdBk9iuxRR0PNalivmv0SzYYvfSTJJEolEMAb8jCfbstMaUjGL4uI2dC9KofzqvOpB3S6CFt4rx6Fl9Hkh3P5A=w720-h489-no)
+
+여기서 `s` 는 split을 의미한다. 세 줄을 한 꺼번에 스테이징하기 보다 더 세분화해서 스테이징하기 위해 split을 하는거다. split을 한 결과는 다음과 같다.
+
+![](https://lh3.googleusercontent.com/KQzWbcfyFdb7qvH4rUYjmL8s2NNSrph-oPVYIOUiVmkBP1ERRqMPy53w0X1AXzbtcIt79H-uiNHftCrcf6z79Zhi9RqN0jb0Qa8w1rR2wQ76Is9HFMrl0mELyBz-AV2wVPk0yFSvOLuPV5HUyG4-HJmKqLq73yMW6s3hY959DrpkgZCC-BAaW5rU0fVvVWZZcgxBSK-ItoUYTQ_-m8Y1lEKE3q7XfFufwik6sqz2qeGRwg6cwXUVhcmHh6HpqlLwJEqsq4__KcuXgJrCNiev6cm6b45Dz2BBCQFx9sxl4es1vyoerosQEqbn2HDqop03OU_umWdFiU4p_H-hYqKbggr8i_QnMLIgLeKZyvoSf3SN0_fiwMRm79YbYzoimXbc8IXZadfBvRrH_8azJxyQ0UVo9aiVy6dKlOe8YOLUR66Ks7arDS-NrHur-65kbxf7FnG3pGGAa_f8YqYJahGkGjqL88aLHOKWo_OPYUCCJ_H7aAU3P_xYE27AmfTYyhp7Ef5QlGyWxtUr151Uz5paLhRgFokveUFrxIBqbcVW9U5DQsdZwVLlhh7JspUXfsJddcfJUh2fVH25BNizW1D4nogEvd7GU6ayUWn8nE7dTXKYzLodJTdB8glSOIxlKE3kU5yml0UOpolWw-zLKKnwT0z6PX6y2hJwpLtcQTwsB0odO5QDov9fnSiI9PxDo4oFou3rNBme1nkLnrxXQ89rquVp1iiX49M8MO-lVLbnieGVcBRDog=w720-h572-no)
+
+하나의 hunk가 3개의 hunk로 쪼개져서 각각 스테이징 할 수 있었다. 세 줄의 코드중 마지막 줄 코드만 스테이징 하지 않기로 했다.
+
+![](https://lh3.googleusercontent.com/ITFznygeA3KQNMX61PfMxOAAUu5pNO2vnwE_J83_oWu2nxoS80Aqm3JmQbaDCMNhoty_NFfGt88z2R0R05CFBbRsxfG9yLZP-GtvfltkE41BtIaMSOEsBLmrYIrW5Z2HGGcdHyqq2HtL-j53X7Kv7jeTiClJ3-L88oN4Hg17A6iXRSbGhjtm8Dv3CrZg_qOQL1iqadjribOmDlrogB4Tg_UPvQwTciNK29ITjfh5sltU1IkO-GFVmSV8PwuDLpdRmGwJQ4BGQzjGMPhDxnMNOoJLoNbNOqQd0L1QvBGP6xg83tX-PgtADpa0T3T-hzv0HZwEp6oCuyxGjs0QQcqR-fTbCo2wnlhWe1Lyg6JydTMzIi5DJvyrvkuqQ5qERSPzNKhULlLaHMxwUMCsXqPDOZhDm4PS7WSb8sM6tZsY3s_dc8Hvyro884QasSWEdO9HUj1-saiENzDuoiDsKL3npc9kGP2j8-ntzL9DGm4BuWNPAtumN7VPFqrxPpVSnaD_vqD8X9vcs-mAee9zESeDBKmAQ_vKdIApQOGzxTYF_YIti31AkuC9YQH0v74RAoDcU0-J86D4rYyt5DXu54LNA42lTfqUAXLsN1DnBCsqEsTX2wNGlihPELVDexwHckf-qk1iTfhWLAoAmQ_9NrNAmbyjwRDrzJKn4gEE5HfKABQ6TdsU8jRn-fvZrk08hFfGxm7UEGcMCRVorVVndo2X5VkWkv2ovtHrrqxKEIGN3Ki69RYnOg=w720-h337-no)
+
+다시 `git add -p` 을 입력해보니 아까 스테이징 하지 않은 한 줄의 코드만 스테이지 여부를 묻고, 나머지 코드는 스테이징 되었음을 확인할 수 있었다. 
+
+이처럼 `git add -p` 를 사용하면, <mark><b>변경사항 단위</b>로만 스테이징이 가능하다.</mark>
+
+`git add -p` 에서 응답할 수 있는 명령어는 `?` 을 입력하면 볼 수 있는데, 다음과 같다.
+
+![](https://lh3.googleusercontent.com/EZaWDiERwWHC0b9Y26t-iuMtBSjLtEmADt0p_a1950PDQwH17gLUsKtwQ86NrBgg7MZdhcLzMPn62pgebHj1c6zCGpJ2-t2Xn4Oyn8z_7HLCu_COp-bgiMWljOA1MfEetjide4LHMV8TO7f-NSzyT1GVvedWRjbCzSP2rgB80U99QUgcWvKThEYQsRvnR-OgnwWm0mKrdDfoaKSoEGIAPKfKjO0JSnoZshpz9-XWneVad0QzIUJIuvxWp71El8mweBQpk8jaf5YZVtYaVNCm-JmIUehi7V7Oaxpe0qAtHB55TSpkQ_UuQ9D5aqsWSTLhHrwtR42EptGdQ5j7jdf7HtYqAKK5bGB4bBlFhOcMiWhi6wAVkEj16-PZP71szp7bKDLxZgGBTDB75KGGQuK0T7L7sUGXqLz8KRzI5z5MtlVFNx_2w-JuDMCMcKBwc6ko_17Aj_bqjLWesfODFUBwyVX9g7PLfLngt4HUYhjYk67mw0o5GvP9o0_FFFX41Ov1yg3g3JEU6uxGGYcGkb6J0ZYQIzsSQ6VY6Ozw4AT2ylVYpcN9vB9b_mCEJGdIP-h960akfLQb1LIDfh3WvamC3HESsxB3uB8IDTw-XgzaIyiM_IV1m2YcfEjHgareU9GLdDqFLEJ5poysw9EmRZFNbL61vfyJsx_idxBfY8llBhecQdk8lmvppfNLEbKLTjKyD3nHJP58B3qZD4Ub6Nvf0N2ZlkXyxo0mOz2l0KWfx1CUdIkaBg=w1440-h366-no)
+
+주로 쓰이는 명령어는 `y`, `n`, `q` 이다.
+
+`y` : 해당 hunk를 스테이징한다.
+
+`n` : 스테이징하지않고 건너뛴다.
+
+`q` : add 과정을 종료한다.
 
 <br>
 
