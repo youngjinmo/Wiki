@@ -15,7 +15,7 @@
 - [터미널로 EC2 인스턴스 접속](#entering-ec2)
 - [EC2 인스턴스 접속시 permission denied 발생할 경우](#error-while-entering-ec2)
 - [EC2 인스턴스에 한글 언어팩 설치](#locale-ko-utf8)
-- [우분투 EC2 인스턴스에 JDK 설치하기](#install-jdk-ec2)
+- [EC2 인스턴스(Ubuntu)에 JDK 설치하기](#install-jdk-ec2)
 
 ---
 
@@ -96,7 +96,7 @@ EC2 인스턴스를 Amazon Linux로 생성했을 경우, public-ip주소 앞에 
 
 <br>
 
-### <a name="install-jdk-ec2"></a>EC2 인스턴스(Ubuntu)에 jdk 설치하기
+### <a name="install-jdk-ec2"></a>EC2 인스턴스(Ubuntu)에 JDK 설치하기
 
 - `sudo apt install default-jdk`
 
