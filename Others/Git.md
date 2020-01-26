@@ -21,7 +21,8 @@ Git은 버전/브랜치 별로 프로젝트의 형상을 관리할 수 있기 �
 - [Fork](#git-fork)
 - [PR](#git-pr)
 - [.gitignore](#git-gitignore)
-- [credential](#git-credential)
+- [Github Credential 저장](#git-credential)
+- [레파지토리 라이센스](#license)
 
 <br>
 
@@ -132,7 +133,7 @@ test 폴더를 만들어서 실습을 해보았다.
 
 <br>
 
-## <a name="git-restore"></a>Unstaging(staging area➡️working directory)
+## <a name="git-restore"></a>Unstaging (staging area➡️working directory)
 
 staging area에서 working directory로 돌리는 방법에 관한 방법이다.
 
@@ -335,16 +336,79 @@ Github Credential이란 Github의 계정정보를 말한다.
 
 터미널 명령어는 다음과 같다.
 
-`git config credential.helper store`
-
-`git push https://github.com/repo.git `
-
-`Username for 'https://github.com' : your github email`
-
-`Password for 'https://your github email' : your github password`
+```
+git config credential.helper store
+git push https://github.com/repo.git
+Username for 'https://github.com' : your github email
+Password for 'https://your github email' : your github password
+```
 
 출처 : https://git-scm.com/docs/git-credential-store
 
 <br>
+
+## <a name="license"></a>레파지토리 라이센스
+
+깃헙에서 오픈소스 레파지토리를 보면 항상 보던게 있다.
+
+![](https://lh3.googleusercontent.com/gyhdw4OLgqZO-G4R2ntt6E3SMw4XDwUdG8TUdhhDCY8ApFyD6JhOMyUaJ_A3hYCz4-uQvJWOiHH6VcPwrCwy_jhobHPuWAGI4jvx94KphmXntVGIjdR0kKDdEbwX7js9fKujH4C4dnfRMaeBJzusgkrn42vkBEMD9ESKuK-3z2GaB53vVNke9WoLdNIDE-dCfUCRX8kLkmUjOOOhDdA-cQ2O1onwNReV0FVbwD6JcYamhjnpMq_RJdGzLoI67LuoCANWnHtI3yc-I0nUDfhpaIXkBMBR8rCygE2IeRRkJIX0dlKMJvf4TJgpEMVxiAx3ZWcvVrCyowo5r3G2Qmes1dR06cKVDD8sHIRT0nogcjX6i5IU_X4fU7Qd4b31cmcs3ElxWXaF-Q6XNMCpRfVf2krkBg2q5ljwOPBg2LSOgWG7qfTDIVzxL42uZUJYRZ15oQylZ2OvjJhgIz1w8SjCo0McBoiRf93yCxhTaRdaKz3NwJlYZENYLahsfQ0F62L93nwSqCgDXEpCDo3j4eYk9uyjLCwOFZZUOZ8Pvzzt3nAtcJACCWkNSYVHwnulEP19fO7ZD_EYRVZZ9xgfSUOzPX0V5kIRMiRfMwLP2Ow2wz5Pi6zFuXFdYY25nzUBw1_24qfp22_mO_xchLe0ZRTcnVMiin2UmDwWpE61x0voayZF5xrlk-gIZn7LjVqtsHDU2AlFcKtRghstN_NfbD-iocKD906XPL-UesgfjU3b5vaEDeu9=w640-h234-no)
+
+오픈소스에 해당하는 라이센스의 최소한의 기준을 정의하기 위해 OSD(Open Source Definition)를 정의해두고 이 정의에 따라 인증, 관리 및 촉진시키고 있다고 한다.
+
+### License List
+
+- [GNU General Public License(GPL) 2.0](#gpl)
+- [GNU Lesser GPL(LGPL) 2.1](#lgpl)
+- [Berkeley Software Distribution(BSD) License](#bsd)
+- [Apache license](#apache)
+- [Mozilla Public License(MPL)](#mpl)
+- [MIT License](#mit)
+
+### <a name="gpl"></a>GNU General Public License(GPL) 2.0
+
+GPL은 현재 가장 많은 오픈소스 소프트웨어가 채택하고 있는 라이센스이다. 오픈소스 라이센스들 중에서 가장 많이 알려져 있고 의무사항들도 타 라이센스에 비해 **엄격한 편**이다.
+
+- 소프트웨어를 배포하는 경우 저작권 표시, 보증책임이 없다는 표시 및 GPL에 의해 배포된다는 사실 명시
+- 소프트웨어를 수정하거나 새로운 소프트웨어를 병합(Dynamic linking 포함)시키는 경우 **GPL에 의해 소스 코드 제공**
+- GPL 소프트웨어를 배포하는 경우, 소스 코드 그 자체를 함께 배포하거나 또는 소스코드를 제공받을 수 있는 방법에 대한 정보를 함께 제공
+
+### <a name="lgpl"></a>GNU Lesser GPL(LGPL) 2.1
+
+GPL 라이센스를 사용하기만 해도 소스코드를 공개해야 한다는 부담 때문에 단순한 라이브러리와 모듈로의  링크를 허용한  라이선스이다. 원래는 한정된 라이브러리에만 적용하려는 의도로 ‘Library GPL’이라는 이름을 붙였으나, 모든 라이브러리에  적용된다는 오해를 사 2.1 버전으로 ‘Lesser GPL’로 변경됐다.
+
+- 소프트웨어를 배포하는 경우 저작권 표시, 보증책임이 없다는 표시 및 LGPL에 의해 배포된다는 사실 명시
+- **LGPL Library**의 일부를 수정하는 경우 수정한 Library를 LGPL에 의해 소스코드 공개
+
+### <a name="bsd"></a>Berkeley Software Distribution(BSD) License
+
+BSD 라이센스는 GPL/LGPL보다 덜 제한적이기 때문에 허용 범위가 넓다. 가장 큰 차이점은 소스코드를 공개하지 않아도 된다는 점이다.
+
+- 소프트웨어를 배포하는 경우 저작권 표시, 보증책임이 없다는 표시
+- 수정 프로그램에 대한 소스 코드의 공개를 요구하지 않기 때문에 **상용 소프트웨어에 무제한 사용가능**
+
+### <a name="apache"></a>Apache License
+
+아파치 소프트웨어 재단에서 자체적으로 만든 소프트웨어에 대한 라이센스 규정이다.
+
+아파치 라이센스는 아파치 재단(ASF: Apache Software Foundation)의 모든 소프트웨어에 적용되며 BSD 라이센스와 비슷하여 **소스코드 공개 등의 의무가 발생하지 않는다.** 다만 **“Apache”라는 이름에 대한 상표권을 침해하지 않아야 한다**는 조항이 명시적으로 들어가 있고, 특허권에 관한 내용이 포함되어 BSD 라이센스보다는 좀더 법적으로 완결된 내용을 담고 있다. 특히 **GPL 2.0으로 배포되는 코드와 결합되는 것이 어렵다**는 문제가 었었는데, GPL 3.0에서는 이 문제를 해결하여 아파치 라이센스로 배포되는 코드가 **GPL 3.0으로 배포되는 코드와 결합하는 것이 가능**해졌다.
+
+### <a name="mpl"></a>Mozilla Public License(MPL)
+
+MPL은 Netscape 브라우저의 소스코드를 공개하기 위해 개발된 라이센스이다. MPL에서는 링크 등의 여부에 상관없이 원래의 소스코드가 아닌 **새로운 파일에 작성된 소스코드에 대해서는 공개의 의무가 발생하지 않는다.**
+
+- 소프트웨어를 배포하는 경우 저작권 표시, 보증책임이 없다는 표시 및 MPL에 의해 배포된다는 사실을 명시
+- **MPL 코드를 수정한 부분은 다시 MPL에 의해 배포**
+- MPL 코드와 다른 코드를 결합하여 프로그램을 만들 경우 **MPL 코드를 제외한 결합 프로그램에 대한 소스코드는 공개할 필요가 없음**
+- 소스코드를 적절한 형태로 제공하는 경우, 실행파일에 대한 라이센스는 MPL이 아닌 다른 것으로 선택가능
+- 특허기술이 구현된 프로그램의 경우 관련 사실을 **‘LEGAL’**파일에 기록하여 배포
+
+### <a name="mit"></a>MIT License
+
+MIT 라이센스는 미국 매사추세츠공과대학교(MIT)에서 해당 대학 소프트웨어 공학도들을 돕기 위해 개발한 라이센스이다. 라이센스와 저작권 관련 명시만 지켜주면 되는 라이센스이다.
+
+- 이 소프트웨어를 누구라도 무상으로 제한없이 취급해도 좋다.
+- 저자 또는 저작권자는 소프트웨어에 관해서 아무런 책임을 지지 않는다.
+
+출처 : <a href="http://guswnsxodlf.github.io/software-license" target="_blank">오픈소스 소프트웨어 라이센스의 종류와 제약</a>
 
 <br>
