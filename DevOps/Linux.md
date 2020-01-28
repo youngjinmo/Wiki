@@ -20,6 +20,8 @@
 - 패키지 관리툴
   - [apt-get](#apt-get)
     - [update와 upgrade의 차이](#difference-between-update-upgrade)
+    - [ubuntu에서 jdk, jre설치하기](#install-jdk-jre)
+    - [ubuntu에서 java 설치 경로 찾기](#which)
 
 <br>
 
@@ -193,9 +195,29 @@ Ubuntu에서 자주 사용하는 패키지 툴이다. `apt-get` 패키지 툴을
 ### <a name="difference-between-update-upgrade"></a>apt-get update와 apt-get upgrade의 차이
 
 - `apt-get update`
-  - 설치가 가능한 패키지 리스트들을 업데이트. 
+  - **설치가 가능한 패키지 리스트**들을 업데이트. 
     설치하는게 아니라 설치 가능한 리스트를 업데이트하는 것.
 - `apt-get upgrade`
-  - 설치된 패키지들을 최신 버전으로 재설치하는 것
+  - **설치된 패키지**들을 최신 버전으로 재설치하는 것
 
 출처 : [ask ubuntu - What is the difference between apt-get update and upgrade?](https://askubuntu.com/questions/94102/what-is-the-difference-between-apt-get-update-and-upgrade)
+
+<br>
+
+### <a name="install-jdk-jre"></a>ubuntu에서 jdk, jre 설치하기
+
+```
+sudo apt-get install openjdk-8-jre
+sudo apt install openjdk-8-jdk-headless
+```
+
+
+
+### <a name="which"></a>ubuntu에서 java 설치 경로 찾기
+
+```
+which java
+which javac
+```
+
+<br>
