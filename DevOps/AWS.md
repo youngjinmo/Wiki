@@ -61,7 +61,7 @@ aws에서 발급받은 key 디렉토리와 접속하고자 하는 EC2 ip주소�
 
 ## <a name="reboot-ec2"></a>시스템 재부팅
 
-AWS에서는 일반적인 Ubuntu 재부팅 <a href="/Linux.md#ubuntu-reboot" target="_blank">명령어</a>만으로는 재부팅이 불가능하다. 쉘모드로 진입한 상태이기 때문에 연결이 끊어질뿐 시스템의 호스트인 AWS EC2는 여전히 실행중이기 때문이다. 따라서 EC2 콘솔에서 인스턴스를 재부팅 해야만 한다.
+AWS에서는 일반적인 Ubuntu 재부팅 <a href="../Linux.md#ubuntu-reboot" target="_blank">명령어</a>만으로는 재부팅이 불가능하다. 쉘모드로 진입한 상태이기 때문에 연결이 끊어질뿐 시스템의 호스트인 AWS EC2는 여전히 실행중이기 때문이다. 따라서 EC2 콘솔에서 인스턴스를 재부팅 해야만 한다.
 
 ![](https://lh3.googleusercontent.com/Nhx3IEXSONGBGpeiHYMB0RRGNdjJ22TMe3DDhaQztbJ0tZN0wBK61ZwV7vp4WO4zpUc91NRzR8fQY3b-52H40OML9AMcfg1NyW7qUu_NGeUvXns4ns3CRvoNTzbY7ONyh2Wrp2vXQBPACqSJisyZRc33OE0n8qN7inzYv5FJPMNG4A3sN3-y-7-NjAjzALT_GVebMWO-OAAR1vdM2_sXXKlCoK6V-2k3qJOFvhtnPQXdPxzlgih7zy3dxLRiC3KhiN1CIAFqRO4uGIcsii3tpYnkHQeG6xne-L0WcDwdnF8LbdbKWpXJcBRqfzmwScjnJasAM6WhuavM-yA7juK5ZijA84yzjzvanBf_GVvmXKNvg37tYT6ueCcZk1pq6JcWfh34SAuu1-gLimucKT1bB_SkKVmP7zea1CYsVu71Vxb02SQuF7-GyWgXL6JPFoVo51zqsEaG9Aaqv8MsecsQOvXv3mFwPeAKnKrNK4Nd_aYfPegBxGP8ZZ8kjIevhiEbleG3KbldHXV5oLomwJJalmUWg9uaQapx0qTYPVvcSp55aSYU0x4Gk9pyMNQ-koi0n1iBF17_1KvjaLukHW3d5JPssHXxExbAZ_miGw_f3_qCAMChmDqPEx79Hd4NbuBry6ny4uyRl1KOR_I-8X31262J2qPl6tyGs773b4-DcDCY1RV8-YuALt0VG1kTdTYAUJdls_lHgdAZHQ4g3ix-uDXhBjpv90HgTjfjLiYcUnsIPrAt=w720-h276-no)
 
