@@ -152,7 +152,7 @@ $ sudo reboot
 ```
 
 AWS EC2 Ubuntu 인스턴스에서는 이와같은 방식으로는 해결할 수 없다. 
-<a href="../AWS.md#reboot-ec2" target="_blank">이 부분</a>을 참고바란다.
+<a href="https://github.com/youngjinmo/TIL/blob/master/DevOps/AWS.md#reboot-ec2" target="_blank">이 부분</a>을 참고바란다.
 
 <br>
 
