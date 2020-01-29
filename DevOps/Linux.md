@@ -151,6 +151,9 @@ Ubuntu EC2에 접속했는데, 이런 메세지를 발견했다. 커널의 보�
 $ sudo reboot
 ```
 
+AWS EC2 Ubuntu 인스턴스에서는 이와같은 방식으로는 해결할 수 없다. 
+<a href="/AWS.md#reboot-ec2" target="_blank">이 부분</a>을 참고바란다.
+
 <br>
 
 # <a name="linux-vi"></a>Vi Editor

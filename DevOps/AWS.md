@@ -13,6 +13,7 @@
 - [Region과 Availability zone](#region)
 - [EC2 인스턴스의 기능](#ec2)
 - [터미널로 EC2 인스턴스 접속](#entering-ec2)
+- [시스템 재부팅](#reboot-ec2)
 - [EC2 인스턴스 접속시 permission denied 발생할 경우](#error-while-entering-ec2)
 - [EC2 인스턴스에 한글 언어팩 설치](#locale-ko-utf8)
 - [EC2 인스턴스(Ubuntu)에 JDK 설치하기](#install-jdk-ec2)
@@ -54,6 +55,14 @@ aws에서 발급받은 key 디렉토리와 접속하고자 하는 EC2 ip주소�
 
 `$ ssh -i aws-key/keypair.pem ec2-user@ec2-public-ip-address`
 ![](https://lh3.googleusercontent.com/MSEtddwUB8DHXaK0GMxWhokA1MvyZF3gY3LfJf75IY7ocJ_l8sC6K3g8OzWDMFFGtqekR1XvV_rU8eeFIOAd_-KG2-0pP5MNkfDKtC1QBf_Q4AfADtPnaDb3a3jtqS9_upjqXq8gCIKE3-41qfcUaJpzLMDF0Zr46TFWqH3DohkscDZlev9mXC5W_VO7zqdRBlPv3yfNnNhlI6qpXQEc4CsWHDRh0DwktBe3A1IIYBT391gTSMhsC3hr3mZQMLl-CmoOtWDu1fKtkXXL6f6CM3bUTCnz8ON2hQKvhNS6XMtAqqg8Ns8MgrQfqd34PLovOE2Q1iEFwvHWIm9Q4oXKG-L75VOq1EDYtrPCOUduYhJrVy3JCj4oZHamVWFpOkzfZwGmnNVl1DWA6zotVzqo6QzqU4MUwemuK3-jRmxaTdV2FWZ-lmJwSlopRxieGiFcYagAswf9tylPqwiRGKxGiTL4GL9RmZBv-yi2RhWKnGznTgdWXc8b5ygBGnui9zWRvqzlv5RADBUiaxfjiCONtUPnRu5gefQSxvQCtYkeXKmrZ7qCS6dAlgU4QMTpoXylM3u82BUbnpE1Ig9wyLvjXIZbHH751yLKgDYSXXCdVTwFOIoWQMOAMZKIBZp8UcnX2nu7ChXMyN2WOazqhAIjj9DWWWhK3vTc2JekDzAeDmeMCla5SMWXF-176xulpEBAtf7qJOchfrRijHVKar8NaOSe_HZGIkNxYVRd8N4nuiqYgy06oA=w720-h349-no)
+
+<br>
+
+### <a name="reboot-ec2"></a>시스템 재부팅
+
+AWS에서는 일반적인 Ubuntu 재부팅 <a href="/Linux.md#ubuntu-reboot" target="_blank">명령어</a>만으로는 재부팅이 불가능하다. 쉘모드로 진입한 상태이기 때문에 연결이 끊어질뿐 시스템의 호스트인 AWS EC2는 여전히 실행중이기 때문이다. 따라서 EC2 콘솔에서 인스턴스를 재부팅 해야만 한다.
+
+![](https://lh3.googleusercontent.com/Nhx3IEXSONGBGpeiHYMB0RRGNdjJ22TMe3DDhaQztbJ0tZN0wBK61ZwV7vp4WO4zpUc91NRzR8fQY3b-52H40OML9AMcfg1NyW7qUu_NGeUvXns4ns3CRvoNTzbY7ONyh2Wrp2vXQBPACqSJisyZRc33OE0n8qN7inzYv5FJPMNG4A3sN3-y-7-NjAjzALT_GVebMWO-OAAR1vdM2_sXXKlCoK6V-2k3qJOFvhtnPQXdPxzlgih7zy3dxLRiC3KhiN1CIAFqRO4uGIcsii3tpYnkHQeG6xne-L0WcDwdnF8LbdbKWpXJcBRqfzmwScjnJasAM6WhuavM-yA7juK5ZijA84yzjzvanBf_GVvmXKNvg37tYT6ueCcZk1pq6JcWfh34SAuu1-gLimucKT1bB_SkKVmP7zea1CYsVu71Vxb02SQuF7-GyWgXL6JPFoVo51zqsEaG9Aaqv8MsecsQOvXv3mFwPeAKnKrNK4Nd_aYfPegBxGP8ZZ8kjIevhiEbleG3KbldHXV5oLomwJJalmUWg9uaQapx0qTYPVvcSp55aSYU0x4Gk9pyMNQ-koi0n1iBF17_1KvjaLukHW3d5JPssHXxExbAZ_miGw_f3_qCAMChmDqPEx79Hd4NbuBry6ny4uyRl1KOR_I-8X31262J2qPl6tyGs773b4-DcDCY1RV8-YuALt0VG1kTdTYAUJdls_lHgdAZHQ4g3ix-uDXhBjpv90HgTjfjLiYcUnsIPrAt=w720-h276-no)
 
 <br>
 
