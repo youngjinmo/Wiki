@@ -13,6 +13,7 @@
   - [터미널 결과 출력 저장](#save-output)
   - [명령어 동시실행](#combine-commands)
   - [슬립모드 진입방지 \(caffeinate)](#caffeinate)
+  - [시스템 재부팅](#ubuntu-reboot)
 - [Vi Editor](#linux-vi)
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
@@ -57,7 +58,9 @@
 
 심볼릭 링크는 디렉토리 또는 파일에 더 빠르게 접근하기 위한 별명을 설정하는 일과 같다. `디렉토리 --심볼릭링크`
 
-`ln -s [target] [symbolic_link_name]`
+```
+$ ln -s [target] [symbolic_link_name]
+```
 
 <img src="http://www.mediafire.com/convkey/1fa6/at0glqvdxyrry4czg.jpg" width="700" />
 
@@ -67,17 +70,21 @@
 
 유닉스를 위해 만들어진 텍스트 검색 기능의 명령어이다. <i>**g**rep | **r**egular **e**xpression | **p**rint</i>의 약자라고 한다.
 
-`grep [pattern] [file]` 포맷으로 입력하면 [file]에서 [pattern]이 어디있는지를 알려준다.
+```
+$ grep [pattern] [file]
+```
+
+포맷으로 입력하면 [file]에서 [pattern]이 어디있는지를 알려준다.
 
 ![](http://www.mediafire.com/convkey/0dc1/t7dwrw36pfdc0l2zg.jpg)
-
-
 
 `grep`은 옵셥으로 검색할 수도 있다.
 
 [lorem-ipsum](https://www.lipsum.com/)에서 텍스트를 가져와서 lorem-ipsum.txt라는 파일을 만들었다. 여기서 **There**를 검색하면 다음과 같이 출력된다.
 
 ![](http://www.mediafire.com/convkey/c3d8/9azmf260ppue6huzg.jpg)
+
+
 
 그런데 자세히 보면 대문자가 없을뿐 중간에 there가 쓰인 다른 문장도 찾을 수 있다. 이럴 때 `-i` 옵션을 사용해서 검색하면, 대소문자를 구분하지 않고 검색결과를 출력해준다.
 
@@ -96,8 +103,6 @@
 | -w     | 패턴이 전체 단어와 일치하는 행만 출력   | `grep -w "PATTERN" FILE`   |
 | -m     | 최대 검색 결과 갯수 제한                | `grep -m 1 "PATTERN" FILE` |
 
-
-
 **References**
 
 - [개발자를 위한 레시피 - 리눅스 grep 명령어 사용법](https://recipes4dev.tistory.com/157)
@@ -106,7 +111,9 @@
 
 ##<a name="save-output"></a>터미널 결과 출력
 
-`ls -al > "file.txt"`
+```
+$ ls -al > "file.txt"
+```
 
 ![](https://www.mediafire.com/convkey/716d/zfjd6vv45y4m2xzzg.jpg)
 
@@ -114,21 +121,35 @@
 
 ##<a name="combine-commands"></a>명령어 동시실행
 
-`command1 && command2`
+```
+$ command1 && command2
+```
 
 ![](https://www.mediafire.com/convkey/e96a/nunbbvezumvc1rxzg.jpg)
 
 <br>
 
-##<a name=""></a>슬립모드 진입방지 (caffeinate)
+##<a name="caffeinate"></a>슬립모드 진입방지 (caffeinate)
 
 맥OS에서 잠자기모드 진입을 방지하는 앱이 있다. 맥 사용자라면 누구나 아는 Caffein이라는 앱인데, 터미널 명령어 하나면 이 앱처럼 맥이 슬립모드에 진입하는걸 막는 기능을 사용할 수 있다.
 
 ```
-caffeinate
+$ caffeinate
 ```
 
 만약 종료하고 싶다면, `ctrl + c` 를 입력하여 종료하면 된다.
+
+<br>
+
+## <a name="ubuntu-reboot"></a>시스템 재부팅
+
+![](https://lh3.googleusercontent.com/Bsxa1KiiuFD3qtQH-tbxksfPqDOWPBUXhiJ5Lv99WBsG45sfjaZWu2rfcdnfh1udobwEtIyOZc7K9uC-YA1PGyX6BykW1QwZkeaE8u11qfkLWIBn9d1mUJ12vlWxjRTeQaIV3isqxzDdykQYBaXYTqPyqj3f2ymmj7R116kT9xcXS18XNBTg-abd2wDmtvDVoYB9JhPJ6AGlsGqDUEJvzMLTVl4kXAQsYr1Oht8i94BMqBO7eTrBk0sZ8GrowJDPb0qK1K4lEijIFD7Wj664ljyd-vJaYMfaeDrMh-NOObn-mkNCyDSIjCcqycNRoc43qdlMLIAUWXCdPqipeI0UBgXs9bCknOR4ZXt7miNb4XcV7I8aKBho2oLNiX-WcQnjb09dP1NMBMz517xrPAlaCfBkad7sfhEmFN3hHP9DUx4vkf30MLvuuS4-cbkRdLpzTbZKfkNxJ4zZW3QKKcw7yvP9n93rpe2g9Hl8UBc1fo7IqI81cffcMV008ZXtGdkCybJSyUjPnbOxfg6YYCWjiORcGOrb6_FrN7BUEg_PK8zlGL1xRkdKTE9cemp7pCgqoai779nvL1z6dmRDOPcIn8N7bMsXxc0-SxGYpy64yj6LFCGLDjEegq8VA0ZVQhmoKaLdUiQq4x_SUC1qGbvjtrayB8lELhO7bg-2c41VtQuipJIUgtulqKnT0XgdlP9GA7tytce63uNq1RNA6lZ5P7AIrkNjGH-N1r8OOvTFBFMJnA4O=w720-h238-no)
+
+Ubuntu EC2에 접속했는데, 이런 메세지를 발견했다. 커널의 보안을 위해서 업데이트해야할 패키지들이 있으니 시스템을 재부팅하라는 메세지인 것 같다. 
+
+```
+$ sudo reboot
+```
 
 <br>
 
@@ -180,8 +201,6 @@ caffeinate
 | :q     | 종료하기          |
 | :wq    | 저장하고 종료하기 |
 
-
-
 **References**
 
 - [VI Text Edito with Commonds: Linux/Unix Tutorial](https://www.guru99.com/the-vi-editor.html)
@@ -207,17 +226,17 @@ Ubuntu에서 자주 사용하는 패키지 툴이다. `apt-get` 패키지 툴을
 ### <a name="install-jdk-jre"></a>ubuntu에서 jdk, jre 설치하기
 
 ```
-sudo apt-get install openjdk-8-jre
-sudo apt install openjdk-8-jdk-headless
+$ sudo apt-get install openjdk-8-jre
+$ sudo apt install openjdk-8-jdk-headless
 ```
 
-
+<br>
 
 ### <a name="which"></a>ubuntu에서 java 설치 경로 찾기
 
 ```
-which java
-which javac
+$ which java
+$ which javac
 ```
 
 <br>
