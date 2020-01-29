@@ -17,11 +17,12 @@
 - [EC2 인스턴스 접속시 permission denied 발생할 경우](#error-while-entering-ec2)
 - [EC2 인스턴스에 한글 언어팩 설치](#locale-ko-utf8)
 - [EC2 인스턴스(Ubuntu)에 JDK 설치하기](#install-jdk-ec2)
+- [awscli 설치하기](#awscli)
 - [Apache2 웹서버 실행](#start-apache2)
 
 ---
 
-### <a name="region"></a>Region과 Availability zone
+## <a name="region"></a>Region과 Availability zone
 
 Region(지역)은 (서울, 대한민국) 또는 도쿄, 일본 처럼 물리적인 지역을 이야기한다. Availability zone(가용구역, 이하 'az')은 Region을 커버하는 데이터센터를 의미한다. 
 
@@ -35,7 +36,7 @@ az은 **<u>장애가 발생했을 경우 이를 복구하기 위한 백업</u>**
 
 <br>
 
-###<a name="ec2"></a>EC2 인스턴스의 기능
+##<a name="ec2"></a>EC2 인스턴스의 기능
 
 AWS에서 EC2 인스턴스는 하나의 가상 컴퓨팅 환경을 의미한다. 컴퓨터 한 대를 생각하면 된다.
 
@@ -49,7 +50,7 @@ AMI(Amazon Machine Image)은 서버에 필요한 운영체제와 여러 소프�
 
 <br>
 
-### <a name="entering-ec2"></a>터미널로 EC2 인스턴스 접속
+## <a name="entering-ec2"></a>터미널로 EC2 인스턴스 접속
 
 aws에서 발급받은 key 디렉토리와 접속하고자 하는 EC2 ip주소를 함께 입력한다.
 
@@ -58,7 +59,7 @@ aws에서 발급받은 key 디렉토리와 접속하고자 하는 EC2 ip주소�
 
 <br>
 
-### <a name="reboot-ec2"></a>시스템 재부팅
+## <a name="reboot-ec2"></a>시스템 재부팅
 
 AWS에서는 일반적인 Ubuntu 재부팅 <a href="/Linux.md#ubuntu-reboot" target="_blank">명령어</a>만으로는 재부팅이 불가능하다. 쉘모드로 진입한 상태이기 때문에 연결이 끊어질뿐 시스템의 호스트인 AWS EC2는 여전히 실행중이기 때문이다. 따라서 EC2 콘솔에서 인스턴스를 재부팅 해야만 한다.
 
@@ -66,7 +67,7 @@ AWS에서는 일반적인 Ubuntu 재부팅 <a href="/Linux.md#ubuntu-reboot" tar
 
 <br>
 
-### <a name="error-while-entering-ec2"></a>EC2 인스턴스 접속시 permission denied 발생할 경우
+## <a name="error-while-entering-ec2"></a>EC2 인스턴스 접속시 permission denied 발생할 경우
 
 EC2 인스턴스를 Amazon Linux로 생성했을 경우, public-ip주소 앞에 붙이는 이름은 `ec2-user`, Ubuntu로 생성했을 경우에는 `ubuntu` 로 해서 접속을 시도한다.
 
@@ -82,7 +83,7 @@ EC2 인스턴스를 Amazon Linux로 생성했을 경우, public-ip주소 앞에 
 
 <br>
 
-### <a name="locale-ko-utf8"></a>EC2 locale 설정
+## <a name="locale-ko-utf8"></a>EC2 locale 설정
 
 인스턴스에 접속해서 `locale` 을 입력하면 현재 설정된 locale을 확인할 수 있다.
 
@@ -106,7 +107,7 @@ EC2 인스턴스를 Amazon Linux로 생성했을 경우, public-ip주소 앞에 
 
 <br>
 
-### <a name="install-jdk-ec2"></a>EC2 인스턴스(Ubuntu)에 JDK 설치하기
+## <a name="install-jdk-ec2"></a>EC2 인스턴스(Ubuntu)에 JDK 설치하기
 
 - `$ sudo apt install default-jdk`
 - 구버전 설치할 경우, [Oracle Java Archive](https://www.oracle.com/technetwork/java/archive-139210.html)에서 버전을 찾아서 설치.
@@ -116,7 +117,31 @@ EC2 인스턴스를 Amazon Linux로 생성했을 경우, public-ip주소 앞에 
 
 <br>
 
-### <a name="start-apache2"></a>Apache2 웹서버 실행하기
+## <a name="awscli"></a>AWS-CLI 설치하기
+
+AWS Command Line Interface(AWS CLI)는 명령줄 shell의 명령을 사용하여 AWS 서비스와 상호 작용할 수 있는 오픈 소스 도구이다. AWS CLI를 사용하면 원하는 터미널 프로그램에 있는 명령 프롬프트(Terminal, iTerm2)에서 브라우저 기반 AWS Management 콘솔에서 제공하는 것과 동일한 기능을 구현하는 명령을 실행할 수 있다.
+
+```
+$ aws configure
+AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name [None]: us-west-2
+Default output format [None]: ENTER
+```
+
+출처 : <a href="https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-welcome.html" target="_blank">ASW - AWS Command Line Interface란 무엇입니까?</a>
+
+
+
+설치는 아래의 명령어로 설치한다.
+
+```
+$ sudo apt install awscli 
+```
+
+<br>
+
+## <a name="start-apache2"></a>Apache2 웹서버 실행하기
 
 **Apache2 웹서버 실행하는 방법**
 

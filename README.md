@@ -89,6 +89,7 @@
     - [EC2 인스턴스 접속시 permission denied 발생할 경우](DevOps/AWS.md#error-while-entering-ec2)
     - [EC2 locale 설정](DevOps/AWS.md#locale-ko-utf8)
     - [EC2 인스턴스(Ubuntu)에 JDK 설치하기](DevOps/AWS.md#install-jdk-ec2)
+    - [awscli 설치하기](DevOps/AWS.md#awscli)
     - [Apache2 웹서버 실행하기](#start-apache2)
 - [Others](https://github.com/youngjinmo/TIL/tree/master/Others)
   - [정규표현식](/Others/regex.md)
