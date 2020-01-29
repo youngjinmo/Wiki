@@ -16,6 +16,7 @@
 - [EC2 인스턴스 접속시 permission denied 발생할 경우](#error-while-entering-ec2)
 - [EC2 인스턴스에 한글 언어팩 설치](#locale-ko-utf8)
 - [EC2 인스턴스(Ubuntu)에 JDK 설치하기](#install-jdk-ec2)
+- [Apache2 웹서버 실행](#start-apache2)
 
 ---
 
@@ -51,7 +52,7 @@ AMI(Amazon Machine Image)은 서버에 필요한 운영체제와 여러 소프�
 
 aws에서 발급받은 key 디렉토리와 접속하고자 하는 EC2 ip주소를 함께 입력한다.
 
-`ssh -i aws-key/keypair.pem ec2-user@ec2-public-ip-address`
+`$ ssh -i aws-key/keypair.pem ec2-user@ec2-public-ip-address`
 ![](https://lh3.googleusercontent.com/MSEtddwUB8DHXaK0GMxWhokA1MvyZF3gY3LfJf75IY7ocJ_l8sC6K3g8OzWDMFFGtqekR1XvV_rU8eeFIOAd_-KG2-0pP5MNkfDKtC1QBf_Q4AfADtPnaDb3a3jtqS9_upjqXq8gCIKE3-41qfcUaJpzLMDF0Zr46TFWqH3DohkscDZlev9mXC5W_VO7zqdRBlPv3yfNnNhlI6qpXQEc4CsWHDRh0DwktBe3A1IIYBT391gTSMhsC3hr3mZQMLl-CmoOtWDu1fKtkXXL6f6CM3bUTCnz8ON2hQKvhNS6XMtAqqg8Ns8MgrQfqd34PLovOE2Q1iEFwvHWIm9Q4oXKG-L75VOq1EDYtrPCOUduYhJrVy3JCj4oZHamVWFpOkzfZwGmnNVl1DWA6zotVzqo6QzqU4MUwemuK3-jRmxaTdV2FWZ-lmJwSlopRxieGiFcYagAswf9tylPqwiRGKxGiTL4GL9RmZBv-yi2RhWKnGznTgdWXc8b5ygBGnui9zWRvqzlv5RADBUiaxfjiCONtUPnRu5gefQSxvQCtYkeXKmrZ7qCS6dAlgU4QMTpoXylM3u82BUbnpE1Ig9wyLvjXIZbHH751yLKgDYSXXCdVTwFOIoWQMOAMZKIBZp8UcnX2nu7ChXMyN2WOazqhAIjj9DWWWhK3vTc2JekDzAeDmeMCla5SMWXF-176xulpEBAtf7qJOchfrRijHVKar8NaOSe_HZGIkNxYVRd8N4nuiqYgy06oA=w720-h349-no)
 
 <br>
@@ -80,11 +81,11 @@ EC2 인스턴스를 Amazon Linux로 생성했을 경우, public-ip주소 앞에 
 
 인스턴스 접속해서 아래 명령어 명령.
 
-`sudo apt-get install language-pack-ko`
+`$ sudo apt-get install language-pack-ko`
 
 그 다음으로
 
-`sudo locale-gen ko_KR.UTF-8`
+`$ sudo locale-gen ko_KR.UTF-8`
 
 **Amazon Linux 인스턴스라면,**
 
@@ -98,12 +99,21 @@ EC2 인스턴스를 Amazon Linux로 생성했을 경우, public-ip주소 앞에 
 
 ### <a name="install-jdk-ec2"></a>EC2 인스턴스(Ubuntu)에 JDK 설치하기
 
-- `sudo apt install default-jdk`
+- `$ sudo apt install default-jdk`
+- 구버전 설치할 경우, [Oracle Java Archive](https://www.oracle.com/technetwork/java/archive-139210.html)에서 버전을 찾아서 설치.
+  
+- `$ ssh -i [aws-public-key].pem ubuntu@[ip-port@aws]`
+- AWS 서버를 실행할 때마다 ip주소가 바뀐다. 바뀐 ip주소를 입력해야 정상적으로 AWS 웹서버에 접속할 수 있다.
 
-  - 구버전 설치할 경우, [Oracle Java Archive](https://www.oracle.com/technetwork/java/archive-139210.html)에서 버전을 찾아서 설치.
+<br>
 
-- `ssh -i [aws-public-key].pem ubuntu@[ip-port@aws]`
+### <a name="start-apache2"></a>Apache2 웹서버 실행하기
 
-  - AWS 서버를 실행할 때마다 ip주소가 바뀐다. 바뀐 ip주소를 입력해야 정상적으로 AWS 웹서버에 접속할 수 있다.
+**Apache2 웹서버 실행하는 방법**
+
+```
+$ sudo /etc/init.d/apache2 start
+$ sudo service apache2 start
+```
 
 <br>
