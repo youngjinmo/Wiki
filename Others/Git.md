@@ -137,9 +137,11 @@ test 폴더를 만들어서 실습을 해보았다.
 
 staging area에서 working directory로 돌리는 방법에 관한 방법이다.
 
-`git add .` 명령어로 작업한 파일 전체를 staging area에 올려두었는데, 이 중 커밋되면 안되는 파일을 발견했다. 
+`git add .` 명령어로 작업한 파일 전체를 staging area에 올려두었는데, 이 중 커밋되면 안되는 파일을 발견했다. 이 땐 아래의 명령어를 통해 staging된 파일을 working directory로 복귀시킬 수 있다.
 
-이 땐 `git restore --staged <file>` 명령어를 통해 staging된 파일을 working directory로 복귀시킬 수 있다.
+```
+$ git restore --staged "file path"
+```
 
 <br>
 
@@ -152,7 +154,7 @@ file_02.java 파일을 staging area에 올려두었다가 다시 untracking file
 ## <a name="create-branch"></a>브랜치 생성하기
 
 ```git
-git branch unit-Test
+$ git branch unit-Test
 ```
 
 `unit-Test` 라는 이름의 브랜치를 생성할 수 있다.
@@ -164,7 +166,7 @@ git branch unit-Test
 로컬 저장소의 모든 브랜치를 확인하고 싶다면,
 
 ```git
-git branch
+$ git branch
 ```
 
 ![](http://www.mediafire.com/convkey/113b/6naabezpnga2arlzg.jpg)
@@ -172,7 +174,7 @@ git branch
 원격 저장소 브랜치까지 모두 확인하고 싶다면,
 
 ```git
-git branch -a
+$ git branch -a
 ```
 
 ![](http://www.mediafire.com/convkey/d579/to1uf1203n1i2d4zg.jpg)
@@ -182,7 +184,7 @@ git branch -a
 ## <a name="move-branch"></a>브랜치 이동하기
 
 ```git
-git checkout master
+$ git checkout master
 ```
 
 ![](http://www.mediafire.com/convkey/53ce/pgdo7ue0e03jbl4zg.jpg)
@@ -192,7 +194,7 @@ git checkout master
 ## <a name="delete-branch"></a>브랜치 삭제하기
 
 ```git
-git branch -D unit-Test
+$ git branch -D unit-Test
 ```
 
 <br>
@@ -200,7 +202,7 @@ git branch -D unit-Test
 ## <a name="delete-origin-branch"></a>원격 저장소 브랜치 삭제하기
 
 ```git
-git push origin --delete unit-Test
+$ git push origin --delete unit-Test
 ```
 
 원격 저장소에서 `unit-Test` 브랜치가 삭제된다.
@@ -214,13 +216,13 @@ git push origin --delete unit-Test
 만약 이름을 변경하길 원하는 브랜치가 선택되어 있다면,
 
 ```git
-git branch -m new-name
+$ git branch -m new-name
 ```
 
 현재 선택된 브랜치가 아닌 다른 브랜치의 이름을 변경하고자 한다면,
 
 ```git
-git branch -m old-name new-name
+$ git branch -m old-name new-name
 ```
 
 ![](http://www.mediafire.com/convkey/e9d9/to6tbiwhaa0go37zg.jpg)
@@ -228,13 +230,13 @@ git branch -m old-name new-name
 원격 저장소에서 적용하기
 
 ```git
-git push origin :old-name
+$ git push origin :old-name
 ```
 
 변경된 새 브랜치 원격 저장소에 적용하기
 
 ```git
-git push --set-upstream origin new-name
+$ git push --set-upstream origin new-name
 ```
 
 ![](http://www.mediafire.com/convkey/5d11/rpk9z3iwnxxto6czg.jpg)

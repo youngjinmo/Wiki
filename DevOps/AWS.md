@@ -19,6 +19,7 @@
 - [EC2 인스턴스(Ubuntu)에 JDK 설치하기](#install-jdk-ec2)
 - [awscli 설치하기](#awscli)
 - [Apache2 웹서버 실행](#start-apache2)
+- [서버시간 확인하기](#check-date)
 
 ---
 
@@ -149,5 +150,15 @@ $ sudo apt install awscli
 $ sudo /etc/init.d/apache2 start
 $ sudo service apache2 start
 ```
+
+<br>
+
+## <a name="check-date"></a>서버시간 확인하기
+
+```
+$ date
+```
+
+서버에 적용된 시간과 날짜를 확인할 수 있다.
 
 <br>
