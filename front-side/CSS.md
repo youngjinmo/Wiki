@@ -39,8 +39,11 @@
 
 HTML 문서의 스타일 코드를 적용할 때 class, id로 구분해서 스타일을 따로 적용하는 편인데, 이 때 서로다른 id에 같은 스타일의 적용이 필요할 때가 있다. 이 땐 그냥 `,` 로 구분해서 복수의 id에 스타일을 적용할 수 있다.
 
-![](https://www.mediafire.com/convkey/f4a3/zi8orbpwx27e2g6zg.jpg)
-
-https://codepen.io/youngjinmo/pen/LYEdypN
+<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="youngjinmo" data-slug-hash="LYEdypN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Apply style to multiple ids.">
+  <span>See the Pen <a href="https://codepen.io/youngjinmo/pen/LYEdypN">
+  Apply style to multiple ids.</a> by DevAndy (<a href="https://codepen.io/youngjinmo">@youngjinmo</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 <br>
