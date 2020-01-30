@@ -91,7 +91,7 @@
     - [EC2 인스턴스(Ubuntu)에 JDK 설치하기](DevOps/AWS.md#install-jdk-ec2)
     - [awscli 설치하기](DevOps/AWS.md#awscli)
     - [Apache2 웹서버 실행하기](DevOps/AWS.md#start-apache2)
-    - [서버시간 확인하기](DevOps/AWS.md#check-date)
+    - [서버시간 변경하기](DevOps/AWS.md#change-localtime)
     - [키페어(.pem) 자동으로 읽어오기](DevOps/AWS.md#autoload-pem)
     - [호스트네임 변경하기](DevOps/AWS.md#change-hostname)
 - [Others](https://github.com/youngjinmo/TIL/tree/master/Others)

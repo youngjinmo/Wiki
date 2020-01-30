@@ -19,7 +19,7 @@
 - [EC2 인스턴스(Ubuntu)에 JDK 설치하기](#install-jdk-ec2)
 - [awscli 설치하기](#awscli)
 - [Apache2 웹서버 실행](#start-apache2)
-- [서버시간 확인하기](#check-date)
+- [서버시간 변경하기](#change-localtime)
 - [키페어(.pem) 자동으로 읽어오기](#autoload-pem)
 - [호스트네임 변경하기](#change-hostname)
 
@@ -155,13 +155,20 @@ $ sudo service apache2 start
 
 <br>
 
-## <a name="check-date"></a>서버시간 확인하기
+## <a name="change-localtime"></a>서버시간 변경하기
 
 ```
 $ date
 ```
 
 서버에 적용된 시간과 날짜를 확인할 수 있다.
+
+이제 이 서버의 시간을 우리나라 시간으로 변경해보겠다.
+
+```
+$ sudo rm /etc/localtime
+$ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+```
 
 <br>
 
@@ -225,10 +232,12 @@ $ sudo vim /etc/hostname
 
 `/etc/hostname` 에서 ip주소로 입력된 호스트네임을 변경하고 싶은 서버 이름으로 변경한다.
 
-그리고 확인해본다.
+그리고 확인해본다. 
 
 ```
 $ hostname
 ```
+
+이제 쉘 모드에서 보여지는 ip주소(`ubuntu@ip-172-xxx-xx-xxx`) 대신 호스트네임(`ubuntu@Devandy-lectureSearch`)으로 보여질 것이다.
 
 <br>
