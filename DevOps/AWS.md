@@ -20,6 +20,8 @@
 - [awscli 설치하기](#awscli)
 - [Apache2 웹서버 실행](#start-apache2)
 - [서버시간 확인하기](#check-date)
+- [키페어(.pem) 자동으로 읽어오기](#autoload-pem)
+- [호스트네임 변경하기](#change-hostname)
 
 ---
 
@@ -160,5 +162,73 @@ $ date
 ```
 
 서버에 적용된 시간과 날짜를 확인할 수 있다.
+
+<br>
+
+## <a name="autoload-pem"></a>키페어(.pem) 자동으로 읽어오기
+
+쉘 모드로 진입하기 위해 아래와 같은 명령어를 계속 입력해야한다.
+
+```
+$ ssh -i aws-pem-경로 ubuntu@ip주소
+```
+
+이제부터 키페어를 자동으로 읽어오도록 할 것이다. 그럼 앞으로 EC2 인스턴스에 쉘 모드로 진입할 때마다 키페어 경로를 입력하지 않아도 된다.
+
+```
+$ cp /aws-pem-경로 ~/.ssh/
+$ chmod 600 ~/.ssh/pem이름
+```
+
+키를 `~/.ssh/` 에 복사하고 키의 권한도 변경했다. 이제 config 파일을 수정한다.
+
+```
+$ vim ~/.ssh/config
+```
+
+vim 에디터모드로 입력창이 열리면 아래와 같이 입력한다.
+
+```config
+Host 서비스명
+	HostName ec2-ip주소
+	User ubuntu #AmazonLinux면 ec2-user
+	IdentityFile ~/.ssh/pem이름
+```
+
+마지막으로 해당 파일의 권한을 변경한다.
+
+```
+$ chmod 700 ~/.ssh/config
+```
+
+이제 간단한 명령어로 EC2 인스턴스에 접속이 가능한다.
+
+```
+$ ssh 서비스명
+```
+
+<br>
+
+## <a name="change-hostname"></a>호스트네임 변경하기
+
+호스트네임을 변경하면, AWS keypair를 자동으로 연결하도록 [설정](#autoloard-pem)한 후 아래처럼 간단하게 접속할 수 있다.
+
+```
+$ ssh DevAndy-SpringBoot
+```
+
+AWS 우분투 EC2에서 호스트네임을 변경하는 방법은 다음과 같다.
+
+```
+$ sudo vim /etc/hostname
+```
+
+`/etc/hostname` 에서 ip주소로 입력된 호스트네임을 변경하고 싶은 서버 이름으로 변경한다.
+
+그리고 확인해본다.
+
+```
+$ hostname
+```
 
 <br>
