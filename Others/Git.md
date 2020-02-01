@@ -21,7 +21,9 @@ Git은 버전/브랜치 별로 프로젝트의 형상을 관리할 수 있기 �
 - [Fork](#git-fork)
 - [PR](#git-pr)
 - [.gitignore](#git-gitignore)
+- [git config 설정](#git-config)
 - [Github Credential 저장](#git-credential)
+- [Github에 SSH 등록하기](#add-ssh)
 - [레파지토리 라이센스](#license)
 
 <br>
@@ -330,22 +332,157 @@ vi에디터로 `.gitignore` 파일을 생성한다. 그리고 버전관리 하�
 
 <br>
 
+## <a name="git-config"></a>git config 설정
+
+로컬에서 커맨드라인으로 git을 관리하기 위해서는 계정이 필요하다.
+
+~~~
+$ git config --global user.name "이름"
+$ git config --global user.email "이메일"
+$ git config --global user.password "패스워드"
+~~~
+
+git config를 저장하는 가장 쉬운방법이지만, 보안으로는 가장 취약한 방식이다. 
+
+아래의 명령어를 입력하면, 현재의 쉘에 저장된 credential을 바로 확인할 수 있다.
+
+~~~
+$ git config --list
+~~~
+
+![](https://lh3.googleusercontent.com/ylZk8OqZsTmAcSjYPzFtx8_-3DSTG7cTG28pmk1DKxfQ9Bxf6h19M_Iq5im1-cdMUmpU3jSVFd78JAa8W4wHJ7_0SfQ4frGEbE2_jIMZ2wBU_CTstFP2TPlzXjJoJJ9J1OoNgdkFXQl4I8f0S8c6wqAWl4p-DnQtUrWIvTheeMBJ8PRdamb7KlSl9xsCGRUxLZ-R9HWBkPG2pvDwsvkZ9S_nSI7_hUXwh6QbST7STvPDKdywQ5XTwZ3OfeSWI_rlz0h3di5b7I2Xdr6LUoHFDoyxSbm7GKhyORnUg3e_WYrx1oXVJIoYISFMoBq_BIbKgooCyzLnv3X8D6YaK1bfQS6d71SMS3ZrXeN89zAZoSWFWCQPH8u_i1XT4qLEG9JK8dZkcBHgoL0EaKP_705HzOUVdk1DGrQ_kMazaUk3RzCVV_KAOU_zcC_7N6FsZJ3L2a9cPDLauGIaTyekC3ERtda6Wuf4Y3lqdT7ym0Q0qD43vcXvnG0VXwzmWZOZfvZlmp5Qff6VD4-FF3BAIm5LtgmfhTYfY719OGV5kTaHZ614tmE7vsNz3uYtT_2F1wcn0-mD6x4xWRAe_tFHiJIh3Ses743kAVBfrYdZu7G7TI9sKe02_eEN5k3h0pT045zKtIFRLbO_FcMB7RMARmp_eJ82wwHpjzFUHr8BtG6urdZQ3oQDd0wY_bo3Jdx1F_r0S0byZUNyIuT7AeKLIxvW53ebfOSk9yJdFRHN9mzAbvMbpiUohw=w551-h222-no)
+
+패스워드를 입력하지 않고 바로 확인할 수 있는 방법만큼 좋은 방식같지는 않다.
+
 ## <a name="git-cedential"></a>Github Credential 저장
 
 Github Credential이란 Github의 계정정보를 말한다. 
 
-저장소에 push/pull 하거나 private 저장소를 clone하기 위해서는 해당 저장소를 이용할 수 있는 권한이 필요한데 이 때 credential에 계정 정보를 저장해두면 저장소 이용시마다 로그인할 필요가 없다.
+저장소에 push/pull 하거나 private 저장소를 clone하기 위해서는 해당 저장소를 이용할 수 있는 권한이 필요한데 이 때 credential에 계정 정보를 저장해두면 저장소 이용시마다 로그인할 필요가 없다. 
 
 터미널 명령어는 다음과 같다.
 
 ```
-git config credential.helper store
-git push https://github.com/repo.git
-Username for 'https://github.com' : your github email
-Password for 'https://your github email' : your github password
+$ git config credential.helper store
+$ git push https://github.com/repo.git
+$ Username for 'https://github.com' : your github email
+$ Password for 'https://your github email' : your github password
 ```
 
-출처 : https://git-scm.com/docs/git-credential-store
+출처 : <a href="https://git-scm.com/docs/git-credential-store" target="_blank">git-scm - git credential store</a>
+
+그러나 이 방식도 [git config](#git-config)와 마찬가지로 안전하다고 볼 수는 없다. 보안상 추천하는 방식은 다음과 같다.
+
+<br>
+
+## <a name="add-ssh"></a>Github에 SSH 등록하기
+
+쉘에서 SSH 키를 생성한 후, 이를 Github에 저장해서 사용하려고 한다.
+
+<a href="https://ko.wikipedia.org/wiki/%EC%8B%9C%ED%81%90%EC%96%B4_%EC%85%B8" target="_blank">위키백과</a>에 의하면, SSH(Secure Shell)는 네트워크 상의 다른 컴퓨터에 로그인하거나 Github과 같은 원격 시스템에 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있는 프로토콜이라고 한다.
+
+<img src="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2017/07/asymmetric-encryption.jpg" style="zoom:60%;" />
+
+SSH는 암호화되어 통신하기 때문에 통신이 노출되더라도 안전하다고 한다.
+
+<hr>
+
+먼저 쉘에서 SSH 키를 생성해보겠다.
+
+터미널에서 아래 명령어를 입력한다.
+
+~~~
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+~~~
+
+그럼 key pair가 생성된다.
+
+~~~
+> Generating public/private rsa key pair.
+~~~
+
+이후에 프롬프트(Terminal)에 입력을 요구하는 메세지가 출력된다.
+
+~~~
+> Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+~~~
+
+엔터를 입력하고, 
+
+~~~
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+~~~
+
+기억할 수 있는 문장을 두번 입력한다.
+
+![](https://lh3.googleusercontent.com/v63aRqQ4LEVFAmB9KQeiKheT0Q2nk6Ssc3iftUuxt3dUhcCt77v81UCSHH_e2p_SJZPd1XuVfoUT0kgkRHEDPCMmHU2T0MpQxSFNg7gE3Qsbp38ssEIyiAyTmAd4-aInYdbciY7OuekcrVOtA1g3aY8eoykkywJQVfz3J0wGGvzPI11L1UdgxsN1ufHRZ5ZZkrAAr93v0LIh_CcF5aiaxvgIrZEKaUkoGoDL_u61fxQdKihyCoOOBPL_fJCPvT5ayRl_gPLX79iR5GRSdSfDNj15ZohJVe6g2Gt1MkUc6-bQQZ1A_aFq1fBMvQvYmUTUrKmzFugOpSkRQzlhu5Uexk5puSPElSDZh0E9uPN-S0gQ76imL0Iy8ghRVkDJf0hzZR9f1x5dcvbWAAftU-oO2rmf8uCELhsWSKjUispLqoZplM0FahKb7Y-oQa9pR73RrWPYaHEXomc93n_Td4ZdHMv3-dI3ZMwDdRtBq3yoOTJgAXLQxNTYQXc6Yt6hSLHmLWGBTJWUG2cbMP2Uj26AShI6jauybl1Ld6JbS-06i_chUal9YYN8bdznUjvxbx8PNia44kpLoOsCBbcYki1JWqpHdVeI5PHUIPlewkIdb4Q_8DdBx1Xfo-4iI9ODDBpOY5uLPMz96Bx3xGYvAZq9ZJtA0VnDVKaJhlC3bOPtH_4TcB8_kFw0MbcQBDic6uHGP3f0WKPt8d_axxqi3ZyB_HM-ae_rAoz1esIJFeK5J4ephyOqdA=w720-h437-no)
+
+
+
+그리고 터미널에 아래의 명령어를 입력하여 `ssh-agent` 를 실행한다.
+
+~~~
+$ eval "$(ssh-agent -s)"
+> Agent pid 59566
+~~~
+
+pid는 리눅스, 맥 등의 유닉스 관련 대부분의 OS 커널에서 사용하는 Process ID라고 한다. (<a href="https://www.2daygeek.com/check-find-parent-process-id-pid-ppid-linux/" target="_blank">출처</a>)
+
+![](https://lh3.googleusercontent.com/Dfsh3V9UQhKtZV9NGO8BToyaYoPrhr-eJmF2x3uOTgopDio7mwu6W3DpntTz7XqTWoNlGeD16tFaidKP1AQsm5uIwYaTqGB3zyP9gq2iZgURQyt932OqtybGOdw9OUocpztle3Ky6EmXHX6Z2OkYdnW04zVIHp47uxWVu1yYDTWUZRFkPBT1MvPE1t7qGei_jJQ2w0ycveL-G9RmDB9PWLRgz2WtiKMUjKztO2INalCbHRngNCccJUWCADkYZg79AjiWoXvJ-lNTwqxIzzHOutpUbGiNA679xMSX7Frm9brWu2fN-ycCl7_rzmJRF50KngwtjbxImE7D8z7z670AA27Y_97gDJLros8Hp-CR6LpFF61fDERP7Bmn4Fh3FZc838pNCt4KoNi-Ey3fJAEdulntVJAaWL0_8gUraY06W89ElEi5Tgx2QZTT65Kqa6uzQlP4nL--jnsKWOgPujkcC0mwbHaXAn3SyoJFLmj0GmEBX3FpQR7_9BOSkUOjLkQwEh7VXpu3vEo59sEITrnanfMJYg899dR1CICqMtXFcM7peU0E15N2019sqF9nvV3OwrQg2ppwUik0vYn-5ijK0x3htgajHbnYZ1oVWhOG6Do0vW1EvQLD80gUWNU0uMWRveD0u-BAWxOj6D8XSAKswjwbykt-Vn5MSorfcuviQlPMrVcVYwvHqAaj8xQd72cFkWlCUFqu_jFQnLN-soj8pA6Xd_aq4yF2XaDI6EXL3P1Yy6bcew=w701-h199-no)
+
+
+
+그리고 시에라 버전 10.12.2 이상의 맥을 사용한다면, `~/.ssh/config` 를 수정해주어야 한다.
+
+~~~
+Host *
+   AddKeysToAgent yes
+   UseKeychain yes
+   IdentityFile ~/.ssh/id_rsa
+~~~
+
+
+
+그리고 SSH 키를 `ssh-agent`에 연결하고 기억할 수 있는 문장(`passpharase`)를 키체인에 저장한다.
+
+`ssh-agent`는 리눅스 또는 유닉스 계열의 OS에서 로그인이 필요할 때 자동으로 config 를 도와준다고 한다.
+
+~~~
+$ ssh-add -K ~/.ssh/id_rsa
+~~~
+
+
+
+이제 Github 설정에서 방금 생성한 SSH 키를 등록할 것이다. 
+
+생성한 키(`~/.ssh/id_rsa.pub`)를 복사한다.
+
+~~~
+$ pbcopy < ~/.ssh/id_rsa.pub
+~~~
+
+
+
+그리고 <a href="https://github.com/settings/keys" target="_blank">Github 설정</a>의 왼쪽 메뉴바에서 **[SSH and GPG key]**를 클릭한다.
+
+![](https://help.github.com/assets/images/help/settings/settings-sidebar-ssh-keys.png)
+
+**[New SSH key]** 를 클릭한다.
+
+![](https://help.github.com/assets/images/help/settings/ssh-add-ssh-key.png)
+
+
+
+**Title**은 입력하고 싶은 이름을 입력해두고, **Key**에 아까 복사해뒀던 키를 붙여넣기해주면 된다.
+
+
+
+출처
+
+<a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank">Github Help - Generating a new SSH key and adding it to the ssh-agent</a>
+
+<a href="https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account" target="_blank">Github Help - Adding a new SSH key to your Github account</a>
 
 <br>
 
