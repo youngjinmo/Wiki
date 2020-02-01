@@ -6,6 +6,7 @@
 
 - [word-break](#word-break)
 - [복수의 id에 CSS 적용](#apply-style-to-multiple-ids)
+- [margin과 padding 차이](#margin-and-padding)
 
 <br>
 
@@ -45,5 +46,15 @@ HTML 문서의 스타일 코드를 적용할 때 class, id로 구분해서 스�
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<br>
+
+## <a name="margin-and-padding"></a>margin과 padding 차이
+
+![](https://i.stack.imgur.com/VlwVi.png)
+
+위 이미지에서 빨간색 부분이 현재 CSS 코드를 적용중인 객체에 해당한다.
+
+`margin`은 이 객체의 바깥 부분을 조정하는 프로퍼티이며, `padding`은 객체 안쪽을 조정하는 프로퍼티이다.
 
 <br>
