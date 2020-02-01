@@ -14,6 +14,8 @@
   - [명령어 동시실행](#combine-commands)
   - [슬립모드 진입방지 \(caffeinate)](#caffeinate)
   - [시스템 재부팅](#ubuntu-reboot)
+  - [서버시간 변경하기](#change-localtime)
+  - [UTF-8 인코딩설정](#setup-utf8)
 - [Vi Editor](#linux-vi)
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
@@ -153,6 +155,51 @@ $ sudo reboot
 
 AWS EC2 Ubuntu 인스턴스에서는 이와같은 방식으로는 해결할 수 없다. 
 <a href="https://github.com/youngjinmo/TIL/blob/master/DevOps/AWS.md#reboot-ec2" target="_blank">이 부분</a>을 참고바란다.
+
+<br>
+
+## <a name="change-localtime"></a>서버시간 변경하기
+
+```
+$ date
+```
+
+서버에 적용된 시간과 날짜를 확인할 수 있다.
+
+이제 이 서버의 시간을 우리나라 시간으로 변경해보겠다.
+
+```
+$ sudo rm /etc/localtime
+$ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+```
+
+<br>
+
+## <a name="setup-locale"></a>UTF-8 인코딩 설정
+
+```
+$ sudo locale-gen ko_KR.EUC-KR ko_KR.UTF-8
+$ sudo dpkg-reconfigure locales
+```
+
+그리고 `.bash_profile` 을 생성해서 아래의 명령어를 입력해둔다.
+
+```
+$ vim .bash_profile
+
+LANG="ko_KR.UTF-8"
+LANGUAGE="ko_KR:ko:en_US:en"
+```
+
+마지막으로 아래 명령어로 위에서 입력한 `.bash_profile` 을 적용? 한다고 한다. 
+
+```
+$ source .bash_profile
+```
+
+솔직히 아직 잘 이해못했다. 아래 출처의 박재성님이 알려주신대로 따라했다..
+
+출처 : <a href="https://youtu.be/8MzyAFPDC1I?t=838" target="_blank">박재성님 - 원격 서버에 소스 코드 배포하기 1단계</a>
 
 <br>
 
