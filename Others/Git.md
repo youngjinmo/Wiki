@@ -189,7 +189,7 @@ $ git branch -a
 $ git checkout master
 ```
 
-![](http://www.mediafire.com/convkey/53ce/pgdo7ue0e03jbl4zg.jpg)
+![](http://www.mediafire.com/convkey/5812/m7xbdwsyktimcozzg.jpg)
 
 <br>
 
@@ -476,15 +476,15 @@ $ pbcopy < ~/.ssh/id_rsa.pub
 
 **Title**은 입력하고 싶은 이름을 입력해두고, **Key**에 아까 복사해뒀던 키를 붙여넣기해주면 된다.
 
-![](https://lh3.googleusercontent.com/mfafpXh1JnWePYJvhjR__lDupOG_iNsOIZHfx6LIu22HfEzH4b6NS40krlK5AXF2QIeZer1Ie1NerqNHVDmBw4cGgmjmcNu-yLERDVZ26bZROwhZ79C-8nuCNm8ADgJEGvYcOvzX4PF6CmE_Oa-wG5wVAfkP8wSy3PQT6WCabpnEpN9tVdP8B9gnbhp2vPcDQLA66-1HAYXiQbv7Yh4AMDVrKcPIDqtRu1CwUZpTvLzI5wSRgOu8093UDAkcuejp948svdlHeFufVoqapH6f9H_Ju9CkhwJhehH7TWGohBzKQXBnrzOhIHT81vGEzV1XTifBafikprkQbTohvZRoN1dH5nZeKzdld1D-FnfJgF1k1V6keXytI2dGnd6-OoD2xDTOtNPX_mBqL-AzoozPEUIRjK7t3luEyYp1wF-c2Rcdfx4UPhxTCJsD2p6THuYk2rslIWgYaPk66urdHzYc7Ml68r4wF8w-FU4Y4f5mm5AgbNAJh36-KbMuTLvGop5ypOMFMUwoTj9nMWRGowKKaqqVAOO-jFzMz6k1tNraFXnfq81hhzwZ9cNLqxRll3F-jDbwtT5ey8ePoXxJ-QVprx2BNKX-U4F53uL7PUQkimM0Dx1zdk_8IkJzkSwDxJkahamuM4Co421VP3OF8mMxWeWZb2utK14lXwuRtUUfFdWCvbfPDKVTAlh8=w1024-h541-no)
+![](https://lh3.googleusercontent.com/YWlsn_mpoKC7bZollAK0EZQqBJGw5uGcPMB_lVF-xt7ZsDYRbmmdMiyHbNhZTXLkzfRFslXUaHaLIIVfs8Iqd3-VB2k6HXZldkNTnWqy38Vr1XeXGKQDCg35ZhduuVE82w9yeAPqVgHv1lql0Lj3eOSWXM8asS8p2GRVEI2nDfTHl-wLvFOazAEN9ufQYqeZma3uj7S818kltFpDOMKqrlQSeNmg23raoPZau1Xfi1s7oyhmE8sooK6S2SoZcSh62RUJX-bckkA4oq4SBjGAtb0mQGR6iTRTp7BDnSiKeVUs6nVEgMHGy6QmQ_y3hrXrmtGBTJdfqfMNGRcAWTFSgF068TNqzB9a5OROgcKLYPVOI7VAbITM2blPkMJYK-_KWUHfrOKabHKFzIqpkoFWnKZdBzJmxY4lbuDSwOKv_TBMY8KEC5ofLgWjDQxY_8ySQ7RiU-s3L-UonhQULoloMc91T65V8tLTJDH4aA7w6Pqvob-kQ4DpOja0BUsKd3yMTQSMlhgEIImUKc_pBz6a97Lv_vtujuWD4h8v4ou3O_mFFIdtlbS68M9ZUmrDzC3EVoKEWrF47ksJEdmJp507GQitdPWDs2JM8pnkAVlTpFCMHBsiZqPKXlrFu6TkvjGt7TGIGdoD4yMImAtyByEwgqBkdIh83CDlv2Ge2HN8Mt0LWISOiCMBT0UkVm7_982eqil_uwc4lJPzcM7vfGsL4HsPzwlKZlAEQ6xHvZ7vmoP7Q3fytQ=w1024-h541-no)
 
 
 
 출처
 
-<a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank">Github Help - Generating a new SSH key and adding it to the ssh-agent</a>
+- <a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank">Github Help - Generating a new SSH key and adding it to the ssh-agent</a>
 
-<a href="https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account" target="_blank">Github Help - Adding a new SSH key to your Github account</a>
+- <a href="https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account" target="_blank">Github Help - Adding a new SSH key to your Github account</a>
 
 <br>
 

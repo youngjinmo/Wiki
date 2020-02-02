@@ -11,7 +11,7 @@
   - [Symbolic Link](#linux-symboliclink)
   - [grep](#linux-grep)
   - [터미널 결과 출력 저장](#save-output)
-  - [명령어 동시실행](#combine-commands)
+  - [복수의 명령어 동시실행](#combine-commands)
   - [슬립모드 진입방지 \(caffeinate)](#caffeinate)
   - [시스템 재부팅](#ubuntu-reboot)
   - [서버시간 변경하기](#change-localtime)
@@ -121,13 +121,19 @@ $ ls -al > "file.txt"
 
 <br>
 
-##<a name="combine-commands"></a>명령어 동시실행
+##<a name="combine-commands"></a>복수의 명령어 실행하기
 
 ```
 $ command1 && command2
 ```
 
 ![](https://www.mediafire.com/convkey/e96a/nunbbvezumvc1rxzg.jpg)
+
+또는 `;` 로 구분하는 방법이 있다.
+
+```
+$ command1; command2; command3;
+```
 
 <br>
 

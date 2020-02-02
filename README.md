@@ -63,7 +63,7 @@
       - [Symbolic Link](DevOps/Linux.md#linux-symboliclink)
       - [grep](DevOps/Linux.md#linux-grep)
       - [터미널 결과 출력](DevOps/Linux.md#save-output)
-      - [명령어 동시실행](DevOps/Linux.md#combine-commands)
+      - [복수의 명령어 동시실행](DevOps/Linux.md#combine-commands)
       - [슬립모드 진입방지 \(caffeinate)](DevOps/Linux.md##caffeinate)
       - [시스템 재부팅](DevOps/Linux.md#ubuntu-reboot)
       - [서버시간 변경하기](DevOps/Linux.md#change-localtime)
