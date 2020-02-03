@@ -89,7 +89,6 @@
     - [Region과 Availability zone](DevOps/AWS.md#region)
     - [EC2 인스턴스의 기능](DevOps/AWS.md#ec2)
     - [터미널로 EC2 인스턴스 접속](DevOps/AWS.md#entering-ec2)
-    - [EC2 인스턴스 접속시 permission denied 발생할 경우](DevOps/AWS.md#error-while-entering-ec2)
     - [EC2 locale 설정](DevOps/AWS.md#locale-ko-utf8)
     - [EC2 인스턴스(Ubuntu)에 JDK 설치하기](DevOps/AWS.md#install-jdk-ec2)
     - [awscli 설치하기](DevOps/AWS.md#awscli)
@@ -126,5 +125,7 @@
     - [맥에서 라즈베리파이 SSH 접속](Others/raspberryPi.md#ssh-mac)
     - [도커 설치](Others/raspberryPi.md#install-docker)
   - [Errors](/Others/Errors.md)
+    - [인텔리제이에서 class 파일이 decompile되었다고 할 때](/Others/Errors.md#decompile-class-intellij)
+    - [Gradle이 정상적으로 작동하지 않을때](/Others/Errors.md#reimport-gradle)
 
 <br>
