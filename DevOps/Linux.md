@@ -17,6 +17,7 @@
   - [시스템 재부팅](#ubuntu-reboot)
   - [서버시간 변경하기](#change-localtime)
   - [UTF-8 인코딩설정](#setup-utf8)
+  - [호스트네임 변경하기](#hostname)
 - [Vi Editor](#linux-vi)
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
@@ -180,9 +181,6 @@ Ubuntu EC2에 접속했는데, 이런 메세지를 발견했다. 커널의 보�
 $ sudo reboot
 ```
 
-AWS EC2 Ubuntu 인스턴스에서는 이와같은 방식으로는 해결할 수 없다. 
-<a href="https://github.com/youngjinmo/TIL/blob/master/DevOps/AWS.md#reboot-ec2" target="_blank">이 부분</a>을 참고바란다.
-
 <br>
 
 ## <a name="change-localtime"></a>서버시간 변경하기
@@ -227,6 +225,46 @@ $ source .bash_profile
 솔직히 아직 잘 이해못했다. 아래 출처의 박재성님이 알려주신대로 따라했다..
 
 출처 : <a href="https://youtu.be/8MzyAFPDC1I?t=838" target="_blank">박재성님 - 원격 서버에 소스 코드 배포하기 1단계</a>
+
+<br>
+
+## <a name="hostname"></a>호스트네임 변경하기
+
+터미널에서 아래 순서대로 명령어를 입력한다.
+
+~~~
+$ sudo vim /etc/hostname
+~~~
+
+![](https://lh3.googleusercontent.com/CovxqZ2tNzXsP7Kzj4JvwtHkQoWwv6RK5tEDGZR-dehIEstCErw6sHfU46nY3Q_-p2VdgioMF6W0Lc-7-LY1m_zIwT3zhqeccitNnY7hS9p20fJKoh0HyY8vF9xNC7GmuMs3WrCz9uUoR-tooyHb69XnxA4GiIXW9A1oJhSQN4r5iTPriwSJ4ppXNyoI4NNA9E5OC3wue5D7u-aigTDPwSRukpNdh7xN51ONj_hGBIJTiwTPVADIARskG2ijqrZG6-NHBKmVhEhW1-qvFzBD8otyuyyvfkT9Q3U3OxdLJ3qxz6qX54_3WVvvZYr2KQNP1dnguJusPZjC0XF8zjBTVv4yTzYHhqf9MJQ4wCqemHwjSkSFj2h9-AddEMY-XudMKRu7sMKsq2GAOCoW5NPnqRGJ_3NDV1HsEWDEWUxMN4Nml08rvD0-VVS0h36LwfDSvI6WPTT6b1oQv_--uP_gdjyKG17zQkxpPoiohMVF5n2eir-d-J6gme5g7wwtRbImYKYEiMyRAFep3uNNlBhMtRm7d6q_r6EjsXsu_WEir90WNNerPztvNS2oAOzYqcDhsG6KtsRJHbCzjFSUUFghA6ch8tzIpc4X_e-4wzx6z_eoonLkH7OiLajNzycYQgfH3UZlHjz1nyiV7FsPctOGeuWNMGFA4xiFkTXPkjAoelWRPjZcJ0p50FQ8Lma3i8MuOCuLow-afFG1I2MLQ9wAOW0I8XfjIJGoG0d3ppNcQdUK8tH-1A=w804-h136-no)
+
+
+
+~~~
+$ sudo vim /etc/hosts
+~~~
+
+![](https://lh3.googleusercontent.com/5ngAxtISJNgOidVWDgImqatjy4bzcl3cJqOhm2UBpAsE4o3wB53afTeEt_Gb_L_-lXvUBUlN4OcK7sqepXZu6TfnFc2nMnuXtraSvrha9d0d94ArYREp7hK0NdV6Vd0fPd7p9fxBB_Stne9UN5oRutGP0F1FT2FHmAawj8ep5_RkXgSUAAY7rOf8hp4sTUoBClv03lFqK-PvdEf7YRovmjLeLXVS_6muITlUbVGcFX_4Y7jGvhMYhXzQExzzBe7ajgnt71v6Dmyp6Wmio6cWP8RulIXhSoGc5ssuEhhDwHXW-Zk8P8CLpPW3UoB4q0-X1-pB69LvE-xzwQMpg-0kOXdiUToFAlGWv_6ZJ0ZEU3OCKPprd0wIi2oJ170rXkodmqWO-H1ymVW-0M-43nciuYfgyql2ocm9En5X9j9ZtM-00Tyd-uX6u-NXbeYYl4UYB_0HXgZs4ueMzlQ8eE7U5aSfxU2B1WIHPxqSQqitfOaPTKV8s_uF0Gx1ODbQTTfJPKV9lobXe7UMGWddrLIZfX9zwT_4_H2EWeVIT1nLUhJET8opdvHFAoMPPtclqCCtSroGU10qzjVxzh0VKr73N2uY8y1VLiXNBJEI3sKYU9JINutdvj9fkwCOjepYqUljB3F9kI2SEVgzqyMsAmLnxZOJVcLVh3-U0-7eob-8KlakTsrzc5P69VjRnqKpPGqlLSH9OZfBj9V1NKJrheW8sWe_21cToFumPaza3Vs67z2aXwuCMg=w809-h248-no)
+
+
+
+이를 적용하려면 우분투를 종료하고 다시 켜야한다.
+
+~~~
+$ sudo reboot
+~~~
+
+
+
+바뀐 호스트네임을 확인해본다.
+
+~~~
+$ hostname
+~~~
+
+![](https://lh3.googleusercontent.com/EOuji_KjIgPw2TqJNazo5rbTDfu6Yr10faVEMjq0BgRDcgWUnWDkMWglAZGwIlMIO7BANshH8EpQy6sB77ykL7oFAicMyc5ysBA_gI6obnc0wO_DNkKO4JY5_x6NkzTIbHpBUddpM8D5qYmKdXZsNc8NjXwd1Ui7fhG_28vZOO6iUmMi5Sd9lQTZhJchOVu5RMk9albijFGoJoW4P2lFEt8NT3yRmeErkojrwM7t-ZHS7o-nbcCq1RjYffGPrI7b_Ff51ja4tniQhE6W4-6SBEtu8g7j7KvxV3rF58WSnqGEIKB1E5H8z6hdfSdqGlD6DFq3QScg7TcRyVs4axRMwwa4-S_NwRQEOae4l-W-rPEgmUIMbTRtKzbrpvREFoHUfuWSTsyxzHi28Ky0KW1ORXEyQncwszL4zi-EyQLL8om6IMK5fEXvxufm2_gB9Vb4F9W0iAdiKiMxr_pwAzGcMvfhkq3wCZg9p8nn6zAYHL-RLfW9Y1cArmOWzTFFhhSN8kEbhYuqOi2Lfb1OwRBHrQtoTvV5ef0wokxkwGC_qiIHIR-ROWxUORwQNbFurvFb3UmKAn4AwS_pudUmD_NXpbU4dSZUh2nZghk-A4nXS8KQaVJ3KV1xYGTpjuFVTMnTuL4yNlnOdtpGGgLnofXhXekhXX5mXUq5KQeLwBn_UWwJ7lu0_XI12QPktYTf9qm2A36FNFTHXrGZjn4RvWZSKufILW2Ri8IBhWsVaXj7exu_55CtVQ=w674-h117-no)
+
+<br>
 
 <br>
 
