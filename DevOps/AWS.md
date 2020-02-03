@@ -209,10 +209,16 @@ $ ssh DevAndy-SpringBoot
 AWS 우분투 EC2에서 호스트네임을 변경하는 방법은 다음과 같다.
 
 ```
-$ sudo vim /etc/hostname
+$ sudo vim /etc/sysconfig/network
 ```
 
-`/etc/hostname` 에서 ip주소로 입력된 호스트네임을 변경하고 싶은 서버 이름으로 변경한다.
+~~~
+NETWORKING=yes
+HOSTNAME=[바꾸고 싶은 hostname]
+NOZEROCONF=yes
+~~~
+
+변경 후 서버를 reboot하면 바뀐 hostname으로 적용된다.
 
 그리고 확인해본다. 
 
