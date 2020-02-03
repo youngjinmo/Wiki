@@ -7,6 +7,7 @@
 리눅스의 역사나 배경에 대해서도 차후 더 알아보고 정리해야 할 것 같다.
 
 - [명령어](#linux-commands)
+  - [Shell과 Kernel](#shell-kernel)
   - [find](#linux-find)
   - [Symbolic Link](#linux-symboliclink)
   - [grep](#linux-grep)
@@ -29,6 +30,24 @@
 <br>
 
 #<a name="linux-commands"></a>명령어
+
+## <a name="shell-kernel"></a>Shell과 Kernel
+
+![](https://lh3.googleusercontent.com/qxYl-vCqMIO4MaGtuc_5KFvCAyI_qoajHT0p5FwY51s1nbP1-NgSAtMtDkeVplaRZQi1H-hw5M8qqmhH-wQwIQUHNenDgWkf-OuOShPfUmsV5EVb9D8UNbZClTa0mZlVgO3EyPePY6rFfaWHoEDbp627Ay4Le3TV421uLI5BmA4PSwiKxsl7s-s4q5v_YhIQQ_-kugRF1GpRER1q1TvUKhT0jSfHdx4IDnTGqBMy4PNeUUr5rPfAlIs-A6HldTLqTMUZD-aEc73PASY59JfiWiXae3na28h0tYprlHj1RH8BZPd6ISlRihr_NzsBI1AMt7X91EJgNr2u-5WRXGMRbGiQDTETDvg6UiPYnn6hzVY-DTkKdOaVqynbNLzXfMWDY5fN818tKURtqtxGss8178Ls95cK2wbzRP1Y7KqWz5XTVE6t7qH7VwM5hWaikMtJuiZUiYtr03oEWhA2-z9Foz8HmWPHYH6-JhC-5csOy2ehpM4ucAQkjzo3K9ydWuAqZLXxWVBgHnYOOwr0jZcq8a2DgTF860xNUBr43DmWgLikcOICaCoseKXbEeoP52DewOO9po3W_Nzhxh4MYlUKOs1q2nJZDBWvbXA8gDiWjITu0vv9m0q_oEASJ_2ju-gqdXAPOrEx7hn7XwdRPxJBchkH0q2ux01-uXHeffVLT3eVMkULE7A4kITN1_Nl-z0k-HvdR45gjRj50aNb7Zs2wdcr0snL5QM1QSnnMQuXiVRxJpoJ-A=w353-h265-no)
+
+하드웨어는 물리적인 컴퓨터 디바이스를 말한다.
+
+커널이 하는 역할은 물리적인 하드웨어를 제어하는 역할을 수행하며, 운영체제의 코어에 해당한다.
+
+커널을 감싸는 쉘은 개발자가 직접 제어할 수 없는 커널 대신 쉘 스크립트 명령어를 입력하면, 쉘에 해당하는 응용프로그램들이 해석해서 커널이 이해할 수 있는 방식으로 해석해서 전달하는 역할을 수행한다.
+
+커널과 쉘을 구분했을 때의 장점 : 
+
+커널과 쉘을 구분하면, 다양한 쉘을 만들어 낼 수 있다. 이렇게 되면 개발자의 선호에 따라 다양하고 편리하게 쉘을 사용할 수 있다.
+
+출처 : <a href="https://www.youtube.com/watch?v=HYQ65yUlJDg&list=PLuHgQVnccGMBT57a9dvEtd6OuWpugF9SH&index=20&t=0s" target="_blank">생활코딩 - Linux Shell 1. Intro</a>
+
+<br>
 
 ## <a name="linux-find"></a>find
 
