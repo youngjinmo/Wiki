@@ -59,6 +59,7 @@
 - [Devops](https://github.com/youngjinmo/TIL/tree/master/DevOps)
   - [Linux](DevOps/Linux.md)
     - [명령어](DevOps/Linux.md#linux-commands)
+      - [Shell과 Kernel](DevOps/Linux.md#shell-kernel)
       - [find](DevOps/Linux.md#linux-find)
       - [Symbolic Link](DevOps/Linux.md#linux-symboliclink)
       - [grep](DevOps/Linux.md#linux-grep)
