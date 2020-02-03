@@ -103,6 +103,7 @@
     - [Staging과 Commit](/Others/Git.md#git-staging-commit)
     - [파일단위 아닌 변경사항 단위로 Staging하기](/Others/Git.md#git-add-p)
     - [Unstaging](/Others/Git.md#git-restore)
+    - [git log 그래프로 보기](/Others/Git.md#git-log-decorate)
     - [브랜치 생성하기](/Others/Git.md#create-branch)
     - [브랜치 이동하기](/Others/Git.md#move-branch)
     - [브랜치 삭제하기](/Others/Git.md#delete-branch)
