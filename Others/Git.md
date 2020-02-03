@@ -6,13 +6,14 @@ Git은 버전 관리 시스템(VCS, Version Control System)의 한 종류이다.
 
 Git은 버전/브랜치 별로 프로젝트의 형상을 관리할 수 있기 때문에 1인개발에도 유용하며, 협업시엔 Merge 기능을 이용해 생산성을 올릴 수도 있다. 또한 코드 리뷰에 이용하기도 한다.
 
-개발자라면 형상관리는 필수다.
+Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://www.sourcetreeapp.com/" target="_blank">SourceTree</a>)들도 있지만, 필자는 CLI로만 정리했다.
 
 <br>
 
 - [Staging과 Commit](#git-staging-commit)
 - [파일단위 아닌 변경사항 단위로 Staging하기](#git-add-p)
 - [Unstaging](#git-restore)
+- [git log 그래프로 보기](#git-log-decorate)
 - [브랜치 생성하기](#create-branch)
 - [브랜치 이동하기](#move-branch)
 - [브랜치 삭제하기](#delete-branch)
@@ -150,6 +151,32 @@ $ git restore --staged "file path"
 file_02.java 파일을 staging area에 올려두었다가 다시 untracking file로 바꾼 상태이다.
 
 ![](http://www.mediafire.com/convkey/54a7/pln9p0sn3f2bed1zg.jpg)
+
+<br>
+
+## <a name="git-log-decorate"></a>git log 그래프로 보기
+
+Source Tree 같은 GUI 기반의 프로그램을 이용하면, 쉽게 git log를 그래프로 확인할 수 있지만, 터미널에서 CLI로 작업을 할 땐 어떻게 git log를 볼 수 있을까?
+
+먼저 git log를 한 줄로 보는 방법이다. 
+
+~~~
+$ git log --all --oneline
+~~~
+
+![](https://lh3.googleusercontent.com/UMZ-qlsJ9Z1OwdSTKpiFkmbEQEh3d1kSHCNBDjnjwuJlS-JJZ5_aNNLNtEXSuSz1rnx6VkooxOZbfqb02dS-1yoFENVmbR5vSUehsHN9vHe2FgiOhs3yqGZo24RQvVCbT74OybwPWSed177XJbYv3mpbmVMLPuT5ed5W_dPKv5ZRnVTAzlbeS5vbfPry6dlFn31zfVRxGqipC9luG97F30aIqvzfOTKi_CLyBS-cyCGvUysoRX01R_p3StyH-f1f3XaxASpAtwChS0KxCK_9Prv9oAd5z4NBrOo6-px1m9C3r2cy_NcwEoKGn0E9mk9vgeCkwzo0p7jJ8fV1nm65Td77-pyjdcc436NlJorRnPOCpbkvPXEJhU3dyWCWsUbMS0k14XTa28kD_s5GsULdWGvzrz87Oe38sKw-gXmVC3g5ex598cI3bRyUYh8OrbaN7vjecAsl8z032YDV-eKsL_XhPz0LaS2FD9hMB0PcXAJ04vJRNxKDkXUvKTM7IH18Lwv77-actW4scADbcM7ZMsKwPXelDHFlDtqZgEOpMIQL6h4Pujewl6KUR-MXTP37vBVLK2YXr1c3ZTubzKayN0QhJd3OQj56r_zphSN_1DLBgTC4IzOU1G3Clojy26I8XF-gkYf1Q2vE0XbEl9TmdlzXfGCJHwxLm9H3R_6qkyBYZptSBVWIg89DCaHAByC1Daj-sjkyn6HuMb_Lt2KnvUtLxXGqpDGa4wzXimp4MUFQGLXajw=w1354-h1453-no)
+
+이렇게 하면 시간순으로 커밋을 볼수는 있지만 브랜치간 구분이 되지 않아서 가독성이 좋지는 않다.
+
+
+
+~~~
+$ git log --all --oneline --graph --decorate
+~~~
+
+![](https://lh3.googleusercontent.com/u2dGkWciUBYLTknSWUafiNmjDCIfOnEwYd0jLdBJSHTNsRcLnXyJkj3KrN_eLsPU2cj7OLgK5kFpcmECfqbQvEbTX4barCkyC6YD9U4As4LFrkET16UZ26AT_Lzkx0d8pG4wxXZXkTDTAln9Dxq6S-Uqm84iX9klUf7szzxHk7rRgjCnjspAxzWzo8YKcbOHGOy5NSv5EnaYkqX5LbaSDxMQcfijJzlS37m7PcQFusZnQfZ6TrUGoNE7PIYQWHCNP7zndbg8AqGdzfCQIjOUy5RL8O6FnzmCgQKoP1uutsjqeVs2KN761FdQLsEKhgoqV3JnuYn11violqUUbOuMAG7uggIcb_EnrwQWBfTHAj0_pUMEEFRWZ_1-1maX_-y4FmY0cJ5bL_Wv0hb5TaVnJJoJAawo4y6_9OLBCYwz6WFplJa93N_0YWLBZEWjBkrjqxkOfDX7sTxf4QPj0A0GxT7i0Xnda9gJHypA1iM_R0W_RhBFuRVnTtejH-HbiQYeX44OXigXyNvtBuLQoN5vULJMhoPsaR5s9Zo4PJkzdf0x_RbK0Bq-6h26gu2sbxrr1pYhp5BJRCObdnq1wbSKND5i9e_T0HKztarpxH_gYrXHpzrzMX1b7U9ejv5eMcsuYfl6jT6gDd2AYZOFhx3F9BeOSjVzkl5933Mwf29noTERTbJsmjAWvINweu2tO54Pb38cRRcQYyK0ZDCucHpcj_TjDDjTpVdimhsVdXMDEN1VbeUsfg=w1347-h1453-no)
+
+각 브랜치간 커밋을 구분하여 가독성있게 git log를 확인할 수 있게되었다.
 
 <br>
 
