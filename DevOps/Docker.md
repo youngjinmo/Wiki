@@ -3,10 +3,11 @@
 ![](https://logz.io/wp-content/uploads/2016/01/docker-facebook.png)
 
 - [도커?](#intro)
-
 - [도커 설치](#installation)
-- [이미지 생성](#create-image)
+- [이미지 설치하기](#create-image)
+- [컨테이너 시작/중단하기](#control-container)
 - [bash모드로 컨테이너 진입](#exec-imageid-bash)
+- [컨테이너 이름 변경](#change-container)
 - [이미지 배포](#deploy-image)
 - [이미지 이름 변경](#rename-image)
 
@@ -34,36 +35,36 @@
 
 <br>
 
-## <a name="create-image"></a>이미지 생성하기
+## <a name="create-image"></a>이미지 설치하기
 
 먼저 원격 Docker Hub에서 설치할 이미지를 조회한다.
 
-```bash
-docker search [imageID:tag]
+```
+$ docker search [imageID:tag]
 ```
 
 
 
 여기서 official 이미지를 다운받거나 starts가 많은 컨테이너 일수록 신뢰도가 높은 이미지를 다운받으면 된다. 가져오는 방식은 다음과 같다.
 
-```bash
-docker pull [imageID:tag]
+```
+$ docker pull [imageID:tag]
 ```
 
 
 
 로컬에 설치된 도커 이미지를 확인한다.
 
-```bash
-docker images
+```
+$ docker images
 ```
 
 
 
 가져온 이미지를 통해 로컬에 컨테이너를 설치한다.
 
-```bash
-docker run -it --name [container-name] -p 80:80 [image:tag]
+```
+$ docker run -it --name [container-name] -p 80:80 [image:tag]
 ```
 
 위에서 각 명령어는 다음과 같다.
@@ -79,10 +80,6 @@ docker run -it --name [container-name] -p 80:80 [image:tag]
 
 마지막으로 컨테이너를 시작하면 된다.
 
-```bash
-docker start [container-name]
-```
-
 <br>
 
 ### 빠르게 이미지를 내려받고 컨테이너를 실행하는 법.
@@ -95,28 +92,53 @@ docker start [container-name]
 
 <br>
 
+## <a name="rename-image"></a>이미지 이름 변경하기
+
+생성한 이미지의 이름을 변경하는 법은 다음과 같다.
+
+```
+$ docker tag [image-name:tag] [new-image-name:tag]
+```
+
+또는
+
+```
+$ docker tag [image-ID] [new-image-name:tag]
+```
+
+<br>
+
+## <a name="create-container"></a>컨테이너 생성하기
+
+~~~
+$ docker create --name [컨테이너-이름] [이미지-이름]
+~~~
+
+<br>
+
+## <a name="control-container"></a>컨테이너 시작/중단하기
+
+```
+$ docker start [c컨테이너-이름]
+$ docker stop [컨테이너-이름]
+```
+
+<br>
+
 ## <a name="exec-imageid-bash"></a>bash 모드로 컨테이너 진입
 
-```bash
-docker exec -it [container-name] bash
+```
+$ docker exec -it [컨테이너-이름] bash
 ```
 
 위의 명령어를 통해 도커의 컨테이너 내부에 <a href="https://ko.wikipedia.org/wiki/%EB%B0%B0%EC%8B%9C_(%EC%9C%A0%EB%8B%89%EC%8A%A4_%EC%85%B8">bash 모드</a>로 진입할 수 있다.
 
 <br>
 
-## <a name="rename-image"></a>이미지 이름 변경하기
+## <a name="change-container"></a>컨테이너 이름 변경
 
-생성한 이미지의 이름을 변경하는 법은 다음과 같다.
-
-```bash
-docker tag [image-name:tag] [new-image-name:tag]
-```
-
-또는
-
-```bash
-docker tag [image-ID] [new-image-name:tag]
-```
+~~~
+$ docker rename [old-name] [new-name]
+~~~
 
 <br>
