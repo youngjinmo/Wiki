@@ -19,6 +19,9 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [브랜치 삭제하기](#delete-branch)
 - [원격 저장소 브랜치 삭제하기](#delete-origin-branch)
 - [브랜치 이름 변경하기](#change-branch-name)
+- [커밋 합치기 with rebase](#rebase-merged)
+- [커밋 순서 바꾸기 with rebase](#rebase-change-sequence)
+- [커밋메세지 변경하기 with rebase](#rebase-change-commit-m)
 - [Fork](#git-fork)
 - [PR](#git-pr)
 - [.gitignore](#git-gitignore)
@@ -242,7 +245,7 @@ $ git push origin --delete unit-Test
 
 ## <a name="change-branch-name"></a>브랜치 이름 변경하기
 
-만약 이름을 변경하길 원하는 브랜치가 선택되어 있다면,
+만약 이름을 변경하길 원하는 브랜치가 선택되어 있다면, 
 
 ```git
 $ git branch -m new-name
@@ -271,6 +274,100 @@ $ git push --set-upstream origin new-name
 ![](http://www.mediafire.com/convkey/5d11/rpk9z3iwnxxto6czg.jpg)
 
 출처 : [W3docs - How to Rename Git local and remote branches](https://www.w3docs.com/snippets/git/how-to-rename-git-local-and-remote-branches.html)
+
+<br>
+
+## <a name="rebase-merged"></a>커밋 합치기 with rebase
+
+중복된 내용의 커밋이 존재할 경우, 이를 하나의 커밋으로 합치면 깔끔하게 `git log` 를  볼 수 있다.
+
+~~~
+$ git rebase -i HEAD~~
+~~~
+
+위의 명령어는 최신 노드 기준 2개의 커밋을 rebase하는 명령어이다. 만약 3개의 커밋을 정리하고자 한다면 아래와 같이 작성하면 된다.
+
+~~~
+$ git rebase -i HEAD~3
+~~~
+
+
+
+아래 실습을 해보았다.
+
+세 개의 커밋이 있는 깃 레포지토리를 만들어봤다.
+
+![](https://lh3.googleusercontent.com/wrFBPeM9IcBuWy-V82zcjWlkh4sBp7kCH76Eg5DQSNadJ7rr7Sd6OLkOXRBhrw5bqLLgqXzkufijOF-xsHlsv0dW84EhtFstG4DhfbIXssexZm-XRaimxLIJRCrUtWYHoFCahV5n6WJylBUttblKcy9z-vc3iDH2MSfzkBBtFpEtM5cpoSzifPUHFPyv3TskpfAv2PD1bSAVkphlkCb7gf-226wtqxcp8A_Q96zEtX1NtF0iELXu0QL3MhT6bUuZe0caq7XxDieGCU322GMqfo05bmYLgZF7qQnBy_98cN7S1MnsvZBvv5cZTaH-DeoF4aSfS4BPjnTx2v9IQg96TFHP4sKevjG5xKpxyjSYFu5KG-vtc8eSdB_adpCDzWou569iYOkaA_nIQNJwhNlgQjSuKqCJl07TXD62CtLaiSdSM1UBT-oMVOgSXDJ9kvZDtAsNz7GE4foIQnrYVarlOCqwfVn2_6ZFsTOPG4MLu_PLYHbgIS65BfO_m5VZ7e6Bvx4fbp3I1TYr9G1doOWSTlH9n8V02gZaWUUfnfmR5m6hb7RHaHsJHr92gbND0U0JVtBO_Qp2X2g_836yet9QGIKoUwta9HcRw4qwjwLnquB6ImztoYYXmuCxsg9azhytQUqAuEysm9-pGe7-1-kB7lhaLc_9lCs1dgZHHLkRrIa0W2gWrPOUXg-otco2NFwOlzx6OYKW4b4dqqSvtHmtJIEPPACc-5vAAGa4Cms0JMp7gSo8Ow=w385-h206-no)
+
+~~~
+$ git rebase -i HEAD~~
+~~~
+
+명령어를 입력하면 다음과 같은 화면이 출력된다.
+
+![](https://lh3.googleusercontent.com/BvKCLTr8YJUl0Y8yzySJ31kZnUfGVuaAXBf7vGM4CmnVmPjPBTzA6hOMkVAhum38UytKb_gMefzqXmnjrWIChvBMEc_9qK2JaXX6VlRm3ATd15_pqQVDxMBZEE2mfWnSXgLdJi-RDeONELuWXQND8WtH0ca3VQYhrRHn6UhOuyyZ_bho6WLDwhgRvjQQTn2tw4Y-03iqOt8txzHS_URgqKviP8G8Kdzt74pVC0I29h9I_9JeW1j9hZCSqfEn42L0Hb0cFJDStnHlYJQlty9VooePVGOxlijy7RYOZmJgtavYcM-Am_pzPwbKcWmq2Rk4bIqwoyW9VVTGaSHg4SkbItexR2ht1zSVY-Dq4E-1zqq_8uXNZHIFRyURhV1k7uUC9gJJyI9ZTMKGeAiF8X-2svuuTiW6rWlcoOZ3jRV7mfpX6cganvjyNGwUhM-97jmD2_AhG36aHiOeqrQZaa5vmGuFz5SJoZfzGuiEQYb-5a4x9hvYHuG_KJJQ8gp5LpCTiUnjSJy1_xZ80XApjlc66Gel85RPNbeD2z9gC-3P03NSDlIlbzlmANVtKtrvRft19NFQdnhfphXdYdc76_IYk7okUIw0GwA_nSrDG1neRhBgUrrxu3s5XESu20azW7YG0dN_AvyZ3vI8BcoNbjE4AE7ej0bL2p92PYqQ5kxZ9nLN6OyB2LuaTMWoAusrlK2UiayWw8gTmHDHOykIYnY-Oou6XM6KFo0Fapkd_zrEnIkWmAS9gg=w525-h139-no)
+
+HEAD를 바라보는 기준으로 2개의 커밋이 출력되었는데 `commit - B`, `commit -C` 순으로 작성된 커밋들이다.  `commit -C` 를 `commit - B` 로 합병할 생각이다. 이 때 `commit -C` 에 **pick**이라고 되어있는 부분을 **squash**라고 수정하고 입력모드를 나간다. `:wq`
+
+그럼 합병되면서 새로 생성되는 커밋 메세지를 입력하는 창이 출력된다.
+
+![](https://lh3.googleusercontent.com/MfifGefByB5T4WQGzYRR9aOVCtfw5sf_FopOrrR7omA5-r-Ew_i18c7CdI3ktPq8cv0Pkd1sedz5aIjsc2-gzjBaEshxyQogdMRP481HjTT_iGsR8gH_SSlFQylDMn8NNr-d15b1KVW2DODj3b4Aa13lcbnQpPh_QbLRrDQOCAmR52O8qAh-HIYDcF1zCUI_yZw3XNc-YKVzLUvyuLQ--5j28zigRKrX95H-NAlLF7k4x9MxIJ_iHN8raYqvlVX2O7QbvyGuIALPviRsSOfmn7DT8jcDsIah6Ieg3YG_eenAOfvgCh1u6wk1di9CKeM7jE6pIJAso3rmOIPIbVo3BSIst0lG-PQjQdgmNdmU76Y2kL_bSpdyQ9G0PZ5k41HRMj_HhHq4ztoq79eBUn6Drtr2pzj9uhPAh1oocMStJIY15Oro8Qs3ZFEGPhIvVX7n9yssMxdwTTzhr3QSpMBo05YmokBJKsSNuy76fpZReKl5NTiqrGLEDmBYkJBmDOOfZCqTwLgCqFNEi-iqXF7gpf9MKPRGWxxwudhMQLzNUmkLHUnuMzvPV4npe1WTPoXfb27c2tiUcexoS55nZuYO44e0yBefU34LWc1GVvMO7iInEfB674xxp3tsp5ZJukUrVi107MHXpYrLQ-BbnpySQi27k6-8kLaIUnygQGWEo4noiLj7j0dby1Cg8ETP2wy-Gvn-AOgSbs6zoXetVJWsSPUWbxRmUq2JDjlXf5IeAuliPBqgLQ=w679-h332-no)
+
+커밋메세지를 수정하고 나가서 커밋로그를 확인해보니 잘 합병되었음을 확인하였다.
+
+![](https://lh3.googleusercontent.com/phioJps6Zu6vum9scMQnh15VhbzDxTNAWinSj-QPuFcHyEHTxqMnqR9T4hvRKgZwP3b7u3dub1oS4PhA_hJa2Lv7u7rtnNdisG_ZT87TBTy25ejBJylUjJPmnDc-d4DBCUDz2tinJq5XgO500ljsTS_0hUQCyuSpU7E_4ozketYQOv287loie5cMwZZkgr7SKD84olkTUmfZsvEqaQz7bTcfSvmh3e_iyEHeph1d7xLUs8KsQS21C7wbq-BTn0zqhctl2b28eULgp4VImnxeH3UIPMmmgyNdT1EEk472Tt6ksBZuRHOwBgn4A1oAtINNs7eYU7pGU6y3tGN5SIvBx9L230FeSbOZHmHuvVH7vFqJD7HV-HLv4ra8Xq9Bmxro_6QosNjRklL6C3j5bQT2ZOSF3HHvUEHa95-MTRs8aDBHSNKgVF3HVp4v7YKh2V7EQ20lKg4vsmHUlJS6NOltb__P4EginGgiYq9JRQAUF5onlf8FITmIwmwk22Nj0IgN7Ftckte-uQRSZOJ_YaJRvvSWOdiJHvfP1NvynWHOUC0kbvnGPBRmz31lgwxUucfXn7q-wLOnk4gxDhiOZexyAEQVFT7sZnDVqUG5aK3hL6csEmY3RVFv6nBw3Z9x7QV5mY1mAsY5aRLZ16oyQHhaQtTA3NpvqofXQXfDFIZ1LtRQey3IGCFy0Md1Sk7FC_AHD7UuKtCb-khiSyEdm4HBfTp2qtdCCprTNtPuxgU3MrNA7Pibsg=w809-h320-no)
+
+<br>
+
+## <a name="rebase-change-sequence"></a>커밋 순서 바꾸기 with rebase
+
+커밋 순서를 바꾸는것도 **rebase**로 가능하다.
+
+위의 실습 레포지토리에서 커밋 `commit - D` 를 생성했다.
+
+![](https://lh3.googleusercontent.com/DM4Z5n9HpqnMw7upbjSQV85VY18teMzJJsb3zfoVfD7H2OVhhmvgUpR6JJRJF2idRT4jtmG5TXd5Z46OCDfqgaSKR4oIFqnGVtQmJZXTgru-fG3_-QHBFymm5sJKhss3g-ZDyjF2QB5yGjLVTwnVjhRKdXbE5JlPrIP_GFI1_7tdcNuBykzaScnnk5DVxRJqukY7eRH2FFJxJOa_-EjRc-QLngZPz9conAvqPOx7r_Ftt9x2fXYRMdNPzczZoiYM48ATURddHur8tkK5oneccNkVKQV_pgvzzhOg40RTnmTxVSj6nmaOkvoDyDzISTClvPuggRXvElgTPmxdOl36NM0_hN33y8qmDBPeX765wbxxxAmcH3I5Ps-Gf4NUB4d25t91GS2hZBOgRjEWG7aexwZ149riQjKUyzYlifIo6xE8Mpy1L-1-F-eOGKBIxDvXci5CIv5o27FA6YmOku1RK9vVEUuFalpKEqGfQyu8URUFBup2tpjO5UCIih0ntqV0OFLaiNTa65_S74YrE4n-qqAMEiWpa3VPBjj3oMoGXHLyA0Nk4shq6lwLsZRYnFvrIUCjxYautJKtVtxFHzkpqUAP2tCnoXrTcdgkIp5IfjbVJcLf34zjThCE9N0Mz_a4fldxzNCTE_FCoN9sHL2YDYjFzTwwPE4c8mcmNwl8UMoARb-iNnD6XB2VwTj6ZvQyf02-f8EwslGJLBHTQv0meO3fyI24VIymd0pAQnxHIT-EcumFtg=w811-h456-no)
+
+이 상태에서 **rebase**를 시도했다.
+
+~~~
+$ git rebase HEAD~~
+~~~
+
+![](https://lh3.googleusercontent.com/gv99OY72eT07pXHGwMrncAuDDDu58qnk1xSz9nmMFiyWGm7SSn6MqReUKLeERRLWmc4ar_hA_CKCGbMOrwmyKOw-gdmoFTLjSSC8YcBf76dFMBtDl1rEhGH0Lf1xI-WektXHTWCetiL2w8PnkKUoQNgYi7GU2cJ4Chhf66hPn5B9a87cYlzvf8fd6QhdqzwnsoBb3cTRiEYDq9oUKPYZeCSJC8kOxkw4pmRu5LkDUkg7eWHyud8PEQ_g7xd8I4-i6o3rMTcAcz-Kb3cIgtLcHaxFmY7AfHfmOuv9HRFp3F-7kUKR-a3fNl3xMloxZa2XuYUkO-HVrNJqYOJRmFsdAbmRk_Z9Le1T-ViFu0sKwPICeHWns83h-NlodBsKfkOtiJYvzu3GeVcs9ZwWQXveKaBZZGfyxxrzPZhZJHkz70OVHWJdeW5N2Jo7FdAJlXxIXvLPTltD4fmOkKVk8Llvqim9kVhOZ-tbDqCZ7TbJm2k8EZFegINH5qedq6ak8g8nAJkUIk7dSSDl5ixjl3hTBCOZgIYRBK-7S6shbsWU6BIEFIZNQqz15J5KDRLOolKdJk3PMXfDGArSUiSOm__SIMCUaY0yuORzdrVjBKFiX-loVtRqFxWmhT4oyraoHH1_X-CdGgNsdOsc1kJA-GQ3jZMRufpotIxcDT9HeqmzFmcFdngsX8TxNtdwdRdz1ZMRPy2e-y1W_UJw3NIl4AKujNq-hv4oBnxQzoNL23fQIjEcWgNhjA=w526-h134-no)
+
+여기서 변경하고 싶은 커밋을 순서만 바꾸면 된다. 리눅스 명령어를 사용해서 쉽게 바꾸었다.
+
+`yy`(한줄복사) 로 합병된 커밋(`commit - B`, `commit -C`)을 복사하고, `commit - D` 아래로 `p`(붙여넣기) 를 눌러서 붙여넣었다. 그리고 원래 위치가 변경되면서 사라질 커밋은 `dd`(한줄삭제) 를 입력해서 삭제했다.
+
+git log를 확인해보니 순서가 제대로 변경되었음을 확인할 수 있다.
+
+![](https://lh3.googleusercontent.com/UyHO-dqZK4R_lw7NI4Ma6pN7pxyl8nnORSlElcVmHnNT9WcPvih3jyYwZpyk4R2yuuzcgcsF03kjfJZZIyJTFmzvGF7HWQeMu_hXFUwi4DXhV6ZI_iYvKmvqkRc8AZq9WU3zHaZdhZzlIKeRDvZcPDx4ZV2d3BRmT0ohbwPlfCmgnu5FpMpoUqscn3llRWr6zy7pjISzSSMxASSi7afRLFG-9PYuKT1chgniWLVX2QlN3iwlDwt0gjK0Fk8MK8mnaQtTvtZmLN8us_4cO7-QlmVhCo9QJg-lb0yDSMxxh-3tLR7QRO4QUKvc0rRvwF_2Sg8xsMPOUtvCS0U43yQv7lEAUMeErkX2zbihyOXvP_fQJ2r1W9HaBUgwJelFFfIjx7eA5xierPeZYr27YbI2mmdda-okxkE6Qdn31RTm0dznSNNIKT_UMJCdBAikeMXp03fbyC_ndqu1_7twPAmJ_h3R28SSTyLs9F8N1jkcQnfZx-xYq3XR9PvgQI3ibxChiWJjZEGDU7NY3ZQu-qTtrDYvLLrHABUV5DM9qo0KFQvhJfpF7WHGAMZWsczocT8KtV2b-dxDfOQmDw7kGfXw4EeJ9nN_1Tpr9Q1ne0nKPZiVmFetGCr7HSHm8_GxyNUOepTpyWMOQ3uD2lMxr46kKEa2jshmyHwmb0RGGhFkk_kGOv8NRO29LzSW7g8xr2Wke5Mc1E6xHmYXE_oB0suYEPhotUSNKnE0GNrYv1RvySU61B1GGg=w809-h447-no)
+
+<br>
+
+## <a name="rebase-change-commit-m"></a>커밋메세지 변경하기 with rebase
+
+~~~
+$ git rebase -i HEAD~~
+~~~
+
+![](https://lh3.googleusercontent.com/yolPt_hdMMT_qlu4CKvUe_FeO_GeToFXzNM7WJDvc3b8_6BY8Pez9XyBHCI9jZ8lBJ-VGsx3R-tAxQAe2W_43Eg7YZJbU006fGjTDjMdiLo9e0es8HbsXJnnv743l8Rj5ZcS38dIz9pjw2PdAjAQQSrYM_YY9vvpYlnHgX9IXAdwktiX6wjyxslqfJwVxxyWB2k7DmLyycYsEwgb3XM9X9e6UzGZZf8IZ5I2MMkcHQFedQSC0fuCUAiKus29cjp0ytFt9CMSWNpfIRLeC9njdz434GNmvHp4Lf8Osrv1UKHi0pkFbze-mtCzS9AxxARA0q7bPAt4-0cZu-Vxk14XxP-NkOK_rZd2DperDn3ADAWcoZvezUxp8-zQIK1mNFLx9T-AtZNC8-gvBCwrmST_5RO0KEr8oMjoUXRJux_fkkb5TtwZVkXLSqG3lNERqpfwE7HYD8Hcg8VnTM2_gnVTMNw8IESxCFCiJ8FuVaRdVrvtBHsn3qpPDkWeU1timHmv_DCX94nQaGxwkBiAz0c2m5J2RSKjc53MCejcUXyxutFFDdvYXdiIOGspnT0ZJPR19lIiREiurfQg7nohIsvCEmH2Et-5gtQVOAv0jHBXOF8JCB6clh3mHs0rJoL79Z8JwFdDLFFPNkQvhgI02ZMiQIjgCRU64Y3wUB9Op4IDTRd2rt7o-tyss_8lIJQ4JualjUzRSYv6UkiXqrHm2vY6FhLJL4ekMuIVNLWlCNvH0FSDOt93Rw=w536-h137-no)
+
+**rebase** 명령어를 입력하고 화면이 출력되었을 때, 메세지를 수정하고자 하는 커밋의 앞에 edit으로 바꿔준다. 그리고 입력모드를 나간다 `:wq`
+
+그럼 아래와 같은 화면이 출력된다.
+
+![](https://lh3.googleusercontent.com/7ykSpSc1fV1iwMWl_cLklSq_9kR16045Q2F0N-nXoKY55S3ZqmnwAZAXH9ElY9jw1RZyHDIhbgvOAiF53oYGGaPQzYVk3EwqyOyhOHi6uRut0VddfyHKDXPCch1ylGDkZrPs1qHXKQWMXFPjifpD7Dtu0xiz6d2blajIpRqJLYhEGpAH_njJQDACNZfvKxNBaqTw8aJtz91F4hQsGg84I884rX8UgRRzC3V_V5goWqChS8-BnluuZ0GePGxGGC93YblC2hDVP6cNC7yB9nlUq1ESeVfVvDnFOr9oo7SrTF6h75kmaa1nVOcg3XUAwnlVaqx193oMWgMY3eGGUiHiW8we9UJBp_MZLh7Ge61F_1FqO2zhdAIbeVZ-m7TG1sHLXPnjgL4SFbRr5eVpJ5uJ80kfNGX4hSW0cI1xPhoLslZtT-zdFQNmXLl_2os6-bO3WeRSEseVvCvR50ip_r_erIQm_QEvzJsef78NvTZlYvGDzB0EL5mYGMhy7nV7RwDpu0K8mBCCuUnjZOwdV0zTfKlGGp6SNnojIBmw9GItLuIjO-2sFGmacdH_clYKLmBrmgWTd3jXXX5WQaiSaXbJF_TECtn4jLk1WN_bXPkJ5MTziPcba8a6tl1aoB2jpTClpBxyTht6nwlpFWjKvvxHwks3mdIpMDcYtMzLh1J_XR72jAc0zA0wVp_gBdG1DM7lCNk75va1ed0ZNdVRrqXGG7T2BWVyG6_BakOWQNvmL0Ue9_c2YA=w594-h197-no)
+
+위의 메세지대로 커밋 메세지를 작성하는 명령어를 입력한다.
+
+~~~
+$ git commit ---amend -m "new commit message"
+~~~
+
+새로운 메세지로 커밋 메세지가 변경되었다.
+
+![](https://lh3.googleusercontent.com/4GusG71YPR9n8dof7TDBkUosSNPCUPEyn8OQkuOgM4y_hKps1yWXpH_k_4KPCf-C8dnBSOjSi4x8u9XI-OnemuU8pPV1SSX5bWAtETSJrHBjRbPM6kKv4ahGDXelqwCE02GAW7IIVRqT_JLW6ZPOesUVIebx6u29vvWne518J2UWPrGq8octTwvKlCPDlW6UYhvnRcsPmWU8JfUcyJmWiESRVySCRPMNNfywYDVaq3vAmh9moogXAorGGijxiW1mW_Igp9-M6vWM6oxXfqgwfzw66YhFm3yq2cTGSrkc_fKbaMnhdkTCKnf2_1UHc1K1G_PBRH5rl2kJBt155Pz8hU2ehpzLFkVHJ3chWDUh7JyGZXzhxIgFhHqemLhJM5dVHYlPSV5hyHKkwousEUysz6yhf66betz2UYbYS1PVCVjLXtviM2WswEp83MXLnDtbjk0RH2xAzimyFSxG2eOwp4p76pYCktX04DKgLY3aLYl5HKYMqBLvfNTODaphJ9c7LavCXuleFy-sbBhyeQjGn2KR68niaco7L5XKeeAHw2p5pceJCOiSRYRgjW9PQbE2SBnE-tSHvdLH_nJZzNM5jAPrPQexhE2-pTf81NwtZ7OKwAG9j9vExkkN40KyTe17dFQtgm7Ub5T3JxjEUo9h3rYW0KU-8YYiBVD96xIYXDpBEwVR747Bq1GvABoXt1RhScsf4SeU6MHBmea1uPhabHnGu8TqobbnJYRn48wLKtGCL0KS4Q=w808-h427-no)
 
 <br>
 
