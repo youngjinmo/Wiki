@@ -5,11 +5,15 @@
 - [도커?](#intro)
 - [도커 설치](#installation)
 - [이미지 설치하기](#create-image)
+- [이미지 이름 변경](#rename-image)
+- [컨테이너 생성하기](#create-container)
 - [컨테이너 시작/중단하기](#control-container)
+- [도커 이미지 조회하기](#images)
+- [도커 컨테이너 조회하기](#ps)
 - [bash모드로 컨테이너 진입](#exec-imageid-bash)
 - [컨테이너 이름 변경](#change-container)
-- [이미지 배포](#deploy-image)
-- [이미지 이름 변경](#rename-image)
+- [컨테이너 삭제](#rm-container)
+- [이미지 삭제](#rmi-image)
 
 <br>
 
@@ -125,6 +129,30 @@ $ docker stop [컨테이너-이름]
 
 <br>
 
+## <a name="images"></a>도커 이미지 조회하기
+
+~~~
+$ docker images
+~~~
+
+<br>
+
+## <a name="ps"></a>도커 컨테이너 조회하기
+
+실행중인 컨테이너 조회하기
+
+~~~
+$ docker ps
+~~~
+
+전체 컨테이너 조회하기
+
+~~~
+$ docker ps -a
+~~~
+
+<br>
+
 ## <a name="exec-imageid-bash"></a>bash 모드로 컨테이너 진입
 
 ```
@@ -140,5 +168,37 @@ $ docker exec -it [컨테이너-이름] bash
 ~~~
 $ docker rename [old-name] [new-name]
 ~~~
+
+<br>
+
+## <a name="rm-container"></a>컨테이너 삭제하기
+
+~~~
+$ docker rm [컨테이너-이름]
+~~~
+
+복수의 컨테이너를 삭제하고싶을 때는 `,` 로 구분해서 컨테이너 이름 또는 컨테이너 ID를 추가하면 된다.
+
+<br>
+
+## <a name="rmi-image"></a>이미지 삭제하기
+
+~~~
+$ docker rmi [이미지-이름]
+~~~
+
+컨테이너와 마찬가지로  `,` 로 구분해서 복수의 이미지를 삭제 가능하다.
+
+<br>
+
+### 컨테이너와 이미지 동시삭제
+
+이미지를 통해 생성된 컨테이너가 존재한다면, 이미지 삭제가 불가능하다. 컨테이너를 먼저 삭제하고, 이미지를 삭제해야 한다. 그러나 이를 동시에 할 수 있다.
+
+~~~
+$ docker rmi -f [이미지-이름]
+~~~
+
+해당 이미지를 통해 생성된 컨테이너와 이미지를 동시에 강제삭제된다.
 
 <br>
