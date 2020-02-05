@@ -115,7 +115,7 @@ $ docker tag [image-ID] [new-image-name:tag]
 ## <a name="create-container"></a>컨테이너 생성하기
 
 ~~~
-$ docker create --name [컨테이너-이름] [이미지-이름]
+$ docker create -it --name [컨테이너-이름] [이미지-이름]:[tag] /bin/bash
 ~~~
 
 <br>
