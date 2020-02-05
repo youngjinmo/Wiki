@@ -5,6 +5,7 @@ HTTP는 클라이언트와 서버간의 통신을 위한 프로토콜이다. Hyp
 클라이언트와 서버가 request-response할 수 있도록 역할을 수행하는 프로토콜이다.
 
 - [GET/POST](#getpost)
+- [URI와 URL](#uri-url)
 
 <br>
 
@@ -38,7 +39,7 @@ w3scool에서는 다음처럼 GET/POST를 비교하였다.
 
 <br>
 
-## <a name="uri"></a>URI와 URL
+## <a name="uri-url"></a>URI와 URL
 
 URI는 Uniform Resource Identifier. <u>인터넷에 있는 자원을 나타내는 고유한 주소</u>를 의미하는 규약이다.
 

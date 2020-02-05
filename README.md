@@ -55,7 +55,7 @@
 - [CS Knowledges](https://github.com/youngjinmo/TIL/tree/master/CS)
   - [HTTP](CS/network/HTTP.md)
     - [GET/POST](CS/network/HTTP.md#getpost)
-    - [URI/URL](CS/network/HTTP.md#uri)
+    - [URI/URL](CS/network/HTTP.md#uri-url)
 - [Devops](https://github.com/youngjinmo/TIL/tree/master/DevOps)
   - [Linux](DevOps/Linux.md)
     - [명령어](DevOps/Linux.md#linux-commands)
