@@ -25,6 +25,7 @@
 - 패키지 관리툴
   - [apt-get](#apt-get)
     - [update와 upgrade의 차이](#difference-between-update-upgrade)
+    - [apt-get 패키지 설치/삭제하기](#install-remove)
     - [ubuntu에서 jdk, jre설치하기](#install-jdk-jre)
     - [ubuntu에서 java 설치 경로 찾기](#which)
 
@@ -328,13 +329,38 @@ Ubuntu에서 자주 사용하는 패키지 툴이다. `apt-get` 패키지 툴을
 
 ### <a name="difference-between-update-upgrade"></a>apt-get update와 apt-get upgrade의 차이
 
-- `apt-get update`
-  - **설치가 가능한 패키지 리스트**들을 업데이트. 
-    설치하는게 아니라 설치 가능한 리스트를 업데이트하는 것.
-- `apt-get upgrade`
-  - **설치된 패키지**들을 최신 버전으로 재설치하는 것
+```
+$ sudo apt-get update
+```
+
+**설치가 가능한 패키지 리스트**들을 업데이트. 
+설치하는게 아니라 설치 가능한 리스트를 업데이트하는 것.
+
+
+
+```
+$ sudo apt-get upgrade
+```
+
+**설치된 패키지**들을 최신 버전으로 재설치하는 것
 
 출처 : [ask ubuntu - What is the difference between apt-get update and upgrade?](https://askubuntu.com/questions/94102/what-is-the-difference-between-apt-get-update-and-upgrade)
+
+<br>
+
+### <a name="install-remove"></a>apt-get 패키지 설치/삭제하기
+
+apt-get으로 패키지를 설치할 땐,
+
+~~~
+$ sudo apt-get install [package-name]
+~~~
+
+apt-get으로 패키지를 삭제할 땐,
+
+~~~
+$ sudo apt-get remove [package-name]
+~~~
 
 <br>
 

@@ -77,6 +77,7 @@
     - 패키지 관리툴
       - [apt-get](DevOps/Linux.md#apt-get)
         - [update와 upgrade의 차이](DevOps/Linux.md#difference-between-update-upgrade)
+        - [apt-get 패키지 설치/삭제하기](DevOps/Linux.md#install-remove)
         - [ubuntu에서 jdk, jre 설치하기](DevOps/Linux.md#install-jdk-jre)
         - [ubuntu에서 java 설치 경로 찾기](DevOps/Linux.md#which)
   - [Docker](DevOps/Docker.md)
