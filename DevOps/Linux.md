@@ -8,6 +8,7 @@
 
 - [명령어](#linux-commands)
   - [Shell과 Kernel](#shell-kernel)
+  - [비트(32/64) 확인](#uname-m)
   - [find](#linux-find)
   - [Symbolic Link](#linux-symboliclink)
   - [grep](#linux-grep)
@@ -26,7 +27,7 @@
   - [apt-get](#apt-get)
     - [update와 upgrade의 차이](#difference-between-update-upgrade)
     - [apt-get 패키지 설치/삭제하기](#install-remove)
-    - [ubuntu에서 jdk, jre설치하기](#install-jdk-jre)
+    - [Java 설치하기](#install-java)
     - [ubuntu에서 java 설치 경로 찾기](#which)
 
 <br>
@@ -50,6 +51,16 @@
 커널과 쉘을 구분하면, 다양한 쉘을 만들어 낼 수 있다. 이렇게 되면 개발자의 선호에 따라 다양하고 편리하게 쉘을 사용할 수 있다.
 
 출처 : <a href="https://www.youtube.com/watch?v=HYQ65yUlJDg&list=PLuHgQVnccGMBT57a9dvEtd6OuWpugF9SH&index=20&t=0s" target="_blank">생활코딩 - Linux Shell 1. Intro</a>
+
+<br>
+
+## <a name=""></a>비트(32/64) 확인
+
+~~~
+$ uname -m
+~~~
+
+간단하게 현재 접속되어 있는 리눅스 커널의 비트를 확인할 수 있다.
 
 <br>
 
@@ -364,10 +375,9 @@ $ sudo apt-get remove [package-name]
 
 <br>
 
-### <a name="install-jdk-jre"></a>ubuntu에서 jdk, jre 설치하기
+### <a name="install-java"></a>Java 설치하기
 
 ```
-$ sudo apt-get install openjdk-8-jre
 $ sudo apt install openjdk-8-jdk-headless
 ```
 
