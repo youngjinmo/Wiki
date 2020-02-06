@@ -71,6 +71,7 @@
       - [서버시간 변경하기](DevOps/Linux.md#change-localtime)
       - [UTF-8 인코딩설정](DevOps/Linux.md#setup-utf8)
       - [호스트네임 변경하기](DevOps/Linux.md#hostname)
+      - [wget으로 파일 다운로드](#wget)
     - [Vi Editor](DevOps/Linux.md#linux-vi)
       - [입력 명령어](DevOps/Linux.md#vi-input)
       - [이동 명령어](DevOps/Linux.md#vi-move)

@@ -19,6 +19,7 @@
   - [서버시간 변경하기](#change-localtime)
   - [UTF-8 인코딩설정](#setup-utf8)
   - [호스트네임 변경하기](#hostname)
+  - [wget으로 파일다운로드](#wget)
 - [Vi Editor](#linux-vi)
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
@@ -277,6 +278,25 @@ $ hostname
 ![](https://lh3.googleusercontent.com/EOuji_KjIgPw2TqJNazo5rbTDfu6Yr10faVEMjq0BgRDcgWUnWDkMWglAZGwIlMIO7BANshH8EpQy6sB77ykL7oFAicMyc5ysBA_gI6obnc0wO_DNkKO4JY5_x6NkzTIbHpBUddpM8D5qYmKdXZsNc8NjXwd1Ui7fhG_28vZOO6iUmMi5Sd9lQTZhJchOVu5RMk9albijFGoJoW4P2lFEt8NT3yRmeErkojrwM7t-ZHS7o-nbcCq1RjYffGPrI7b_Ff51ja4tniQhE6W4-6SBEtu8g7j7KvxV3rF58WSnqGEIKB1E5H8z6hdfSdqGlD6DFq3QScg7TcRyVs4axRMwwa4-S_NwRQEOae4l-W-rPEgmUIMbTRtKzbrpvREFoHUfuWSTsyxzHi28Ky0KW1ORXEyQncwszL4zi-EyQLL8om6IMK5fEXvxufm2_gB9Vb4F9W0iAdiKiMxr_pwAzGcMvfhkq3wCZg9p8nn6zAYHL-RLfW9Y1cArmOWzTFFhhSN8kEbhYuqOi2Lfb1OwRBHrQtoTvV5ef0wokxkwGC_qiIHIR-ROWxUORwQNbFurvFb3UmKAn4AwS_pudUmD_NXpbU4dSZUh2nZghk-A4nXS8KQaVJ3KV1xYGTpjuFVTMnTuL4yNlnOdtpGGgLnofXhXekhXX5mXUq5KQeLwBn_UWwJ7lu0_XI12QPktYTf9qm2A36FNFTHXrGZjn4RvWZSKufILW2Ri8IBhWsVaXj7exu_55CtVQ=w674-h117-no)
 
 <br>
+
+<br>
+
+## <a name="wget"></a>wget으로 파일 다운로드
+
+우분투를 GUI가 아니라 CLI로 사용다가 파일을 다운받아야 할 상황이 발생하곤 하는데, 이 때 사용하는 패키지가 `wget` 이다.
+
+aws 우분투 인스턴스에 SSH 키페어를 저장해두고, 사용하고 싶어서 `wget`을 사용하게 되었다.
+
+1. 먼저 `.pem` 의 키페어 파일이 담긴 폴더를 압축(`.zip`)한다.
+2. 구글 드라이브에 업로드한다.
+3. 업로드된 파일의 공유가능한 링크를 클립보드로 가져온다(복사)
+   ![](https://lh3.googleusercontent.com/qtDCQlHyq9uZsWldOiOvcsh_TnSWKek5EGefoGCIXXbKXthN9EhN5Y7Yrn1YzCJnq9VzvYAU7PNe5z5Iplvgm36TiIMjGrpk95QdubwlgtKmyrB2RtWtUw3wITdEInI6_hqTn9UGJyy7EB9m3gqSNrWU_FXkq4ySzC29PiUDthEdRSDzPyLD_NseectgCblVCrdDYdml1tzLreRWT9zyhTzO3goDGVx7ho0s9d04mwd0atbaPx5sZya9SJRmmR-5CMBVQ2VIVwY0M6t6F0uufFqQRTHTiNXWrD8Q-aik8ds4rLqIqF3G_31h4nvtb2VOpVNnc57yieHZy7nJA0GEXnaFVeIJLIlnUpnHm2lhwJH8W61zUFDEYGyh4ZvaeIKurWvuu8urhQvths8dJjYSAcpeVP_iJvDEA1Zg4_nof3yTcxwV4EvcWylK63xKIhoXDblVdzpXXPITUfc5xBteAU473DpuryxNGT6RRY54qT5xj547xCMYlA5x-1vKU60gwKPK4ZvSk2g0RjbVd8Oq_dHySCXzlEcDXrja5Jtv6ZiuityWGpDivcuZQANjoYA9AdopdJOf38q_OgBs3ihTGYBorGYOdHtkBO8iFbECYmcAvaZKGc7b9SecSNve9DkxyhAvs0o9URVkagnB1iorBYGcGjCD_BtPSgJLzFYb8vjApnMRp62QT24egBvrvTNf1qVJ3mDOwRDZsjj3vZn3PSkjWtDyRIVgViILTPf-U8ZA04ftzg=w1013-h500-no)
+4. 클립보드에 담긴 url중 id부분만 아래의 명령어에 붙여서 명령어를 완성한다.
+   `wget https://drive.google.com/uc?id=[from-gdrive]`
+5. 위 명령어로 바로 명령하면, 파일 이름이 id값으로 이상하게 다운받아진다. 파일의 이름을 지정하면서 다운받고자 한다면 `-O` 키워드를 사용하여 이름을 지정한다.
+   `wget -O [new-name] https://drive.google.com/uc?id=[from-gdrive]`
+6. 다운로드가 완성되면 `unzip` 키워드로 압축파일을 해제한다.
+   `unzip aws-keypair.zip`
 
 <br>
 
