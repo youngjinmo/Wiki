@@ -478,7 +478,7 @@ $ git config --list
 
 패스워드를 입력하지 않고 바로 확인할 수 있는 방법만큼 좋은 방식같지는 않다.
 
-## <a name="git-cedential"></a>Github Credential 저장
+## <a name="git-credential"></a>Github Credential 저장
 
 Github Credential이란 Github의 계정정보를 말한다. 
 
