@@ -20,7 +20,8 @@
   - [UTF-8 인코딩설정](#setup-utf8)
   - [호스트네임 변경하기](#hostname)
   - [wget으로 파일다운로드](#wget)
-  - [sudo 계정 생성하기](#adduser)
+  - [계정 생성하기](#adduser)
+  - [우분투 패스워드 설정하기](#password)
 - [Vi Editor](#linux-vi)
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
@@ -301,7 +302,7 @@ aws 우분투 인스턴스에 SSH 키페어를 저장해두고, 사용하고 싶
 
 <br>
 
-## <a name="adduser"></a>sudo 계정 생성하기
+## <a name="adduser"></a>계정 생성하기
 
 입력하고 싶은 **[new-user]**을 추가한다.
 
@@ -332,6 +333,28 @@ $ su - [new-user]
 
 
 출처 : <a href="https://linuxize.com/post/how-to-create-a-sudo-user-on-ubuntu/" target="_blank">Linuxize - How To Create a Sudo User on Ubuntu</a>
+
+<br>
+
+## <a name="password"></a>우분투 패스워드 설정하기
+
+root 계정의 패스워드 설정하기
+
+~~~
+$ sudo passwd
+~~~
+
+ root 계정에서 다른 계정의 패스워드 설정하기
+
+~~~
+$ passwd [user]
+~~~
+
+현재 로그인된 계정의 패스워드 설정하기
+
+~~~
+$ passwd
+~~~
 
 <br>
 
