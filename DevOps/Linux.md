@@ -20,6 +20,7 @@
   - [UTF-8 인코딩설정](#setup-utf8)
   - [호스트네임 변경하기](#hostname)
   - [wget으로 파일다운로드](#wget)
+  - [sudo 계정 생성하기](#adduser)
 - [Vi Editor](#linux-vi)
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
@@ -297,6 +298,40 @@ aws 우분투 인스턴스에 SSH 키페어를 저장해두고, 사용하고 싶
    `wget -O [new-name] https://drive.google.com/uc?id=[from-gdrive]`
 6. 다운로드가 완성되면 `unzip` 키워드로 압축파일을 해제한다.
    `unzip aws-keypair.zip`
+
+<br>
+
+## <a name="adduser"></a>sudo 계정 생성하기
+
+입력하고 싶은 **[new-user]**을 추가한다.
+
+~~~
+$ adduser [new-user]
+~~~
+
+그럼 계정의 정보를 입력하는 창이 출력되는데 이것저것 나오는데 그냥 엔터로 넘어가고 비밀번호만 신경써서 입력한다.
+
+![](https://lh3.googleusercontent.com/3Czo0HcG3IWOGBvzNAo47JcL4REc-Ng2Df0zcBLC5IBSfYa7T9GjgDD2jjS_eUam-1WrKGiR33v74XJTj_F4VRPvzjG7BwDeeaTdn95s-cm1AHAxAbPSVEDFgbUlPvfu5mK5C9W_gt0QqCEzepu-KusouXkg_1oHAAAET_hs-qjS6R3s9DacE3F1XWe0PAnOOYPBX78N_8ypaK4HdlWKx3D5zVdddKi1Y26tP80lQ-efpoHmGHo9z6tpcKtNzzVOdOKWJn_NOpSQ4L7_TmhG9i20cWly6xOvm_7CcDI0yfM_hnF09Who9LorFpPt0pik3ThJcHaJJc0yb7MzfqU1LgAhzSd-IbMwh_hzy7UPcnmWq6mdYCPjo4czlrg2Ra3Wosn9gXQ2WAhDX4PJgj_wnp7tjPLqArVkZBl-iQ8rMqYGV2AWPSwKu0MxAHT4aYoHGCOAl4XFeD8oaWYVMRY1J_eiz6HTRsKFGgQGYWh5pqkbxfObqkJSZ9bMZxrnxscvYNAfpwRd0IONkT0wZZgb3D6u1d_CqKQmJhIKiXNbIaA9qETFD-yR5WkgmPBw4iDPIwWhOV4ieuDf3jodUFEJbqncw3-_VTmQYuS16RmBY-YsQyCgxDwpr6I6pAA-TWyqhqR-PoVzyNzNcAMz6rEvvH6V-vMObW2m9eVn0t-kCwvmEg6mZCdSKcsFOswDAGQ7oArpqAJo0ri3CdYZsIHqmQpxvlNcs53c1-Tp51Yf88KYcgiinA=w1024-h537-no)
+
+
+
+생성된 계정을 sudo group에 추가하는 작업이다.
+
+~~~
+$ usermod -aG sudo [new-user]
+~~~
+
+ 
+
+이제 sudo 권한으로 생성된 계정으로 전환한다.
+
+~~~
+$ su - [new-user]
+~~~
+
+
+
+출처 : <a href="https://linuxize.com/post/how-to-create-a-sudo-user-on-ubuntu/" target="_blank">Linuxize - How To Create a Sudo User on Ubuntu</a>
 
 <br>
 
