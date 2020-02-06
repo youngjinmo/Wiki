@@ -7,6 +7,7 @@
 - [이미지 설치하기](#create-image)
 - [이미지 이름 변경](#rename-image)
 - [컨테이너 생성하기](#create-container)
+- [호스트네임 지정하기](#hostname)
 - [컨테이너 시작/중단하기](#control-container)
 - [도커 이미지 조회하기](#images)
 - [도커 컨테이너 조회하기](#ps)
@@ -117,6 +118,18 @@ $ docker tag [image-ID] [new-image-name:tag]
 ~~~
 $ docker create -it --name [컨테이너-이름] [이미지-이름]:[tag] /bin/bash
 ~~~
+
+<br>
+
+## <a name="hostname"></a>호스트네임 지정하기
+
+위의 명령어에서 몇 가지를 추가하면, 호스트네임을 지정할 수 있다.
+
+~~~
+$ docker create -it --name [컨테이너-이름] --rm -h [host-name] -it [image-name] 
+~~~
+
+그럼 내가 지정한 이름의 호스트네임을 갖는 컨테이너를 생성할 수 있다.
 
 <br>
 

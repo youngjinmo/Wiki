@@ -88,6 +88,7 @@
     - [이미지 설치하기](DevOps/Docker.md#create-image)
     - [이미지 이름 변경하기](DevOps/Docker.md#rename-image)
     - [컨테이너 생성하기](DevOps/Docker.md#create-container)
+    - [호스트네임 지정하기](DevOps/Docker.md#hostname)
     - [컨테이너 시작/중단하기](DevOps/Docker.md#control-container)
     - [도커 이미지 조회하기](DevOps/Docker.md#images)
     - [도커 컨테이너 조회하기](DevOps/Docker.md#ps)
