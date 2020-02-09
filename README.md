@@ -78,6 +78,7 @@
       - [입력 명령어](DevOps/Linux.md#vi-input)
       - [이동 명령어](DevOps/Linux.md#vi-move)
       - [파일 상태 명령어](DevOps/Linux.md#vi-filestatus)
+      - [IDE처럼 사용을 위한 Vim 셋팅하기](DevOps/Linux.md#vimrc)
     - 패키지 관리툴
       - [apt-get](DevOps/Linux.md#apt-get)
         - [update와 upgrade의 차이](DevOps/Linux.md#difference-between-update-upgrade)

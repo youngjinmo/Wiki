@@ -26,6 +26,7 @@
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
   - [파일 상태 명령어](#vi-filestatus)
+  - [IDE처럼 사용을 위한 Vim 셋팅하기](#vimrc)
 - 패키지 관리툴
   - [apt-get](#apt-get)
     - [update와 upgrade의 차이](#difference-between-update-upgrade)
@@ -409,6 +410,42 @@ $ passwd
 **References**
 
 - [VI Text Edito with Commonds: Linux/Unix Tutorial](https://www.guru99.com/the-vi-editor.html)
+
+<br>
+
+## <a name=""></a>IDE처럼 사용을 위한 Vim 셋팅하기
+
+![](https://camo.githubusercontent.com/e03b1147d5d7ca3294db48a228f352a048715280/68747470733a2f2f646e70347065686b766f6f366e2e636c6f756466726f6e742e6e65742f34336335616635393762643563316136346562313832396630313163323038662f61732f556c74696d61746525323056696d72632e737667)
+
+간단한 코딩을 위해서 IDE를 실행하기가 부담스러워 Vim 에디터를 드디어 셋팅해보았다.
+
+현재는 <a href="https://github.com/amix/vimrc" target="_blank">amix/vimrc</a>에서 basic vim으로 설치해서 사용중인데, 어느정도 사용하다가 awesome vim을 설치해볼 생각이다.
+
+참고로 basic vim은 많은 플러그인이 필요하지 않은 원격 서버에 용이하다고 한다.
+
+루트 디렉토리로 이동한다.
+
+~~~
+cd -
+~~~
+
+여기에서 basic vim 에디터에 필요한 설정파일을 clone한다.
+
+~~~
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+~~~
+
+이제 <a href="https://en.wikipedia.org/wiki/Bourne_shell" target="_blank">sh</a> 명령어로 이를 현재 OS에 적용하는 명령어이다.
+
+~~~
+sh ~/.vim_runtime/install_basic_vimrc.sh
+~~~
+
+
+
+그럼 이제 Vim 에디터를 IDE처럼 사용할 수 있는 최소한의 셋팅을 마무리했다.
+
+며칠 써보다가 Awesome Vim을 설치해보고 여기에도 설치법을 작성해보겠다.
 
 <br>
 
