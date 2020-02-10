@@ -155,6 +155,14 @@ file_02.java 파일을 staging area에 올려두었다가 다시 untracking file
 
 ![](http://www.mediafire.com/convkey/54a7/pln9p0sn3f2bed1zg.jpg)
 
+
+
+`git add .` 로 여러개의 파일이 올라갔는데, 모두 unstaing하고 싶다면?
+
+~~~
+$ git restore --staged *
+~~~
+
 <br>
 
 ## <a name="git-log-decorate"></a>git log 그래프로 보기
