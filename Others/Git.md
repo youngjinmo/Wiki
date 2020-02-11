@@ -22,6 +22,7 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [커밋 합치기 with rebase](#rebase-merged)
 - [커밋 순서 바꾸기 with rebase](#rebase-change-sequence)
 - [커밋메세지 변경하기 with rebase](#rebase-change-commit-m)
+- [원격 저장소 변경하기](#set-url)
 - [Fork](#git-fork)
 - [PR](#git-pr)
 - [.gitignore](#git-gitignore)
@@ -376,6 +377,36 @@ $ git commit ---amend -m "new commit message"
 새로운 메세지로 커밋 메세지가 변경되었다.
 
 ![](https://lh3.googleusercontent.com/4GusG71YPR9n8dof7TDBkUosSNPCUPEyn8OQkuOgM4y_hKps1yWXpH_k_4KPCf-C8dnBSOjSi4x8u9XI-OnemuU8pPV1SSX5bWAtETSJrHBjRbPM6kKv4ahGDXelqwCE02GAW7IIVRqT_JLW6ZPOesUVIebx6u29vvWne518J2UWPrGq8octTwvKlCPDlW6UYhvnRcsPmWU8JfUcyJmWiESRVySCRPMNNfywYDVaq3vAmh9moogXAorGGijxiW1mW_Igp9-M6vWM6oxXfqgwfzw66YhFm3yq2cTGSrkc_fKbaMnhdkTCKnf2_1UHc1K1G_PBRH5rl2kJBt155Pz8hU2ehpzLFkVHJ3chWDUh7JyGZXzhxIgFhHqemLhJM5dVHYlPSV5hyHKkwousEUysz6yhf66betz2UYbYS1PVCVjLXtviM2WswEp83MXLnDtbjk0RH2xAzimyFSxG2eOwp4p76pYCktX04DKgLY3aLYl5HKYMqBLvfNTODaphJ9c7LavCXuleFy-sbBhyeQjGn2KR68niaco7L5XKeeAHw2p5pceJCOiSRYRgjW9PQbE2SBnE-tSHvdLH_nJZzNM5jAPrPQexhE2-pTf81NwtZ7OKwAG9j9vExkkN40KyTe17dFQtgm7Ub5T3JxjEUo9h3rYW0KU-8YYiBVD96xIYXDpBEwVR747Bq1GvABoXt1RhScsf4SeU6MHBmea1uPhabHnGu8TqobbnJYRn48wLKtGCL0KS4Q=w808-h427-no)
+
+<br>
+
+## <a name="set-url"></a>원격 저장소 변경하기
+
+로컬 저장소가 바라보고 있는 원격 저장소의 url을 보는 방법은 다음의 명령어로 확인가능하다.
+
+```shell
+git remote -v
+```
+
+그게 현재 로컬 저장소가 바라보는 원격 저장소의 url인데 이걸 바꾸려면 다음의 명령어로 바꿀 수 있다.
+
+```shell
+git remote set-url origin https://github.com/youngjinmo/youngjinmo.github.io.git
+```
+
+저장소를 처음만들고, 원격 저장소에 지정할 때의 명령어는 아래와 같다. 아직 지정해둔 원격 저장소가 없을 때엔  `remote`와 `origin` 사이에 `add`를, 지정해둔 원격 저장소 주소를 바꾸고 싶을 땐 `set-url`을 붙이는 차이가 있다.
+
+```shell
+git remote add origin https://github.com/youngjinmo/youngjinmo.github.io.git
+```
+
+
+
+그리고 변경사항을 푸쉬하면 제대로 이동되었음을 확인할 수 있다.
+
+```shell
+git push -u origin master
+```
 
 <br>
 

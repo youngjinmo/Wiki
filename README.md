@@ -124,6 +124,7 @@
     - [커밋 합치기 with rebase](/Others/Git.md#rebase-merged)
     - [커밋 순서 바꾸기 with rebase](/Others/Git.md#rebase-change-sequence)
     - [커밋메세지 변경하기 with rebase](/Others/Git.md#rebase-change-commit-m)
+    - [원격 저장소 변경하기](/Others/Git.md#set-url)
     - [Fork](/Others/Git.md#git-fork)
     - [PR](/Others/Git.md#git-pr)
     - [.gitignore](/Others/Git.md#git-gitignore)
