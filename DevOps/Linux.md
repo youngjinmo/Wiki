@@ -288,18 +288,41 @@ $ hostname
 
 우분투를 GUI가 아니라 CLI로 사용다가 파일을 다운받아야 할 상황이 발생하곤 하는데, 이 때 사용하는 패키지가 `wget` 이다.
 
-aws 우분투 인스턴스에 SSH 키페어를 저장해두고, 사용하고 싶어서 `wget`을 사용하게 되었다.
+AWS 사용환경을 도커 컨테이너로 옮기면서, 도커에서 SSH 키페어를 저장해두고, 사용하고 싶어서 `wget`을 사용하게 되었다. 만약 우분투에서 `wget` 를 사용할 수 없다면, 설치하자
+
+~~~
+$ sudo apt-get install wget
+~~~
+
+
+
+이후의 과정은 다음과 같다.
 
 1. 먼저 `.pem` 의 키페어 파일이 담긴 폴더를 압축(`.zip`)한다.
+
 2. 구글 드라이브에 업로드한다.
+
 3. 업로드된 파일의 공유가능한 링크를 클립보드로 가져온다(복사)
    ![](https://lh3.googleusercontent.com/qtDCQlHyq9uZsWldOiOvcsh_TnSWKek5EGefoGCIXXbKXthN9EhN5Y7Yrn1YzCJnq9VzvYAU7PNe5z5Iplvgm36TiIMjGrpk95QdubwlgtKmyrB2RtWtUw3wITdEInI6_hqTn9UGJyy7EB9m3gqSNrWU_FXkq4ySzC29PiUDthEdRSDzPyLD_NseectgCblVCrdDYdml1tzLreRWT9zyhTzO3goDGVx7ho0s9d04mwd0atbaPx5sZya9SJRmmR-5CMBVQ2VIVwY0M6t6F0uufFqQRTHTiNXWrD8Q-aik8ds4rLqIqF3G_31h4nvtb2VOpVNnc57yieHZy7nJA0GEXnaFVeIJLIlnUpnHm2lhwJH8W61zUFDEYGyh4ZvaeIKurWvuu8urhQvths8dJjYSAcpeVP_iJvDEA1Zg4_nof3yTcxwV4EvcWylK63xKIhoXDblVdzpXXPITUfc5xBteAU473DpuryxNGT6RRY54qT5xj547xCMYlA5x-1vKU60gwKPK4ZvSk2g0RjbVd8Oq_dHySCXzlEcDXrja5Jtv6ZiuityWGpDivcuZQANjoYA9AdopdJOf38q_OgBs3ihTGYBorGYOdHtkBO8iFbECYmcAvaZKGc7b9SecSNve9DkxyhAvs0o9URVkagnB1iorBYGcGjCD_BtPSgJLzFYb8vjApnMRp62QT24egBvrvTNf1qVJ3mDOwRDZsjj3vZn3PSkjWtDyRIVgViILTPf-U8ZA04ftzg=w1013-h500-no)
+
 4. 클립보드에 담긴 url중 id부분만 아래의 명령어에 붙여서 명령어를 완성한다.
    `wget https://drive.google.com/uc?id=[from-gdrive]`
+
 5. 위 명령어로 바로 명령하면, 파일 이름이 id값으로 이상하게 다운받아진다. 파일의 이름을 지정하면서 다운받고자 한다면 `-O` 키워드를 사용하여 이름을 지정한다.
-   `wget -O [new-name] https://drive.google.com/uc?id=[from-gdrive]`
+   `wget -O aws-keypair.zip https://drive.google.com/uc?id=[from-gdrive]`
+
 6. 다운로드가 완성되면 `unzip` 키워드로 압축파일을 해제한다.
    `unzip aws-keypair.zip`
+
+   1. 만약 `unzip` 패키지가 설치되지 않았다면, 이것도 설치하면 된다.
+
+      ~~~
+      $ sudo apt-get install unzip
+      ~~~
+
+<img src="https://lh3.googleusercontent.com/-1lVdHOQrK-SgXkpiqOOTeO2KCMZzro6ajSz_EhOpyQAyyy7JBPYjI3RwUR4_4lgqjAOldR9FMgefgFHvSiQ9zb7LocRVmG8vUKQgg_Uv5QlQfstrM0uhjvl839W6rLyNnGzRZS1zmZ8FhDUllqw3UdJwQ4ogECX-_5xNXHTSUOpGeaP6yxbNbYXXo5V4-aoKzbX_AHpDZV3KbbjHll7t2EHSKEmr935zpJNwUq9G5bPtsD8-vpVClAtoRY5NPbwOU4GOozMPVvZLP4-eXaNIrpBBb_nVj1Z6KiMotykdkZhtOVsAxnioS3IEQvl5ThIr554oe8iJzgf05NmzDnQ3f-iWgnhGTRGXS9v0LyD-zk0GVoMbSCzMBtRRh7RbjE7p7V9FizSiQPIRVJX0O9iKFoESnWfIdHYU9YdVKvmdPj-7DDKb9reJ8vss61jg_HdhFW5byVL7MtcnbHXXrdcoOV_mBFTlEV7IysI7yRaXkYr6ZD5w1-4epFvHIXYEjhAez_UhejhKZaDIqscGkCLF2064dLo7FcCMo7NmTtck9dDny3_0RSLntzgAPbdk3xa0CcHQOXJ81g_rHDCrW0Ln6OGXb5YyNF9vhJ8-vqADe0lX4xBqs4Ezunf14-3Mh-axUvCGh6CFnFQykrOJZqNE4yjSXaqPJtiRiU254MWbrbcljopW_LDkS8DYC3rz_lp1GDTTDWF07Fkx9KkoN-O3LXXLINjrZicxrVz54YQNVtGS3V3Bg=w1440-h580-no" style="zoom:80%;" />
+
+`wget`로 aws-key 라는 이름의 파일을 성공적으로 가져왔다.
 
 <br>
 
