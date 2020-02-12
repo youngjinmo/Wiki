@@ -1,12 +1,10 @@
 # TIL
 
+![](image.jpg)
+
 *Today I learned.*
 
 오늘 제가 배운 내용을 정리하는 공간입니다.
-
-<Br>
-
-## ToC
 
 <details>
   <summary>Languages</summary>
