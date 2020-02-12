@@ -113,7 +113,7 @@
   - [언어별 정규표현식](/Others/regexByPL.md)
   - [Version Control / Git](/Others/Git.md)
     - [Staging과 Commit](/Others/Git.md#git-staging-commit)
-    - [파일단위 아닌 변경사항 단위로 Staging하기](/Others/Git.md#git-add-p)
+    - [파일단위 아닌 변경사항 단위로 커밋하기](/Others/Git.md#git-add-p)
     - [Unstaging](/Others/Git.md#git-restore)
     - [git log 그래프로 보기](/Others/Git.md#git-log-decorate)
     - [브랜치 생성하기](/Others/Git.md#create-branch)
