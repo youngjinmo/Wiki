@@ -1,8 +1,8 @@
 # Python
 
 - [파이썬의 특징](#feature)
-  - [인터프리터 언어](#feature-interpretor)
-  - [인덴트](#feature-indent)
+- [인터프리터 언어](#interpretor)
+- [인덴트](#indent)
 
 <br>
 
@@ -14,7 +14,7 @@
 
 <br>
 
-## <a name="feature-interpretor"></a>인터프리터 언어
+## <a name="interpretor"></a>인터프리터 언어
 
 그동안 배우고 사용하던 Java와 파이썬은 다른 방식으로 작동하는 프로그래밍 언어이다. Java나 C 계열 언어가 컴파일러 언어라면, 파이썬은 인터프리터 언어라고 하는데, 인터프리터 언어란 무엇일까?
 
@@ -30,7 +30,7 @@
 
 <br>
 
-## <a name="feature-indent"></a>인덴트
+## <a name="indent"></a>인덴트
 
 이 부분은 정말 오늘 처음 알게된 사실이다. `{}` 으로 스코프를 지정하는 자바와 달리 파이썬에서는 스코프를 인덴트(Indent)라고 하는 띄어쓰기 공백으로 하기 때문에 매우 민감하다고 한다.
 

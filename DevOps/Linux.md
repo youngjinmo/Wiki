@@ -6,12 +6,12 @@
 
 리눅스의 역사나 배경에 대해서도 차후 더 알아보고 정리해야 할 것 같다.
 
-- [명령어](#linux-commands)
+- [명령어](#commands)
   - [Shell과 Kernel](#shell-kernel)
   - [비트(32/64) 확인](#uname-m)
-  - [find](#linux-find)
-  - [Symbolic Link](#linux-symboliclink)
-  - [grep](#linux-grep)
+  - [find](#find)
+  - [Symbolic Link](#symboliclink)
+  - [grep](#grep)
   - [터미널 결과 출력 저장](#save-output)
   - [복수의 명령어 동시실행](#combine-commands)
   - [슬립모드 진입방지 \(caffeinate)](#caffeinate)
@@ -22,21 +22,20 @@
   - [wget으로 파일다운로드](#wget)
   - [계정 생성하기](#adduser)
   - [우분투 패스워드 설정하기](#password)
-- [Vi Editor](#linux-vi)
+- [Vi Editor](#vi)
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
   - [파일 상태 명령어](#vi-filestatus)
   - [IDE처럼 사용을 위한 Vim 셋팅하기](#vimrc)
-- 패키지 관리툴
-  - [apt-get](#apt-get)
-    - [update와 upgrade의 차이](#difference-between-update-upgrade)
-    - [apt-get 패키지 설치/삭제하기](#install-remove)
-    - [Java 설치하기](#install-java)
-    - [ubuntu에서 java 설치 경로 찾기](#which)
+- [패키지 관리툴 (apt-get)](#apt-get)
+  - [update와 upgrade의 차이](#difference-between-update-upgrade)
+  - [apt-get 패키지 설치/삭제하기](#install-remove)
+  - [Java 설치하기](#install-java)
+  - [ubuntu에서 java 설치 경로 찾기](#which)
 
 <br>
 
-#<a name="linux-commands"></a>명령어
+#<a name="commands"></a>명령어
 
 ## <a name="shell-kernel"></a>Shell과 Kernel
 
@@ -68,7 +67,7 @@ $ uname -m
 
 <br>
 
-## <a name="linux-find"></a>find
+## <a name="find"></a>find
 
 **리눅스에서 파일이나 디렉토리를 검색**할 때 사용하는 명령어이다.
 
@@ -94,7 +93,7 @@ $ uname -m
 
 <br>
 
-## <a name="linux-symboliclink"></a>심볼릭 링크 생성/사용하기
+## <a name="symboliclink"></a>심볼릭 링크 생성/사용하기
 
 심볼릭 링크는 디렉토리 또는 파일에 더 빠르게 접근하기 위한 별명을 설정하는 일과 같다. `디렉토리 --심볼릭링크`
 
@@ -106,7 +105,7 @@ $ ln -s [target] [symbolic_link_name]
 
 <br>
 
-## <a name="linux-grep"></a>grep
+## <a name="grep"></a>grep
 
 유닉스를 위해 만들어진 텍스트 검색 기능의 명령어이다. <i>**g**rep | **r**egular **e**xpression | **p**rint</i>의 약자라고 한다.
 
@@ -382,7 +381,7 @@ $ passwd
 
 <br>
 
-# <a name="linux-vi"></a>Vi Editor
+# <a name="vi"></a>Vi Editor
 
 ## <a name="vi-input"></a>입력 명령어
 
@@ -436,7 +435,7 @@ $ passwd
 
 <br>
 
-## <a name=""></a>IDE처럼 사용을 위한 Vim 셋팅하기
+## <a name="vimrc"></a>IDE처럼 사용을 위한 Vim 셋팅하기
 
 ![](https://camo.githubusercontent.com/e03b1147d5d7ca3294db48a228f352a048715280/68747470733a2f2f646e70347065686b766f6f366e2e636c6f756466726f6e742e6e65742f34336335616635393762643563316136346562313832396630313163323038662f61732f556c74696d61746525323056696d72632e737667)
 

@@ -1,13 +1,13 @@
 # SQL
 
-- [AND 조건 조회](#order-and)
+- [계층적으로 조회하기 (이름순으로 조회시, 동명이면 생일순)](#order-hierarchy)
 - [LIMIT](#limit)
 - [DISTINCT](#distinct)
 - [연산처리](#sql-math)
 
 <br>
 
-### <a name="order-and"></a>AND 조건으로 조회할 때
+### <a name="order-hierarchy"></a>계층적으로 조회하기 (이름순으로 조회시, 동명이면 생일순)
 
 이름(`NAME`) 순으로 조회할 때, 이름이 같을 경우, 생일(`BIRTH_DATE`)이 빠른 순으로 조회할 때 사용하는 쿼리이다.
 

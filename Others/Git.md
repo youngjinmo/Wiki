@@ -10,10 +10,10 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 
 <br>
 
-- [Staging과 Commit](#git-staging-commit)
-- [파일단위 아닌 변경사항 단위로 커밋하기](#git-add-p)
-- [Unstaging](#git-restore)
-- [git log 그래프로 보기](#git-log-decorate)
+- [Staging과 Commit](#staging-commit)
+- [파일단위 아닌 변경사항 단위로 커밋하기](#add-p)
+- [Unstaging](#restore)
+- [git log 그래프로 보기](#log-decorate)
 - [브랜치 생성하기](#create-branch)
 - [브랜치 이동하기](#move-branch)
 - [브랜치 삭제하기](#delete-branch)
@@ -23,17 +23,17 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [커밋 순서 바꾸기 with rebase](#rebase-change-sequence)
 - [커밋메세지 변경하기 with rebase](#rebase-change-commit-m)
 - [원격 저장소 변경하기](#set-url)
-- [Fork](#git-fork)
-- [PR](#git-pr)
-- [.gitignore](#git-gitignore)
-- [git config 설정](#git-config)
-- [Github Credential 저장](#git-credential)
+- [Fork](#fork)
+- [PR](#pr)
+- [.gitignore](#gitignore)
+- [git config 설정](#config)
+- [Github Credential 저장](#credential)
 - [Github에 SSH 등록하기](#add-ssh)
 - [레파지토리 라이센스](#license)
 
 <br>
 
-## <a name="git-staging-commit"></a>Staging과 Commit
+## <a name="staging-commit"></a>Staging과 Commit
 
 형상관리의 핵심인 스테이징과 커밋이다. 
 
@@ -100,7 +100,7 @@ Tracking 되고 있는 파일중에 변경사항이 발생했으니 새로 stagi
 
 <br>
 
-## <a name="git-add-p"></a>파일단위 아닌 변경사항 단위로 커밋하기
+## <a name="add-p"></a>파일단위 아닌 변경사항 단위로 커밋하기
 
 위에서 작성된 스테이징 방식(`git add file`)이 파일 단위라면, 여기서 언급되는 스테이징 방식은 작업의 변경사항 단위로 스테이징하는 방법이다.
 
@@ -140,7 +140,7 @@ test 폴더를 만들어서 실습을 해보았다.
 
 <br>
 
-## <a name="git-restore"></a>Unstaging (staging area➡️working directory)
+## <a name="restore"></a>Unstaging (staging area➡️working directory)
 
 staging area에서 working directory로 돌리는 방법에 관한 방법이다.
 
@@ -166,7 +166,7 @@ $ git restore --staged *
 
 <br>
 
-## <a name="git-log-decorate"></a>git log 그래프로 보기
+## <a name="log-decorate"></a>git log 그래프로 보기
 
 Source Tree 같은 GUI 기반의 프로그램을 이용하면, 쉽게 git log를 그래프로 확인할 수 있지만, 터미널에서 CLI로 작업을 할 땐 어떻게 git log를 볼 수 있을까?
 
@@ -410,7 +410,7 @@ git push -u origin master
 
 <br>
 
-## <a name="git-fork"></a>Fork
+## <a name="fork"></a>Fork
 
 Fork는 다른 사람의 저장소를 내 저장소를 가져오는 기능이다. 정확히는 내가 Fork한 시점까지의 버전/커밋만 가져올 수 있다. 이후에 원래의 저장소, Upstream 저장소에 변경사항이 발생해도 내 저장소에 자동으로 반영되지는 않는다. 이 때엔 수동으로 Upstream 저장소의 변경사항을 동기화(`fetch`)하고 변경사항을 가져와야 한다. 자세한 방법은 [여기](https://youngjinmo.github.io/2019/09/git-sync-forked-repo/)를 참고바란다.
 
@@ -430,7 +430,7 @@ Git 호스팅 서비스(Github, Gitlab)는 원격 저장소이다. 이런 원격
 
 <br>
 
-## <a name="git-pr"></a>PR
+## <a name="pr"></a>PR
 
 깃헙에서 PR이라는 단어를 자주봤을 것이다. PR은 Pull Request의 약어이다. 말 그대로 내가 작성한 커밋을 Pull 해달라고 요청하는 것이다. PR이 사용되는 경우는 아래의 경우에 해당된다.
 
@@ -456,7 +456,7 @@ Upstream 저장소의 어떤 브랜치에 내 커밋을 병합(merge)할 것인�
 
 <br>
 
-## <a name="git-gitignore"></a>.gitignore
+## <a name="gitignore"></a>.gitignore
 
 git으로 버전관리를 하다보면, 버전관리할 필요가 없는 불필요한 파일이 발생하기도 한다. MacOS에서는  ".DS_Store"라는 운영체제 관련된 파일이 생성되는데 이게 저장소로 push되면, 다른 운영체제의 contributor가 작업시에 conflict가 발생될 수 있다. 
 
@@ -495,7 +495,7 @@ vi에디터로 `.gitignore` 파일을 생성한다. 그리고 버전관리 하�
 
 <br>
 
-## <a name="git-config"></a>git config 설정
+## <a name="config"></a>git config 설정
 
 로컬에서 커맨드라인으로 git을 관리하기 위해서는 계정이 필요하다.
 
@@ -517,7 +517,7 @@ $ git config --list
 
 패스워드를 입력하지 않고 바로 확인할 수 있는 방법만큼 좋은 방식같지는 않다.
 
-## <a name="git-credential"></a>Github Credential 저장
+## <a name="credential"></a>Github Credential 저장
 
 Github Credential이란 Github의 계정정보를 말한다. 
 

@@ -3,7 +3,7 @@
 현재 사용중인 컴퓨터의 운영체제가 MacOS인데, 처음 개발을 공부할 때 개발도 물론이거니와 이 맥이라는 환경에 개발자로서 적응해야하는 시간도 필요했다. 그래서 공부하면서 알게 된 것들을 정리해 남겨보겠다.
 
 - [Homebrew](#homebrew)
-- [tree 패키지](#osx-package-tree)
+- [tree 패키지](#package-tree)
 - [Xcode 대신 Command Line Tools 사용하기](#commandlinetools)
 - [xcrun error](#xcrun-error)
 
@@ -45,7 +45,7 @@
 
 <br>
 
-## <a name="osx-package-tree"></a>Tree 패키지
+## <a name="package-tree"></a>Tree 패키지
 
 터미널에서 디렉토리를 계층적으로 분리해서 볼 수 있는 패키지다.
 

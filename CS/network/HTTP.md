@@ -4,12 +4,12 @@ HTTP는 클라이언트와 서버간의 통신을 위한 프로토콜이다. Hyp
 
 클라이언트와 서버가 request-response할 수 있도록 역할을 수행하는 프로토콜이다.
 
-- [GET/POST](#getpost)
+- [GET/POST](#get-post)
 - [URI와 URL](#uri-url)
 
 <br>
 
-## <a name="getpost"></a>GET/POST
+## <a name="get-post"></a>GET/POST
 
 GET은 전달하는 데이터를 url 주소에 붙여서 전달하는 HTTP 메서드이다. 반면에 POST는 url 주소에 붙이지 않고 전달할 수 있는 HTTP 메서드이다.
 
