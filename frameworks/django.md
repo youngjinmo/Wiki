@@ -9,7 +9,10 @@ Django도 Java기반 Spring Framework처럼 MVC 방식의 디자인패턴을 주
 <br>
 
 - [MTV](#mtv)
+- [virtualenv](#virtualenv)
 - [Django 실행환경 구성하기](#start-django)
+- [start project](#startproject)
+- [데이터베이스 마이그레이션](#migrate)
 - [서버 실행하기](#runserver)
 
 <br>
@@ -68,38 +71,6 @@ Djang 애플리케이션이 자장면 가게라고 비유하고, Client는 자�
 
 <br>
 
-## <a name="start-django"></a>Django 실행환경 구성하기
-
-파이썬을 설치한다.
-
-~~~
-$ brew update
-$ brew install python3
-~~~
-
-
-
-장고를 설치한다.
-
-~~~
-$ python3 -m pip install django
-~~~
-
-
-
-장고가 잘 설치되었다면 아래 명령어로 장고의 버전까지 확인이 가능하다.
-
-~~~shell
-$ python3
-Python 3.7.4 (default, Sep  7 2019, 18:27:02)
-[Clang 10.0.1 (clang-1001.0.46.4)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> import django
->>> print(django.get_version())
-~~~
-
-<br>
-
 ## <a name="virtualenv"></a>virtualenv
 
 파이썬은 각 모듈에 필요한 버전을 가상실행환경으로 저장해서 사용할 수 있다고 한다. 
@@ -139,6 +110,61 @@ $ deactivate
 
 
 장고를 설치하기 전에 `virtualenv`를 설치하면 장고의 버전부터 관리할 수 있다.
+
+<br>
+
+## <a name="start-django"></a>Django 실행환경 구성하기
+
+장고를 설치한다.
+
+~~~
+$ python3 -m pip install django
+~~~
+
+
+
+장고가 잘 설치되었다면 아래 명령어로 장고의 버전까지 확인이 가능하다.
+
+~~~shell
+$ python3
+Python 3.7.4 (default, Sep  7 2019, 18:27:02)
+[Clang 10.0.1 (clang-1001.0.46.4)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import django
+>>> print(django.get_version())
+~~~
+
+<br>
+
+## <a name="startproject"></a>start project
+
+장고가 설치되었다면, 이제 프로젝트를 생성할 수 있다.
+
+~~~
+$ django-admin startproject [your-web-project]
+~~~
+
+**[your-web-project]**에 원하는 이름의 프로젝트명을 넣으면 해당이름의 디렉토리가 생성된다.
+
+
+
+새로 생긴 디렉토리에서 **setting.py** 파일을 수정해야 서버를 실행할 수 있다.
+
+아래처럼 '*' 모든 호스트를 허용해야 [서버 실행](#runserver)이 가능하다.
+
+~~~python
+ALLOWED_HOSTS = ['*']
+~~~
+
+<br>
+
+## <a name="migrate"></a>데이터베이스 마이그레이션
+
+그리고 데이터베이스가 생성된다.
+
+~~~
+$ python3 manage.py migrate
+~~~
 
 <br>
 

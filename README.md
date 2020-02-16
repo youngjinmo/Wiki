@@ -92,8 +92,10 @@
         <summary><a href="frameworks/django.md">Django</a></summary>
         <ul>
           <li><a href="frameworks/django.md#mtv">MTV</a></li>
-          <li><a href="frameworks/django.md#start-django">Django 실행환경 구성하기</a></li>
           <li><a href="frameworks/django.md#virtualenv">virtualenv</a></li>
+          <li><a href="frameworks/django.md#start-django">Django 실행환경 구성하기</a></li>
+          <li><a href="frameworks/django.md#startproject">start project</a></li>
+          <li><a href="frameworks/django.md#migrate">데이터베이스 마이그레이션</a></li>
           <li><a href="frameworks/django.md#runserver">서버 실행하기</a></li>
         </ul>
       </details>
@@ -320,3 +322,4 @@
 </details>
 
 <br>
+
