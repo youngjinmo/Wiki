@@ -8,7 +8,13 @@ Django도 Java기반 Spring Framework처럼 MVC 방식의 디자인패턴을 주
 
 <br>
 
-## MTV
+- [MTV](#mtv)
+- [Django 실행환경 구성하기](#start-django)
+- [서버 실행하기](#runserver)
+
+<br>
+
+## <a name="mtv"></a>MTV
 
 Django에서 사용하는 디자인패턴이다. MVC와 같지만, 용어가 다르다. 
 
@@ -60,11 +66,51 @@ Djang 애플리케이션이 자장면 가게라고 비유하고, Client는 자�
 
 이 때 자장면은 그릇에 담겨서 단무지와 함께 나가게 되는데, 이 때의 그릇과 단무지 역할에 해당되는게 **Template**이고, 자장면을 그릇에 담는 과정을 rendering이라고 한다.
 
+<br>
+
+## <a name="start-django"></a>Django 실행환경 구성하기
+
+파이썬을 설치한다.
+
+~~~
+$ brew update
+$ brew install python3
+~~~
 
 
 
+장고를 설치한다.
+
+~~~
+$ python3 -m pip install django
+~~~
 
 
 
+장고가 잘 설치되었다면 아래 명령어로 장고의 버전까지 확인이 가능하다.
 
+~~~shell
+$ python3
+Python 3.7.4 (default, Sep  7 2019, 18:27:02)
+[Clang 10.0.1 (clang-1001.0.46.4)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import django
+>>> print(django.get_version())
+~~~
 
+<br>
+
+## <a name="runserver"></a>서버 실행하기
+
+manage.py 가 있는 디렉토리에서 아래의 명령어를 입력한다.
+
+~~~
+$ python3 manage.py runserver
+~~~
+
+그럼 브라우저에서 django app을 실행할 수 있다. 브라우저에서 접속할 때엔 아래의 주소 중 하나로 접속한다.
+
+- `localhost:8000`
+- `127.0.0.1:8000`
+
+<br>

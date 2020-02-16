@@ -87,7 +87,16 @@
       	</ul>
     	</details>
     </li>
-    <li><a href="frameworks/django.md">Django</a></li>
+    <li>
+      <details>
+        <summary><a href="frameworks/django.md">Django</a></summary>
+        <ul>
+          <li><a href="frameworks/django.md#mtv">MTV</a></li>
+          <li><a href="frameworks/django.md#start-django">Django 실행환경 구성하기</a></li>
+          <li><a href="frameworks/django.md#runserver">서버 실행하기</a></li>
+        </ul>
+      </details>
+    </li>
   </ul>
 </details>
 <details>
@@ -121,23 +130,23 @@
           </li>
           <li>
             <details>
-              <summary><a href="devops/linux.md#vi">Vi</a></summary>
+              <summary><a href="DevOps/linux.md#vi">Vi</a></summary>
               <ul>
-                <li><a href="devops/linux.md#vi-input">입력 명령어</a></li>
-            		<li><a href="devops/linux.md#vi-move">이동 명령어</a></li>
-      					<li><a href="devops/linux.md#vi-filestatus">파일 상태 명령어</a></li>
-								<li><a href="devops/linux.md#vimrc">IDE처럼 사용을 위한 Vim 셋팅하기</a></li>
+                <li><a href="DevOps/linux.md#vi-input">입력 명령어</a></li>
+            		<li><a href="DevOps/linux.md#vi-move">이동 명령어</a></li>
+      					<li><a href="DevOps/linux.md#vi-filestatus">파일 상태 명령어</a></li>
+								<li><a href="DevOps/linux.md#vimrc">IDE처럼 사용을 위한 Vim 셋팅하기</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary><a href="devops/linux.md#apt-get">패키지 관리툴 (apt-get)</a></summary>
+              <summary><a href="DevOps/linux.md#apt-get">패키지 관리툴 (apt-get)</a></summary>
               <ul>
-                <li><a href="devops/linux.md#difference-between-update-upgrade">update와 upgrade의 차이</a></li>
-                <li><a href="devops/linux.md#install-remove">apt-get 패키지 설치/삭제하기</a></li>
-                <li><a href="devops/linux.md#install-java">Java 설치하기</a></li>
-                <li><a href="devops/linux.md#which">ubuntu에서 java 설치 경로 찾기</a></li>
+                <li><a href="DevOps/linux.md#difference-between-update-upgrade">update와 upgrade의 차이</a></li>
+                <li><a href="DevOps/linux.md#install-remove">apt-get 패키지 설치/삭제하기</a></li>
+                <li><a href="DevOps/linux.md#install-java">Java 설치하기</a></li>
+                <li><a href="DevOps/linux.md#which">ubuntu에서 java 설치 경로 찾기</a></li>
               </ul>
             </details>
           </li>
@@ -213,6 +222,32 @@
   </ul>
 </details>
 <details>
+      <summary>Git</summary>
+      <ul>
+        <li><a href="vcs/Git.md#staging-commit">Staging과 Commit</a></li>
+        <li><a href="vcs/Git.md#add-p">파일단위 아닌 변경사항 단위로 커밋하기</a></li>
+        <li><a href="vcs/Git.md#restore">Unstaging</a></li>
+        <li><a href="vcs/Git.md#log-decorate">git log 그래프로 보기</a></li>
+        <li><a href="vcs/Git.md#create-branch">브랜치 생성하기</a></li>
+        <li><a href="vcs/Git.md#move-branch">브랜치 이동하기</a></li>
+        <li><a href="vcs/Git.md#delete-branch">브랜치 삭제하기</a></li>
+        <li><a href="vcs/Git.md#delete-origin-branch">원격 저장소 브랜치 삭제하기</a></li>
+        <li><a href="vcs/Git.md#change-branch-name">브랜치 이름 변경하기</a></li>
+        <li><a href="vcs/Git.md#rebase-merged">커밋 합치기 with rebase</a></li>
+        <li><a href="vcs/Git.md#rebase-change-sequence">커밋 순서 바꾸기 with rebase</a></li>
+        <li><a href="vcs/Git.md#rebase-change-commit-m">커밋메세지 변경하기 with rebase</a></li>
+        <li><a href="vcs/Git.md#commit-amend">최신 커밋 메세지 변경하기</a></li>
+        <li><a href="vcs/Git.md#set-url">원격 저장소 변경하기</a></li>
+        <li><a href="vcs/Git.md#fork">Fork</a></li>
+        <li><a href="vcs/Git.md#pr">PR</a></li>
+        <li><a href="vcs/Git.md#gitignore">.gitignore</a></li>
+        <li><a href="vcs/Git.md#config">git config 설정</a></li>
+        <li><a href="vcs/Git.md#credential">Github Credential 저장</a></li>
+        <li><a href="vcs/Git.md#add-ssh">Github에 SSH 등록하기</a></li>
+        <li><a href="vcs/Git.md#license">레파지토리 라이센스</a></li>
+      </ul>
+      </details>
+<details>
   <summary>CS</summary>
   <ul>
     <li>
@@ -251,33 +286,6 @@
     </li>
     <li>
       <details>
-      <summary><a href="Others/Git.md">Git</a></summary>
-      <ul>
-        <li><a href="Others/Git.md#staging-commit">Staging과 Commit</a></li>
-        <li><a href="Others/Git.md#add-p">파일단위 아닌 변경사항 단위로 커밋하기</a></li>
-        <li><a href="Others/Git.md#restore">Unstaging</a></li>
-        <li><a href="Others/Git.md#log-decorate">git log 그래프로 보기</a></li>
-        <li><a href="Others/Git.md#create-branch">브랜치 생성하기</a></li>
-        <li><a href="Others/Git.md#move-branch">브랜치 이동하기</a></li>
-        <li><a href="Others/Git.md#delete-branch">브랜치 삭제하기</a></li>
-        <li><a href="Others/Git.md#delete-origin-branch">원격 저장소 브랜치 삭제하기</a></li>
-        <li><a href="Others/Git.md#change-branch-name">브랜치 이름 변경하기</a></li>
-        <li><a href="Others/Git.md#rebase-merged">커밋 합치기 with rebase</a></li>
-        <li><a href="Others/Git.md#rebase-change-sequence">커밋 순서 바꾸기 with rebase</a></li>
-        <li><a href="Others/Git.md#rebase-change-commit-m">커밋메세지 변경하기 with rebase</a></li>
-        <li><a href="Others/Git.md#set-url">원격 저장소 변경하기</a></li>
-        <li><a href="Others/Git.md#fork">Fork</a></li>
-        <li><a href="Others/Git.md#pr">PR</a></li>
-        <li><a href="Others/Git.md#gitignore">.gitignore</a></li>
-        <li><a href="Others/Git.md#config">git config 설정</a></li>
-        <li><a href="Others/Git.md#credential">Github Credential 저장</a></li>
-        <li><a href="Others/Git.md#add-ssh">Github에 SSH 등록하기</a></li>
-        <li><a href="Others/Git.md#license">레파지토리 라이센스</a></li>
-      </ul>
-      </details>
-    </li>
-    <li>
-      <details>
       <summary><a href="Others/Errors.md">Errors</a></summary>
       <ul>
         <li><a href="Others/Errors.md#reimport-gradle">Gradle이 정상적으로 작동하지 않을때</a></li>
@@ -307,5 +315,6 @@
     </li>
   </ul>
 </details>
+
 
 <br>

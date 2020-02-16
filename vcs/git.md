@@ -22,6 +22,7 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [커밋 합치기 with rebase](#rebase-merged)
 - [커밋 순서 바꾸기 with rebase](#rebase-change-sequence)
 - [커밋메세지 변경하기 with rebase](#rebase-change-commit-m)
+- [최신 커밋 메세지 변경하기](#commit-amend)
 - [원격 저장소 변경하기](#set-url)
 - [Fork](#fork)
 - [PR](#pr)
@@ -351,6 +352,16 @@ $ git rebase HEAD~~
 git log를 확인해보니 순서가 제대로 변경되었음을 확인할 수 있다.
 
 ![](https://lh3.googleusercontent.com/UyHO-dqZK4R_lw7NI4Ma6pN7pxyl8nnORSlElcVmHnNT9WcPvih3jyYwZpyk4R2yuuzcgcsF03kjfJZZIyJTFmzvGF7HWQeMu_hXFUwi4DXhV6ZI_iYvKmvqkRc8AZq9WU3zHaZdhZzlIKeRDvZcPDx4ZV2d3BRmT0ohbwPlfCmgnu5FpMpoUqscn3llRWr6zy7pjISzSSMxASSi7afRLFG-9PYuKT1chgniWLVX2QlN3iwlDwt0gjK0Fk8MK8mnaQtTvtZmLN8us_4cO7-QlmVhCo9QJg-lb0yDSMxxh-3tLR7QRO4QUKvc0rRvwF_2Sg8xsMPOUtvCS0U43yQv7lEAUMeErkX2zbihyOXvP_fQJ2r1W9HaBUgwJelFFfIjx7eA5xierPeZYr27YbI2mmdda-okxkE6Qdn31RTm0dznSNNIKT_UMJCdBAikeMXp03fbyC_ndqu1_7twPAmJ_h3R28SSTyLs9F8N1jkcQnfZx-xYq3XR9PvgQI3ibxChiWJjZEGDU7NY3ZQu-qTtrDYvLLrHABUV5DM9qo0KFQvhJfpF7WHGAMZWsczocT8KtV2b-dxDfOQmDw7kGfXw4EeJ9nN_1Tpr9Q1ne0nKPZiVmFetGCr7HSHm8_GxyNUOepTpyWMOQ3uD2lMxr46kKEa2jshmyHwmb0RGGhFkk_kGOv8NRO29LzSW7g8xr2Wke5Mc1E6xHmYXE_oB0suYEPhotUSNKnE0GNrYv1RvySU61B1GGg=w809-h447-no)
+
+<br>
+
+## <a name="commit-amend"></a>최신 커밋 메세지 수정하기
+
+~~~
+$ git commit --amend
+~~~
+
+![](https://lh3.googleusercontent.com/qp4ZCcWB1B38dCnpMaWW0aa_F-O_R-VGfvmkejQTnr3xbepxeQXNCjwoPDl-dtFckQ2RsSQuaT7s_omOofMk2aJmwtuRJ19J-iQMljMm8lDdmxMfAkgTuTDgNY0I8pyCcCWh1b7IfA7GZuthqKeq4LKDMSdjtVqHaGcNrRY9XBuNHpTsUT0yfN-3zT3Ix3IOcmG_gULLhKdsyQGNnxO5UhqwjgNFt-cshYu0Z8kweUNRxcZNIl7D5l6eVZAkGaKV2VQ9Acs9CjEeZloG3yUNSGdRPFtujeyWYoWk7hpiIeaGiXO8yHSrJ4ZromTtoEvlnFi_-_vEm39gUMp739i4ejNIdl9z7LuqzHNnbOOXyD9Q3DvBbBIDRMyKvpNMCo1JTGypJJwYNVK8apjo_wNtC1Bjq5F8FLxSZyYl9WD0pgFnCBuJIVHuvSt7ScivX3UHeX_KnOc3Yq68gnhLK4b0EXgMpGodbxO3jj7ZtYWW9WYyvEPDD42jq-e94tnhxGStpJJoF-OTjs_ztWMNBuzMMfkpVCCVSTk4g2eopqjyjlbdz_lOb3b38Bk4vMmxEzsT22564itInzoV3rFacSi3p-RmX_qUqf2-tMvz3g4wx6NnDh9_IJcUV2jiZdRjrNd-nviEExSEIUSIyJMR1Jy8YOF31IpbE4AlGvctlf2-ojFS4MyNMkI1HtJ4=w1392-h550-no)
 
 <br>
 
