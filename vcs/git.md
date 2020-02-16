@@ -23,6 +23,7 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [커밋 순서 바꾸기 with rebase](#rebase-change-sequence)
 - [커밋메세지 변경하기 with rebase](#rebase-change-commit-m)
 - [최신 커밋 메세지 변경하기](#commit-amend)
+- [커밋 이동하기](#move-to-commit)
 - [원격 저장소 변경하기](#set-url)
 - [Fork](#fork)
 - [PR](#pr)
@@ -355,16 +356,6 @@ git log를 확인해보니 순서가 제대로 변경되었음을 확인할 수 
 
 <br>
 
-## <a name="commit-amend"></a>최신 커밋 메세지 수정하기
-
-~~~
-$ git commit --amend
-~~~
-
-![](https://lh3.googleusercontent.com/qp4ZCcWB1B38dCnpMaWW0aa_F-O_R-VGfvmkejQTnr3xbepxeQXNCjwoPDl-dtFckQ2RsSQuaT7s_omOofMk2aJmwtuRJ19J-iQMljMm8lDdmxMfAkgTuTDgNY0I8pyCcCWh1b7IfA7GZuthqKeq4LKDMSdjtVqHaGcNrRY9XBuNHpTsUT0yfN-3zT3Ix3IOcmG_gULLhKdsyQGNnxO5UhqwjgNFt-cshYu0Z8kweUNRxcZNIl7D5l6eVZAkGaKV2VQ9Acs9CjEeZloG3yUNSGdRPFtujeyWYoWk7hpiIeaGiXO8yHSrJ4ZromTtoEvlnFi_-_vEm39gUMp739i4ejNIdl9z7LuqzHNnbOOXyD9Q3DvBbBIDRMyKvpNMCo1JTGypJJwYNVK8apjo_wNtC1Bjq5F8FLxSZyYl9WD0pgFnCBuJIVHuvSt7ScivX3UHeX_KnOc3Yq68gnhLK4b0EXgMpGodbxO3jj7ZtYWW9WYyvEPDD42jq-e94tnhxGStpJJoF-OTjs_ztWMNBuzMMfkpVCCVSTk4g2eopqjyjlbdz_lOb3b38Bk4vMmxEzsT22564itInzoV3rFacSi3p-RmX_qUqf2-tMvz3g4wx6NnDh9_IJcUV2jiZdRjrNd-nviEExSEIUSIyJMR1Jy8YOF31IpbE4AlGvctlf2-ojFS4MyNMkI1HtJ4=w1392-h550-no)
-
-<br>
-
 ## <a name="rebase-change-commit-m"></a>커밋메세지 변경하기 with rebase
 
 ~~~
@@ -388,6 +379,52 @@ $ git commit ---amend -m "new commit message"
 새로운 메세지로 커밋 메세지가 변경되었다.
 
 ![](https://lh3.googleusercontent.com/4GusG71YPR9n8dof7TDBkUosSNPCUPEyn8OQkuOgM4y_hKps1yWXpH_k_4KPCf-C8dnBSOjSi4x8u9XI-OnemuU8pPV1SSX5bWAtETSJrHBjRbPM6kKv4ahGDXelqwCE02GAW7IIVRqT_JLW6ZPOesUVIebx6u29vvWne518J2UWPrGq8octTwvKlCPDlW6UYhvnRcsPmWU8JfUcyJmWiESRVySCRPMNNfywYDVaq3vAmh9moogXAorGGijxiW1mW_Igp9-M6vWM6oxXfqgwfzw66YhFm3yq2cTGSrkc_fKbaMnhdkTCKnf2_1UHc1K1G_PBRH5rl2kJBt155Pz8hU2ehpzLFkVHJ3chWDUh7JyGZXzhxIgFhHqemLhJM5dVHYlPSV5hyHKkwousEUysz6yhf66betz2UYbYS1PVCVjLXtviM2WswEp83MXLnDtbjk0RH2xAzimyFSxG2eOwp4p76pYCktX04DKgLY3aLYl5HKYMqBLvfNTODaphJ9c7LavCXuleFy-sbBhyeQjGn2KR68niaco7L5XKeeAHw2p5pceJCOiSRYRgjW9PQbE2SBnE-tSHvdLH_nJZzNM5jAPrPQexhE2-pTf81NwtZ7OKwAG9j9vExkkN40KyTe17dFQtgm7Ub5T3JxjEUo9h3rYW0KU-8YYiBVD96xIYXDpBEwVR747Bq1GvABoXt1RhScsf4SeU6MHBmea1uPhabHnGu8TqobbnJYRn48wLKtGCL0KS4Q=w808-h427-no)
+
+<br>
+
+## <a name="commit-amend"></a>최신 커밋 메세지 수정하기
+
+~~~
+$ git commit --amend
+~~~
+
+![](https://lh3.googleusercontent.com/qp4ZCcWB1B38dCnpMaWW0aa_F-O_R-VGfvmkejQTnr3xbepxeQXNCjwoPDl-dtFckQ2RsSQuaT7s_omOofMk2aJmwtuRJ19J-iQMljMm8lDdmxMfAkgTuTDgNY0I8pyCcCWh1b7IfA7GZuthqKeq4LKDMSdjtVqHaGcNrRY9XBuNHpTsUT0yfN-3zT3Ix3IOcmG_gULLhKdsyQGNnxO5UhqwjgNFt-cshYu0Z8kweUNRxcZNIl7D5l6eVZAkGaKV2VQ9Acs9CjEeZloG3yUNSGdRPFtujeyWYoWk7hpiIeaGiXO8yHSrJ4ZromTtoEvlnFi_-_vEm39gUMp739i4ejNIdl9z7LuqzHNnbOOXyD9Q3DvBbBIDRMyKvpNMCo1JTGypJJwYNVK8apjo_wNtC1Bjq5F8FLxSZyYl9WD0pgFnCBuJIVHuvSt7ScivX3UHeX_KnOc3Yq68gnhLK4b0EXgMpGodbxO3jj7ZtYWW9WYyvEPDD42jq-e94tnhxGStpJJoF-OTjs_ztWMNBuzMMfkpVCCVSTk4g2eopqjyjlbdz_lOb3b38Bk4vMmxEzsT22564itInzoV3rFacSi3p-RmX_qUqf2-tMvz3g4wx6NnDh9_IJcUV2jiZdRjrNd-nviEExSEIUSIyJMR1Jy8YOF31IpbE4AlGvctlf2-ojFS4MyNMkI1HtJ4=w1392-h550-no)
+
+<br>
+
+## <a name="move-to-commit"></a>커밋 이동하기
+
+현재 커밋 로그 상태이다. 여기서 `8b2da2` 로 시작하는 커밋으로 이동하려고 한다. 정확히는 이동이 아니라 **HEAD**가 바라보는 커밋을 `02860e` 에서 `8b2da2`로 변경하는 것이다.
+
+![](https://lh3.googleusercontent.com/eR5LgAFzPzH-eHc_ommFm6-oHVtTDNOCKt5P5HJDd1X3kJ1qXirg1gzB3A9qjywimLAkTYuz7igksAMUp7COhJpUX4il1CpwW1tgKjEA4Iygw41qLDLdtcutB8EP_ajGjJGjuh2V-sHsGnqMnLlYeIy-EtdHjiYIXkvkfL7_vzH4a7vTOD52zPHvYAAEMHTI0u-DDKYlG3uQPPqQVosVGOIyxaOhcH-gxoDCku7xm3UUdHBqfOn0Y6Yw_h1E5rRZ5pBXshYIu7Qi0MJOURADvg1QGgqSrg1FEbhZ1j9fWG3D0TuJr5G_Z0ih3ZL55NK5JrJSEf4Onv2D8qWovwSAchetTMD3YTZkz3cvRhZ3dv6T12VCmlDhyV7IaQ-I1D29W9R8MKQHjfGVU9EfZUYtHobxftPeqNBWnRAeyR9Iof0MzkaPcuJK_ddbp1-WFz4uhJYe2D3TucnogOOwm4tCD-kqVKO8Z6_gmyCULs2l9Au8o5tDbRnEpbOTaxTn_-HG0aA3KXkf-JZ5E6Xn9f54cKHCkMTsjVcHI9ckzC4WhODqgkUDy-URuzIF4NyY_-yfBRAuK49wFimMatecgtbdp5MHe6W_Df4Fjqf4FmZclZo2cgtsyt2uLJ0SyPWFAOotmB3FcZc8mb9eQcCW3iFTvz47lFa1j3A2RjxEemgWOflc7DHeTL4To9k1IbrOE2opnf2QE1WQZfKPQXe9Duerte1mgrYUbK_PLNKicRbh259PqdnlyA=w1436-h846-no)
+
+
+
+**HEAD**가 바라보는 커밋을 바꾸고 싶을 땐(커밋 이동), `checkout` 명령어와 함께 바라보고 싶은 커밋주소 앞의 6자리를 입력하면 된다. (*근데 5자리만 입력했는데도 잘 이동이 된다..?*)
+
+~~~
+$ git checkout 8b2da
+~~~
+
+![](https://lh3.googleusercontent.com/Q5W4iNHnvLuA83sKyn0VlAdOjS2GukF-0PF1XG4nFVhWG_1vY2l6oX5KbIZwN2eC5ueMvOw4ZPqqjSKtUVngdj3qeFn_nTcFAevINPad0ig2w5FPFzka92NcMU-pyZ-AfBHB-93EjR-y4VsJfncp2nFmQOJuMyus3uJHW0_JvKj3s1Y6-ielq9gIDl6GB8wteXBB6a6ova2uX1s23z9rF28_OVhjXqv24BW-i0hUMvBl60S052-KpAp-ZJor8MABogruN4JBlGm_lA88is6AvEGnXAz2nF7kGQq9CsoarFry8zKEkVTxtUc6TVlR20PTb371TCGnUnN66zfDg-7E3eLsa4iXjQZfTh0G3Y1E5N7CjO_LEpRN7RLFXEiSB2bQE5OoVVnTB_bxmIKZi9hfspMZfW--W8OazeA1U6hdz5tStP5Bi8bOyzyx-iP-CLUXrqKn1R1stHA2UdFDsKH8ASaikjEqQn8NAjf1MhLEOwthaqyQbK1oHLnywBBKrUG1Gx7X_mOeWKCLc9i2UR9mzXax6tqqi0zBLo4JUvZ-wMfcILQ1SpniPVFsAlyk-WPrnFA2aIQDkC4V784Hp2Vo1ynJzbNlNVEpRJrRK-esPC-tCTTRSOI6EyD9vV43uyXrZNV1TPhFkKjRk0ysKtbbOR89gf3znxwtER1KQh8ukqoXSmjzh0Wf6YlRD1uzbFXYJF-XZexRYU3lTR-AxknTVQIDzVMMXumsAb8BrGg3D28e6sC4Cg=w1440-h1058-no)
+
+
+
+`git log` 를 확인해보니 잘 이동되었음을 확인하였다.
+
+![](https://lh3.googleusercontent.com/yZTCgCV-1Bmm16DSRRz5RSyNqCGmKyKHzf2_-XCB6mo2vUBlm2CUqE96fNYA5-VL8kqOuRJBupCreCppefPuQ3LgCKO3y5iYQWPkPanKGft3nsIh_70-hEg9hwW4IDOMse9E_bibZRsRe5KMrT0n9sdO2UI8jbd-i6bhgjTfi9dH5KzUP81iyhVYCk0Z7xeYqIdmZDvmBirH9bgxVbPFnPRuN9c6MIGb-S15gZY3da9tf-U6-qPDS7nSbwkXutuLI-PKa1cb_x8f_T_xaVep9BVakNkMVKbMB8LHHfiCz3qLZ3WLbeKE_3h-_v6g0_5Rb8wgljtu0p6DHaLlkJ2iOmS6poh6DVIjEbQiBO-2mRWCUe2oU2HDeVixbfhRC9VjTaM8ty0H-ZhibaUX0cTrprAV0Rlt2WGrMsakj_Vm_wFZAD3ByN1x9PZAsguZSHu9uTiirrLz5M2tNOQ0Z3tlk64s7ud3yi3V2ONnekqGURtY7ouRSNgJrn1mp0PgqmNdWPaSF_iX0gYC0URgiWMnUeTOoxN4Rzlx3VLgj-D4JwpDmcaPTh3MY07zA1w2Tjn95RLBhKQ84Z4obG29Hdy7pSXrshissiBJRgohLiS1CzmF4PmTlniikWMkHIdcKSZDMpWcln5UBIsIZqXd7I800FjutUQCI_HLtEIpNHhnajNvreolccp-s8Kvbq2S4gbJzfeAvQPxpen4mIn9UETPQswKMIxb_n58WHGFyF8gqDGA05Fx2A=w1440-h489-no)
+
+
+
+다시 돌아오고자 한다면 브랜치로 `checkout` 하여 최신 커밋으로 돌아올 수 있다.
+
+~~~
+$ git checkout [branch-]
+~~~
+
+![](https://lh3.googleusercontent.com/yPpRimVz5pEIYL7katnPcJ3_4CSxWAayCNVpSVub8ExM1EfiJjCYhwTjbxCx5-nGM4QRN0nUIWnkaq1J-tVrYM37KRVcknZ_lXQd6aX1rWJ_zyj6lqrmOerv9GMhx-r5ymKlRaLgNi40BVZFYIi4MeeKGeByhCQKdcx_6ijj_wmCYhJCPHh4EVH-14t71tZz7IpLRCBEcf4-qEzpepziGI4jtfkjCztskPeGw_7rH1nwenEheXUk9nakf-DaSTcyzWJHk3wYNFzOwaSxgC5fVWNqUBinJxtL0NvC1VGEFw6vxUcv7tLoh89Y-sUisqVMpbCoowSaYl7-3Ojg-bWmopIKxpF3mp16e2HS9a6ymRmWnoANBv5RJ4iJG5ufyug7LoGivbx9AYOGmA3wAYFFU4uM3k84_SnRU5tMuxOf4WPTFqMbScwcBgvsmY8qHnrNwgVnWlYdPBNBilDas9R3bgkh95cEH4AefBoyOZTlJSAn3Wxu1K1kQGphnmQSL1O-VhDcae3sAIlW3eO-4p4P8JoMeCNhfHKVDj4SZTI4MqjUzRaJfRqRnxskEfoeiRN5poT_BlhaqJXiZF_CO84FOrtMAqzm-OpS_Aylovco8fdXSAIx16-xFGpQ8o0R5aqtOxOo5sZYkJv6vuep9km6nlsCwV7DyMzMDh2QstshxtmNqp9i_9WAeNDbd-ucIcgCbXwcbGlVt-eqO-NVis3f7NY35SEjjMh7yChs8OOoheJpglq8Pw=w540-h348-no)
+
+**test** 브랜치가 바라보는 최신 커밋으로 잘 돌아왔다.
 
 <br>
 

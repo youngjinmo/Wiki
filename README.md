@@ -238,6 +238,7 @@
         <li><a href="vcs/Git.md#rebase-change-sequence">커밋 순서 바꾸기 with rebase</a></li>
         <li><a href="vcs/Git.md#rebase-change-commit-m">커밋메세지 변경하기 with rebase</a></li>
         <li><a href="vcs/Git.md#commit-amend">최신 커밋 메세지 변경하기</a></li>
+        <li><a href="vcs/Git.md#move-to-commit">커밋 이동하기</a></li>
         <li><a href="vcs/Git.md#set-url">원격 저장소 변경하기</a></li>
         <li><a href="vcs/Git.md#fork">Fork</a></li>
         <li><a href="vcs/Git.md#pr">PR</a></li>
