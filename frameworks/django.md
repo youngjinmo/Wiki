@@ -100,6 +100,48 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 <br>
 
+## <a name="virtualenv"></a>virtualenv
+
+파이썬은 각 모듈에 필요한 버전을 가상실행환경으로 저장해서 사용할 수 있다고 한다. 
+
+pip3 모듈로 `virtualenv` 설치하기
+
+~~~
+$ python3 install virtualenv
+~~~
+
+
+
+원하는 디렉토리에 파이썬 가상실행환경(`virtualenv`) 설정하기
+
+~~~
+$ virtualenv [folder]
+~~~
+
+**[folder]**에는 원하는 이름으로 가상실행환경을 실행하고 저장할 디렉토리의 이름을 넣으면 된다.
+
+
+
+`virtualenv` 실행하기
+
+~~~
+$ source [folder]/bin/activate
+~~~
+
+
+
+`virtualenv` 종료하기
+
+~~~
+$ deactivate
+~~~
+
+
+
+장고를 설치하기 전에 `virtualenv`를 설치하면 장고의 버전부터 관리할 수 있다.
+
+<br>
+
 ## <a name="runserver"></a>서버 실행하기
 
 manage.py 가 있는 디렉토리에서 아래의 명령어를 입력한다.
