@@ -18,6 +18,7 @@
 - [awscli 설치하기](#awscli)
 - [Apache2 웹서버 실행](#start-apache2)
 - [키페어(.pem) 자동으로 읽어오기](#autoload-pem)
+- [Amazon Linux에 메이븐 설치하기](#install-maven)
 
 ---
 
@@ -172,3 +173,15 @@ $ ssh 서비스명
 ```
 
 <br>
+
+## <a name="install-maven"></a>Amazon Linux에 메이븐 설치하기
+
+~~~
+$ sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+$ sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+$ sudo yum install -y apache-maven
+$ mvn --version
+~~~
+
+<br>
+

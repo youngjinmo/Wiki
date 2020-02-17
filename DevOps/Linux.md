@@ -31,6 +31,8 @@
   - [update와 upgrade의 차이](#difference-between-update-upgrade)
   - [apt-get 패키지 설치/삭제하기](#install-remove)
   - [Java 설치하기](#install-java)
+  - [Java 버전 변경하기](#alternative)
+  - [Java 빌드](#build-java)
   - [ubuntu에서 java 설치 경로 찾기](#which)
 
 <br>
@@ -517,6 +519,32 @@ $ sudo apt-get remove [package-name]
 ```
 $ sudo apt install openjdk-8-jdk-headless
 ```
+
+<br>
+
+### <a name="alternative"></a>Java 버전 변경하기
+
+`openjdk-jdk` 로 설치하면, 우분투내 기본적인 jdk가 설치된다. 이 때엔 가장 최신버전인 jdk11로 설치되는데, 다른 버전의 jdk를 이용하고 싶다면 필요할 때마다 선택할 수 있다.
+
+~~~
+$ sudo update-alternatives --config java
+~~~
+
+그럼 아래의 이미지처럼 콘솔에 출력될 것이다.
+
+![](https://lh3.googleusercontent.com/Mp1X6vnmTot6TxWOKl9V2VMABoCUUSdkvlBZXMisLxKK-lAB2AYfUnnVpKKAYE4CwoXnVfBXcxQq06YZ-Ixgpx0iB80bEC2Ng-42nvwKjyXJYaaGQadrBJcFN_6mHjz7ACMLT8vcFqMV2Yj3OcU7EnMsztAocTg7RIvtFnFcfJNyFptxqIE7J4n_VWIKwQMWoXHdTarayW5YuNQId50nJG1HMdgqVpxYPFao25hDrMf_kqi5vg3ao6IAgM-VwlHpgqWEq8SLmOK6caGNn7joxMTympv9B3R8YxP8mHv31LkpTLBfxWNycy_vlAc-cVtaeDyyQXvZNf7bm5kLYPVph1_ZawEGzEDZI_0W9S7afFJ82Pwu8k5HlcyWT_X0oQZw94vaF9jX1cAJCArYeN72241c57P-bQN8VKcsY7g1o1dJ7NWqoNQ07OqIpllDkNmR_smClj46ZtQJywXsAxJna1mbua_y4UPb__gOTc494o5F-WE4tZHg2DD2t9I27FeR00_0Hyu1ZaSjxx9y50GovGQLFWZ9FG5OF_g5JLb9HPCSV5V6NZp8s5nbDI1QorT1fmdcj5dV_csjXGeCv6lFzDhrAoNPp60ApMFkgcIfHIWV057kdeJCv4ObNKGVfYNcJJcmfPadkiORdXvIHAWCXZNi557VQBAJinbYZwU-Kk_EHUJWXbFwvT8bX3JseCn1beh6mQI5KzFCGxPbK_ZpgJu3GOLBzAcG-rvxycvlew1cFWvDeg=w1440-h435-no)
+
+이때 원하는 버전의 번호를 입력하고 엔터를 입력하면, 해당 버전으로 jdk 버전이 변경된다.
+
+<br>
+
+### <a name="build-java"></a>Java 빌드
+
+**빌드 툴이 메이븐일 경우**
+
+~~~
+$ ./mvnw clean package
+~~~
 
 <br>
 

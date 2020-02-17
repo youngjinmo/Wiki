@@ -149,6 +149,8 @@
                 <li><a href="DevOps/linux.md#difference-between-update-upgrade">update와 upgrade의 차이</a></li>
                 <li><a href="DevOps/linux.md#install-remove">apt-get 패키지 설치/삭제하기</a></li>
                 <li><a href="DevOps/linux.md#install-java">Java 설치하기</a></li>
+                <li><a href="DevOps/linux.md#alternative">Java 버전 변경하기</a></li>
+                <li><a href="DevOps/linux.md#build-java">Java 빌드</a></li>
                 <li><a href="DevOps/linux.md#which">ubuntu에서 java 설치 경로 찾기</a></li>
               </ul>
             </details>
