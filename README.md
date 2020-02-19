@@ -42,9 +42,23 @@
       <details>
       <summary><a href="languages/sql.md">SQL</a></summary>
         <ul>
-          <li><a href="languages/sql.md#order-hierarchy">계층적으로 조회하기 (이름순으로 조회시, 동명이면 생일순)</a></li>
-          <li><a href="languages/sql.md#limit">LIMIT</a></li>
-          <li><a href="languages/sql.md#distinct">DISTINCT</a></li>
+          <li><a href="languages/sql.md#overview">데이터베이스 개요</a></li>
+          <li><a href="languages/sql.md#proscons">데이터베이스의 장단점</a></li>
+          <ul>
+            <li><a href="languages/sql.md#pros">장점</a></li>
+            <li><a href="languages/sql.md#cons">단점</a></li>
+          </ul>
+          <li><a href="languages/sql.md#term">데이터베이스 관련 용어</a></li>
+          <ul>
+            <li><a href="languages/sql.md#ddl">DDL</a></li>
+            <li><a href="languages/sql.md#dml">DML</a></li>
+            <li><a href="languages/sql.md#dcl">DCL</a></li>
+            <li><a href="languages/sql.md#dbms">DBMS</a></li>
+            <li><a href="languages/sql.md#rdbms">RDBMS</a></li>
+          </ul>
+          <li><a href="languages/sql.md#select-order">정렬하여 조회하기 (이름순으로 조회시, 동명이면 생일순)</a></li>
+          <li><a href="languages/sql.md#limit">데이터 출력 수 결정하기 (LIMIT)</a></li>
+          <li><a href="languages/sql.md#distinct">중복제거 조회 (DISTINCT)</a></li>
           <li><a href="languages/sql.md#sql-math">연산처리</a></li>
         </ul>
       </details>
