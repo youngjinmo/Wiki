@@ -40,7 +40,7 @@
     </li>
     <li>
       <details>
-      <summary><a href="languages/sql.md">SQL</a></summary>
+      <summary><a href="languages/sql.md">SQL (oracle)</a></summary>
         <ul>
           <li><a href="languages/sql.md#overview">데이터베이스 개요</a></li>
           <li><a href="languages/sql.md#proscons">데이터베이스의 장단점</a></li>
@@ -56,6 +56,16 @@
             <li><a href="languages/sql.md#dbms">DBMS</a></li>
             <li><a href="languages/sql.md#rdbms">RDBMS</a></li>
           </ul>
+          <li><a href="languages/sql.md#show-all-tables">오라클에서 전체 테이블 조회하기</a></li>
+          <li><a href="languages/sql.md#create-account">오라클 DB 계정 생성하고 전환하기</a></li>
+          <li><a href="languages/sql.md#drop-account">오라클 DB 계정 삭제하기</a></li>
+          <li><a href="languages/sql.md#create-table">테이블 생성하기</a></li>
+          <li><a href="languages/sql.md#desc">데이터 구조 조회하기 (DESC)</a></li>
+          <li><a href="languages/sql.md#insert-into-table">데이터 삽입하기</a></li>
+          <li><a href="languages/sql.md#drop-table">테이블 삭제하기</a></li>
+          <li><a href="languages/sql.md#show-all-columns">테이블 전체 컬럼 조회</a></li>
+          <li><a href="languages/sql.md#show-specific-columns">선택적 데이터 조회</a></li>
+          <li><a href="languages/sql.md#show-columns-while-condition">조건에 따른 데이터 조회</a></li>
           <li><a href="languages/sql.md#select-order">정렬하여 조회하기 (이름순으로 조회시, 동명이면 생일순)</a></li>
           <li><a href="languages/sql.md#limit">데이터 출력 수 결정하기 (LIMIT)</a></li>
           <li><a href="languages/sql.md#distinct">중복제거 조회 (DISTINCT)</a></li>
@@ -336,6 +346,7 @@
     </li>
   </ul>
 </details>
+
 
 <br>
 
