@@ -137,8 +137,8 @@
             <details>
               <summary><a href="DevOps/Linux.md#commands">명령어</a></summary>
               <ul>
-                <li><a href="DevOps/linux.md#shell-kernel">Shell과 Kernel</a></li>
-                <li><a href="DevOps/linux.md#uname-m">비트(32/64) 확인</a></li>
+                <li><a href="DevOps/Linux.md#shell-kernel">Shell과 Kernel</a></li>
+                <li><a href="DevOps/Linux.md#uname-m">비트(32/64) 확인</a></li>
                 <li><a href="DevOps/Linux.md#find">find</a></li>
                 <li><a href="DevOps/Linux.md#symboliclink">Symbolic Link</a></li>
                 <li><a href="DevOps/Linux.md#grep">grep</a></li>
@@ -157,25 +157,26 @@
           </li>
           <li>
             <details>
-              <summary><a href="DevOps/linux.md#vi">Vi</a></summary>
+              <summary><a href="DevOps/Linux.md#vim">Vim</a></summary>
               <ul>
-                <li><a href="DevOps/linux.md#vi-input">입력 명령어</a></li>
-            		<li><a href="DevOps/linux.md#vi-move">이동 명령어</a></li>
-      					<li><a href="DevOps/linux.md#vi-filestatus">파일 상태 명령어</a></li>
-								<li><a href="DevOps/linux.md#vimrc">IDE처럼 사용을 위한 Vim 셋팅하기</a></li>
+                <li><a href="DevOps/Linux.md#vi-input">입력 명령어</a></li>
+            		<li><a href="DevOps/Linux.md#vi-move">이동 명령어</a></li>
+      					<li><a href="DevOps/Linux.md#vi-filestatus">파일 상태 명령어</a></li>
+								<li><a href="DevOps/Linux.md#vimrc">IDE처럼 사용을 위한 Vim 셋팅하기</a></li>
+                <li><a href="DevOps/Linux.md#vim-v">한 글자/한 줄씩 드래그 하기</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary><a href="DevOps/linux.md#apt-get">패키지 관리툴 (apt-get)</a></summary>
+              <summary><a href="DevOps/Linux.md#apt-get">패키지 관리툴 (apt-get)</a></summary>
               <ul>
-                <li><a href="DevOps/linux.md#difference-between-update-upgrade">update와 upgrade의 차이</a></li>
-                <li><a href="DevOps/linux.md#install-remove">apt-get 패키지 설치/삭제하기</a></li>
-                <li><a href="DevOps/linux.md#install-java">Java 설치하기</a></li>
-                <li><a href="DevOps/linux.md#alternative">Java 버전 변경하기</a></li>
-                <li><a href="DevOps/linux.md#build-java">Java 빌드</a></li>
-                <li><a href="DevOps/linux.md#which">ubuntu에서 java 설치 경로 찾기</a></li>
+                <li><a href="DevOps/Linux.md#difference-between-update-upgrade">update와 upgrade의 차이</a></li>
+                <li><a href="DevOps/Linux.md#install-remove">apt-get 패키지 설치/삭제하기</a></li>
+                <li><a href="DevOps/Linux.md#install-java">Java 설치하기</a></li>
+                <li><a href="DevOps/Linux.md#alternative">Java 버전 변경하기</a></li>
+                <li><a href="DevOps/Linux.md#build-java">Java 빌드</a></li>
+                <li><a href="DevOps/Linux.md#which">ubuntu에서 java 설치 경로 찾기</a></li>
               </ul>
             </details>
           </li>
@@ -346,6 +347,7 @@
     </li>
   </ul>
 </details>
+
 
 
 <br>

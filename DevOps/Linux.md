@@ -22,11 +22,12 @@
   - [wget으로 파일다운로드](#wget)
   - [계정 생성하기](#adduser)
   - [우분투 패스워드 설정하기](#password)
-- [Vi Editor](#vi)
+- [Vim Editor](#vim)
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
   - [파일 상태 명령어](#vi-filestatus)
   - [IDE처럼 사용을 위한 Vim 셋팅하기](#vimrc)
+  - [한 글자/한 줄씩 드래그 하기](#vim-v)
 - [패키지 관리툴 (apt-get)](#apt-get)
   - [update와 upgrade의 차이](#difference-between-update-upgrade)
   - [apt-get 패키지 설치/삭제하기](#install-remove)
@@ -470,6 +471,14 @@ sh ~/.vim_runtime/install_basic_vimrc.sh
 그럼 이제 Vim 에디터를 IDE처럼 사용할 수 있는 최소한의 셋팅을 마무리했다.
 
 며칠 써보다가 Awesome Vim을 설치해보고 여기에도 설치법을 작성해보겠다.
+
+<br>
+
+### <a name="vim-v"></a>한 글자/한 줄씩 드래그 하기
+
+vim 에디터 모드에서 `v` 를 입력하면, 커서가 있는 위치에서 드래그를 할 수 있다. `V` 를 입력하면, 한 줄씩 드래그가 가능하다.
+
+<img src="https://lh3.googleusercontent.com/xSBXHEvkTJbcfJA7U9KKzABXI9SxoioUqgJiuRA3r_fJdtKV7cgfgSnsXsULMLbKzdUDCAzjIxX54fMzvMyGGZdVUyfr5ikkHQos80sTTlAv0f1LcwAdo3S3ZdEDq0MFmtEscru3QVTiaWz79romKG2K1y0R24bTl9SGZyRfoIxdP8_dm8Zjmec1RZRQHTHdjjqSc2RQwQbJCsbD0HDciPQBnfHIBmgjdXrgCDsZRuGXApoOdmvPBc5-kHAhTjMhA_tMS37sj-zJ_YEm-2dQpbhnElEFJqmQkPsOK98axPnWub27i1eEmgJveyMtm6lTu5p6Da610C5HBRWzHdts5-9akJC9gFhZONPkqMNhmjJBBR6pX-s67AnZKCq5pfHdZa7-TEKoAK2xbTp_I4hHAGCgEbAdTfKJsuqyQUHQzWO6ERvkV8BL6__1gEAgHAcpJplgb04foaJ3N8wWp_nscqRJSL44n10GVgEIxXq-fTeE7qY6a8AngQh4NwbnqX5AnpMOK1dUO18hYKXvfINeBaCyNd_9Fe1DMb2kqiJ4ifYDRqV3-26vdvZXeo-wvGNtYCG6HohfFVtvm2uFgTyFHAm8esXv1RHImrH_RFxalTLWjUVCeToOeS6nloSHBRgXsJEVoBYbJWuRkvnqbd202GtKiiKVcq9mjOXyMtXiXKJaQphjAfzvsXW6iajeJlbVw8X0KXfN4CYjtfNG8zlSjTlXJD-tAQwIr6kOXEjjHvWkw_aCnw=w702-h396-no" style="zoom:50%;" />
 
 <br>
 
