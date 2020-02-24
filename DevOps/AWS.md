@@ -18,7 +18,9 @@
 - [awscli 설치하기](#awscli)
 - [Apache2 웹서버 실행](#start-apache2)
 - [키페어(.pem) 자동으로 읽어오기](#autoload-pem)
+- [Amazon Linux에 Java 설치하기](#install-jdk-aws)
 - [Amazon Linux에 메이븐 설치하기](#install-maven)
+- [Java 프로그램 실행하기 (jar파일 실행)](#java-jar)
 
 ---
 
@@ -174,6 +176,52 @@ $ ssh 서비스명
 
 <br>
 
+<hr>
+
+### 여기부터 ec2 인스턴스의 타입을 Amazon Linux로 사용하였습니다.
+
+![](https://lh3.googleusercontent.com/wQ_h6mtmotLmbZHlWwEY4tV7G9eozL_ZRZEFfckGiiIiKK03BihC_5Ohy-QzO_NKc2YJJ5OEZNyOkZ6GapUyI3H1pb75oinNedlBp-prOgZl2CnW20CdvqJmWkoHp3-TP6lysnoSJER1-EdUA2VZcrkPJKfXXKGCrTdrspwTbpd1nu9qd-pz8YMUM5M68IMhTn9KcDWoFqRZm-P9bMSYbNj7RYyiRSrkLEeJl7TrTAHE7td5bG0KsY8THV3J9Y6XbE4znnDSHfOeVcNR01IUhawivG_RUWmNeKAT26yDfN6sjBOawEgOcmPyTbs0qGarUMwyu0w96od2d7PmclT_b2dWZuVobWOV6W6Ts2FNQiBr4BmWHytZH4WA_ggM03Cih1tmZJUOi2pHDHJi2jT6CkTmP0pUAPdls5ZaTC6NMG2pFuVrJh63tFEtG1Q6d4vzAwXQb1qoj2dNBNnlROGxmgTKAzatl00v4njX9TLXahjDBkVMWyWaV_nzKPy2QNwwghhqacFL2o2wzy0-fMmL5vXpC7rX-u3eUAvQlrvuMcFiemSQ4y3sj8FjtkgnoWrFZwQDS_nqgERxgt7EIb3_fqBVUf7jUpg1xojptG-lS-HicvAsumGstZvGltHP7--LsTBZ6tCqDoO9BsQJT8wXCJyfMd658_OvD_1RyfXDiWTIxyGrNIjZ8i-j5RXVs21zlOkZlUs7B7DwVOtaOstwGyGEpibE_L05X94Fi1xHrpLWe1HYHA=w1440-h708-no)
+
+<hr>
+
+<br>
+
+## <a name="install-jdk-aws"></a>Amazon Linux에 Java 설치하기
+
+yum list를 업데이트 해준다. 안해줘도 Java를 설치할 수 있지만 패키지를 설치하기 전에는 패키지 관리툴을 업데이트하는 걸 선호한다.
+
+~~~
+$ sudo yum update 
+~~~
+
+
+
+**Java 1.8 jdk 설치하기**
+
+~~~
+$ sudo yum install -y java-1.8.0-openjdk-devel.x86_64
+~~~
+
+
+
+설치했다면, 인스턴스의 Java버전을 방금 설치한 Java 1.8로 변경한다.
+
+~~~
+$ sudo /usr/sbin/alternatives --config java
+~~~
+
+![](https://lh3.googleusercontent.com/G9pdacK0rNY2U58xFShcwprYtWRNZ3zuEq6gJSyOOg8g6Kd1sZGLKlbaq-vlBI28ti6n12NM82yw_Ghx1kVHFaXSCtHLuVtRnApbnRVC3YCmEO6GPct0SHpw-MYd1XmDQHGBfcOweNezZkoAIVMfKB-NV-BZXWJCK-7uEr7Bzi7qLksVHS47U9d9eOfZ3X59yYjYFo3wBnjGVs0NKEQ-Um6WkNO-b_eK0MjgFdntLu8uT5qYhIBPc32GEOisj2NEoZKcflgZd5ef_wlPfJVxP95p-pv6UpL6O16KS1qeaXijc64ThatP8-uUdekKGeb5ffdq_ZRHoTbCSVtRenhXFukWxommkHBdqgmoJPZm_DWMD_2fs4C4rL-qoJmwRfKwxxcNL9yicbUu4jGIrcvPBLGP3P47ZUT2U5N1eC_HML_HXwluH3WZKWkP11n9FMCrebaxyGjd7__9jY7kxExGtGU-yBS_ue0k7VfFwChISbPvFx6hyXWf1XyY44lGzjsB75i3tF4CbeNj1MIhV0knbU555FFU1BV4XR0iDiPSx14VHeVAM80OHtdaiFwLfxBbd8AfINJdd_NUs0ZV7qNrhSvlIfdLqJycqZmqOTFc88yu70913sVonh1ynFAIskwX4P5qo5HehnFwp55ySOZsiMcE0oIyyFVBGc2p1v8WEUzrv9Tut_SEnnBJiHP0oqpKAR_Zqcswml5eFigzovGR-Jmq8x0-0dSkYOKgN9QZ6WR0QBpISg=w1440-h375-no)
+
+화면에 저렇게 나올텐데 +가 있는 곳이 현재의 Java 버전이다. 따라서 버전을 바꾸고 싶다면 바꾸고 싶은 버전의 숫자를 입력하고 엔터를 하면 된다.
+
+이후엔 필요없는 jdk를 삭제한다.
+
+~~~
+$ sudo yum remove java-1.7.0-openjdk
+~~~
+
+<br>
+
 ## <a name="install-maven"></a>Amazon Linux에 메이븐 설치하기
 
 ~~~
@@ -185,3 +233,16 @@ $ mvn --version
 
 <br>
 
+## <a name="java-jar"></a>Java 프로그램 실행하기 (jar파일 실행)
+
+메이븐이나 gradle로 빌드를 했다면, 빌드된 디렉토리내에 `.jar` 로 끝나는 파일이 생성된 것을 확인할 수 있다. 
+
+gradle로 빌드를 했을때엔 프로젝트 디렉토리내에 `/build/libs/` 안에 jar파일이 생성되었다.
+
+해당 파일을 실행하면 프로그램이 실행된다.
+
+~~~
+$ java -jar my_project-0.0.1-SNAPSHOT.jar
+~~~
+
+<br>

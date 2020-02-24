@@ -215,6 +215,9 @@
           <li><a href="DevOps/AWS.md#awscli">awscli 설치하기</a></li>
           <li><a href="DevOps/AWS.md#start-apache2">Apache2 웹서버 실행</a></li>
           <li><a href="DevOps/AWS.md#autoload-pem">키페어(.pem) 자동으로 읽어오기</a></li>
+          <li><a href="DevOps/AWS.md#install-jdk-aws">Amazon Linux에 Java 설치하기</a></li>
+          <li><a href="DevOps/AWS.md#install-maven">Amazon Linux에 메이븐 설치하기</a></li>
+          <li><a href="DevOps/AWS.md#java-jar">Java 프로그램 실행하기 (jar파일 실행)</a></li>
         </ul>
       </details>
     </li>
@@ -347,6 +350,7 @@
     </li>
   </ul>
 </details>
+
 
 
 
