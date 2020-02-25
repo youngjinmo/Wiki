@@ -173,10 +173,6 @@
               <ul>
                 <li><a href="DevOps/Linux.md#difference-between-update-upgrade">update와 upgrade의 차이</a></li>
                 <li><a href="DevOps/Linux.md#install-remove">apt-get 패키지 설치/삭제하기</a></li>
-                <li><a href="DevOps/Linux.md#install-java">Java 설치하기</a></li>
-                <li><a href="DevOps/Linux.md#alternative">Java 버전 변경하기</a></li>
-                <li><a href="DevOps/Linux.md#build-java">Java 빌드</a></li>
-                <li><a href="DevOps/Linux.md#which">ubuntu에서 java 설치 경로 찾기</a></li>
               </ul>
             </details>
           </li>
@@ -209,14 +205,16 @@
         <ul>
           <li><a href="DevOps/AWS.md#region">Region과 Availability zone</a></li>
           <li><a href="DevOps/AWS.md#ec2">EC2 인스턴스의 기능</a></li>
-          <li><a href="DevOps/AWS.md#entering-ec2">터미널로 EC2 인스턴스 접속</a></li>
+          <li><a href="DevOps/AWS.md#ssh-i">터미널로 EC2 인스턴스 SSH 접속</a></li>
           <li><a href="DevOps/AWS.md#locale-ko-utf8">EC2 locale 설정</a></li>
-          <li><a href="DevOps/AWS.md#install-jdk-ec2">EC2 인스턴스(Ubuntu)에 JDK 설치하기</a></li>
           <li><a href="DevOps/AWS.md#awscli">awscli 설치하기</a></li>
           <li><a href="DevOps/AWS.md#start-apache2">Apache2 웹서버 실행</a></li>
           <li><a href="DevOps/AWS.md#autoload-pem">키페어(.pem) 자동으로 읽어오기</a></li>
-          <li><a href="DevOps/AWS.md#install-jdk-aws">Amazon Linux에 Java 설치하기</a></li>
+          <li><a href="DevOps/AWS.md#install-jdk-ubuntu">Ubuntu EC2에 JDK 설치하기</a></li>
+          <li><a href="DevOps/AWS.md#install-jdk-amazonlinux">Amazon Linux에 Java 설치하기</a></li>
+          <li><a href="DevOps/AWS.md#which">Java 설치 경로 찾기</a></li>
           <li><a href="DevOps/AWS.md#install-maven">Amazon Linux에 메이븐 설치하기</a></li>
+          <li><a href="DevOps/AWS.md#java-build">Java 프로그램 빌드하기 (maven/gradle)</a></li>
           <li><a href="DevOps/AWS.md#java-jar">Java 프로그램 실행하기 (jar파일 실행)</a></li>
         </ul>
       </details>
@@ -350,9 +348,6 @@
     </li>
   </ul>
 </details>
-
-
-
 
 <br>
 

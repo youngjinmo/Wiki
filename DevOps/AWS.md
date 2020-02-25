@@ -11,15 +11,17 @@
 ### ToC
 
 - [Region과 Availability zone](#region)
-- [EC2 인스턴스의 기능](#ec2)
-- [터미널로 EC2 인스턴스 접속](#entering-ec2)
+- [EC2 인스턴스](#ec2)
+- [EC2 인스턴스 SSH 접속](#ssh-i)
 - [EC2 locale 설정](#locale-ko-utf8)
-- [EC2 인스턴스(Ubuntu)에 JDK 설치하기](#install-jdk-ec2)
 - [awscli 설치하기](#awscli)
 - [Apache2 웹서버 실행](#start-apache2)
 - [키페어(.pem) 자동으로 읽어오기](#autoload-pem)
-- [Amazon Linux에 Java 설치하기](#install-jdk-aws)
+- [Ubuntu EC2에 JDK 설치하기](#install-jdk-ubuntu)
+- [Amazon Linux에 Java 설치하기](#install-jdk-amazonlinux)
+- [Java 설치 경로 찾기](#which)
 - [Amazon Linux에 메이븐 설치하기](#install-maven)
+- [Java 프로그램 빌드하기 (maven/gradle)](#java-build)
 - [Java 프로그램 실행하기 (jar파일 실행)](#java-jar)
 
 ---
@@ -38,7 +40,7 @@ az은 **<u>장애가 발생했을 경우 이를 복구하기 위한 백업</u>**
 
 <br>
 
-##<a name="ec2"></a>EC2 인스턴스의 기능
+##<a name="ec2"></a>EC2 인스턴스
 
 AWS에서 EC2 인스턴스는 하나의 가상 컴퓨팅 환경을 의미한다. 컴퓨터 한 대를 생각하면 된다.
 
@@ -52,7 +54,15 @@ AMI(Amazon Machine Image)은 서버에 필요한 운영체제와 여러 소프�
 
 <br>
 
-## <a name="entering-ec2"></a>터미널로 EC2 인스턴스 접속
+## <a name="ssh-i"></a>EC2 인스턴스 SSH 접속
+
+바로 ssh 접속을 시도하면, 키페어의 접근권한이 문제될 수 있다. 따라서 키페어의 접근권한을 변경한다.
+
+~~~
+$ chmod 400 aws/secure/aws-lecturesearch.pem
+~~~
+
+
 
 aws에서 발급받은 key 디렉토리와 접속하고자 하는 EC2 ip주소를 함께 입력한다.
 
@@ -82,16 +92,6 @@ aws에서 발급받은 key 디렉토리와 접속하고자 하는 EC2 ip주소�
 `LANG=ko_KR.UTF-8`
 
 출처 : [Beomi's Tech Blog - ubuntu Locale 한글로 바꾸기](https://beomi.github.io/2017/07/10/Ubuntu-Locale-to-ko_KR/)
-
-<br>
-
-## <a name="install-jdk-ec2"></a>EC2 인스턴스(Ubuntu)에 JDK 설치하기
-
-- `$ sudo apt install default-jdk`
-- 구버전 설치할 경우, [Oracle Java Archive](https://www.oracle.com/technetwork/java/archive-139210.html)에서 버전을 찾아서 설치.
-  
-- `$ ssh -i [aws-public-key].pem ubuntu@[ip-port@aws]`
-- AWS 서버를 실행할 때마다 ip주소가 바뀐다. 바뀐 ip주소를 입력해야 정상적으로 AWS 웹서버에 접속할 수 있다.
 
 <br>
 
@@ -176,6 +176,16 @@ $ ssh 서비스명
 
 <br>
 
+## <a name="install-jdk-ubuntu"></a>Ubuntu EC2에 JDK 설치하기
+
+- `$ sudo apt install default-jdk`
+- 구버전 설치할 경우, [Oracle Java Archive](https://www.oracle.com/technetwork/java/archive-139210.html)에서 버전을 찾아서 설치.
+
+- `$ ssh -i [aws-public-key].pem ubuntu@[ip-port@aws]`
+- AWS 서버를 실행할 때마다 ip주소가 바뀐다. 바뀐 ip주소를 입력해야 정상적으로 AWS 웹서버에 접속할 수 있다.
+
+<br>
+
 <hr>
 
 ### 여기부터 ec2 인스턴스의 타입을 Amazon Linux로 사용하였습니다.
@@ -186,7 +196,7 @@ $ ssh 서비스명
 
 <br>
 
-## <a name="install-jdk-aws"></a>Amazon Linux에 Java 설치하기
+## <a name="install-jdk-amazonlinux"></a>Amazon Linux에 Java 설치하기
 
 yum list를 업데이트 해준다. 안해줘도 Java를 설치할 수 있지만 패키지를 설치하기 전에는 패키지 관리툴을 업데이트하는 걸 선호한다.
 
@@ -222,6 +232,15 @@ $ sudo yum remove java-1.7.0-openjdk
 
 <br>
 
+## <a name="which"></a>Java 설치 경로 찾기
+
+```
+$ which java
+$ which javac
+```
+
+<br>
+
 ## <a name="install-maven"></a>Amazon Linux에 메이븐 설치하기
 
 ~~~
@@ -229,6 +248,24 @@ $ sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-m
 $ sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
 $ sudo yum install -y apache-maven
 $ mvn --version
+~~~
+
+<br>
+
+## <a name="java-build"></a>Java 프로그램 빌드하기(maven/gradle)
+
+**Maven**
+
+~~~
+$ chmod +x ./mvnw
+$ ./mvnw clean package
+~~~
+
+**Gradle**
+
+~~~
+$ chmod +x ./gradlew
+$ ./gradlew build
 ~~~
 
 <br>
