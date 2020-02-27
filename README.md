@@ -100,16 +100,16 @@
               </ul>
             </details>
           </li>
+          <li>
+            <details>
+              <summary><a href="frameworks/spring-framework/jpa.md">JPA</a></summary>
+              <ul>
+                <li><a href="frameworks/spring-framework/jpa.md#hibernate">Hibernate</a></li>
+              </ul>
+            </details>
+          </li>
   		</ul>
       </details>
-    </li>
-    <li>
-    	<details>
-      <summary><a href="frameworks/jpa.md">JPA</a></summary>
-      	<ul>
-      		<li><a href="frameworks/jpa.md#hibernate">Hibernate</a></li>
-      	</ul>
-    	</details>
     </li>
     <li>
       <details>
@@ -256,28 +256,28 @@
 <details>
       <summary>Git</summary>
       <ul>
-        <li><a href="vcs/Git.md#staging-commit">Staging과 Commit</a></li>
-        <li><a href="vcs/Git.md#add-p">파일단위 아닌 변경사항 단위로 커밋하기</a></li>
-        <li><a href="vcs/Git.md#restore">Unstaging</a></li>
-        <li><a href="vcs/Git.md#log-decorate">git log 그래프로 보기</a></li>
-        <li><a href="vcs/Git.md#create-branch">브랜치 생성하기</a></li>
-        <li><a href="vcs/Git.md#move-branch">브랜치 이동하기</a></li>
-        <li><a href="vcs/Git.md#delete-branch">브랜치 삭제하기</a></li>
-        <li><a href="vcs/Git.md#delete-origin-branch">원격 저장소 브랜치 삭제하기</a></li>
-        <li><a href="vcs/Git.md#change-branch-name">브랜치 이름 변경하기</a></li>
-        <li><a href="vcs/Git.md#rebase-merged">커밋 합치기 with rebase</a></li>
-        <li><a href="vcs/Git.md#rebase-change-sequence">커밋 순서 바꾸기 with rebase</a></li>
-        <li><a href="vcs/Git.md#rebase-change-commit-m">커밋메세지 변경하기 with rebase</a></li>
-        <li><a href="vcs/Git.md#commit-amend">최신 커밋 메세지 변경하기</a></li>
-        <li><a href="vcs/Git.md#move-to-commit">커밋 이동하기</a></li>
-        <li><a href="vcs/Git.md#set-url">원격 저장소 변경하기</a></li>
-        <li><a href="vcs/Git.md#fork">Fork</a></li>
-        <li><a href="vcs/Git.md#pr">PR</a></li>
-        <li><a href="vcs/Git.md#gitignore">.gitignore</a></li>
-        <li><a href="vcs/Git.md#config">git config 설정</a></li>
-        <li><a href="vcs/Git.md#credential">Github Credential 저장</a></li>
-        <li><a href="vcs/Git.md#add-ssh">Github에 SSH 등록하기</a></li>
-        <li><a href="vcs/Git.md#license">레파지토리 라이센스</a></li>
+        <li><a href="vcs/git.md#staging-commit">Staging과 Commit</a></li>
+        <li><a href="vcs/git.md#add-p">파일단위 아닌 변경사항 단위로 커밋하기</a></li>
+        <li><a href="vcs/git.md#restore">Unstaging</a></li>
+        <li><a href="vcs/git.md#log-decorate">git log 그래프로 보기</a></li>
+        <li><a href="vcs/git.md#create-branch">브랜치 생성하기</a></li>
+        <li><a href="vcs/git.md#move-branch">브랜치 이동하기</a></li>
+        <li><a href="vcs/git.md#delete-branch">브랜치 삭제하기</a></li>
+        <li><a href="vcs/git.md#delete-origin-branch">원격 저장소 브랜치 삭제하기</a></li>
+        <li><a href="vcs/git.md#change-branch-name">브랜치 이름 변경하기</a></li>
+        <li><a href="vcs/git.md#rebase-merged">커밋 합치기 with rebase</a></li>
+        <li><a href="vcs/git.md#rebase-change-sequence">커밋 순서 바꾸기 with rebase</a></li>
+        <li><a href="vcs/git.md#rebase-change-commit-m">커밋메세지 변경하기 with rebase</a></li>
+        <li><a href="vcs/git.md#commit-amend">최신 커밋 메세지 변경하기</a></li>
+        <li><a href="vcs/git.md#move-to-commit">커밋 이동하기</a></li>
+        <li><a href="vcs/git.md#set-url">원격 저장소 변경하기</a></li>
+        <li><a href="vcs/git.md#fork">Fork</a></li>
+        <li><a href="vcs/git.md#pr">PR</a></li>
+        <li><a href="vcs/git.md#gitignore">.gitignore</a></li>
+        <li><a href="vcs/git.md#config">git config 설정</a></li>
+        <li><a href="vcs/git.md#credential">Github Credential 저장</a></li>
+        <li><a href="vcs/git.md#add-ssh">Github에 SSH 등록하기</a></li>
+        <li><a href="vcs/git.md#license">레파지토리 라이센스</a></li>
       </ul>
       </details>
 <details>
