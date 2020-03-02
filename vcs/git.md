@@ -32,6 +32,7 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [Github Credential 저장](#credential)
 - [Github에 SSH 등록하기](#add-ssh)
 - [레파지토리 라이센스](#license)
+- [커밋 템플릿 만들기](#gitmessage)
 
 <br>
 
@@ -762,5 +763,76 @@ MIT 라이센스는 미국 매사추세츠공과대학교(MIT)에서 해당 대�
 - 저자 또는 저작권자는 소프트웨어에 관해서 아무런 책임을 지지 않는다.
 
 출처 : <a href="http://guswnsxodlf.github.io/software-license" target="_blank">오픈소스 소프트웨어 라이센스의 종류와 제약</a>
+
+<br>
+
+## <a name="gitmessage"></a>커밋 템플릿 만들기
+
+- [gitmessage.txt 생성](#gitmessage-create)
+- [vim을 git editor로 지정](#gitmessage-set-editor)
+- [위에서 작성한 gitmessage를 템플릿으로 지정](#gitmessage-set-template)
+
+### <a name="gitmessage-create"></a>gitmessage.txt 생성
+
+~~~
+$ vim ~/.gitmessage.txt
+~~~
+
+vim 에디터가 열리면 여기서 템플릿을 만들면 된다. 필자는 이렇게 작성했다.
+
+~~~txt
+# 제목은 최대 50글자까지 아래에 작성: ex) <feat>: Add OAuth2
+
+# 본문은 아래에 작성
+
+# 꼬릿말은 아래에 작성: ex) Github issue #23
+
+
+# --- COMMIT END ---
+# <타입> 리스트
+#   feat    : 기능 (새로운 기능)
+#   fix     : 버그 (버그 수정)
+#   refactor: 리팩토링
+#   style   : 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없음)
+#   docs    : 문서 (문서 추가, 수정, 삭제)
+#   test    : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)
+#   chore   : 기타 변경사항 (빌드 스크립트 수정 등)
+# ------------------
+#     제목 첫 글자를 대문자로
+#     제목은 명령문으로
+#     제목 끝에 마침표(.) 금지
+#     제목과 본문을 한 줄 띄워 분리하기
+#     본문은 "어떻게" 보다 "무엇을", "왜"를 설명한다.
+#     본문에 여러줄의 메시지를 작성할 땐 "-"로 구분
+# ------------------
+~~~
+
+다시 한 번 언급하지만 이 템플릿이 열리며 커밋 메세지를 작성하기 때문에 커밋 메세지 작성에 대한 규칙을 여기에 명시하면 된다. 내가 아닌 다른 사람들이 보고 쉽게 작성할 수 있도록 최대한 명료하게 작성하는게 중요하다.
+
+
+
+### <a name="gitmessage-set-editor"></a>vim을 git editor로 지정
+
+~~~
+$ git config --global core.editor vim
+~~~
+
+ 다른 에디터(emacs)를 사용하는 사람이라면, 위 커맨드 명령어중 vim을 다른 명령어로 교체하면 된다.
+
+
+
+### <a name="gitmessage-set-template"></a>위에서 작성한 gitmessage를 템플릿으로 지정
+
+~~~
+$ git config --global commit.template ~/.gitmessage.txt
+~~~
+
+이제 커밋(`git commit`)을 명령하면, gitmessage 템플릿에서 작성할 수 있게 된다.
+
+
+
+![](https://lh3.googleusercontent.com/A9Y_6n1mfhLHn4ztVc7L2zhQDxPECedZm2GHPl9T2CSxIGHo6kWL4lajlNw2V3wFV8h1O45z_g-T6RvnFytmdbdplqK_QANY4KclS0GpCNDmFKVhgs8D6YqGmqT-0gF8ksMfpY_oC_jgSsMqQkGtRaw4sMRxLjCWcPpBBkhZyPFaR4_I7zB4EookrH5vDwdstT1oUoUw91KlLN-tZGTVQEN35A4YSqsZnYcvQXg-FQomn9_y3bBs6-BvBMAh9jTbE7wcwfsZ7Kj3tXQdsFjtyk6ci4N7bS2ydsJCGr20eAuq_Cw30bG8rnVUKWTE3-IAohyxBQkE7_uPOh_5DDoU3vIEmsOkd-AL5STFL3HAJbhq4K82XfLf1GYluYRmsDqb3w4UnMHGP7htZ03o4kPWXt5FR61trD6YCkQTsfFRFtOJa6s4B_bzOtONaDA8vRzEi902uzQBjEfF-RHpzpfnNU_ibdLvlPkHQ3QS2l1BuQr3bASVQ9k76PG4y__73zEU7t8ZhQM-h5_xreQ1my7hNSzNSSrtu2ecNby7Jd7h2Fpk4FqrVKGxZATwSQsGtvRzoRkIn_A8t9GKhCKFibUtHAV0oeAv4t7j1ncECzupEYx6WOCGooE0hBAANqoNOl1tmH13EIExNI2BIrwhMWX1eSKXzV-SMA5qaMuZgBQ1c197ygIqYLAeQqyp7FLa9R2h7XTrrCGFDsIkwbY7sH7J9hGmgGgMbCLEd3OrSsLW0JfLt-rK=w809-h576-no)
+
+![](https://lh3.googleusercontent.com/6NE5lo6P5RNQEPI5XZ4iu3cLaHrOkL0ufrYzny6zqYA9W3npq6gJap_a4QvBJABkEPtasps5MR2ugv_ADCrtdEgHD4KOD8S7ifWHM_uGXrS08EYxxSEb3IVgHrFoFGRRYhU07bruP63tTXw5tk9VOqfL4N6rHZEsg_Ju-Smfks2e8fSsAj0Kc3FFSrp9qTVnb_Faqeiji8d8cK4l1VD_8JLHVvCL-VMpomacxNaFOy4XqwUXOVcPfDSui4LKmQ9DPXB6XumOvVPt7VRtZ09gDru6-L2vxFvXj2zgwozATgp-TOiTOOa1b0Ip8YT14ocuuXlJRg7Oe3HxzfZhcgusgc7vMQu7k9hlMTAAL64peB_DTtQ_b8VNwoewS1ewtgGnSdBqWmkXnrw1Dru3IWdnRhy7zR-wKaMG4QGmyUi0EwMqdsTpnZxWzUv_tVKYLLoEkXUdP7HYHyv8u5UIFj6oCQKbs4NfUpImeyppMQMPHHN4vg7RxkoC2cP-0_BoKYJaqbk5a5fYpU05hYlZRFJ83qSVTPTN-NcVey0prcKJ-337caZoziYcpDa7iBoehLXv3pItRDXld911lqbeb_BfVVHfwifJQhnsBj6lTxntJJE9B1NtwTV7NVLA2o6N7izK04-Bpp3oRAY3bJS3cJEbh_d6GbsJVvMUGCLzD0ifZ7q1kXHblNX2pRMWTcJcb4zPV1qUzhDMVq1vJmspdmvicpNn_gB67q6gcvfbQG1B6eiIrHNx=w669-h155-no)
 
 <br>

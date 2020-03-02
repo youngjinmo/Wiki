@@ -1,6 +1,6 @@
 # TIL
 
-![](image.jpg)
+![image](resources/image.jpg)
 
 *Today I learned.*
 
@@ -11,65 +11,65 @@
   <ul>
     <li>
       <details>
-      <summary><a href="languages/java.md">Java</a></summary>
+      <summary><a href="languages/java.md" target="_blank">Java</a></summary>
         <ul>
-          <li><a href="languages/java.md#fature">Java의 특징</a></li>
-          <li><a href="languages/java.md#philosophy">Java의 철학</a></li>
-          <li><a href="languages/java.md#run-java-cli">IDE없이 컴파일, 실행하기</a></li>
-          <li><a href="languages/java.md#wrapper-class">Wrapper Class</a></li>
-          <li><a href="languages/java.md#date">Date</a></li>
-          <li><a href="languages/java.md#javadoc">JavaDoc</a></li>
-          <li><a href="languages/java.md#math">Math</a></li>
-          <li><a href="languages/java.md#length">length, length(), size()</a></li>
-          <li><a href="languages/java.md#equals">==과 equals()</a></li>
-          <li><a href="languages/java.md#touppercase">문자열 변환 함수</a></li>
-          <li><a href="languages/java.md#lombok">Lombok</a></li>
-          <li><a href="languages/java.md#javabean">JavaBean</a></li>
+          <li><a href="languages/java.md#fature" target="_blank">Java의 특징</a></li>
+          <li><a href="languages/java.md#philosophy" target="_blank">Java의 철학</a></li>
+          <li><a href="languages/java.md#run-java-cli" target="_blank">IDE없이 컴파일, 실행하기</a></li>
+          <li><a href="languages/java.md#wrapper-class" target="_blank">Wrapper Class</a></li>
+          <li><a href="languages/java.md#date" target="_blank">Date</a></li>
+          <li><a href="languages/java.md#javadoc" target="_blank">JavaDoc</a></li>
+          <li><a href="languages/java.md#math" target="_blank">Math</a></li>
+          <li><a href="languages/java.md#length" target="_blank">length, length(), size()</a></li>
+          <li><a href="languages/java.md#equals" target="_blank">==과 equals()</a></li>
+          <li><a href="languages/java.md#touppercase" target="_blank">문자열 변환 함수</a></li>
+          <li><a href="languages/java.md#lombok" target="_blank">Lombok</a></li>
+          <li><a href="languages/java.md#javabean" target="_blank">JavaBean</a></li>
         </ul>
       </details>
     </li>
     <li>
       <details>
-      <summary><a href="languages/python.md">Python</a></summary>
+      <summary><a href="languages/python.md" target="_blank">Python</a></summary>
         <ul>
-          <li><a href="languages/python.md#feature">파이썬의 특징</a></li>
-          <li><a href="languages/python.md#interpretor">인터프리터 언어</a></li>
-          <li><a href="languages/python.md#indent">인덴트</a></li>
+          <li><a href="languages/python.md#feature" target="_blank">파이썬의 특징</a></li>
+          <li><a href="languages/python.md#interpretor" target="_blank">인터프리터 언어</a></li>
+          <li><a href="languages/python.md#indent" target="_blank">인덴트</a></li>
         </ul>
       </details>
     </li>
     <li>
       <details>
-      <summary><a href="languages/sql.md">SQL (oracle)</a></summary>
+      <summary><a href="languages/sql.md" target="_blank">SQL (oracle)</a></summary>
         <ul>
-          <li><a href="languages/sql.md#overview">데이터베이스 개요</a></li>
-          <li><a href="languages/sql.md#proscons">데이터베이스의 장단점</a></li>
+          <li><a href="languages/sql.md#overview" target="_blank">데이터베이스 개요</a></li>
+          <li><a href="languages/sql.md#proscons" target="_blank">데이터베이스의 장단점</a></li>
           <ul>
-            <li><a href="languages/sql.md#pros">장점</a></li>
-            <li><a href="languages/sql.md#cons">단점</a></li>
+            <li><a href="languages/sql.md#pros" target="_blank">장점</a></li>
+            <li><a href="languages/sql.md#cons" target="_blank">단점</a></li>
           </ul>
-          <li><a href="languages/sql.md#term">데이터베이스 관련 용어</a></li>
+          <li><a href="languages/sql.md#term" target="_blank">데이터베이스 관련 용어</a></li>
           <ul>
-            <li><a href="languages/sql.md#ddl">DDL</a></li>
-            <li><a href="languages/sql.md#dml">DML</a></li>
-            <li><a href="languages/sql.md#dcl">DCL</a></li>
-            <li><a href="languages/sql.md#dbms">DBMS</a></li>
-            <li><a href="languages/sql.md#rdbms">RDBMS</a></li>
+            <li><a href="languages/sql.md#ddl" target="_blank">DDL</a></li>
+            <li><a href="languages/sql.md#dml" target="_blank">DML</a></li>
+            <li><a href="languages/sql.md#dcl" target="_blank">DCL</a></li>
+            <li><a href="languages/sql.md#dbms" target="_blank">DBMS</a></li>
+            <li><a href="languages/sql.md#rdbms" target="_blank">RDBMS</a></li>
           </ul>
-          <li><a href="languages/sql.md#show-all-tables">오라클에서 전체 테이블 조회하기</a></li>
-          <li><a href="languages/sql.md#create-account">오라클 DB 계정 생성하고 전환하기</a></li>
-          <li><a href="languages/sql.md#drop-account">오라클 DB 계정 삭제하기</a></li>
-          <li><a href="languages/sql.md#create-table">테이블 생성하기</a></li>
-          <li><a href="languages/sql.md#desc">데이터 구조 조회하기 (DESC)</a></li>
-          <li><a href="languages/sql.md#insert-into-table">데이터 삽입하기</a></li>
-          <li><a href="languages/sql.md#drop-table">테이블 삭제하기</a></li>
-          <li><a href="languages/sql.md#show-all-columns">테이블 전체 컬럼 조회</a></li>
-          <li><a href="languages/sql.md#show-specific-columns">선택적 데이터 조회</a></li>
-          <li><a href="languages/sql.md#show-columns-while-condition">조건에 따른 데이터 조회</a></li>
-          <li><a href="languages/sql.md#select-order">정렬하여 조회하기 (이름순으로 조회시, 동명이면 생일순)</a></li>
-          <li><a href="languages/sql.md#limit">데이터 출력 수 결정하기 (LIMIT)</a></li>
-          <li><a href="languages/sql.md#distinct">중복제거 조회 (DISTINCT)</a></li>
-          <li><a href="languages/sql.md#sql-math">연산처리</a></li>
+          <li><a href="languages/sql.md#show-all-tables" target="_blank">오라클에서 전체 테이블 조회하기</a></li>
+          <li><a href="languages/sql.md#create-account" target="_blank">오라클 DB 계정 생성하고 전환하기</a></li>
+          <li><a href="languages/sql.md#drop-account" target="_blank">오라클 DB 계정 삭제하기</a></li>
+          <li><a href="languages/sql.md#create-table" target="_blank">테이블 생성하기</a></li>
+          <li><a href="languages/sql.md#desc" target="_blank">데이터 구조 조회하기 (DESC)</a></li>
+          <li><a href="languages/sql.md#insert-into-table" target="_blank">데이터 삽입하기</a></li>
+          <li><a href="languages/sql.md#drop-table" target="_blank">테이블 삭제하기</a></li>
+          <li><a href="languages/sql.md#show-all-columns" target="_blank">테이블 전체 컬럼 조회</a></li>
+          <li><a href="languages/sql.md#show-specific-columns" target="_blank">선택적 데이터 조회</a></li>
+          <li><a href="languages/sql.md#show-columns-while-condition" target="_blank">조건에 따른 데이터 조회</a></li>
+          <li><a href="languages/sql.md#select-order" target="_blank">정렬하여 조회하기 (이름순으로 조회시, 동명이면 생일순)</a></li>
+          <li><a href="languages/sql.md#limit" target="_blank">데이터 출력 수 결정하기 (LIMIT)</a></li>
+          <li><a href="languages/sql.md#distinct" target="_blank">중복제거 조회 (DISTINCT)</a></li>
+          <li><a href="languages/sql.md#sql-math" target="_blank">연산처리</a></li>
         </ul>
       </details>
     </li>
@@ -84,27 +84,27 @@
       	<ul>
     			<li>
           	<details>
-          		<summary><a href="frameworks/spring-framework/spring-boot.md">Spring Boot</a></summary>
+          		<summary><a href="frameworks/spring-framework/spring-boot.md" target="_blank">Spring Boot</a></summary>
               <ul>
-                <li><a href="frameworks/spring-framework/spring-boot.md#feature">Spring Boot 특징</a></li>
-                <li><a href="frameworks/spring-framework/spring-boot.md#config">Spring Boot auto-configuration</a></li>
-                <li><a href="frameworks/spring-framework/spring-boot.md#error">에러페이지 핸들링</a></li>
+                <li><a href="frameworks/spring-framework/spring-boot.md#feature" target="_blank">Spring Boot 특징</a></li>
+                <li><a href="frameworks/spring-framework/spring-boot.md#config" target="_blank">Spring Boot auto-configuration</a></li>
+                <li><a href="frameworks/spring-framework/spring-boot.md#error" target="_blank">에러페이지 핸들링</a></li>
               </ul>
             </details>
           </li>
           <li>
           	<details>
-          		<summary><a href="frameworks/spring-framework/spring-security.md">Spring Security</a></summary>
+          		<summary><a href="frameworks/spring-framework/spring-security.md" target="_blank">Spring Security</a></summary>
               <ul>
-                <li><a href="frameworks/spring-framework/spring-security.md#oatuh2">OAuth2</a></li>
+                <li><a href="frameworks/spring-framework/spring-security.md#oatuh2" target="_blank">OAuth2</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary><a href="frameworks/spring-framework/jpa.md">JPA</a></summary>
+              <summary><a href="frameworks/spring-framework/jpa.md" target="_blank">JPA</a></summary>
               <ul>
-                <li><a href="frameworks/spring-framework/jpa.md#hibernate">Hibernate</a></li>
+                <li><a href="frameworks/spring-framework/jpa.md#hibernate" target="_blank">Hibernate</a></li>
               </ul>
             </details>
           </li>
@@ -113,14 +113,14 @@
     </li>
     <li>
       <details>
-        <summary><a href="frameworks/django.md">Django</a></summary>
+        <summary><a href="frameworks/django.md" target="_blank">Django</a></summary>
         <ul>
-          <li><a href="frameworks/django.md#mtv">MTV</a></li>
-          <li><a href="frameworks/django.md#virtualenv">virtualenv</a></li>
-          <li><a href="frameworks/django.md#start-django">Django 실행환경 구성하기</a></li>
-          <li><a href="frameworks/django.md#startproject">start project</a></li>
-          <li><a href="frameworks/django.md#migrate">데이터베이스 마이그레이션</a></li>
-          <li><a href="frameworks/django.md#runserver">서버 실행하기</a></li>
+          <li><a href="frameworks/django.md#mtv" target="_blank">MTV</a></li>
+          <li><a href="frameworks/django.md#virtualenv" target="_blank">virtualenv</a></li>
+          <li><a href="frameworks/django.md#start-django" target="_blank">Django 실행환경 구성하기</a></li>
+          <li><a href="frameworks/django.md#startproject" target="_blank">start project</a></li>
+          <li><a href="frameworks/django.md#migrate" target="_blank">데이터베이스 마이그레이션</a></li>
+          <li><a href="frameworks/django.md#runserver" target="_blank">서버 실행하기</a></li>
         </ul>
       </details>
     </li>
@@ -131,48 +131,48 @@
   <ul>
     <li>
       <details>
-        <summary><a href="DevOps/Linux.md">Linux</a></summary>
+        <summary><a href="DevOps/Linux.md" target="_blank">Linux</a></summary>
         <ul>
           <li>
             <details>
-              <summary><a href="DevOps/Linux.md#commands">명령어</a></summary>
+              <summary><a href="DevOps/Linux.md#commands" target="_blank">명령어</a></summary>
               <ul>
-                <li><a href="DevOps/Linux.md#shell-kernel">Shell과 Kernel</a></li>
-                <li><a href="DevOps/Linux.md#uname-m">비트(32/64) 확인</a></li>
-                <li><a href="DevOps/Linux.md#find">find</a></li>
-                <li><a href="DevOps/Linux.md#symboliclink">Symbolic Link</a></li>
-                <li><a href="DevOps/Linux.md#grep">grep</a></li>
-                <li><a href="DevOps/Linux.md#save-output">터미널 결과 출력 저장</a></li>
-                <li><a href="DevOps/Linux.md#combine-commands">복수의 명령어 동시실행</a></li>
-                <li><a href="DevOps/Linux.md#caffeinate">슬립모드 진입방지 (caffeinate)</a></li>
-                <li><a href="DevOps/Linux.md#ubuntu-reboot">시스템 재부팅</a></li>
-                <li><a href="DevOps/Linux.md#change-localtime">서버시간 변경하기</a></li>
-                <li><a href="DevOps/Linux.md#setup-utf8">UTF-8 인코딩설정</a></li>
-                <li><a href="DevOps/Linux.md#hostname">호스트네임 변경하기</a></li>
-                <li><a href="DevOps/Linux.md#wget">wget으로 파일다운로드</a></li>
-                <li><a href="DevOps/Linux.md#adduser">계정 생성하기</a></li>
-                <li><a href="DevOps/Linux.md#password">우분투 패스워드 설정하기</a></li>
+                <li><a href="DevOps/Linux.md#shell-kernel" target="_blank">Shell과 Kernel</a></li>
+                <li><a href="DevOps/Linux.md#uname-m" target="_blank">비트(32/64) 확인</a></li>
+                <li><a href="DevOps/Linux.md#find" target="_blank">find</a></li>
+                <li><a href="DevOps/Linux.md#symboliclink" target="_blank">Symbolic Link</a></li>
+                <li><a href="DevOps/Linux.md#grep" target="_blank">grep</a></li>
+                <li><a href="DevOps/Linux.md#save-output" target="_blank">터미널 결과 출력 저장</a></li>
+                <li><a href="DevOps/Linux.md#combine-commands" target="_blank">복수의 명령어 동시실행</a></li>
+                <li><a href="DevOps/Linux.md#caffeinate" target="_blank">슬립모드 진입방지 (caffeinate)</a></li>
+                <li><a href="DevOps/Linux.md#ubuntu-reboot" target="_blank">시스템 재부팅</a></li>
+                <li><a href="DevOps/Linux.md#change-localtime" target="_blank">서버시간 변경하기</a></li>
+                <li><a href="DevOps/Linux.md#setup-utf8" target="_blank">UTF-8 인코딩설정</a></li>
+                <li><a href="DevOps/Linux.md#hostname" target="_blank">호스트네임 변경하기</a></li>
+                <li><a href="DevOps/Linux.md#wget" target="_blank">wget으로 파일다운로드</a></li>
+                <li><a href="DevOps/Linux.md#adduser" target="_blank">계정 생성하기</a></li>
+                <li><a href="DevOps/Linux.md#password" target="_blank">우분투 패스워드 설정하기</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary><a href="DevOps/Linux.md#vim">Vim</a></summary>
+              <summary><a href="DevOps/Linux.md#vim" target="_blank">Vim</a></summary>
               <ul>
-                <li><a href="DevOps/Linux.md#vi-input">입력 명령어</a></li>
-            		<li><a href="DevOps/Linux.md#vi-move">이동 명령어</a></li>
-      					<li><a href="DevOps/Linux.md#vi-filestatus">파일 상태 명령어</a></li>
-								<li><a href="DevOps/Linux.md#vimrc">IDE처럼 사용을 위한 Vim 셋팅하기</a></li>
-                <li><a href="DevOps/Linux.md#vim-v">한 글자/한 줄씩 드래그 하기</a></li>
+                <li><a href="DevOps/Linux.md#vi-input" target="_blank">입력 명령어</a></li>
+            		<li><a href="DevOps/Linux.md#vi-move" target="_blank">이동 명령어</a></li>
+      					<li><a href="DevOps/Linux.md#vi-filestatus" target="_blank">파일 상태 명령어</a></li>
+								<li><a href="DevOps/Linux.md#vimrc" target="_blank">IDE처럼 사용을 위한 Vim 셋팅하기</a></li>
+                <li><a href="DevOps/Linux.md#vim-v" target="_blank">한 글자/한 줄씩 드래그 하기</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary><a href="DevOps/Linux.md#apt-get">패키지 관리툴 (apt-get)</a></summary>
+              <summary><a href="DevOps/Linux.md#apt-get" target="_blank">패키지 관리툴 (apt-get)</a></summary>
               <ul>
-                <li><a href="DevOps/Linux.md#difference-between-update-upgrade">update와 upgrade의 차이</a></li>
-                <li><a href="DevOps/Linux.md#install-remove">apt-get 패키지 설치/삭제하기</a></li>
+                <li><a href="DevOps/Linux.md#difference-between-update-upgrade" target="_blank">update와 upgrade의 차이</a></li>
+                <li><a href="DevOps/Linux.md#install-remove" target="_blank">apt-get 패키지 설치/삭제하기</a></li>
               </ul>
             </details>
           </li>
@@ -181,41 +181,41 @@
     </li>
     <li>
       <details>
-        <summary><a href="DevOps/Docker.md">Docker</a></summary>
+        <summary><a href="DevOps/Docker.md" target="_blank">Docker</a></summary>
         <ul>
-          <li><a href="DevOps/Docker.md#intro">도커?</a></li>
-          <li><a href="DevOps/Docker.md#installation">도커 설치</a></li>
-          <li><a href="DevOps/Docker.md#create-image">이미지 설치하기</a></li>
-          <li><a href="DevOps/Docker.md#rename-image">이미지 이름 변경</a></li>
-          <li><a href="DevOps/Docker.md#create-container">컨테이너 생성하기</a></li>
-          <li><a href="DevOps/Docker.md#hostname">호스트네임 지정하기</a></li>
-          <li><a href="DevOps/Docker.md#control-container">컨테이너 시작/중단하기</a></li>
-          <li><a href="DevOps/Docker.md#images">도커 이미지 조회하기</a></li>
-          <li><a href="DevOps/Docker.md#ps">도커 컨테이너 조회하기</a></li>
-          <li><a href="DevOps/Docker.md#exec-imageid-bash">bash모드로 컨테이너 진입</a></li>
-          <li><a href="DevOps/Docker.md#change-container">컨테이너 이름 변경</a></li>
-          <li><a href="DevOps/Docker.md#rm-container">컨테이너 삭제</a></li>
-          <li><a href="DevOps/Docker.md#rmi-image">이미지 삭제</a></li>
+          <li><a href="DevOps/Docker.md#intro" target="_blank">도커?</a></li>
+          <li><a href="DevOps/Docker.md#installation" target="_blank">도커 설치</a></li>
+          <li><a href="DevOps/Docker.md#create-image" target="_blank">이미지 설치하기</a></li>
+          <li><a href="DevOps/Docker.md#rename-image" target="_blank">이미지 이름 변경</a></li>
+          <li><a href="DevOps/Docker.md#create-container" target="_blank">컨테이너 생성하기</a></li>
+          <li><a href="DevOps/Docker.md#hostname" target="_blank">호스트네임 지정하기</a></li>
+          <li><a href="DevOps/Docker.md#control-container" target="_blank">컨테이너 시작/중단하기</a></li>
+          <li><a href="DevOps/Docker.md#images" target="_blank">도커 이미지 조회하기</a></li>
+          <li><a href="DevOps/Docker.md#ps" target="_blank">도커 컨테이너 조회하기</a></li>
+          <li><a href="DevOps/Docker.md#exec-imageid-bash" target="_blank">bash모드로 컨테이너 진입</a></li>
+          <li><a href="DevOps/Docker.md#change-container" target="_blank">컨테이너 이름 변경</a></li>
+          <li><a href="DevOps/Docker.md#rm-container" target="_blank">컨테이너 삭제</a></li>
+          <li><a href="DevOps/Docker.md#rmi-image" target="_blank">이미지 삭제</a></li>
         </ul>
       </details>
     </li>
     <li>
       <details>
-        <summary><a href="DevOps/AWS.md">AWS</a></summary>
+        <summary><a href="DevOps/AWS.md" target="_blank">AWS</a></summary>
         <ul>
-          <li><a href="DevOps/AWS.md#region">Region과 Availability zone</a></li>
-          <li><a href="DevOps/AWS.md#ec2">EC2 인스턴스의 기능</a></li>
-          <li><a href="DevOps/AWS.md#ssh-i">터미널로 EC2 인스턴스 SSH 접속</a></li>
-          <li><a href="DevOps/AWS.md#locale-ko-utf8">EC2 locale 설정</a></li>
-          <li><a href="DevOps/AWS.md#awscli">awscli 설치하기</a></li>
-          <li><a href="DevOps/AWS.md#start-apache2">Apache2 웹서버 실행</a></li>
-          <li><a href="DevOps/AWS.md#autoload-pem">키페어(.pem) 자동으로 읽어오기</a></li>
-          <li><a href="DevOps/AWS.md#install-jdk-ubuntu">Ubuntu EC2에 JDK 설치하기</a></li>
-          <li><a href="DevOps/AWS.md#install-jdk-amazonlinux">Amazon Linux에 Java 설치하기</a></li>
-          <li><a href="DevOps/AWS.md#which">Java 설치 경로 찾기</a></li>
-          <li><a href="DevOps/AWS.md#install-maven">Amazon Linux에 메이븐 설치하기</a></li>
-          <li><a href="DevOps/AWS.md#java-build">Java 프로그램 빌드하기 (maven/gradle)</a></li>
-          <li><a href="DevOps/AWS.md#java-jar">Java 프로그램 실행하기 (jar파일 실행)</a></li>
+          <li><a href="DevOps/AWS.md#region" target="_blank">Region과 Availability zone</a></li>
+          <li><a href="DevOps/AWS.md#ec2" target="_blank">EC2 인스턴스의 기능</a></li>
+          <li><a href="DevOps/AWS.md#ssh-i" target="_blank">터미널로 EC2 인스턴스 SSH 접속</a></li>
+          <li><a href="DevOps/AWS.md#locale-ko-utf8" target="_blank">EC2 locale 설정</a></li>
+          <li><a href="DevOps/AWS.md#awscli" target="_blank">awscli 설치하기</a></li>
+          <li><a href="DevOps/AWS.md#start-apache2" target="_blank">Apache2 웹서버 실행</a></li>
+          <li><a href="DevOps/AWS.md#autoload-pem" target="_blank">키페어(.pem) 자동으로 읽어오기</a></li>
+          <li><a href="DevOps/AWS.md#install-jdk-ubuntu" target="_blank">Ubuntu EC2에 JDK 설치하기</a></li>
+          <li><a href="DevOps/AWS.md#install-jdk-amazonlinux" target="_blank">Amazon Linux에 Java 설치하기</a></li>
+          <li><a href="DevOps/AWS.md#which" target="_blank">Java 설치 경로 찾기</a></li>
+          <li><a href="DevOps/AWS.md#install-maven" target="_blank">Amazon Linux에 메이븐 설치하기</a></li>
+          <li><a href="DevOps/AWS.md#java-build" target="_blank">Java 프로그램 빌드하기 (maven/gradle)</a></li>
+          <li><a href="DevOps/AWS.md#java-jar" target="_blank">Java 프로그램 실행하기 (jar파일 실행)</a></li>
         </ul>
       </details>
     </li>
@@ -226,28 +226,28 @@
   <ul>
     <li>
       <details>
-        <summary><a href="front-side/template-engines.md">Template Engines</a></summary>
+        <summary><a href="front-side/template-engines.md" target="_blank">Template Engines</a></summary>
         <ul>
-          <li><a href="front-side/template-engines.md#mustache">Mustache</a></li>
+          <li><a href="front-side/template-engines.md#mustache" target="_blank">Mustache</a></li>
         </ul>
       </details>
     </li>
     <li>
       <details>
-        <summary><a href="front-side/html.md">HTML</a></summary>
+        <summary><a href="front-side/html.md" target="_blank">HTML</a></summary>
         <ul>
-          <li><a href="front-side/html.md#datails">details</a></li>
+          <li><a href="front-side/html.md#datails" target="_blank">details</a></li>
         </ul>
       </details>
     </li>
     <li>
       <details>
-        <summary><a href="front-side/CSS.md">CSS</a></summary>
+        <summary><a href="front-side/CSS.md" target="_blank">CSS</a></summary>
         <ul>
-          <li><a href="front-side/CSS.md#word-break">word-break</a></li>
-          <li><a href="front-side/CSS.md#apply-style-to-multiple-ids">복수의 id에 CSS 적용</a></li>
-          <li><a href="front-side/CSS.md#margin-and-padding">margin과 padding 차이</a></li>
-          <li><a href="front-side/CSS.md##luminosity">이미지 흑백 전환 효과주기</a></li>
+          <li><a href="front-side/CSS.md#word-break" target="_blank">word-break</a></li>
+          <li><a href="front-side/CSS.md#apply-style-to-multiple-ids" target="_blank">복수의 id에 CSS 적용</a></li>
+          <li><a href="front-side/CSS.md#margin-and-padding" target="_blank">margin과 padding 차이</a></li>
+          <li><a href="front-side/CSS.md##luminosity" target="_blank">이미지 흑백 전환 효과주기</a></li>
         </ul>
       </details>
     </li>
@@ -256,28 +256,29 @@
 <details>
       <summary>Git</summary>
       <ul>
-        <li><a href="vcs/git.md#staging-commit">Staging과 Commit</a></li>
-        <li><a href="vcs/git.md#add-p">파일단위 아닌 변경사항 단위로 커밋하기</a></li>
-        <li><a href="vcs/git.md#restore">Unstaging</a></li>
-        <li><a href="vcs/git.md#log-decorate">git log 그래프로 보기</a></li>
-        <li><a href="vcs/git.md#create-branch">브랜치 생성하기</a></li>
-        <li><a href="vcs/git.md#move-branch">브랜치 이동하기</a></li>
-        <li><a href="vcs/git.md#delete-branch">브랜치 삭제하기</a></li>
-        <li><a href="vcs/git.md#delete-origin-branch">원격 저장소 브랜치 삭제하기</a></li>
-        <li><a href="vcs/git.md#change-branch-name">브랜치 이름 변경하기</a></li>
-        <li><a href="vcs/git.md#rebase-merged">커밋 합치기 with rebase</a></li>
-        <li><a href="vcs/git.md#rebase-change-sequence">커밋 순서 바꾸기 with rebase</a></li>
-        <li><a href="vcs/git.md#rebase-change-commit-m">커밋메세지 변경하기 with rebase</a></li>
-        <li><a href="vcs/git.md#commit-amend">최신 커밋 메세지 변경하기</a></li>
-        <li><a href="vcs/git.md#move-to-commit">커밋 이동하기</a></li>
-        <li><a href="vcs/git.md#set-url">원격 저장소 변경하기</a></li>
-        <li><a href="vcs/git.md#fork">Fork</a></li>
-        <li><a href="vcs/git.md#pr">PR</a></li>
-        <li><a href="vcs/git.md#gitignore">.gitignore</a></li>
-        <li><a href="vcs/git.md#config">git config 설정</a></li>
-        <li><a href="vcs/git.md#credential">Github Credential 저장</a></li>
-        <li><a href="vcs/git.md#add-ssh">Github에 SSH 등록하기</a></li>
-        <li><a href="vcs/git.md#license">레파지토리 라이센스</a></li>
+        <li><a href="vcs/git.md#staging-commit" target="_blank">Staging과 Commit</a></li>
+        <li><a href="vcs/git.md#add-p" target="_blank">파일단위 아닌 변경사항 단위로 커밋하기</a></li>
+        <li><a href="vcs/git.md#restore" target="_blank">Unstaging</a></li>
+        <li><a href="vcs/git.md#log-decorate" target="_blank">git log 그래프로 보기</a></li>
+        <li><a href="vcs/git.md#create-branch" target="_blank">브랜치 생성하기</a></li>
+        <li><a href="vcs/git.md#move-branch" target="_blank">브랜치 이동하기</a></li>
+        <li><a href="vcs/git.md#delete-branch" target="_blank">브랜치 삭제하기</a></li>
+        <li><a href="vcs/git.md#delete-origin-branch" target="_blank">원격 저장소 브랜치 삭제하기</a></li>
+        <li><a href="vcs/git.md#change-branch-name" target="_blank">브랜치 이름 변경하기</a></li>
+        <li><a href="vcs/git.md#rebase-merged" target="_blank">커밋 합치기 with rebase</a></li>
+        <li><a href="vcs/git.md#rebase-change-sequence" target="_blank">커밋 순서 바꾸기 with rebase</a></li>
+        <li><a href="vcs/git.md#rebase-change-commit-m" target="_blank">커밋메세지 변경하기 with rebase</a></li>
+        <li><a href="vcs/git.md#commit-amend" target="_blank">최신 커밋 메세지 변경하기</a></li>
+        <li><a href="vcs/git.md#move-to-commit" target="_blank">커밋 이동하기</a></li>
+        <li><a href="vcs/git.md#set-url" target="_blank">원격 저장소 변경하기</a></li>
+        <li><a href="vcs/git.md#fork" target="_blank">Fork</a></li>
+        <li><a href="vcs/git.md#pr" target="_blank">PR</a></li>
+        <li><a href="vcs/git.md#gitignore" target="_blank">.gitignore</a></li>
+        <li><a href="vcs/git.md#config" target="_blank">git config 설정</a></li>
+        <li><a href="vcs/git.md#credential" target="_blank">Github Credential 저장</a></li>
+        <li><a href="vcs/git.md#add-ssh" target="_blank">Github에 SSH 등록하기</a></li>
+        <li><a href="vcs/git.md#license" target="_blank">레파지토리 라이센스</a></li>
+        <li><a href="vcs/git.md#gitmessage" target="_blank">커밋 템플릿 만들기</a></li>
       </ul>
       </details>
 <details>
@@ -285,10 +286,10 @@
   <ul>
     <li>
       <details>
-        <summary><a href="CS/network/HTTP.md">HTTP</a></summary>
+        <summary><a href="CS/network/HTTP.md" target="_blank">HTTP</a></summary>
         <ul>
-          <li><a href="CS/network/HTTP.md#get-post">GET/POST</a></li>
-          <li><a href="CS/network/HTTP.md#uri-url">URI와 URL</a></li>
+          <li><a href="CS/network/HTTP.md#get-post" target="_blank">GET/POST</a></li>
+          <li><a href="CS/network/HTTP.md#uri-url" target="_blank">URI와 URL</a></li>
         </ul>
       </details>
     </li>
@@ -299,50 +300,50 @@
   <ul>
     <li>
       <details>
-      <summary><a href="Others/reg.md">정규표현식</a></summary>
+      <summary><a href="Others/reg.md" target="_blank">정규표현식</a></summary>
       <ul>
-        <li><a href="Others/reg.md#digit-single">숫자 대표문자 (한 글자만)</a></li>
-        <li><a href="Others/reg.md#word-single">글자 대표문자 (한 글자만)</a></li>
-        <li><a href="Others/reg.md#multiple">문자 여러개</a></li>
-        <li><a href="Others/reg.md#atleast-one">0개 이상</a></li>
-        <li><a href="Others/reg.md#isExist">x가 있을수도 있고, 없을 수도 있고</a></li>
-        <li><a href="Others/reg.md#isExist-multiple">x 또는 y가 있을수도 있고, 없을 수도 있고</a></li>
-        <li><a href="Others/reg.md#select-word-by-specific-number">특정 글자 수의 문자만 조회</a></li>
-        <li><a href="Others/reg.md#select-word-by-numbers">글자 수 조건 추가하여 문자 조회</a></li>
-        <li><a href="Others/reg.md#select-specific-word">특정 문자만 조회</a></li>
-        <li><a href="Others/reg.md#select-all-small-alphabets">소문자 알파벳 전체를 조회하기</a></li>
-        <li><a href="Others/reg.md#select-korean">한글단어 조회</a></li>
-        <li><a href="Others/reg.md#select-other-words">기타 대표문자</a></li>
-        <li><a href="Others/reg.md#regbylanguages">언어별 정규표현식</a></li>
+        <li><a href="Others/reg.md#digit-single" target="_blank">숫자 대표문자 (한 글자만)</a></li>
+        <li><a href="Others/reg.md#word-single" target="_blank">글자 대표문자 (한 글자만)</a></li>
+        <li><a href="Others/reg.md#multiple" target="_blank">문자 여러개</a></li>
+        <li><a href="Others/reg.md#atleast-one" target="_blank">0개 이상</a></li>
+        <li><a href="Others/reg.md#isExist" target="_blank">x가 있을수도 있고, 없을 수도 있고</a></li>
+        <li><a href="Others/reg.md#isExist-multiple" target="_blank">x 또는 y가 있을수도 있고, 없을 수도 있고</a></li>
+        <li><a href="Others/reg.md#select-word-by-specific-number" target="_blank">특정 글자 수의 문자만 조회</a></li>
+        <li><a href="Others/reg.md#select-word-by-numbers" target="_blank">글자 수 조건 추가하여 문자 조회</a></li>
+        <li><a href="Others/reg.md#select-specific-word" target="_blank">특정 문자만 조회</a></li>
+        <li><a href="Others/reg.md#select-all-small-alphabets" target="_blank">소문자 알파벳 전체를 조회하기</a></li>
+        <li><a href="Others/reg.md#select-korean" target="_blank">한글단어 조회</a></li>
+        <li><a href="Others/reg.md#select-other-words" target="_blank">기타 대표문자</a></li>
+        <li><a href="Others/reg.md#regbylanguages" target="_blank">언어별 정규표현식</a></li>
       </ul>
       </details>
     </li>
     <li>
       <details>
-      <summary><a href="Others/Errors.md">Errors</a></summary>
+      <summary><a href="Others/Errors.md" target="_blank">Errors</a></summary>
       <ul>
-        <li><a href="Others/Errors.md#reimport-gradle">Gradle이 정상적으로 작동하지 않을때</a></li>
+        <li><a href="Others/Errors.md#reimport-gradle" target="_blank">Gradle이 정상적으로 작동하지 않을때</a></li>
       </ul>
       </details>
     </li>
     <li>
       <details>
-      <summary><a href="Others/mac.md">MacOS</a></summary>
+      <summary><a href="Others/mac.md" target="_blank">MacOS</a></summary>
       <ul>
-        <li><a href="Others/mac.md#homebrew">Homebrew</a></li>
-        <li><a href="Others/mac.md#package-tree">tree 패키지</a></li>
-        <li><a href="Others/mac.md#commandlinetools">Xcode 대신 Command Line Tools 사용하기</a></li>
-        <li><a href="Others/mac.md#xcrun-error">xcrun error</a></li>
+        <li><a href="Others/mac.md#homebrew" target="_blank">Homebrew</a></li>
+        <li><a href="Others/mac.md#package-tree" target="_blank">tree 패키지</a></li>
+        <li><a href="Others/mac.md#commandlinetools" target="_blank">Xcode 대신 Command Line Tools 사용하기</a></li>
+        <li><a href="Others/mac.md#xcrun-error" target="_blank">xcrun error</a></li>
       </ul>
       </details>
     </li>
     <li>
       <details>
-      <summary><a href="Others/pi.md">Raspberry Pi</a></summary>
+      <summary><a href="Others/pi.md" target="_blank">Raspberry Pi</a></summary>
       <ul>
-        <li><a href="Others/pi.md#enable-ssh">SSH 활성화</a></li>
-        <li><a href="Others/pi.md#ssh-mac">맥에서 라즈베리파이 SSH 접속</a></li>
-        <li><a href="Others/pi.md#install-docker">도커 설치</a></li>
+        <li><a href="Others/pi.md#enable-ssh" target="_blank">SSH 활성화</a></li>
+        <li><a href="Others/pi.md#ssh-mac" target="_blank">맥에서 라즈베리파이 SSH 접속</a></li>
+        <li><a href="Others/pi.md#install-docker" target="_blank">도커 설치</a></li>
       </ul>
       </details>
     </li>
