@@ -6,6 +6,7 @@
 - [tree 패키지](#package-tree)
 - [Xcode 대신 Command Line Tools 사용하기](#commandlinetools)
 - [xcrun error](#xcrun-error)
+- [특정포트 사용중인 프로세스 종료하기](#killproc)
 
 <br>
 
@@ -90,5 +91,27 @@ CommanLineTools를 업데이트 하지 않아 발생한 에러같았다. X Code�
 `xcode-select --install` 명령어로 CommanLineTools를 업데이트 하고 나서 다시 reinstall했더니 정상적으로 설치가 되었다.
 
 ![](http://www.mediafire.com/convkey/e0a1/sfyajpnpwqt9ytbzg.jpg)
+
+<br>
+
+## <a name="killproc"></a>특정포트 사용중인 프로세스 종료하기
+
+포트를 사용중인 프로세스 조회**
+
+```
+sudo lsof -i :8080 // port
+```
+
+위 명령어로 조회된 프로세스중 종료할 프로세스의 PID를 드래그해서 복사한다.
+
+<br>
+
+**해당 프로세스 종료하기**
+
+```
+kill 22640 // process
+```
+
+`kill`이라는 명령어와 함께 아까 복사해둔 PID를 입력하면 해당 프로세스를 종료할 수 있다. 다시 `sudo lsof -i :8080` 를 통해 프로세스가 정상적으로 종료되었는지 확인할 수 있다.
 
 <br>

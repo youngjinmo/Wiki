@@ -334,6 +334,7 @@
         <li><a href="Others/mac.md#package-tree" target="_blank">tree 패키지</a></li>
         <li><a href="Others/mac.md#commandlinetools" target="_blank">Xcode 대신 Command Line Tools 사용하기</a></li>
         <li><a href="Others/mac.md#xcrun-error" target="_blank">xcrun error</a></li>
+        <li><a href="Others/mac.md#killproc">특정포트 사용중인 프로세스 종료하기</a></li>
       </ul>
       </details>
     </li>
