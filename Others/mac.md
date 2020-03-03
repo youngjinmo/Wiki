@@ -7,6 +7,7 @@
 - [Xcode 대신 Command Line Tools 사용하기](#commandlinetools)
 - [xcrun error](#xcrun-error)
 - [특정포트 사용중인 프로세스 종료하기](#killproc)
+- [한글 깨진 파일 UTF-8 변환해서 복구하기 (iconv)](#iconv)
 
 <br>
 
@@ -115,3 +116,29 @@ kill 22640 // process
 `kill`이라는 명령어와 함께 아까 복사해둔 PID를 입력하면 해당 프로세스를 종료할 수 있다. 다시 `sudo lsof -i :8080` 를 통해 프로세스가 정상적으로 종료되었는지 확인할 수 있다.
 
 <br>
+
+## <a name="iconv"></a>한글 깨진 파일 UTF-8 변환해서 복구하기 (iconv)
+
+맥을 사용하면서 불편한 점 중 하나는 UTF-8으로 인코딩되지 않은 파일을 타 운영체제 사용자로부터 파일을 받을 때이다. 지금까지는 양해를 구하고 UTF-8 인코딩을 부탁하곤 했는데, 이제 그럴 필요가 없어졌다.
+
+php 코드 한 줄만으로 한글이 깨져서 전송된 파일을 UTF-8으로 인코딩해서 복구할 수 있기 때문이다.<br>
+
+php엔 파일의 character encoding을 바꿀 수 있는 <a href="https://www.php.net/manual/en/function.iconv.php" target="_blank">iconv</a> 라는 함수가 존재한다. 이 함수를 사용해서 간단히 문제를 해결할 수 있다.
+
+```php
+iconv -f euc-kr -t utf-8 [file] > [new file]
+```
+
+`-f` : 원 문서의 인코딩 방식
+
+`-t` : 새로 출력되는 파일의 인코딩 방식
+
+
+
+**인코딩 전**
+
+<img src="http://www.mediafire.com/convkey/8d6c/eu9kzcicc80xofdzg.jpg" />
+
+**인코딩 후**
+
+<img src="http://www.mediafire.com/convkey/c90f/tlln4gcjwkk8uujzg.jpg" />
