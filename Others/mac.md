@@ -142,3 +142,4 @@ iconv -f euc-kr -t utf-8 [file] > [new file]
 **인코딩 후**
 
 <img src="http://www.mediafire.com/convkey/c90f/tlln4gcjwkk8uujzg.jpg" />
+
