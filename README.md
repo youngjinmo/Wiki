@@ -146,6 +146,7 @@
                 <li><a href="DevOps/Linux.md#combine-commands" target="_blank">복수의 명령어 동시실행</a></li>
                 <li><a href="DevOps/Linux.md#caffeinate" target="_blank">슬립모드 진입방지 (caffeinate)</a></li>
                 <li><a href="DevOps/Linux.md#ubuntu-reboot" target="_blank">시스템 재부팅</a></li>
+                <li><a href="DevOps/Linux.md#ifconfig" target="_blank">ip주소 확인하기</a></li>
                 <li><a href="DevOps/Linux.md#change-localtime" target="_blank">서버시간 변경하기</a></li>
                 <li><a href="DevOps/Linux.md#setup-utf8" target="_blank">UTF-8 인코딩설정</a></li>
                 <li><a href="DevOps/Linux.md#hostname" target="_blank">호스트네임 변경하기</a></li>
