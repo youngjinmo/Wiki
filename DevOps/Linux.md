@@ -225,7 +225,7 @@ $ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 <br>
 
-## <a name="setup-locale"></a>UTF-8 인코딩 설정
+## <a name="setup-locale"></a>UTF-8 인코딩 설정(한국어 설정)
 
 ```
 $ sudo locale-gen ko_KR.EUC-KR ko_KR.UTF-8
@@ -246,8 +246,6 @@ LANGUAGE="ko_KR:ko:en_US:en"
 ```
 $ source .bash_profile
 ```
-
-솔직히 아직 잘 이해못했다. 아래 출처의 박재성님이 알려주신대로 따라했다..
 
 출처 : <a href="https://youtu.be/8MzyAFPDC1I?t=838" target="_blank">박재성님 - 원격 서버에 소스 코드 배포하기 1단계</a>
 

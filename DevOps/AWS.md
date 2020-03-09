@@ -13,7 +13,7 @@
 - [Region과 Availability zone](#region)
 - [EC2 인스턴스](#ec2)
 - [EC2 인스턴스 SSH 접속](#ssh-i)
-- [EC2 locale 설정](#locale-ko-utf8)
+- [EC2 언어 설정](#locale-ko-utf8)
 - [awscli 설치하기](#awscli)
 - [Apache2 웹서버 실행](#start-apache2)
 - [키페어(.pem) 자동으로 읽어오기](#autoload-pem)
@@ -74,11 +74,11 @@ aws에서 발급받은 key 디렉토리와 접속하고자 하는 EC2 ip주소�
 
 <br>
 
-## <a name="locale-ko-utf8"></a>EC2 locale 설정
+## <a name="locale-ko-utf8"></a>EC2 언어 설정
 
 인스턴스에 접속해서 `locale` 을 입력하면 현재 설정된 locale을 확인할 수 있다.
 
-**Ubuntu EC2 인스턴스라면,**
+### Ubuntu EC2
 
 인스턴스 접속해서 아래 명령어 명령.
 
@@ -88,13 +88,22 @@ aws에서 발급받은 key 디렉토리와 접속하고자 하는 EC2 ip주소�
 
 `$ sudo locale-gen ko_KR.UTF-8`
 
-**Amazon Linux 인스턴스라면,**
 
-`/etc/sysconfig/i18n` 파일을 수정
 
-`LANG=ko_KR.UTF-8`
+### Amazon Linux EC2
 
-출처 : [Beomi's Tech Blog - ubuntu Locale 한글로 바꾸기](https://beomi.github.io/2017/07/10/Ubuntu-Locale-to-ko_KR/)
+`/etc/sysconfig/i18n` 파일을 수정한다.
+
+~~~
+$ vim /etc/sysconfig/i18n
+$ LANG=ko_KR.UTF-8
+~~~
+
+만약 권한 문제로 수정할 수 없다면, [chmod](https://youngjinmo.github.io/2019/07/linux-permission/)이용하여 권한을 수정해서 파일을 수정한후 다시 아래의 명령어를 통해 권한을 돌려놓자.
+
+~~~
+$ chmod 644 /etc.sysconfig/i18n
+~~~
 
 <br>
 

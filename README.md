@@ -148,7 +148,7 @@
                 <li><a href="DevOps/Linux.md#ubuntu-reboot" target="_blank">시스템 재부팅</a></li>
                 <li><a href="DevOps/Linux.md#ifconfig" target="_blank">ip주소 확인하기</a></li>
                 <li><a href="DevOps/Linux.md#change-localtime" target="_blank">서버시간 변경하기</a></li>
-                <li><a href="DevOps/Linux.md#setup-utf8" target="_blank">UTF-8 인코딩설정</a></li>
+                <li><a href="DevOps/Linux.md#setup-utf8" target="_blank">UTF-8 인코딩 설정(한국어 설정)</a></li>
                 <li><a href="DevOps/Linux.md#hostname" target="_blank">호스트네임 변경하기</a></li>
                 <li><a href="DevOps/Linux.md#wget" target="_blank">wget으로 파일다운로드</a></li>
                 <li><a href="DevOps/Linux.md#adduser" target="_blank">계정 생성하기</a></li>
@@ -207,7 +207,7 @@
           <li><a href="DevOps/AWS.md#region" target="_blank">Region과 Availability zone</a></li>
           <li><a href="DevOps/AWS.md#ec2" target="_blank">EC2 인스턴스의 기능</a></li>
           <li><a href="DevOps/AWS.md#ssh-i" target="_blank">터미널로 EC2 인스턴스 SSH 접속</a></li>
-          <li><a href="DevOps/AWS.md#locale-ko-utf8" target="_blank">EC2 locale 설정</a></li>
+          <li><a href="DevOps/AWS.md#locale-ko-utf8" target="_blank">EC2 언어 설정</a></li>
           <li><a href="DevOps/AWS.md#awscli" target="_blank">awscli 설치하기</a></li>
           <li><a href="DevOps/AWS.md#start-apache2" target="_blank">Apache2 웹서버 실행</a></li>
           <li><a href="DevOps/AWS.md#autoload-pem" target="_blank">키페어(.pem) 자동으로 읽어오기</a></li>
