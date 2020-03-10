@@ -3,6 +3,7 @@
 - [SpringBoot 특징](#feature)
 - [Spring Boot auto-configuration](#config)
 - [에러페이지 핸들링](#error)
+- [request mapping통한 다중맵핑](#request-multi-mapping)
 
 <br>
 
@@ -112,5 +113,26 @@ public class ErrorHandler {
 추가적인 학습/설명이 필요하다면 이 링크[(갱그리-Spring Boot 에러페이지 Customizing)](https://brunch.co.kr/@ourlove/70)를 통해 꼭 해보길 바란다.
 
 <br>
+
+## <a name="request-multi-mapping"></a>request mapping통한 다중맵핑
+
+`@GetMapping` 메서드는 하나의 매핑만 가능하지만, `@RequetMapping` 을 이용하면 다중맵핑이 가능하다. 
+
+웹 애플리케이션의 메인 페이지로 이동하는 3개의 키워드를 모두 index.html로 넘기고 싶다.
+
+이땐 value안에 키워드를 `,`로 구분하여 작성하면 된다.
+
+~~~java
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class homeController {
+   @RequestMapping(value = {"/", "/index", "/main"})
+   public String index(){
+      return "index";
+   }
+}
+~~~
 
 <br>
