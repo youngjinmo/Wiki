@@ -89,7 +89,7 @@
                 <li><a href="frameworks/spring-framework/spring-boot.md#feature" target="_blank">Spring Boot 특징</a></li>
                 <li><a href="frameworks/spring-framework/spring-boot.md#config" target="_blank">Spring Boot auto-configuration</a></li>
                 <li><a href="frameworks/spring-framework/spring-boot.md#error" target="_blank">에러페이지 핸들링</a></li>
-                <li><a href="frameworks/spring-framework/spring-boot.md#request-multi-mapping" target="_blank">@RequestMapping통한 다중맵핑</a></li>
+                <li><a href="frameworks/spring-framework/spring-boot.md#get-mapping-multi" target="_blank">@GetMapping 어노테이션으로 다중맵핑하기</a></li>
               </ul>
             </details>
           </li>

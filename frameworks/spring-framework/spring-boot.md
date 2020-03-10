@@ -3,7 +3,7 @@
 - [SpringBoot 특징](#feature)
 - [Spring Boot auto-configuration](#config)
 - [에러페이지 핸들링](#error)
-- [@RequestMapping통한 다중맵핑](#request-multi-mapping)
+- [@GetMapping 어노테이션으로 다중맵핑하기](#get-mapping-multi)
 
 <br>
 
@@ -114,13 +114,11 @@ public class ErrorHandler {
 
 <br>
 
-## <a name="request-multi-mapping"></a>@RequestMapping통한 다중맵핑
+## <a name="get-mapping-multi"></a>@GetMapping 어노테이션으로 다중맵핑하기
 
-`@GetMapping` 메서드는 하나의 매핑만 가능하지만, `@RequetMapping` 을 이용하면 다중맵핑이 가능하다. 
+파라미터안에 `value = { , }` 형식으로 작성하면 `@GetMapping` 어노테이션으로 다중맵핑이 가능하다.
 
-웹 애플리케이션의 메인 페이지로 이동하는 3개의 키워드를 모두 index.html로 넘기고 싶다.
-
-이땐 value안에 키워드를 `,`로 구분하여 작성하면 된다.
+웹 애플리케이션의 메인 페이지로 이동하는 3개의 키워드를 모두 index.html로 넘기고 싶어서 작성한 코드이다.
 
 ~~~java
 import org.springframework.stereotype.Controller;
