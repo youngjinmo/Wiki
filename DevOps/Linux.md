@@ -9,9 +9,9 @@
 - [명령어](#commands)
   - [Shell과 Kernel](#shell-kernel)
   - [비트(32/64) 확인](#uname-m)
-  - [find](#find)
   - [Symbolic Link](#symboliclink)
-  - [grep](#grep)
+  - [find - 파일/디렉토리 찾기](#find)
+  - [grep - 문서내 검색](#grep)
   - [터미널 결과 출력 저장](#save-output)
   - [복수의 명령어 동시실행](#combine-commands)
   - [슬립모드 진입방지 \(caffeinate)](#caffeinate)
@@ -67,7 +67,19 @@ $ uname -m
 
 <br>
 
-## <a name="find"></a>find
+## <a name="symboliclink"></a>심볼릭 링크 생성/사용하기
+
+심볼릭 링크는 디렉토리 또는 파일에 더 빠르게 접근하기 위한 별명을 설정하는 일과 같다. `디렉토리 --심볼릭링크`
+
+```
+$ ln -s [target] [symbolic_link_name]
+```
+
+<img src="http://www.mediafire.com/convkey/1fa6/at0glqvdxyrry4czg.jpg" width="700" />
+
+<br>
+
+## <a name="find"></a>find - 파일/디렉토리 찾기
 
 **리눅스에서 파일이나 디렉토리를 검색**할 때 사용하는 명령어이다.
 
@@ -93,19 +105,7 @@ $ uname -m
 
 <br>
 
-## <a name="symboliclink"></a>심볼릭 링크 생성/사용하기
-
-심볼릭 링크는 디렉토리 또는 파일에 더 빠르게 접근하기 위한 별명을 설정하는 일과 같다. `디렉토리 --심볼릭링크`
-
-```
-$ ln -s [target] [symbolic_link_name]
-```
-
-<img src="http://www.mediafire.com/convkey/1fa6/at0glqvdxyrry4czg.jpg" width="700" />
-
-<br>
-
-## <a name="grep"></a>grep
+## <a name="grep"></a>grep - 문서내 검색
 
 유닉스를 위해 만들어진 텍스트 검색 기능의 명령어이다. <i>**g**rep | **r**egular **e**xpression | **p**rint</i>의 약자라고 한다.
 

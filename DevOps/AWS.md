@@ -23,6 +23,8 @@
 - [Amazon Linux에 메이븐 설치하기](#install-maven)
 - [Java 프로그램 빌드하기 (maven/gradle)](#java-build)
 - [Java 프로그램 실행하기 (jar파일 실행)](#java-jar)
+- [포트번호 8080으로 리다이렉트 하기](#redirect-8080)
+- [터미널 백그라운드에서 서버 실행하기(tmux)](#tmux)
 
 ---
 
@@ -293,5 +295,53 @@ gradle로 빌드를 했을때엔 프로젝트 디렉토리내에 `/build/libs/` 
 ~~~
 $ java -jar my_project-0.0.1-SNAPSHOT.jar
 ~~~
+
+<br>
+
+## <a name="redirect-8080"></a>포트번호 8080으로 리다이렉트 하기
+
+~~~
+$ sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+~~~
+
+<br>
+
+## <a name="tmux"></a>터미널 백그라운드에서 서버 실행하기(tmux)
+
+**tmux 설치하기**
+
+~~~
+$ sudo yum install tmux
+~~~
+
+
+
+**백그라운드에서 실행할 세션 시작하기**
+
+~~~
+$ tmux new -s [name]
+~~~
+
+[name]에 세션이름 지정
+
+
+
+**현재 실행중인 세션 확인하기**
+
+~~~
+$ tmux ls
+~~~
+
+
+
+**실행중인 세션 종료하기**
+
+~~~
+$ tmux kill-session -t [name]
+~~~
+
+
+
+출처 : [tmux cheatsheet](https://gist.github.com/henrik/1967800)
 
 <br>

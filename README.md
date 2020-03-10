@@ -139,9 +139,9 @@
               <ul>
                 <li><a href="DevOps/Linux.md#shell-kernel" target="_blank">Shell과 Kernel</a></li>
                 <li><a href="DevOps/Linux.md#uname-m" target="_blank">비트(32/64) 확인</a></li>
-                <li><a href="DevOps/Linux.md#find" target="_blank">find</a></li>
                 <li><a href="DevOps/Linux.md#symboliclink" target="_blank">Symbolic Link</a></li>
-                <li><a href="DevOps/Linux.md#grep" target="_blank">grep</a></li>
+                <li><a href="DevOps/Linux.md#find" target="_blank">find - 파일/디렉토리 찾기</a></li>
+                <li><a href="DevOps/Linux.md#grep" target="_blank">grep - 문서내 검색</a></li>
                 <li><a href="DevOps/Linux.md#save-output" target="_blank">터미널 결과 출력 저장</a></li>
                 <li><a href="DevOps/Linux.md#combine-commands" target="_blank">복수의 명령어 동시실행</a></li>
                 <li><a href="DevOps/Linux.md#caffeinate" target="_blank">슬립모드 진입방지 (caffeinate)</a></li>
@@ -217,6 +217,8 @@
           <li><a href="DevOps/AWS.md#install-maven" target="_blank">Amazon Linux에 메이븐 설치하기</a></li>
           <li><a href="DevOps/AWS.md#java-build" target="_blank">Java 프로그램 빌드하기 (maven/gradle)</a></li>
           <li><a href="DevOps/AWS.md#java-jar" target="_blank">Java 프로그램 실행하기 (jar파일 실행)</a></li>
+          <li><a href="DevOps/AWS.md#redirect-8080" target="_blank">포트번호 8080으로 리다이렉트 하기</a></li>
+          <li><a href="DevOps/AWS.md#tmux" target="_blank">터미널 백그라운드에서 서버 실행하기(tmux)</a></li>
         </ul>
       </details>
     </li>
