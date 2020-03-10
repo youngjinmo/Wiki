@@ -3,7 +3,7 @@
 - [SpringBoot 특징](#feature)
 - [Spring Boot auto-configuration](#config)
 - [에러페이지 핸들링](#error)
-- [request mapping통한 다중맵핑](#request-multi-mapping)
+- [@RequestMapping통한 다중맵핑](#request-multi-mapping)
 
 <br>
 
@@ -114,7 +114,7 @@ public class ErrorHandler {
 
 <br>
 
-## <a name="request-multi-mapping"></a>request mapping통한 다중맵핑
+## <a name="request-multi-mapping"></a>@RequestMapping통한 다중맵핑
 
 `@GetMapping` 메서드는 하나의 매핑만 가능하지만, `@RequetMapping` 을 이용하면 다중맵핑이 가능하다. 
 

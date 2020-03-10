@@ -89,7 +89,7 @@
                 <li><a href="frameworks/spring-framework/spring-boot.md#feature" target="_blank">Spring Boot 특징</a></li>
                 <li><a href="frameworks/spring-framework/spring-boot.md#config" target="_blank">Spring Boot auto-configuration</a></li>
                 <li><a href="frameworks/spring-framework/spring-boot.md#error" target="_blank">에러페이지 핸들링</a></li>
-                <li><a href="frameworks/spring-framework/spring-boot.md#request-multi-mapping" target="_blank">request mapping통한 다중맵핑</a></li>
+                <li><a href="frameworks/spring-framework/spring-boot.md#request-multi-mapping" target="_blank">@RequestMapping통한 다중맵핑</a></li>
               </ul>
             </details>
           </li>
@@ -232,7 +232,14 @@
       <details>
         <summary><a href="front-side/template-engines/template-engines.md" target="_blank">Template Engines</a></summary>
         <ul>
-          <li><a href="front-side/template-engines/mustache.md" target="_blank">Mustache</a></li>
+          <li>
+            <details>
+              <summary><a href="front-side/template-engines/mustache.md#mustache" target="_blank">Mustache</a></summary>
+              <ul>
+                <li><a href="front-side/template-engines/mustache.md#refactor" target="_blank">화면 분할하기 (중복제거)</a></li>
+              </ul>
+            </details>
+          </li>
         </ul>
       </details>
     </li>

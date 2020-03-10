@@ -1,3 +1,8 @@
+- [Mustache](#mustache)
+- [화면 분할하기 (중복제거)](#refactor)
+
+<hr>
+
 ## <a name="mustache"></a>Mustache
 
 JSP도 있고, Spring Boot에서는 Thymeleaf를 미는것도 같은데 왜 Mustache를 알아야 할까.
@@ -12,9 +17,22 @@ Thymeleaf는 잘 모르지만, 느리다는 성능 상의 이슈가 있는 편�
 
 일단 대략적으로 이정도만 알고 있는데, 향후 써보면서 계속 업데이트 해보겠다.
 
-<br>
-
 **Reference**
 
 - [Baeldung - Spring Boot Mustache](https://www.baeldung.com/spring-boot-mustache)
 
+<br>
+
+## <a name="refactor"></a>화면 분할하기 (중복제거)
+
+Mustache에서는 template을 기준으로 화면을 분할 할 수 있다. 
+
+![](https://lh3.googleusercontent.com/GI4huIPN0qAYjfr1m5MDQNyPQOjEmHUILT_aC_ZHkeCTA6YTeE_HKAQGxKjUXOGSvaY1wPWJOT4-FNhlm3NYnFzmzLw-6d37UAUpkFaG_f4HhbSp36pC5a_GakDv58SqPbfvJXDvy-aHMRpK_PCQcLxltHfLN1iVnVtpNuehsrXnJOnxwgYMkfi-9X2wRmzP7AthOAHPEYOAYatg6SQV7AG9d52Vba6GYvVgZEJumn7cT828O9hIrnPKmDYCMkhkHKnMn_nFfzWytXtN3sjPfPfs0dheg4ci0SupyDZs6Rm9gRH3fvfjCtKewEZEG0Fn9Ip1GYES95Itqoz25TVe-lXzV5Xj3W-fXhTRI74HyzeVjJ7EJWYv4_moEiXYPpFMehptPF-rr77Y9FWcwAq5aD34EIBw8DD5YUX1sbXrhKoeUfUWnbOlBI6F95aTQyOOp_TPbE4RC0Ba4-cMsUu8nY99xvLqftiwSj09YgAkw5RWv5qCksi98tjk4DIyU3RmfGBSbAPyeHPiSNpM3uUwS-6CLzWfNqNuhHIAqRSBAYTYHf54wCfEsbuPBXQ6OpWLKxRteer7crHkq7P87E500dzLylg_PSmuw3VuOzzSdeNxkMhUfIgrXRcIj7cQ0ll8P9KhT6saEH61nWl0k52RBnme0kif10O9sZBwLv0yBN7uUdymnNW4KBX27Yq5iUk_KvNahkCy2CbknmpoPy1b5xxjqtbPrAxWGxRHNHBdKPY5Xe75=w231-h166-no)
+
+~~~html
+{{> /layout/navigation}}
+~~~
+
+위 코드는 mustache 템플릿엔진이 적용중인 index.html파일에서 navigation에 해당하는 코드만 따로 저장한 navigation.html을 불러오는 코드이다.
+
+<br>
