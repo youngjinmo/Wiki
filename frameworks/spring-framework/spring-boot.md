@@ -4,6 +4,7 @@
 - [Spring Boot auto-configuration](#config)
 - [에러페이지 핸들링](#error)
 - [@GetMapping 어노테이션으로 다중맵핑하기](#get-mapping-multi)
+- [h2 데이터베이스 마이그레이션](#h2-databse)
 
 <br>
 
@@ -132,5 +133,66 @@ public class homeController {
    }
 }
 ~~~
+
+<br>
+
+## <a name="h2-databse"></a>h2 데이터베이스 마이그레이션
+
+h2데이터 베이스란 **컴퓨터에 내장된 램(RAM)메모리에 의지하는 데이터베이스**를 말한다. 테스트 또는 지금의 나처럼 실습을 위해서는 간편하고 빠르기 때문에 좋은 옵션이 될 수 있다.
+
+다만, 램에 데이터를 저장하다보니 웹서버를 재부팅하면 기존의 데이터가 사라진다는 단점이 있다. 따라서 이 때엔 테스트에 필요한 데이터를 미리 sql로 작성해두고 웹서버 재부팅시마다 데이터를 인위적으로 주입하여 테스트 해볼 수 있다.
+
+스프링부트 프로젝트에서 h2 데이터 베이스를 사용하는 방법은 다음과 같다.
+
+
+
+### 의존성 설정
+
+**Maven**
+
+~~~xml
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+<dependency>
+   <groupId>com.h2database</groupId>
+   <artifactId>h2</artifactId>
+</dependency>
+~~~
+
+**Gradle**
+
+~~~gradle
+// https://mvnrepository.com/artifact/com.h2database/h2
+testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
+~~~
+
+
+
+### application.yml 설정
+
+~~~yml
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+spring.datasource.url=jdbc:h2:mem:devandy;
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+~~~
+
+
+
+이제 데이터베이스가 사용가능하며, `localhost:8080/h2-console` 에서 대시보드를 이용할 수도 있다.
+
+![](https://lh3.googleusercontent.com/VD97biPg5fcx8KwvetWuiwQ9Atr81zPmhwlMntynUvyK7ICh1Qq8Pk34_9Wa6_YgJAd_hDRDvEy14LYYVALxi-E0_Jrv7wBChRywueHMVyuJfOj2fRlIT2H6vxhLv30jklpyrOXDCmMoy6dWncPF0rC3CSvE4_pfkbi4qIWBScKBl_Y69eNoJv-JZAGgxd1RcA-rbk63cEfPFEgrCl3b8_v0_VCV3vTEbIgwV_huEb-7BGIbvZxAtdcaNTkv1LsJaquRis_vkPjkfzsu2LzgPXGfcBTNg8KWqtvNMtq1b3fcrU49tmzX_oIvKYU9IXeA011fG6oI6hsEmpY4BNW91Sn10Q0vgXRtxgsRV1DWySyJD_jW0_aFURz__PqEc5Xn3WVAERTso52Autvn07ejtg21fr84d3lk3qTaKozgbEJgwBJDflpvrV64ODEmjeXquMTQ9FwTsi2-NFSjrazPlak4LNHPXsCP69SdEUZ5STE8JKD99fiD9a96UYeml-EyHyvDzNz6MnRnXmkLjgrnd4Zj7sV8qUad990r6EQNp9JVtY4mGIL-zCXMhvC2SVLO-PEyirrUZ7DEnL5UbnvpHWLfUluFSdk09BupqW9H_Vt35slM0iOKbliBTsxo7MCSzAjVTEP3kXaNkqUiLTLZUpSP79ZA6GBCcUaUiqslpvfdLxMIZoFqOY2sITcDRSKZpTURnKtXbjo5aEURXdaxBDNinAr1oy7rzywUkf1_IjaN3dLKoQ=w509-h402-no)
+
+![](https://lh3.googleusercontent.com/7g4emF9IGksv-m0sPpFAR3zI979_RKRss2Ebksu4bCBxCAZ-XOVqS62PyLWFyX4qXQ8VnP7iFhlu2xfqW0XU4AL63SG9uoYtsWY68bUm4P1AqC-0A2nX0JQZnqD5JkwwCcR9yx1fY2QSDeYvnTPJDxf9QntTAX95xGi1iIsdYIKDd9Eg9zkgaRguWEnpksmoUuJTj4FIgeOQjveE1f1YuVRLRgSwOSBU-WMVhvmd6O0KuVFpNra3i934fhG3gUa8RohlhHSdXlKzaleHwZYYnJEHI1m601NBY_h2LQinHkCmx_wNIzSReWKJHHW_wNmTlRBS1WlG1NvUgvUTy8AEbaeMThJmQm3QUbLHxmFK8B3E-XcG-NLRYjyvVppUcMn3_hngSfPcDvzjRT1bkSZ3fWv6k_3o5vyXd5b1amWmAxVS_rZJ_RGZOh6iaLPLarDaD4NQ55D8w-8mjXm7I7ZDJQh3Ta2qWfOlQb0ta0mB2yzvuC3JjoLWsf4V6o9lv07q6kO7IJ2yTNC6YPz3UGJlLHgIbUomuvJsflbuNSOJPIO58WSThBLRUdQQRTuQnKhbXa6_grfdFmQVqrB87rs11LkZVIpSCGELnf5U5kDZUHa643w1HIbPcMKX1x75OThFKUOr-amtqFBPA48mpzsodaW79YqNXSoTHuJvDAEgelED-wKxoXScnGoBWIYWlPbPmJkJtvnnkOe2qwt7duRGAa8SXjA2cNOTZ46IduCRpd76B4pokA=w864-h778-no)
 
 <br>
