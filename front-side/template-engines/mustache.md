@@ -1,4 +1,5 @@
 - [Mustache](#mustache)
+- [mustache 시작하기](#getting-started)
 - [화면 분할하기 (중복제거)](#refactor)
 - [update form구현하기](#update-form)
 
@@ -21,6 +22,39 @@ Thymeleaf는 잘 모르지만, 느리다는 성능 상의 이슈가 있는 편�
 **Reference**
 
 - [Baeldung - Spring Boot Mustache](https://www.baeldung.com/spring-boot-mustache)
+
+<br>
+
+## <a name="getting-started"></a>mustache 시작하기
+
+### 의존성 설정
+
+**Maven**
+
+~~~xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-mustache</artifactId>
+    <version>2.2.5.RELEASE</version>
+</dependency>
+~~~
+
+**Gradle**
+
+~~~gradle
+compile group: 'org.springframework.boot', name: 'spring-boot-starter-mustache', version: '2.2.5.RELEASE'
+~~~
+
+출처 : [https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mustache/2.2.5.RELEASE](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mustache/2.2.5.RELEASE)
+
+
+
+### application.yml 설정
+
+~~~yml
+spring.mustache.suffix: .html
+handlebars.cache=false
+~~~
 
 <br>
 
@@ -126,7 +160,7 @@ public class User {
 ~~~html
 {{#users}}
 <form method="post" action="/user/list">
-  // 이메일 주소 입력 칸
+  <!--이메일 주소 입력 칸-->
   <div class="form-group">
     <label for="userEmail">이메일</label>
     <input type="email" class="form-control" 
@@ -134,7 +168,7 @@ public class User {
       value="{{userEmail}}">
   </div>
       
-  // 이름 입력 칸
+  <!--이름 입력 칸-->
   <div class="form-group">
     <label for="userName">이름</label>
     <input class="form-control" 
@@ -142,14 +176,14 @@ public class User {
       value="{{userName}}">
   </div>
       
-  // 비밀번호 입력 칸
+  <!--비밀번호 입력 칸-->
   <div class="form-group">
     <label for="userPassword">비밀번호</label>
     <input type="password" class="form-control" 
       id="userPassword" name="userPassword" >
   </div>
       
-  // 수정완료 버튼
+  <!--수정완료 버튼-->
   <button type="submit" 
     class="btn btn-success clearfix pull-right">
       정보수정
