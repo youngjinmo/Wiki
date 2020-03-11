@@ -237,6 +237,7 @@
               <summary><a href="front-side/template-engines/mustache.md#mustache" target="_blank">Mustache</a></summary>
               <ul>
                 <li><a href="front-side/template-engines/mustache.md#refactor" target="_blank">화면 분할하기 (중복제거)</a></li>
+                <li><a href="front-side/template-engines/mustache.md#update-form" target="_blank">update form구현하기</a></li>
               </ul>
             </details>
           </li>
