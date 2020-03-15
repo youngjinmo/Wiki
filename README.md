@@ -176,6 +176,7 @@
               <ul>
                 <li><a href="DevOps/Linux.md#difference-between-update-upgrade" target="_blank">update와 upgrade의 차이</a></li>
                 <li><a href="DevOps/Linux.md#install-remove" target="_blank">apt-get 패키지 설치/삭제하기</a></li>
+                <li><a href="DevOps/Linux.md#asciinema" target="_blank">터미널 녹화기 asciinema</a></li>
               </ul>
             </details>
           </li>
@@ -365,7 +366,6 @@
     </li>
   </ul>
 </details>
-
 
 <br>
 

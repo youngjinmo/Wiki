@@ -32,6 +32,7 @@
 - [패키지 관리툴 (apt-get)](#apt-get)
   - [update와 upgrade의 차이](#difference-between-update-upgrade)
   - [apt-get 패키지 설치/삭제하기](#install-remove)
+  - [터미널 녹화기 asciinema](#asciinema)
 
 <br>
 
@@ -527,3 +528,84 @@ $ sudo apt-get remove [package-name]
 ~~~
 
 <br>
+
+## <a name="asciinema"></a>터미널 녹화기 asciinema
+
+터미널 화면을 녹화하는 [Asciinema](https://asciinema.org/) 패키지이다. 아래처럼 터미널 화면을 녹화할 수 있다.
+
+<script id="asciicast-170142" src="https://asciinema.org/a/170142.js" async></script>
+
+<br>
+
+### 설치
+
+**Ubuntu**
+
+~~~
+sudo apt-add-repository ppa:zanchey/asciinema
+sudo apt-get update
+sudo apt-get install asciinema
+~~~
+
+
+
+**MacOS (Homebrew)**
+
+~~~
+brew install asciinema
+~~~
+
+
+
+### 회원가입
+
+asciinema를 통해 생성되는 파일(.cast)은 일반적인 미디어 플레이로 재생할 수 없다. 재생하려면 asciinema를 통해서만 가능한데, 이를 asciinema에 업로드하면, embed링크를 통해 어디서나 재생할 수 있게된다. 따라서 회원가입을 하는것을 추천한다.
+
+웹에서 회원가입이 끝났다면, 터미널로 다시 돌아가서 asciinema 로그인 상태를 전달하자.
+
+~~~
+$ asciinema auth
+~~~
+
+![](https://lh3.googleusercontent.com/hdbRY9R91_sYu4aup6TB2KqdfbBbWMvrv_txe_EFeNqQtAT08KQendVrtxZbQhWj1bXzOs4fm7brartKOXoVGW18HgxaALauhpHmZ40b4TN5mgmB_Avo2P2DMPppISwcLHC26tLQpbAp67aPSBVtaYwfBBVDiPADRgGTH1o2iZsFyPuCLlL9mUd2ebrcNb_2rsy3KKnk9B0JcRyiaIc3XzR7VFowtfs3_mVlUTmNTBBBO2SH1qETrPNX5PcLT0xJfU9ymGMBopZONhx9ZUnvOzD3pwO9a31ws5yZVVKtqV4M2AelbvyoNPHAXRU7GmyyWn4Y_pAMspogksfEG0krM4YuePcbQBq7HxWMAg6Gjtgg_cOZkc_mRM6VnyO6g-KeFb4pKSiTAY9XiTqb4DQriZM2pD7a3-znIf2kSEgnJi9FiDYV4en4i2kmlVIaxaCts_NOIsk-h2yj-TrV4R67gCljT9Y3DPxX9VujhGc-30a_ePYBTv7SDpGoux81KvwTjJOLpO1L6-r9zvvrr01ymjlCYDGDWAWYcWrDODH6pebwN67MXXM2ww39JX9DVj2VVAYDtRT2ZrVV2WR0wwpkCV379Fis5XhGRbeaulmvUEnPaafHP-Rb-gNlagLC3jTQeg0yX45NsHndE64be6Dv1MZzUHcyZyvAvKI7MF_C2tT3-fmCkz2P09MknQJjfklkhZdmGKTcwlGS48SfXwWQQLvG1DDgFLjZGjZdj13p0fniiq8KIQ=w807-h264-no)
+
+그럼 url이 하나 생성되는데, 생성된 url로 웹브라우저로 접속해서 로그인하면, 앞으로 터미널에서 asciinema를 통해 녹화되는 영상을 클라우드(asciinema.org)로 업로드할 수 있게 된다.
+
+
+
+### 녹화
+
+터미널을 녹화하는 커맨드 명령어를 알아보자.
+
+![](https://lh3.googleusercontent.com/q4e5VsIPKE5ZVDF4qXmDRJCtNck9I4-icrkuRGiLceMBNbB_k_E5MWQXEYBHcYWuSU1zxgwgzt4Q2GyBHAyygEYUtgaDSVECS7z4Zd2SaBm3Nm1jsfrZKvFSuwwjrJGLZKqf2299Zmk2UA9AYj66dXPNJ9nGFLf6tKnwvzeM6n57I5tOfsMfzJK0Guy2PLwXffcp9ZjeNkKxlYRETx2-mtBiWkCW34zWLAU5XiHbWICM0JBuMwTekGLdyG0yUcYvWtTwqntFii2FSMqOoSAggXztKXMhABh2-upd4lfKKPhRsY29UUPIGBS-TmVj2T-2Dh_n_yed-B_CtcvwoNCXYFywCmiFucnVMIfzYbEiRREliHOQdjOLid9vmKIuehTuAffabpffVbinrGQHfzZaQKD-xq_fj1FzbT2NQNZu9V7jycYzaHWRsjwVJ3kZI4zrv0QhvUU6SrzxNt_ABz2MIEizOyravTNjEDB_Ww8zkTZ51v1UGKTI20aHxqOfcAW0_r5mhN1v2R1RBaby639CNqqSK_2sFOFOMBZIhUw0hJHzv8H-P9KH6CZ643gyISVzoR014B8cL9V_iuwBqix8g67Be4oOIBc2r144w2xkRJbs7q9laJYTmQN1HrBf-eiq6zOZl6SwrZnZDj62zXL5KfxHsH54UZR7EFy9eZCSIp4p4XW9F8A8mSmWUMHfXbiF0ZpGuhtgDFdDjyDOwSX66cgRQOLs-ZCeTd-Uxiu7Iwrvbul8mgxxy9Rm=w809-h530-no)
+
+저장할 때 파일의 명령을 지정하면서 저장하는 명령어는 다음과 같다.
+
+~~~
+$ asciinema rec -t "new-file"
+~~~
+
+
+
+녹화를 중지하고 싶으면 exit를 입력하면 된다.
+
+~~~
+$ exit
+~~~
+
+
+
+그럼 녹화 영상을 asciinema.org로 업로드할지, 로컬에 저장할지를 묻는다. 업로드를 원한다면, Enter 로컬에만 저장을 원한다면 ctrl+c를 입력하면 된다.
+
+**업로드했을 때.**
+
+![](https://lh3.googleusercontent.com/UmAK-Ni3DUpBwxxg_5KpEverW_G4yriZIDT5-UejiPdojSJEQXGd8XWA6c8i25ZrF2FYkD4qGfDdkoobvLitPBcRW0frsNqB32IKbd0l23mIeoouwxQa6PxZO1gSBJoOEyOVjJ_LFRg5SDrt3umvo4Kd4_xT4Ge83MtW2Fz5hnPkmiOjS3drbtop-O4Rw4AwMy9EHUXbWw4Q4ruuULcZCQfG_TDTju3MMwLFatx6H7RfObc22U1ijQhewnj4M0w4pXW2z0y1F00YWtyNoElJnv-re-CD0rR59gPFpgNv9iGE0uGNpfhFqeg7f5XETzZe_fqfsOMYS3sTMuxGoPwBQOcGAv8-7OD1T7T5jKpTt8TId4qe417VpLz54BAJ4-cP3efv6Qf2uvI4K86rQ_EgWMkorfr2f4Ez_Sk_EybRj2N7xeLmxubHRvVmjCkFQ13EnD35L2vZrGMdHWizcKlCyQrK8Twh-nev8mKxRBYLhfTk8OixY7SWSCzTd60lj2ibATrZIQ5IndFk7jw8Os5fC9_WK6wCq26mCxsaOtudgV3h6pkh2Gs2iSu5M_r8OZxWe3oOxqOyDXK9KsbX_Q2p-lObBuxqSyDGgpDXxiZjXRZPpiQ5AOSmVXOL9mUtbK4Hg2ZtiPUEYfpuuV9XGAM6KcCX00FD9GrX9ZbbB5s64kDuTMgi70Bxnu8SyP2Vf0qGK_s7l5kOq1xiIzL2BcY9Wr8EKUPGHTckGfhl_J17bO4U5bXjlw=w810-h218-no)
+
+
+
+**로컬에 저장했을 때.**
+
+![](https://lh3.googleusercontent.com/ZiqelRnS6wLSQZvYAG2uqSdfdPgxVzNKr3dqG2h1PaQoWBRe-UrAMhAP-YDzVGFiUuEE3r0wbV173inj0OvF2ImfS6v--PKNOqMd5Nwvlm4_t93KpNrozmxiEoZjdDExlw1bzvRHDLtnZlXRYEw9bfmtejxC4W5hvFpxWQMMDJiMKC_r8MHkHGe7Z7E6ujJPRk4vcsGvZwR6mQO6-lHucP0V3pyNQGQpF9QL-d4CzmSi4Hik8nnLuQzANFPnFDStbX_vm8XY13n2ZH1iB648sU4r1olRx-NKX2B_Vbx1csP4oro9e45f7L-8bUfA4U2C4bbKVnpPJdnbu1qHRHFHfD8vZBAiRGu3zIm-riQo7Qc1o5g3fmmsphVTdQEp97xigYZWurf_TfK1uqKI0bsgGmtMQcwOSYx_AA3w_yZZmluyUYt5yRYEeVMFnPaPMYKOrppy8O1HBk_dlyWg76M8DZdNHwOowaOOE99xZ3XCWN_GKh1YjSI7mZDMaOlTqdNId29_zIWblcfb-UMxYtlRNw8yDZzQmpD9AmgptQjN7GIj7pfSluqvkQWvFqdpjjaeim0cnZmCJ1BCh-VMa3sHRUMHCcF40SpQd9YrtZaIvi3u4MCVYiWbpd2LDfZSGCSdtg-boN-Rmc_hHqi1hFEyydeVRbmn2JoQvBk848f1ZUxnCzssHKC-ToIDt3vmcuer4xJ91j3C0qOnMEpUaDhhQPVnW6B3-TWdZLrfVhouSzIHOLZdtiMaTNvb=w739-h143-no)
+
+<br>
+
