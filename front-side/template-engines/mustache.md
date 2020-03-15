@@ -110,7 +110,7 @@ public class userController {
 
 
 
-### mustache 문법 작성
+### html 페이지에 mustache 문법 작성
 
 컨트롤러에서 가져온 사용자 정보가 담긴 `model` 을 가져오려면 mustache의 문법을 알아야 한다. mustache에서는 model을 가져와서 맵핑할 때 아래와 같은 형식을 사용한다.
 
@@ -155,7 +155,7 @@ public class User {
 
 여기서 수정에 필요한 데이터 컬럼인 userEmail, userName, userPassword를 사용할 것이다.
 
-이를 적용하면 수정하는 페이지에서 작성해야할 mustache는 다음과 같다.
+이를 적용하면 수정하는 페이지(update.html)에서 작성해야할 코드는 다음과 같다.
 
 ~~~html
 {{#users}}
