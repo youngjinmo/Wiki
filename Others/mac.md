@@ -75,7 +75,9 @@
 
 Mac에서 git, gcc같은 개발 관련 툴을 사용하기 위해서는 Command Line Tools가 먼저 설치되어 있어야 한다. X Code를 설치하면 X Code 메뉴탭에서 설치가 가능하긴 하지만, 굳이 X Code를 사용하지 않는 개발자가 이렇게 무거운 툴을 설치할 필요는 없다. 터미널에서 간단히 아래의 명령어를 입력하여 설치할 수 있다.
 
-`xcode-select --install`
+~~~
+xcode-select --install
+~~~
 
 출처 : [백투더맥 - Xcode없이 맥에 '명령어 라인도구(Command Line Tools)'를 설치하는 방법](https://macnews.tistory.com/4243)
 
