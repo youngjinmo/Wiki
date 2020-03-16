@@ -284,7 +284,8 @@
         <li><a href="vcs/git.md#rebase-change-sequence" target="_blank">커밋 순서 바꾸기 with rebase</a></li>
         <li><a href="vcs/git.md#rebase-change-commit-m" target="_blank">커밋메세지 변경하기 with rebase</a></li>
         <li><a href="vcs/git.md#commit-amend" target="_blank">최신 커밋 메세지 변경하기</a></li>
-        <li><a href="vcs/git.md#move-to-commit" target="_blank">커밋 이동하기</a></li>
+        <li><a href="vcs/git.md#stash" target="_blank">stash</a></li>
+        <li><a href="vcs/git.md#git-checkout-from-head" target="_blank">HEAD가 바라보는 커밋 변경하기</a></li>
         <li><a href="vcs/git.md#set-url" target="_blank">원격 저장소 변경하기</a></li>
         <li><a href="vcs/git.md#fork" target="_blank">Fork</a></li>
         <li><a href="vcs/git.md#pr" target="_blank">PR</a></li>
