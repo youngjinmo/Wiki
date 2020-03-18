@@ -108,7 +108,7 @@ $ LANG=ko_KR.UTF-8
 만약 권한 문제로 수정할 수 없다면, [chmod](https://youngjinmo.github.io/2019/07/linux-permission/)이용하여 권한을 수정해서 파일을 수정한후 다시 아래의 명령어를 통해 권한을 돌려놓자.
 
 ~~~
-$ chmod 644 /etc.sysconfig/i18n
+$ chmod 644 /etc/sysconfig/i18n
 ~~~
 
 <br>

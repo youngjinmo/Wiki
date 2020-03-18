@@ -36,7 +36,7 @@
 
 <br>
 
-#<a name="commands"></a>명령어
+<h1><a name="commands"></a>명령어</h1>
 
 ## <a name="shell-kernel"></a>Shell과 Kernel
 
@@ -149,7 +149,7 @@ $ grep [pattern] [file]
 
 <br>
 
-##<a name="save-output"></a>터미널 결과 출력
+<h2><a name="save-output"></a>터미널 결과 출력</h2>
 
 ```
 $ ls -al > "file.txt"
@@ -159,7 +159,7 @@ $ ls -al > "file.txt"
 
 <br>
 
-##<a name="combine-commands"></a>복수의 명령어 실행하기
+<h2><a name="combine-commands"></a>복수의 명령어 실행하기</h2>
 
 ```
 $ command1 && command2
@@ -175,7 +175,7 @@ $ command1; command2; command3;
 
 <br>
 
-##<a name="caffeinate"></a>슬립모드 진입방지 (caffeinate)
+<h2><a name="caffeinate"></a>슬립모드 진입방지 (caffeinate)</h2>
 
 맥OS에서 잠자기모드 진입을 방지하는 앱이 있다. 맥 사용자라면 누구나 아는 Caffein이라는 앱인데, 터미널 명령어 하나면 이 앱처럼 맥이 슬립모드에 진입하는걸 막는 기능을 사용할 수 있다.
 
