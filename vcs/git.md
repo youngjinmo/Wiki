@@ -23,6 +23,8 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [커밋 순서 바꾸기 with rebase](#rebase-change-sequence)
 - [커밋메세지 변경하기 with rebase](#rebase-change-commit-m)
 - [최신 커밋 메세지 변경하기](#commit-amend)
+- [최신 커밋과 현재 status 비교](#diff-head)
+- [최신 커밋과 그 이전 커밋 비교](#diff-head-before)
 - [stash](#stash)
 - [HEAD가 바라보는 커밋 변경하기](#git-checkout-from-head)
 - [원격 저장소 변경하기](#set-url)
@@ -388,6 +390,22 @@ $ git commit ---amend -m "new commit message"
 
 ~~~
 $ git commit --amend
+~~~
+
+<br>
+
+## <a name="diff-head"></a>최신 커밋과 현재 status 비교
+
+~~~
+$ git diff HEAD
+~~~
+
+<br>
+
+## <a name="diff-head-before"></a>최신 커밋과 그 이전 커밋 비교
+
+~~~
+$ git diff HEAD HEAD^
 ~~~
 
 <br>
