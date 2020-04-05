@@ -112,7 +112,7 @@ Data Manipulation Language
 
 Data Control Language
 
-**<u>데이터를 제어</u>**하는 언어이다.
+**데이터를 제어**하는 언어이다.
 
 사용자 권한, 작업의 취소 등 DML과 비교하여 상위 개념(?)의 언어라고 생각한다.
 
@@ -144,7 +144,7 @@ Data Control Language
 
 | SQL    | RDBMS         | Description                      |
 | ------ | ------------- | -------------------------------- |
-| Row    | Tuplr, Record | 하나의 항목을 대표하는 데이터    |
+| Row    | Tuple, Record | 하나의 항목을 대표하는 데이터    |
 | Column | Attribute     | 튜플의 이름 요소                 |
 | Table  | Relation      | 같은 속성을 공유하는 튜플의 모임 |
 

@@ -7,12 +7,12 @@
 - [이미지 설치하기](#create-image)
 - [이미지 이름 변경](#rename-image)
 - [컨테이너 생성하기](#create-container)
+- [컨테이너 이름 변경](#change-container)
 - [호스트네임 지정하기](#hostname)
 - [컨테이너 시작/중단하기](#control-container)
 - [도커 이미지 조회하기](#images)
 - [도커 컨테이너 조회하기](#ps)
 - [bash모드로 컨테이너 진입](#exec-imageid-bash)
-- [컨테이너 이름 변경](#change-container)
 - [컨테이너 삭제](#rm-container)
 - [이미지 삭제](#rmi-image)
 
@@ -121,6 +121,14 @@ $ docker create -it --name [컨테이너-이름] [이미지-이름]:[tag] /bin/b
 
 <br>
 
+## <a name="change-container"></a>컨테이너 이름 변경
+
+~~~
+$ docker rename [old-name] [new-name]
+~~~
+
+<br>
+
 ## <a name="hostname"></a>호스트네임 지정하기
 
 위의 명령어에서 몇 가지를 추가하면, 호스트네임을 지정할 수 있다.
@@ -173,14 +181,6 @@ $ docker exec -it [컨테이너-이름] bash
 ```
 
 위의 명령어를 통해 도커의 컨테이너 내부에 <a href="https://ko.wikipedia.org/wiki/%EB%B0%B0%EC%8B%9C_(%EC%9C%A0%EB%8B%89%EC%8A%A4_%EC%85%B8">bash 모드</a>로 진입할 수 있다.
-
-<br>
-
-## <a name="change-container"></a>컨테이너 이름 변경
-
-~~~
-$ docker rename [old-name] [new-name]
-~~~
 
 <br>
 
