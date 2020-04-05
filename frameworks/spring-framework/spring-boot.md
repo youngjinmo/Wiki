@@ -5,6 +5,7 @@
 - [에러페이지 핸들링](#error)
 - [@GetMapping 어노테이션으로 다중맵핑하기](#get-mapping-multi)
 - [h2 데이터베이스 마이그레이션](#h2-databse)
+- [DB 에러발생 무시하고 프로젝트 실행하기](#datasource-autocofig)
 
 <br>
 
@@ -194,5 +195,23 @@ spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ![](https://lh3.googleusercontent.com/VD97biPg5fcx8KwvetWuiwQ9Atr81zPmhwlMntynUvyK7ICh1Qq8Pk34_9Wa6_YgJAd_hDRDvEy14LYYVALxi-E0_Jrv7wBChRywueHMVyuJfOj2fRlIT2H6vxhLv30jklpyrOXDCmMoy6dWncPF0rC3CSvE4_pfkbi4qIWBScKBl_Y69eNoJv-JZAGgxd1RcA-rbk63cEfPFEgrCl3b8_v0_VCV3vTEbIgwV_huEb-7BGIbvZxAtdcaNTkv1LsJaquRis_vkPjkfzsu2LzgPXGfcBTNg8KWqtvNMtq1b3fcrU49tmzX_oIvKYU9IXeA011fG6oI6hsEmpY4BNW91Sn10Q0vgXRtxgsRV1DWySyJD_jW0_aFURz__PqEc5Xn3WVAERTso52Autvn07ejtg21fr84d3lk3qTaKozgbEJgwBJDflpvrV64ODEmjeXquMTQ9FwTsi2-NFSjrazPlak4LNHPXsCP69SdEUZ5STE8JKD99fiD9a96UYeml-EyHyvDzNz6MnRnXmkLjgrnd4Zj7sV8qUad990r6EQNp9JVtY4mGIL-zCXMhvC2SVLO-PEyirrUZ7DEnL5UbnvpHWLfUluFSdk09BupqW9H_Vt35slM0iOKbliBTsxo7MCSzAjVTEP3kXaNkqUiLTLZUpSP79ZA6GBCcUaUiqslpvfdLxMIZoFqOY2sITcDRSKZpTURnKtXbjo5aEURXdaxBDNinAr1oy7rzywUkf1_IjaN3dLKoQ=w509-h402-no)
 
 ![](https://lh3.googleusercontent.com/7g4emF9IGksv-m0sPpFAR3zI979_RKRss2Ebksu4bCBxCAZ-XOVqS62PyLWFyX4qXQ8VnP7iFhlu2xfqW0XU4AL63SG9uoYtsWY68bUm4P1AqC-0A2nX0JQZnqD5JkwwCcR9yx1fY2QSDeYvnTPJDxf9QntTAX95xGi1iIsdYIKDd9Eg9zkgaRguWEnpksmoUuJTj4FIgeOQjveE1f1YuVRLRgSwOSBU-WMVhvmd6O0KuVFpNra3i934fhG3gUa8RohlhHSdXlKzaleHwZYYnJEHI1m601NBY_h2LQinHkCmx_wNIzSReWKJHHW_wNmTlRBS1WlG1NvUgvUTy8AEbaeMThJmQm3QUbLHxmFK8B3E-XcG-NLRYjyvVppUcMn3_hngSfPcDvzjRT1bkSZ3fWv6k_3o5vyXd5b1amWmAxVS_rZJ_RGZOh6iaLPLarDaD4NQ55D8w-8mjXm7I7ZDJQh3Ta2qWfOlQb0ta0mB2yzvuC3JjoLWsf4V6o9lv07q6kO7IJ2yTNC6YPz3UGJlLHgIbUomuvJsflbuNSOJPIO58WSThBLRUdQQRTuQnKhbXa6_grfdFmQVqrB87rs11LkZVIpSCGELnf5U5kDZUHa643w1HIbPcMKX1x75OThFKUOr-amtqFBPA48mpzsodaW79YqNXSoTHuJvDAEgelED-wKxoXScnGoBWIYWlPbPmJkJtvnnkOe2qwt7duRGAa8SXjA2cNOTZ46IduCRpd76B4pokA=w864-h778-no)
+
+<br>
+
+## <a name="datasource-autocofig"></a>DB 에러발생 무시하고 프로젝트 실행하기
+
+스프링부트 프로젝트의 main클래스에 어노테이션을 추가한다.
+
+~~~java
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+@SpringBootApplication
+public class DevAndy {
+   public static void main(String[] args) {
+      SpringApplication.run(ToDoApplication.class, args);
+   }
+}
+~~~
+
+이렇게 하면, Datasource가 없어도, 즉 DB 연결을 필요로 하는 프로젝트인데, DB가 연결되지 않은 경우에도 프로젝트를 실행할 수 있다.
 
 <br>

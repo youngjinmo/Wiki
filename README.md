@@ -91,6 +91,7 @@
                 <li><a href="frameworks/spring-framework/spring-boot.md#error" target="_blank">에러페이지 핸들링</a></li>
                 <li><a href="frameworks/spring-framework/spring-boot.md#get-mapping-multi" target="_blank">@GetMapping 어노테이션으로 다중맵핑하기</a></li>
                 <li><a href="frameworks/spring-framework/spring-boot.md#h2-databse" target="_blank">h2 데이터베이스 마이그레이션</a></li>
+                <li><a href="frameworks/spring-framework/spring-boot.md#datasource-autocofig" target="_blank">DB 에러발생 무시하고 프로젝트 실행하기</a></li>
               </ul>
             </details>
           </li>
