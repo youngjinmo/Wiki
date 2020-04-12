@@ -14,6 +14,7 @@
 - [EC2 인스턴스](#ec2)
 - [EC2 인스턴스 SSH 접속](#ssh-i)
 - [EC2 언어 설정](#locale-ko-utf8)
+- [Amazon Linux 비밀번호 변경/설정하기](#setpasswd)
 - [awscli 설치하기](#awscli)
 - [Apache2 웹서버 실행](#start-apache2)
 - [키페어(.pem) 자동으로 읽어오기](#autoload-pem)
@@ -88,17 +89,21 @@ $ ssh -i aws-key/keypair.pem ec2-user@ec2-public-ip-address
 
 인스턴스 접속해서 아래 명령어 명령.
 
-`$ sudo apt-get install language-pack-ko`
+~~~
+$ sudo apt-get install language-pack-ko
+~~~
 
 그 다음으로
 
-`$ sudo locale-gen ko_KR.UTF-8`
+~~~
+$ sudo locale-gen ko_KR.UTF-8
+~~~
 
-
+<br>
 
 ### Amazon Linux EC2
 
-`/etc/sysconfig/i18n` 파일을 수정한다.
+/etc/sysconfig/i18n 파일을 수정한다.
 
 ~~~
 $ vim /etc/sysconfig/i18n
@@ -110,6 +115,42 @@ $ LANG=ko_KR.UTF-8
 ~~~
 $ chmod 644 /etc/sysconfig/i18n
 ~~~
+
+<br>
+
+## <a name="setpasswd"></a>Amazon Linux 비밀번호 변경/설정하기
+
+![](https://lh3.googleusercontent.com/kHDUxeqoOu0i5VV2DbUsCB6xp7ETpry3lQUZvg4pV08zrrgP6XhaKyQf7bYaUu_qFbhU9pnzllUrdQV6PZMNmpRQB9rK6ckJwCDDr2R3groqc28prxw3NQjhBu0wk-zap5Hj3BGDmB_pdSRvvUk5t7ea3fXIbnf0b0uKCjWzyaf2LY1tN4phFOuhZ33l-8VfIstsmZ9Eh0jS0qcqZ4UuXythJkIHoO0OOiH_WfrkpaM1vPBiWLtbH-WBauhP93M5vNgti9bKRJdgZCW8tpTVnQibgpKG2EwpjIwUbzahS7dwmBZA_pz9xOrGmIpT0IUZcXgAUJEn2-9xI2GEgR1IbPr-2AOc3Ggc-PL-3i6gKxZb-vMHx5xcDab3-9fi3zvagDK-5AYbhOaqhtR8yaHCvRAbsLA0MPlve0TjVJeFvqjTi95mCiwDCqjzp-fhIgJJWxZY9LQMU5NUTcsiSdUFv7P7CEPrCeXkSvne_AnNofPT9Yn3ruUGhaIs5lgUnQ1puk_bCFBnOmYml1c_2v1aZWFsjtxb8c7SC2uX1YxSUXHKxYbx_Y3M0m--8-ct8qbMaGeupg1CXEAsqNtQ2K-2EG3Aj9Qdc1y9chpRgcAHhKMaBrGqNFv-Rm2Z0V2R4hvEXMCzfIU9RjC4DU2nFm733tTPzezf0qexkKH3U69UlrcP_xrE2mGtBI4dw-AhhX5np9jZWON75PZO5tNVuiUmvM2JeD2eHI4lkxzj-XGMe3TPzrF2F0qV0LUj=w1438-h181-no)
+
+`sudo`를 계속해서 입력하는게 번거로워서 사용자를 변경하려고 하니 비밀번호를 요구한다. 그러나 ec2를 생성할 때 특별히 비밀번호를 셋팅한적이 없는데 무슨 비밀번호를 입력해야하는거지..?
+
+[AWS 공식문서](https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-password-login/)를 확인해보니 비밀번호를 설정해야 사용할 수 있었다. 
+
+~~~
+$ sudo passwd ec2-user
+~~~
+
+![](https://lh3.googleusercontent.com/Uh0FcUdbxDgUELB2CfQnSSRc_BK_q7zmDGYgqCJEtm5Km1AsyuavkBVL9V6gXDeI9IoP6hTl0whTOeTFXeD2vn4lhMfoGPEq_TbLwQGHJeKWrMoEI0oen76CDM8Zh1HsDZ-uYD6icSTt_CkW9hAi6RrL3Ya5oVJezz5ougFlK76d8yAc4VAeNsY47am3UktMH2K7kNUvX31eFUl3kPZZl05zC9Tjm7QLuxvfOYwCuDAVVIDoLZww9-7KF73xn68Egs7bN6xvci0tHkDn2vtY56NTEAGu7STmpwb1QLcQJ2qFn-QrvvaCW_De5HootFzDUzH8acRkbZhWShrnXcoWAHrJVm_KbkN6mKJgtNpv6qTsqEVMgEElZHNEXWrFt52VBnuAJJ9cj-DsBf09g61c0lvfQEh6OSRUID3qvAlD3Q0t-3xbkkKUH8p4NtaRDhEDTYzLq-Slf7ZzPks53rgZWuRzopEXeC2wWbgdX4Vdz7BOHgSobHkbbImDPCT4z02WG1kotOZ1rhMBeMTNSTxk6HPVsjLsA_dZfElNV0kauh_lRvejc9cRjW3YTeL3bF2gTn_YQVoF3UAQyxU3M4sIdI-s6cZI4bjFRWKp-7Dp847rMUpjHc78g1V5HvHq4axLMDcPc7riuonM3ODPaFM2XfzCBmaQ-xhWrJdzxKjs0DdB6bEm2g6HSjlGDr4VtRB0XkNxw8VKjzomNzRan2Xg0x40bkBmCdbNJSJRgz0PFIRGGpFVeHOEHOw9=w1434-h304-no)
+
+
+
+그리고 PasswodAuthenticaion을 활성화해야 한다.
+
+~~~
+$ sudo vim /etc/ssh/sshd_config
+~~~
+
+sshd_config안에 PasswordAuthentication을 찾아서 no를 yes로 바꾸면 된다.
+
+![](https://lh3.googleusercontent.com/QGtNbNSfEiWiAEQ8O4BQGULE-Q9roC0PascPYFWl0W94AqkAMuZczwHxRshqsfdOVgPdKyA1niUMFHhSUZ27kCYTquhQe6nPcPvwnHgqKjOgZEKfzXRBgyrAjwqaZYaoUo9Sbt6eRuNsyvCxNCbcKo6738Z8fjg0htkL1qIaCMCFvjKagwYqFP_odhKib9Zrm4GJfYI_p-hSl-hX7hrO-DL2OHVLX_PFILsWI31WlExuN53NXQcGL7Z5GFWyvNCCFKYXUEOLW4424darsjbZYOIGbvLrsaRhmeKStsDKT0esqiB7AuuHI_Eha91POJq1oRCavecI7glXLJ5CSG8kFTAe9zmRA2upSjp8WyT40MZkxc6A9xSdnpqyOb_tOof1AwD3H7fp9NIWd64w8UNUdB79UMfReTJxauqevNbnEUMcM72-5wg2VCbbUiRgjyGLFKnuHuR0IVUxrFFdvDv2os8k-QQxOhXiRvpyGUA__uaVwf-uJakUGi0JJSvgjveJXZQMfo9qs3wNMqyWjHQytM-cA4EFuwuGCPZ49xNPD8IzEHFpelCd7x3rewsLjAJhCb5Ib4XqAdsiRZ0Iui1s_x0NcskVNTZFxPKmA6RnOihNhLtppFEs2vZ7JsQq6KHGp9BHimryeI6kCcgbMpVVELlhqSxx3iK_S7AxlXDPTy9TFNCVOQRiqOkthTKoDuKSzHrAySyEnd0x69RWWqdYccUu2QJLp4HRjAdTnlhXIhdb4kppqpWS0hso=w1440-h220-no)
+
+이제 SSH를 재시작하면 바뀐 패스워드가 적용된다.
+
+~~~
+$ sudo service sshd restart
+~~~
+
+![](https://lh3.googleusercontent.com/Px0CX5SR8iERwo6WrxnChem8s15AgubiyoKFwHXZyjoBsYo1AE4JhaXSAaNGM_zPKh-4vyYGCItMnMYf-feWOxflFOgfEASnHVGa92_90Ofu8Wa4pY6uUSh6bmeNaMdpeW2O4XM7bs4AugOej7EOczHSeRbEtqlpIqbBT73gJDBoYwGEOHG22qpz8rRv2Ox_h_wZ5T0VT64na8FmgaBYzpq4UhH7xY2dYOcO9tf6eHBCSc1oU03Ec-rO8ykYUWtxg2gYU6Brn7K0K9Wwgg1PGR7Uo_7v7xkiK_yzSW8VFLXCqSIAKlqwNcVwlI7Yuf9dnzWMOLYe3IqrRzVMNWHraVMU8TKFqM2KuqnTzBTwGziYpPA-j1O-8snTYjVABl7S89fBVzw-5HN2RwqtqRPI6fVMFe2ApUHfgigSjzloVONRkNI-ikc2ZKOEVKAi-OcMQr_0yj_opVKIXg9xwtDtQnLQVoFb8VsDCEUhNoVKGFsNnEbB1GTKsEaimh1ksJMshOyTHNGUIDLPMaejk3D_HgF54fj6X2weMzV3zOpACL2YBxo5nsnqlcgle69JopCjEnmdB_5TF8Fu8VU7zkpXIj5ShOnLbHD1bf7rpETyiAtPCd7DC-3DOe19y-jfyyBONA9DrcuDTdVXny1jhm2mcV8pqM1c5nsFZP-tnHlhGq36rgG3VdavIKrLQfVQ89T_VdD9pQUvU3Wh-B08ob1KQPInpqLHJWicJZb-N8k5taryxPcX34XDUbZ2=w1444-h139-no)
 
 <br>
 
@@ -196,10 +237,16 @@ $ ssh 서비스명
 
 ## <a name="install-jdk-ubuntu"></a>Ubuntu EC2에 JDK 설치하기
 
-- `$ sudo apt install default-jdk`
+- ~~~
+  $ sudo apt install dafault-jdk
+  ~~~
+
 - 구버전 설치할 경우, [Oracle Java Archive](https://www.oracle.com/technetwork/java/archive-139210.html)에서 버전을 찾아서 설치.
 
-- `$ ssh -i [aws-public-key].pem ubuntu@[ip-port@aws]`
+- ~~~
+  $ ssh -i [aws-public-key].pem ubuntu@[ip-port]
+  ~~~
+
 - AWS 서버를 실행할 때마다 ip주소가 바뀐다. 바뀐 ip주소를 입력해야 정상적으로 AWS 웹서버에 접속할 수 있다.
 
 <br>

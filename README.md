@@ -212,6 +212,7 @@
           <li><a href="DevOps/AWS.md#ec2" target="_blank">EC2 인스턴스의 기능</a></li>
           <li><a href="DevOps/AWS.md#ssh-i" target="_blank">터미널로 EC2 인스턴스 SSH 접속</a></li>
           <li><a href="DevOps/AWS.md#locale-ko-utf8" target="_blank">EC2 언어 설정</a></li>
+          <li><a href="DevOps/AWS.md#setpasswd" target="_blank">Amazon Linux 비밀번호 변경/설정하기</a></li>
           <li><a href="DevOps/AWS.md#awscli" target="_blank">awscli 설치하기</a></li>
           <li><a href="DevOps/AWS.md#start-apache2" target="_blank">Apache2 웹서버 실행</a></li>
           <li><a href="DevOps/AWS.md#autoload-pem" target="_blank">키페어(.pem) 자동으로 읽어오기</a></li>
