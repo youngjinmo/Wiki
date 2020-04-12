@@ -18,7 +18,8 @@
   - [시스템 재부팅](#ubuntu-reboot)
   - [ip주소 확인하기](#ifconfig)
   - [서버시간 변경하기](#change-localtime)
-  - [UTF-8 인코딩설정](#setup-utf8)
+  - [UTF-8 인코딩설정](#setup-locale)
+  - [sudo 권한 설정하기](#sudo-su)
   - [호스트네임 변경하기](#hostname)
   - [wget으로 파일다운로드](#wget)
   - [계정 생성하기](#adduser)
@@ -249,6 +250,27 @@ $ source .bash_profile
 ```
 
 출처 : <a href="https://youtu.be/8MzyAFPDC1I?t=838" target="_blank">박재성님 - 원격 서버에 소스 코드 배포하기 1단계</a>
+
+<br>
+
+## <a name="sudo-su"></a>sudo 권한 설정하기
+
+먼저 현재 사용하고 있는 우분투계정을 알아야 한다.
+
+~~~
+$ whoami
+[user-name]
+~~~
+
+여기서 출력되는 우분투계정에 `sudo` 권한을 설정하는 것이다.
+
+~~~
+$ sudo su - [user-name]
+~~~
+
+패스워드를 입력하면 `sudo` 권한이 최종적으로 우분투계정에 sudo 권한 설정이 끝난다.
+
+![](https://lh3.googleusercontent.com/B6TH5dmvU6sSrFIvF0uTECkobfG9nicD1SPY5YA1APAOVZ49ODzJpN8F4Qg_BcGbmDkKese4zMcXO3MlxrqDdUSn-c-yYgmXllxmy5YdwKqRiEPRcY1XICePm6vxP1r2_g6Wbjh6JmWpnvHYP_rla9NQkJLhlCjC4ppb390gV8O3muE7YDZlf3a0cHIcDSeF7aoihRLPDnMbgu2CkEpY6m9y0bQojBmKYohDNo0_q8cIrtr_jU5PfRtikbnzjb_vhIGcPHvz8jXa7cGDDNz832FJvDOyUo8Dtqjb209kGf278MrNeFhQbQUY9rw5fMPhMY4uljcj9glx_1jKkTOTiXItiwnVTAMabOpjomPuorYITLTkMOr6kye30KfL8LP669gy__-duR8B0hvQ7pdMFHrYXVydg-hlN3Dav_QLcMbyQqCQoRa9YeQZEtJ0adtP2X2Shlq8e6GlFZKsiOd0tD9AMI_5ztZBdsbpaLUVmuK22rM0ta-ZOqWfjWmZWGOJVW_3uP6F5pPdnWm8WymNbxBHeYppkD9prEWYc-Vr70Rqu_W6pJ5q_ekaDNkWN9lnMhVLvNjRRhlPpfS432VYyu1hDnVlYpbh9nsuD-g7_NeHLfBGMLEv_btzm2NAj5R8_MzGIaBhqAkG5MU8_QHie5V0D-sd-CKp2yaBfCZSN92WPyj8ulkqEDKS6oV_q7SXuBAxnwFYhLxVALuHK4yjq_8JvXxsxxu98n1z3kHomvXxuSZ-Euk8xzgX=w1436-h178-no)
 
 <br>
 
