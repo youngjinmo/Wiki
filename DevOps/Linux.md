@@ -9,6 +9,7 @@
 - [명령어](#commands)
   - [Shell과 Kernel](#shell-kernel)
   - [비트(32/64) 확인](#uname-m)
+  - [파일 이동 (mv)](#mv)
   - [Symbolic Link](#symboliclink)
   - [find - 파일/디렉토리 찾기](#find)
   - [grep - 문서내 검색](#grep)
@@ -59,13 +60,31 @@
 
 <br>
 
-## <a name=""></a>비트(32/64) 확인
+## <a name="uname-m"></a>비트(32/64) 확인
 
 ~~~
 $ uname -m
 ~~~
 
 간단하게 현재 접속되어 있는 리눅스 커널의 비트를 확인할 수 있다.
+
+<br>
+
+## <a name="mv"></a>파일 이동 (mv)
+
+파일을 이동할 때 사용하는 쉘 명령어이다.
+
+~~~
+$ mv path/old/mv.txt path/new/mv.txt
+~~~
+
+오랫동안 위의 명령어로만 사용했는데 최근 [트위터](https://twitter.com/__ditto/status/1251342498032578560)에서 아래의 명령어를 알게되었다!
+
+~~~
+$ mv path/{old/mv.txt, new/mv.txt}
+~~~
+
+[![asciicast](https://asciinema.org/a/HpfWkG7FTV5VKKG7LV4NcJaGW.svg)](https://asciinema.org/a/HpfWkG7FTV5VKKG7LV4NcJaGW)
 
 <br>
 

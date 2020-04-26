@@ -142,6 +142,7 @@
               <ul>
                 <li><a href="DevOps/Linux.md#shell-kernel" target="_blank">Shell과 Kernel</a></li>
                 <li><a href="DevOps/Linux.md#uname-m" target="_blank">비트(32/64) 확인</a></li>
+                <li><a href="DevOps/Linux.md#mv" target="_blank">파일 이동(mv)</a></li>
                 <li><a href="DevOps/Linux.md#symboliclink" target="_blank">Symbolic Link</a></li>
                 <li><a href="DevOps/Linux.md#find" target="_blank">find - 파일/디렉토리 찾기</a></li>
                 <li><a href="DevOps/Linux.md#grep" target="_blank">grep - 문서내 검색</a></li>
