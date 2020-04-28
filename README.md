@@ -23,6 +23,7 @@
           <li><a href="languages/java.md#scanner" target="_blank">Scanner</a></li>
           <li><a href="languages/java.md#length" target="_blank">length, length(), size()</a></li>
           <li><a href="languages/java.md#equals" target="_blank">==과 equals()</a></li>
+          <li><a href="languages/java.md#ternary" target="_blank">삼항연산자</a></li>
           <li><a href="languages/java.md#touppercase" target="_blank">문자열 변환 함수</a></li>
           <li><a href="languages/java.md#lombok" target="_blank">Lombok</a></li>
           <li><a href="languages/java.md#javabean" target="_blank">JavaBean</a></li>

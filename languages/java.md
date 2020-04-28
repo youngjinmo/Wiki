@@ -10,6 +10,7 @@
 - [Scanner](#scanner)
 - [length, length(), size()](#length)
 - [==과 equals()](#equals)
+- [삼항연산자](#ternary)
 - [문자열 변환 함수](#touppercase)
 - [Lombok](#lombok)
 - [JavaBean](#javabean)
@@ -361,6 +362,20 @@ Java에서 길이를 반환하는 메서드 또는 프로퍼티는 `length`, `le
 
 <br>
 
+## <a name="ternary"></a>삼항연산자
+
+if 조건문보다 간단하게 한줄로 작성하는 조건식이다.
+
+~~~java
+(AAA) ? "변수 AAA가 true이면" : "변수 AAA가 false이면";
+~~~
+
+괄호 안의 boolean 값이 true이면, `?` 뒤의 로직이 실행되고, false이면, `:` 뒤의 로직이 실행되는 형식이다.
+
+<img src="https://lh3.googleusercontent.com/9APBXoOZ24H51qRe9N5vEBbpyR289cOxwQ-9UxyI2pR2ppu_nEXIg68FxP6eipr1_K3IT_a0GD1yz-MLu4a3cPe2-N6vXYk8w129pwSGnXXC70yLbtxJRQvy0nPnze4MqAah_TNifPqMENXFlArPeeiWII9mA9918mm1ww2g-xqiF3PCg2OMuI0-Pz0B3HooPhCoya91f6OJ-jhS8Q2cHET-1MXpa759Vqy9Fbb4O4O92cK8YXb2LNm-jtiJicQJcGq_yG21pjmtgdaJZRVkRhq7zFF97BFx-sVwsaWyvKHrEJytKxKARnuhlvTV11tJIB2JCF_1FyIvFEMXI-IoNZnGCKqPwp1M45vrn0yHyyZ-9EUz4VLVvoxHfu_xMwBfv-TNrNQL1UNK2NrIPh04z7aLkohWyX-xnURLLJi4s7KGSkZfUI-YciVgfWRW6MaMQQdln1L64_reb1yAED4ijWONRjrDm8pZOoidAYiXfbdBolZ8X8ol6GudEGRITLgDbUo5Eq3SECyUMvOIIc5IDtvvIUTRPV3TFPqtWj-XHrcqrZ85T480WPt4aaKZM27q09W7fn_29TwblUOew9nr3wBc2LC6EmcsUBqgl8HGm-5wSjXi2m6ISp8RiWrgZWx6VmcbNqeXctc4cUsZ9aQ2JAtJZRlOLxg48fYggdPqMuK-Bn9CDYynw67IpraeE8cSRN1uPQYKyIfAT0zkeC0C5wwIHFccuqJAXxPpODeHAVNg21zZPseSGkQr=w1060-h480-no" style="width: 80%;" />
+
+<br>
+
 ##<a name="touppercase"></a>문자열 변환 함수
 
 입력받은 문자열중 같은 문자가 몇번 나오는지를 파악하는 [문제](https://www.acmicpc.net/problem/1152)를 풀다가 자주 사용하는 문자열 변환 함수를 정리해보았다.
@@ -561,7 +576,7 @@ Argument가 몇개인지, 어떤 필드에 맵핑되는지를 찾아야한다. �
 
 <br>
 
-### <a name="javabean-why-create-interface"></a>왜 ava.io.serializable 인터페이스 구현?
+### <a name="javabean-why-create-interface"></a>왜 java.io.serializable 인터페이스 구현?
 
 [JavaBean의 목적](#rule-and-why)은 여러가지 객체들을 하나의 객체에 담기 위함이라고 했는데, 담아서 무엇을 하려는걸까. 메모리에 존재하는 오브젝트를 네트워크를 통해 전송하거나 파일에 저장하려면 `data stream`(e.g. `byte[]`)으로 이 오브젝트를 변환시켜줘야한다. 이 변환 작업을 Serialization이라고 부른다. JavaBean을 저장하거나 전송하는 일이 많기 때문에, Serializable가 스탠다드에 포함되는것으로 추정.
 
