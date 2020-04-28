@@ -11,6 +11,7 @@
 - [length, length(), size()](#length)
 - [==과 equals()](#equals)
 - [삼항연산자](#ternary)
+- [switch문](#switch)
 - [문자열 변환 함수](#touppercase)
 - [Lombok](#lombok)
 - [JavaBean](#javabean)
@@ -373,6 +374,66 @@ if 조건문보다 간단하게 한줄로 작성하는 조건식이다.
 괄호 안의 boolean 값이 true이면, `?` 뒤의 로직이 실행되고, false이면, `:` 뒤의 로직이 실행되는 형식이다.
 
 <img src="https://lh3.googleusercontent.com/9APBXoOZ24H51qRe9N5vEBbpyR289cOxwQ-9UxyI2pR2ppu_nEXIg68FxP6eipr1_K3IT_a0GD1yz-MLu4a3cPe2-N6vXYk8w129pwSGnXXC70yLbtxJRQvy0nPnze4MqAah_TNifPqMENXFlArPeeiWII9mA9918mm1ww2g-xqiF3PCg2OMuI0-Pz0B3HooPhCoya91f6OJ-jhS8Q2cHET-1MXpa759Vqy9Fbb4O4O92cK8YXb2LNm-jtiJicQJcGq_yG21pjmtgdaJZRVkRhq7zFF97BFx-sVwsaWyvKHrEJytKxKARnuhlvTV11tJIB2JCF_1FyIvFEMXI-IoNZnGCKqPwp1M45vrn0yHyyZ-9EUz4VLVvoxHfu_xMwBfv-TNrNQL1UNK2NrIPh04z7aLkohWyX-xnURLLJi4s7KGSkZfUI-YciVgfWRW6MaMQQdln1L64_reb1yAED4ijWONRjrDm8pZOoidAYiXfbdBolZ8X8ol6GudEGRITLgDbUo5Eq3SECyUMvOIIc5IDtvvIUTRPV3TFPqtWj-XHrcqrZ85T480WPt4aaKZM27q09W7fn_29TwblUOew9nr3wBc2LC6EmcsUBqgl8HGm-5wSjXi2m6ISp8RiWrgZWx6VmcbNqeXctc4cUsZ9aQ2JAtJZRlOLxg48fYggdPqMuK-Bn9CDYynw67IpraeE8cSRN1uPQYKyIfAT0zkeC0C5wwIHFccuqJAXxPpODeHAVNg21zZPseSGkQr=w1060-h480-no" style="width: 80%;" />
+
+<br>
+
+## <a name="swtich"></a>switch문
+
+switch문은 괄호안에 결과가 어떤 값을 갖느냐에 따라 서로 다른 로직을 실행할 수 있는 제어문이다.
+
+~~~java
+switch(aaa) {
+  case 1:
+    // 실행
+    break;
+  case 2:
+    // 실행
+    break;
+  default:
+    // 실행
+    break;
+}
+~~~
+
+aaa가 1을 가질때 특정 로직이 실행되고, break된다. 만약 case 에 break가 작성되어 있지 않으면, 다음 case 문이 자동으로 실행된다. 따라서 복수의 case문(multiple)에 따라 하나의 로직을 실행하고자 한다면 이 때 break을 선별적으로 작성해야 한다.
+
+int형 값 month에 따라서 season값을 선택하는 switch문을 작성해보았다. (출처 : [프로그래머스](https://programmers.co.kr/learn/courses/5))
+
+~~~
+month가 12월-2월일 경우 : season = "겨울"
+month가 3월-5월일 경우 : season = "봄"
+month가 6월-8월일 경우 : season = "여름"
+month가 9월-11월일 경우 : season = "가을"
+~~~
+
+~~~java
+int month = Calendar.getInstance().get(Calendar.MONTH)+1;
+String season = "";
+switch(month){
+  case 12:
+  case 1:
+  case 2:
+    season = "겨울";
+    break;
+  case 3:
+  case 4:
+  case 5:
+    season = "봄";
+    break;
+  case 6:
+  case 7:
+  case 8:
+    season = "여름";
+    break;
+  case 9:
+  case 10:
+  case 11:
+    season = "가을";
+    break;
+}
+~~~
+
+break을 어디에 작성하느냐에 따라 multiple 선택도 가능함을 알 수 있다.
 
 <br>
 
