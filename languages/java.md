@@ -7,6 +7,7 @@
 - [Date](#java-date)
 - [Javadoc](#javadoc)
 - [Math](#math)
+- [Scanner](#scanner)
 - [length, length(), size()](#length)
 - [==과 equals()](#equals)
 - [문자열 변환 함수](#touppercase)
@@ -375,6 +376,41 @@ Java에서 길이를 반환하는 메서드 또는 프로퍼티는 `length`, `le
 문자열 메서드끼리는 중복 사용도 가능하다.
 
 ![](http://www.mediafire.com/convkey/d469/mxdlxuexldnhqzmzg.jpg)
+
+<br>
+
+## <a name="scanner"></a>Scanner
+
+Scanner 클래스는 입력을 받아주는 클래스이다.
+
+### `String` 형을 입력으로 받을 때.
+
+~~~java
+String str = new Scanner(System.in).next();
+
+// Scanner 인스턴스를 따로 생성했을 경우,
+Scanner sc = new Scanner(system.in);
+String str = sc.next();
+~~~
+
+### `int` 형을 입력으로 받을 때.
+
+~~~java
+int num = new Scanner(System.in).next();
+
+// Scanner 인스턴스를 따로 생성했을 경우,
+Scanner sc = new Scanner(system.in);
+int num = sc.nextInt();
+~~~
+
+### `char` 형을 입력으로 받을 때.
+
+~~~java
+Scanner sc = new Scanner(system.in);
+
+String s = sc.next();
+char c = s.charAt(0);
+~~~
 
 <br>
 

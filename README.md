@@ -20,6 +20,7 @@
           <li><a href="languages/java.md#date" target="_blank">Date</a></li>
           <li><a href="languages/java.md#javadoc" target="_blank">JavaDoc</a></li>
           <li><a href="languages/java.md#math" target="_blank">Math</a></li>
+          <li><a href="languages/java.md#scanner" target="_blank">Scanner</a></li>
           <li><a href="languages/java.md#length" target="_blank">length, length(), size()</a></li>
           <li><a href="languages/java.md#equals" target="_blank">==과 equals()</a></li>
           <li><a href="languages/java.md#touppercase" target="_blank">문자열 변환 함수</a></li>
