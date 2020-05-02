@@ -363,6 +363,14 @@ Java에서 길이를 반환하는 메서드 또는 프로퍼티는 `length`, `le
 
 <br>
 
+## <a name="identityHashCode"></a>객체 주소값 확인 (identityHashCode())
+
+앞에서 산술연산자 ==와 `equals()` 함수를 통한 비교를 했는데, 객체 주소값을 직접 눈으로 보고싶다면(?) System 객체에 내장된 `identityHashCode()`를 이용하면 볼 수 있다.
+
+![](https://lh3.googleusercontent.com/bAKOE9kOi5joQsKqOXh7s8ifHQAo0J3S_PzEBnegpxUTson5fVGwTCZ8PRgsw7jBYphPcMTFySDcvwjRAOaFXUhQKCchjS_P7edFuNQSXKB1cprtudSynLI5lvEqvlD8Zyemla3HxAbaQalT5znEK2Q5hpwrrNtL6Pcp4tF40jOjiXI6kUNEaNFvhJQp3_Oz72bATRaocohzkxw70JpX2IwmHMT7mt1YM9_txfYKxtD9KolPut2kGV9G5zrz7TqwrkZCTHkkZ9pMbXOthuxsl8qtFPtHndWNeDN5b3sDkGO6HHuc_YeLwnOn7i_5vhwQ_br8AcuHGxcWiYWEmJ4Ec5hhjoV_kgO1Z46PWG246XAkoIXxmRaye3fD9bXq8Yp_NHk8PoOtouj0h_cZSAJwNP36wB8FSi2XrUjnZXvZtA8xiA2iLXbQjydgWcBdFr5nlUzvmtHK3n2GpL_M3OVQwG_S3Vc7TJjzFIW92vAiIpel1z1hhOjC_u0dNu6aF35XqgOvrEw0-cX4oxMXLaIE_wCqkGRn5GROUH5qJFJBXgdkpGsiagz5xyn4hYlS8H1TNUW_80PY7L4Mr-lqFE5WGLCsQgOSPy-Xo8d2ZEqspBShqmLaYWp4kczl4DA10RCeai9WV06fxbKCuGl1dSEpBe8mAU2EQEW3I19A_3ghAfDUf9-5eA-6gRmiRALjXvdKjNd9otrN5lN-ebriqHEUbgn501YBbpP6fQnfU-GHYS_0fUrKEol4YFxh=w1372-h850-no)
+
+<br>
+
 ## <a name="ternary"></a>삼항연산자
 
 if 조건문보다 간단하게 한줄로 작성하는 조건식이다.

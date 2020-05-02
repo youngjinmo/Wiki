@@ -23,6 +23,7 @@
           <li><a href="languages/java.md#scanner" target="_blank">Scanner</a></li>
           <li><a href="languages/java.md#length" target="_blank">length, length(), size()</a></li>
           <li><a href="languages/java.md#equals" target="_blank">==과 equals()</a></li>
+          <li><a href="languages/java.md#identityHashCode" target="_blank">객체 주소값 확인 (identityHashCode())</a></li>
           <li><a href="languages/java.md#ternary" target="_blank">삼항연산자</a></li>
           <li><a href="languages/java.md#switch" target="_blank">switch문</a></li>
           <li><a href="languages/java.md#touppercase" target="_blank">문자열 변환 함수</a></li>
