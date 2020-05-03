@@ -4,6 +4,7 @@
 - [Java의 철학](#philosophy)
 - [IDE없이 컴파일하고, 실행하기](#run-compile-without-ide)
 - [기본형 타입과 참조형 타입](#java-type)
+- [접근제한자](#access-modifier)
 - [String 클래스](#string-methods)
 - [enum](#enum)
 - [Wrapper Class](#wrapper-class)
@@ -101,6 +102,39 @@ int num = 0; // 기본형 타입의 초기화는 이렇게 해야한다.
 기본형 타입 8가지를 제외한 나머지 자료형. 기본적으로 `java.lang.Object`를 상속받는 객체이다.   **<u>참조형 타입의 변수는 null 또는 메모리 주소를 값으로 갖는다.</u>** 연산자 `new` 의 결과가 객체의 주소이다.
 
 참조형 객체로는 클래스형(Class Type), 인터페이스형(Interface Type), 배열형(Array Type)이 존재한다.
+
+<br>
+
+## <a name="access-modifier"></a>접근제한자
+
+접근제한자는 클래스 내에서 멤버의 접근을 제한하는 역할을 수행한다.
+
+<table>
+  <tr>
+    <th style="width: 20%; text-align: center;">접근제한자 종류</th>
+    <th style="text-align: center;">설명</th>
+  </tr>
+  <tr>
+    <td>public</td>
+    <td>어떤 클래스든 접근가능</td>
+  </tr>
+  <tr>
+    <td>protected</td>
+    <td>상속받은 클래스에서는 접근가능</td>
+  </tr>
+  <tr>
+    <td>default</td>
+    <td>같은 패키지에서만 접근가능</td>
+  </tr>
+  <tr>
+    <td>private</td>
+    <td>자신을 제외한 모든 클래스의 접근 불가능</td>
+  </tr>
+</table>
+
+접근 영역순으로 정리하면, 다음과 같다.
+
+**public > protected > default > private**
 
 <br>
 
