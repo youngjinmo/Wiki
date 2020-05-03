@@ -5,6 +5,7 @@
 - [IDE없이 컴파일하고, 실행하기](#run-compile-without-ide)
 - [기본형 타입과 참조형 타입](#java-type)
 - [String 클래스](#string-methods)
+- [enum](#enum)
 - [Wrapper Class](#wrapper-class)
 - [Date](#java-date)
 - [Javadoc](#javadoc)
@@ -317,6 +318,60 @@ System.out.println(Arrays.toString(bytesArr));
 ![](https://lh3.googleusercontent.com/y82u1xMYdpei4fNvYZxEiUnbHuR5p8I0D29cSN0hWmN5uRLN7MLdjxyNj08j90655x6GgnD12StW5PKVZoS40f4-OWYGy-eG1qQ2hM0OOc46vw-sK-b4_hZwbO9rGe73U5RpSiEfHrRp7hmKp7QCQku47KwQkXU2Bb5MOB-r3-DRD7t4LlOkVxdL49YnkLGZZAgKiGSsRS-kyisPhgGfdQQTafl782mbM1un6zc-hwYD9HwkZQ1_rADp_7NQNH4aXFq7v_txuFF_PgkaNyeo41SyCZJoxArORrufHDFfwav8sgx4KUgtS1XES41ArL4ry1pDkeXB3-I9dEDI_DfnFFee3EjZDjJqkoVn2xzswlyg3lQNwOUcvTAVhL4XyL3baJk7AgW0SChvJ5wvTjnRVgC3erSDHM8rHCeOUdT8Rln29ic2S474gNGlCcKjBkZQ2OF4wh4iEH6U0U3CpbJA_pE05LCUNubY9x-QVt2nz4HYGDGfEfLJ6Et1UDXcyeRBigjyTBRIBYUH4yUZbLQesE9C3ZSEnI-W4C8BVWiU_3jiGxkFKOy_RQvRb2nQRNXndTSS0mW4B-bfmMB9iJypKpVU10OlLynm-z66U22aL5KsZyRo58d4pBGqdbumVIFSWKbQ2JzHnFx8DT34u4QR9pQyG6kFGitTaaGS6Rc81zet6mFNitL4hYZwfBQbVPJdWDgg9cfPv2dAJ1kk7IUSuVwPj51znMbdHhi-72X7wSYWLrbluRtt9W3M=w870-h240-no)
 
 아스키코드 테이블상 H라는 문자는 10진수 72와 매칭된다. 따라서 문자열 str 변수에서 H의 문자와 매칭되는 바이트 코드는 72라는 걸 알 수 있다.
+
+<br>
+
+## <a name="enum"></a>enum
+
+enum은 자바 클래스의 한 종류인데, **서로 연관된 상수들의 집합**이다. Java 1.5 버전부터 추가되었다고 한다.
+
+final 키워드를 사용해서 상수를 선언하는 것과 똑같은 역할이다. 다만 이렇게 연관된 상수들을 하나로 모아둔 점이 특징이다. 
+
+enum은 클래스로 생성할수도 있고, 내부클래스로도 생성할 수 있다.
+
+### enum을 사용하는 목적
+
+- 코드 가독성을 높힌다.
+- 객체의 값을 특정 값으로 제한하고 싶을때 사용한다. enum 클래스내에 선언된 타입으로 상수 사용을 제한할 수 있다.
+
+
+
+enum 클래스를 활용한 예제 코드이다.
+
+**Developer.java**
+
+~~~java
+public class Developer {
+   String name;
+   int age;
+   Main.DevType type;
+}
+~~~
+
+**Main.java**
+
+~~~java
+public class Main {
+   public static void main(String[] args) {
+
+      Developer dev = new Developer();
+
+      dev.name = "DevAndy";
+      dev.age = 29;
+      dev.type = DevType.WEB;
+
+      System.out.println("name : "+dev.name);
+      System.out.println("age : "+dev.age);
+      System.out.println("type : "+dev.type);
+   }
+
+   enum DevType {
+      WEB, ANDROID, IOS, SERVER
+   }
+}
+~~~
+
+<img src="https://lh3.googleusercontent.com/x-YHKnMrzNw92Q881oISbxKCZjQmkxYfy2JIbUkYVHA35rfPR8s9vCHgZngzmTzkQOLF3o8GOdQuMHriyBvMFZg-nC5CQoLAeLbJ1vqGTlBd2piMmhUXv-y18xlGti3NXwRluJE4nWZm2dvIT0kgh0kxTzdGSuiz-IO96oSfBoev_CFawtwxBPGl8ZVADsZlXFTTUDH-rTo6tO2eaysypC5AExYTHyut62TFsGiSKk4H2r6JytgNqIIgNFcBXlpjeNtpYJuBjRdycOr4ru840JiaMHWvOAEc0mb8P07Eje5AwBmWYGHAg_rDiNM-uOlsy5ezEtnqlWeRaCB5nS481L0GiBh5VpZPnqFnvkwetpt5UzGXJHZZHFnQg-JYDzGIDksZacFftBojhqZ7PMQcWBYb2DnYdIfPLPf5gziecuRAD52Z8GNxlM-108wd9F52u6cdwGYaRKm_FkbJdpgOTZ8LxnhB7LPztaV8I7o-HoQWKFlCuogG7dqq08RVwQAY5NXAUnrxU6VC6wQe2oLtr_ktrS1ztEyRFHtcv2TJUVH5dkdTcPqBvC0S-wP-lzsY98nYGeW8bqRgpXYeUABUnB38GtKWrVmkROGE4m0PtfhVPjpvAXqHTvDc0_jYEJ1JHYRwKHbFhS8bV2uveKaOp30-KkmdXo0y3W-xcaUW5a8Nh9aPNZdx68E7dSiFt9zqw7eKW0pESynyUenV5bPNwm3zx8udnMDAyoc6xT6bw76jAEoGymRF3vqF=w756-h454-no" style="width: 70%;" />
 
 <br>
 
