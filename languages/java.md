@@ -4,6 +4,7 @@
 - [Java의 철학](#philosophy)
 - [IDE없이 컴파일하고, 실행하기](#run-compile-without-ide)
 - [기본형 타입과 참조형 타입](#java-type)
+- [String 클래스](#string-methods)
 - [Wrapper Class](#wrapper-class)
 - [Date](#java-date)
 - [Javadoc](#javadoc)
@@ -99,6 +100,223 @@ int num = 0; // 기본형 타입의 초기화는 이렇게 해야한다.
 기본형 타입 8가지를 제외한 나머지 자료형. 기본적으로 `java.lang.Object`를 상속받는 객체이다.   **<u>참조형 타입의 변수는 null 또는 메모리 주소를 값으로 갖는다.</u>** 연산자 `new` 의 결과가 객체의 주소이다.
 
 참조형 객체로는 클래스형(Class Type), 인터페이스형(Interface Type), 배열형(Array Type)이 존재한다.
+
+<br>
+
+## <a name="string-methods"></a>String 클래스
+
+String 클래스가 내장하고 있는 메서드들에 대해 정리해보았다.
+
+### length()
+
+~~~java
+/*
+  문자열 데이터의 길이를 반환하는 메서드이다.
+  파라미터는 존재하지 않는다.
+ */
+
+String str = "Hello Java";
+System.out.println(str.length()); 
+// 출력결과 : 10
+~~~
+
+### concat()
+
+~~~java
+/*
+  문자열과 문자열을 결합하는 메서드이다.
+  파라미터에 추가할 String형 데이터가 온다.
+ */
+
+String str = "Hello ";
+String lang = "Java";
+System.out.println(str.concat(lang));
+// 출력결과 : Hello Java
+~~~
+
+### subString()
+
+~~~java
+/*
+  문자열을 자르는 메서드이다.
+  파라미터에 어디부터 어디까지 자를지 문자열의 인덱스가 와야한다.
+  첫번째 파라미터가 시작 인덱스, 두번째 파라미터가 마지막 인덱스이며,
+  파라미터를 하나만 넣을경우, 입력받은 인덱스부터 마지막까지 문자열을 자른다.
+ */
+
+String str = "Hello Java";
+String lang = str.subString(6);
+
+System.out.println(lang);
+// 출력 결과 : Java
+~~~
+
+### indexOf()
+
+~~~java
+/*
+  문자가 위치한 인덱스를 반환하는 메서드이다.
+  파라미터로 char형 문자를 입력받으며, 해당 문자와 일치하는 문자가 
+  문자열에 존재할 경우 인덱스를 반환한다. 
+  만약 2개 이상 문자가 발견될 경우, 가장 먼저 오는 문자의 인덱스를 반환한다.
+  문자가 존재하지 않는 경우엔 -1을 반환한다.
+ */
+
+String str = "Hello Java";
+System.out.println(str.indexOf('a'));
+// 출력 결과 : 7
+~~~
+
+### charAt()
+
+~~~java
+/*
+  indexOf()와 반대의 메서드이다.
+  인덱스에 위치한 문자를 반환하는 메서드이다.
+  파라미터로는 int형 인덱스를 입력받는다.
+ */
+
+String str = "Hello Java";
+System.out.println(str.charAt(1));
+// 출력 결과 : e
+~~~
+
+### isEmpty()
+
+~~~java
+/*
+  해당 문자열이 빈 값인지 확인하는 메서드이다.
+  문자열의 길이가 0인지 비교하여 boolean값을 반환한다.
+  파라미터는 없다.
+  문자열의 길이가 0이면, true
+  문자열의 길이가 0이 아니면 false
+ */
+
+String str = "Hello Java";
+System.out.println(str.isEmpty());
+// 출력 결과 : false
+~~~
+
+### replace()
+
+~~~java
+/*
+  문자열의 일부를 다른 문자열로 바꿔주는 메서드이다.
+  파라미터로는 2개를 가지며, 첫째 파라미터로 바꿀 문자열,
+  두번째 파라미터로 새로운 문자열을 입력한다.
+ */
+
+String str = "Hello Java";
+String newStr = str.replace("Java", "Python");
+
+System.out.println(newStr);
+// 출력 결과 : Hello Python
+~~~
+
+### toUpperCase()
+
+~~~java
+/*
+  문자열을 대문자로 바꿔주는 메서드이다.
+  파라미터에 대문자로 바꿔줄 String 데이터를 입력한다.
+ */
+
+String str = "hello java";
+String strUp = str.toUpperCase();
+
+System.out.println(strUp);
+// 출력 결과 : HELLO JAVA
+~~~
+
+toUpperCase()는 subString()과 함께 사용하면, String 클래스에는 없는 첫글자만 대문자로 바꾸는 capitalize를 구현할 수 있다.
+
+~~~java
+String str = "hello java";
+String newStr = str.subString(0, 1).toUpperCase();
+// subString으로 첫글자만 가져와서 toUpperCase()를 적용한 코드이다.
+~~~
+
+### toLowerCase()
+
+~~~java
+/*
+  문자열로 소문자로 바꿔주는 메서드이다.
+  파라미터에 소문자로 바꿔줄 String 데이터를 입력한다.
+ */
+
+String str = "HELLO JAVA";
+String strLo = str.toLowerCase();
+
+System.out.println(strLo);
+// 출력 결과 : hello java
+~~~
+
+### trim()
+
+~~~java
+/*
+  문자열 앞뒤의 공백을 제거해주는 메서드이다.
+  파라미터는 없다.
+ */
+
+String str = "  Hellooo Java World   ";
+String trimStr = str.trim();
+
+System.out.println(trimStr);
+// 출력 결과 : Hellooo Java World
+~~~
+
+### split()
+
+~~~java
+/*
+  문자열을 잘라서 배열로 반환하는 메서드이다.
+  파라미터로 자를때 기준이 되는 문자열을 입력받는다.
+ */
+
+String str = "Hello Java";
+String[] arr = str.split("");
+
+System.out.println(Arrays.toString(arr));
+// 출력 결과 : [H, e, l, l, o,  , J, a, v, a]
+~~~
+
+### toCharArray()
+
+~~~java
+/*
+  split("")과 같은 기능이지만, 반환하는 배열의 타입이 문자열 배열이 아니라
+  문자형(char[]) 배열이라는 차이가 있다.
+  파라미터는 없다.
+ */
+
+String str = "Hello Java";
+char[] cArr = str.toCharArray();
+
+System.out.println(cArr);
+// 출력 결과 : Hello Java
+~~~
+
+### getBytes()
+
+~~~java
+/*
+  byte 배열로 반환하는 메서드이다.
+  파라미터는 없다.
+ */
+
+String str = "Hello Java";
+byte[] bytesArr = str.getBytes();
+
+System.out.println(Arrays.toString(bytesArr));
+// 출력 결과 : [72, 101, 108, 108, 111, 32, 74, 97, 118, 97]
+~~~
+
+여기서 출력되는 byte코드는 [아스키코드 테이블](https://www.ascii-code.com/)을 보면 어떤 문자열을 의미하는지 알 수 있다.
+
+![](https://lh3.googleusercontent.com/y82u1xMYdpei4fNvYZxEiUnbHuR5p8I0D29cSN0hWmN5uRLN7MLdjxyNj08j90655x6GgnD12StW5PKVZoS40f4-OWYGy-eG1qQ2hM0OOc46vw-sK-b4_hZwbO9rGe73U5RpSiEfHrRp7hmKp7QCQku47KwQkXU2Bb5MOB-r3-DRD7t4LlOkVxdL49YnkLGZZAgKiGSsRS-kyisPhgGfdQQTafl782mbM1un6zc-hwYD9HwkZQ1_rADp_7NQNH4aXFq7v_txuFF_PgkaNyeo41SyCZJoxArORrufHDFfwav8sgx4KUgtS1XES41ArL4ry1pDkeXB3-I9dEDI_DfnFFee3EjZDjJqkoVn2xzswlyg3lQNwOUcvTAVhL4XyL3baJk7AgW0SChvJ5wvTjnRVgC3erSDHM8rHCeOUdT8Rln29ic2S474gNGlCcKjBkZQ2OF4wh4iEH6U0U3CpbJA_pE05LCUNubY9x-QVt2nz4HYGDGfEfLJ6Et1UDXcyeRBigjyTBRIBYUH4yUZbLQesE9C3ZSEnI-W4C8BVWiU_3jiGxkFKOy_RQvRb2nQRNXndTSS0mW4B-bfmMB9iJypKpVU10OlLynm-z66U22aL5KsZyRo58d4pBGqdbumVIFSWKbQ2JzHnFx8DT34u4QR9pQyG6kFGitTaaGS6Rc81zet6mFNitL4hYZwfBQbVPJdWDgg9cfPv2dAJ1kk7IUSuVwPj51znMbdHhi-72X7wSYWLrbluRtt9W3M=w870-h240-no)
+
+아스키코드 테이블상 H라는 문자는 10진수 72와 매칭된다. 따라서 문자열 str 변수에서 H의 문자와 매칭되는 바이트 코드는 72라는 걸 알 수 있다.
 
 <br>
 
