@@ -16,6 +16,7 @@
           <li><a href="languages/java.md#fature" target="_blank">Java의 특징</a></li>
           <li><a href="languages/java.md#philosophy" target="_blank">Java의 철학</a></li>
           <li><a href="languages/java.md#run-java-cli" target="_blank">IDE없이 컴파일, 실행하기</a></li>
+          <li><a href="languages/java.md#java-type" target="_blank">기본형 타입과 참조형 타입</a></li>
           <li><a href="languages/java.md#wrapper-class" target="_blank">Wrapper Class</a></li>
           <li><a href="languages/java.md#date" target="_blank">Date</a></li>
           <li><a href="languages/java.md#javadoc" target="_blank">JavaDoc</a></li>

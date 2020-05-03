@@ -3,6 +3,7 @@
 - [Java의 특징](#feature)
 - [Java의 철학](#philosophy)
 - [IDE없이 컴파일하고, 실행하기](#run-compile-without-ide)
+- [기본형 타입과 참조형 타입](#java-type)
 - [Wrapper Class](#wrapper-class)
 - [Date](#java-date)
 - [Javadoc](#javadoc)
@@ -66,6 +67,38 @@
 실행할 땐 `java JavaYahac` 처럼 파일 포맷없이 클래스 파일명으로 명령을 한다. 그럼 현재 디렉토리에서 이름이 일치하는 클래스를 찾아서 실행한다. 
 
 실행 순서는 `main()`를 먼저 수행하고, `main()`에서 호출하는 메서드들을 수행하는 순서로 수행된다.
+
+<br>
+
+## <a name="java-type"></a>기본형 타입과 참조형 타입
+
+### Primitive Type (기본형 타입)
+
+연산에 사용되는 자료형 8가지.
+
+기본형 타입은 non-Object 타입이며, **null 값을 가질 수 없다.**
+
+~~~java
+int num = null; // 에러를 발생한다. 기본형 타입은 null을 가질 수 없다.
+int num = 0; // 기본형 타입의 초기화는 이렇게 해야한다.
+~~~
+
+
+
+- byte
+- char
+- short
+- int
+- long
+- float
+- double
+- boolean
+
+### Reference Type (참조형 타입)
+
+기본형 타입 8가지를 제외한 나머지 자료형. 기본적으로 `java.lang.Object`를 상속받는 객체이다.   **<u>참조형 타입의 변수는 null 또는 메모리 주소를 값으로 갖는다.</u>** 연산자 `new` 의 결과가 객체의 주소이다.
+
+참조형 객체로는 클래스형(Class Type), 인터페이스형(Interface Type), 배열형(Array Type)이 존재한다.
 
 <br>
 
@@ -359,7 +392,7 @@ Java에서 길이를 반환하는 메서드 또는 프로퍼티는 `length`, `le
 
 더 자세히 알아보고자 한다면, 블로그를 참고할 것.
 
-- [DevAndy - 문자열 비교, ==과 equals()의 차이](https://youngjinmo.github.io/2019/12/java-equals/)
+- [JAVA - String 객체간 비교](https://devyoungjin.github.io/2019/12/boolean-string/)
 
 <br>
 
