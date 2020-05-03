@@ -7,7 +7,8 @@
 - [word-break](#word-break)
 - [복수의 id에 CSS 적용](#apply-style-to-multiple-ids)
 - [margin과 padding 차이](#margin-and-padding)
-- [이미지 흑백 전환 효과주기](#luminosity)
+- [이미지 흑백 전환 효과주기](#mix-blend-mode)
+- [텍스트/이미지 정렬](#align)
 
 <br>
 
@@ -60,11 +61,11 @@ HTML 문서의 스타일 코드를 적용할 때 class, id로 구분해서 스�
 
 <br>
 
-## <a name="luminosity"></a>이미지 흑백 전환효과 주기
+## <a name="mix-blend-mode"></a>이미지 흑백 전환효과 주기
 
-<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="css,result" data-user="youngjinmo" data-slug-hash="JjdXEXb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Nostalgia">
-  <span>See the Pen <a href="https://codepen.io/youngjinmo/pen/JjdXEXb">
-  Nostalgia</a> by DevAndy (<a href="https://codepen.io/youngjinmo">@youngjinmo</a>)
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="youngjinmo" data-slug-hash="qBOVmjR" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="qBOVmjR">
+  <span>See the Pen <a href="https://codepen.io/youngjinmo/pen/qBOVmjR">
+  qBOVmjR</a> by DevAndy (<a href="https://codepen.io/youngjinmo">@youngjinmo</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -74,7 +75,7 @@ HTML 문서의 스타일 코드를 적용할 때 class, id로 구분해서 스�
 이미지 반전을 이용한 효과인것 같다. 반전을 주기위해서는 먼저 이미지의 배경색을 주어야 한다. 이미지의 배경색을 주지 않으면 효과가 발생하지 않는다. 배경색을 무엇으로 주냐에 따라서 색 반전도 다르게 발생한다.
 
 ~~~css
-.ki {
+#ki {
   background: white;
 }
 ~~~
@@ -84,7 +85,7 @@ HTML 문서의 스타일 코드를 적용할 때 class, id로 구분해서 스�
 배경색을 넣었다면, 이제 이미지에 반전 효과를 준다.
 
 ~~~css
-.ki img {
+#ki img {
   mix-blend-mode: luminosity;
 }
 ~~~
@@ -92,11 +93,39 @@ HTML 문서의 스타일 코드를 적용할 때 class, id로 구분해서 스�
 이제 색이 바뀐다. 마우스 오버시 다시 원래 색이 돌아오게 하려면 `:hover` 를 넣어준다.
 
 ~~~css
-.ki img:hover {
+#ki img:hover {
   mix-blend-mode: normal;
 }
 ~~~
 
 출처 : <a href="https://studiomeal.com/archives/852" target="_blank">1분코딩 - CSS로 흑백이미지 만들기</a>
+
+<br>
+
+## <a name="align"></a>텍스트/이미지 정렬
+
+### 텍스트 중앙정렬
+
+`text-align` 속성값으로 center를 줌으로써 중앙정렬할 수 있다.
+
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="youngjinmo" data-slug-hash="GRpOmqy" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="text-align">
+  <span>See the Pen <a href="https://codepen.io/youngjinmo/pen/GRpOmqy">
+  text-align</a> by DevAndy (<a href="https://codepen.io/youngjinmo">@youngjinmo</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+### 이미지 중앙정렬
+
+이미지는 `display` 속성으로 block을 주고, 좌우 margin을 auto를 주입하면, 자동으로 화면의 가운데로 정렬된다.
+
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="youngjinmo" data-slug-hash="yLYPbad" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="yLYPbad">
+  <span>See the Pen <a href="https://codepen.io/youngjinmo/pen/yLYPbad">
+  yLYPbad</a> by DevAndy (<a href="https://codepen.io/youngjinmo">@youngjinmo</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+출처 : [w3school - CSS Layout](https://www.w3schools.com/css/css_align.asp)
 
 <br>
