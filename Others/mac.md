@@ -9,6 +9,7 @@
 - [특정포트 사용중인 프로세스 종료하기](#killproc)
 - [한글 깨진 파일 UTF-8 변환해서 복구하기 (iconv)](#iconv)
 - [맥 전원버튼 눌러도 안켜질때](#nopoweronmymac)
+- [ios 백업 데이터 저장 디렉토리 ](#ios-backup-directory)
 
 <br>
 
@@ -166,5 +167,15 @@ iconv -f euc-kr -t utf-8 [file] > [new file]
 1. 맥북을 완전 종료한 뒤, Cmd + Option + P + R + 전원 버튼을 동시에 누른다.
    (P와 R이 멀리 떨어져있기 때문에 손가락 포지셔닝이 중요하다)
 2. 위에서 버튼을 누르고 있으면 부팅음이 들리는데, 이 때에도 버튼을 계속 누르고 있으면 다시 한 번 부팅음이 들린다. 두번째 부팅음때 버튼을 떼면 된다.
+
+<br>
+
+## <a name="ios-backup-directory"></a>ios 백업 데이터 저장 디렉토리
+
+커맨드키를 누른 상태에서 상단 바에서 Go를 클릭하면, Library를 들어갈 수 있다.
+
+![](https://lh3.googleusercontent.com/ybCTNp1Iq0-dNEQABxlF6tn-fML95g5x97Fr2eCUxAk0qH5hW-fvK5nsXPMDnKqaQztHHEmKFoHBzfpk_Gvacn0KeXp71p0dMgaeW0hQGe3wnv72jgaiVWEI0Ao8ZGanHWuwP2pN_J3YQaDCgEBK6yywqBhqFaKz95zIY3UuJDa2siXtKO0xqIG0_jiO7ogL_iV0tPkztrlN6IaL7J_XTBL1wuVr8ORQa22vnZhaNDdIq55xsbQfuLuUnWwjfJBHPccktMxSkbtJ3_J9lmkpqpgZDjG8Z7EM3rHzokXe2_amnPHq3lqS1rBu83ouenISArZ1SLPa6fvk2_BZu4pTXBa31gfrZyX5ybDJfIHZ-xI1LwA7c76uV_6hlqVG1wSWl6x-twohQqr6q6zC9tRW5DLma9968viPVl1dyNvm517hue4UOzOtbmw1B2xXCslkk4N9V1RvTb87SPlIZdnHETuEBEjqM2WSAwDoeMhegfLdfJZPYdxyt4K1o3TjT2Hhz2-hBMbvVxRMcsac2pgHbkV3O46LD_7YuqIOhNdh85KzGUK2X_Vtjovnh2d0q4WpbTy-FQ547tzcPgVMKH5Vm8TrheWTi2bgwqTztwz_-ZdSxEeuaoJBttR3res-o7LBLzBnDD2EOtyzEfOL8-85IDqL5IYAesGMAJkxkz5EeA_qqtGXJimWK53LdiKIWeHdOZILwUpNkhxbNZo3HyPnSOYJUOXmz8UwsInHti5Vm4vMhKPwKj_IhRZ9=w434-h50-no)
+
+Library에서부터 **[Application Support]** -> **[MobileSync]** -> **[Backup]** 에 ios 백업 데이터가 저장된다.
 
 <br>
