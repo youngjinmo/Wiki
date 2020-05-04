@@ -19,6 +19,7 @@
           <li><a href="languages/java.md#java-type" target="_blank">기본형 타입과 참조형 타입</a></li>
           <li><a href="languages/java.md#access-modifier" target="_blank">접근제한자</a></li>
           <li><a href="languages/java.md#string-methods" target="_blank">String 클래스</a></li>
+          <li><a href="languages/java.md#getclass" target="_blank">클래스 타입 반환하기</a></li>
           <li><a href="languages/java.md#enum" target="_blank">enum</a></li>
           <li><a href="languages/java.md#wrapper-class" target="_blank">Wrapper Class</a></li>
           <li><a href="languages/java.md#date" target="_blank">Date</a></li>
@@ -27,7 +28,7 @@
           <li><a href="languages/java.md#scanner" target="_blank">Scanner</a></li>
           <li><a href="languages/java.md#length" target="_blank">length, length(), size()</a></li>
           <li><a href="languages/java.md#equals" target="_blank">==과 equals()</a></li>
-          <li><a href="languages/java.md#identityHashCode" target="_blank">객체 주소값 확인 (identityHashCode())</a></li>
+          <li><a href="languages/java.md#identityHashCode" target="_blank">객체 주소값 확인 ( identityHashCode() )</a></li>
           <li><a href="languages/java.md#ternary" target="_blank">삼항연산자</a></li>
           <li><a href="languages/java.md#switch" target="_blank">switch문</a></li>
           <li><a href="languages/java.md#touppercase" target="_blank">문자열 변환 함수</a></li>

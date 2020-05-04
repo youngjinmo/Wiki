@@ -6,6 +6,7 @@
 - [기본형 타입과 참조형 타입](#java-type)
 - [접근제한자](#access-modifier)
 - [String 클래스](#string-methods)
+- [클래스 타입 반환하기](#getclass)
 - [enum](#enum)
 - [Wrapper Class](#wrapper-class)
 - [Date](#java-date)
@@ -14,9 +15,9 @@
 - [Scanner](#scanner)
 - [length, length(), size()](#length)
 - [==과 equals()](#equals)
+- [객체 주소값 확인 ( identityHashCode() )](#identityHashCode)
 - [삼항연산자](#ternary)
 - [switch문](#switch)
-- [문자열 변환 함수](#touppercase)
 - [Lombok](#lombok)
 - [JavaBean](#javabean)
   - [JavaBean 규칙은 무엇이며, 왜?](#rule-and-why)
@@ -352,6 +353,24 @@ System.out.println(Arrays.toString(bytesArr));
 ![](https://lh3.googleusercontent.com/y82u1xMYdpei4fNvYZxEiUnbHuR5p8I0D29cSN0hWmN5uRLN7MLdjxyNj08j90655x6GgnD12StW5PKVZoS40f4-OWYGy-eG1qQ2hM0OOc46vw-sK-b4_hZwbO9rGe73U5RpSiEfHrRp7hmKp7QCQku47KwQkXU2Bb5MOB-r3-DRD7t4LlOkVxdL49YnkLGZZAgKiGSsRS-kyisPhgGfdQQTafl782mbM1un6zc-hwYD9HwkZQ1_rADp_7NQNH4aXFq7v_txuFF_PgkaNyeo41SyCZJoxArORrufHDFfwav8sgx4KUgtS1XES41ArL4ry1pDkeXB3-I9dEDI_DfnFFee3EjZDjJqkoVn2xzswlyg3lQNwOUcvTAVhL4XyL3baJk7AgW0SChvJ5wvTjnRVgC3erSDHM8rHCeOUdT8Rln29ic2S474gNGlCcKjBkZQ2OF4wh4iEH6U0U3CpbJA_pE05LCUNubY9x-QVt2nz4HYGDGfEfLJ6Et1UDXcyeRBigjyTBRIBYUH4yUZbLQesE9C3ZSEnI-W4C8BVWiU_3jiGxkFKOy_RQvRb2nQRNXndTSS0mW4B-bfmMB9iJypKpVU10OlLynm-z66U22aL5KsZyRo58d4pBGqdbumVIFSWKbQ2JzHnFx8DT34u4QR9pQyG6kFGitTaaGS6Rc81zet6mFNitL4hYZwfBQbVPJdWDgg9cfPv2dAJ1kk7IUSuVwPj51znMbdHhi-72X7wSYWLrbluRtt9W3M=w870-h240-no)
 
 아스키코드 테이블상 H라는 문자는 10진수 72와 매칭된다. 따라서 문자열 str 변수에서 H의 문자와 매칭되는 바이트 코드는 72라는 걸 알 수 있다.
+
+<br>
+
+## <a name="getclass"></a>클래스 타입 반환하기
+
+객체의 타입을 알아내는 메서드이다. Object 클래스에 내장된 메서드이다.
+
+~~~java
+public class DevAndy {
+  public static void main(String[] args){
+    Car c = new Car();
+    
+    System.out.println(c.getClass().getName());
+  }
+}
+~~~
+
+![](https://lh3.googleusercontent.com/zT_zQmPslMKvOO0ZVEfQX03DWc6403YtuhPD7nzM3Z7DuhWwlohn1i_1AAhtBRrOk_wknEi_bsB2Ds7hJSkeVewMaJuGEzzNrB5R-EgWVixUI4I_U6nHtd_hwCdSz6y_kLGbUFiL7Vy9GoWkSRhmS843wTIiUy4wDcuwsiQa34w0TRySBOGTxt_WKB6ByBRZgvsjx0hat1ywg4uX81xnSIpf1cRabCRKftlH4qWMDFvEd7l30-GD3d0gN3D-85jshVF1QVElTepBQN6il4n-04I-E0VEQbWHNj0WH9jbCLssjLsHSDjBI5kdJPOi_qyThePctDRr3CYWfB9CFaOGEczhmeiG0_m7RszRBExudsxqfyEtJez7Azx2rKiZQ2SJjEkUvz4vBY0a-3x21vG0r2aTBP95TqfojVwjuRKeUw1MhSXTv8E42aPrLgDdpmnik8q8dZtJMv6bLNvLhPHjyWcb8G2w67ISgBxyHAelfJMygH6Gn7EdFJq2046dTdz2fmH_VDe3oePJwbcqs83-cDnGZypjmYBASY_nJngxHiaBvXJMmIJpBJw8JUxTRJqeacYc-yisotKFElmXelfLvDUI9W2e1Dd-G0wNXRzbIr8QkkWyy7Zx8sw9lDeHIxGnLU-ZEXp-Twk5cLVbXZBLHQKUWgxsTNAOWUycCw2FUrskHtjfjTF8sZl-Jz2nLzSpUT7p8ywGmky1JXxfmmkXzFAFvHGHLIuy5zYZwYOkgXwqkffJ4PpePYhK=w1288-h420-no)
 
 <br>
 
@@ -703,7 +722,7 @@ Java에서 길이를 반환하는 메서드 또는 프로퍼티는 `length`, `le
 
 <br>
 
-## <a name="identityHashCode"></a>객체 주소값 확인 (identityHashCode())
+## <a name="identityHashCode"></a>객체 주소값 확인 ( identityHashCode() )
 
 앞에서 산술연산자 ==와 `equals()` 함수를 통한 비교를 했는데, 객체 주소값을 직접 눈으로 보고싶다면(?) System 객체에 내장된 `identityHashCode()`를 이용하면 볼 수 있다.
 
@@ -782,24 +801,6 @@ switch(month){
 ~~~
 
 break을 어디에 작성하느냐에 따라 multiple 선택도 가능함을 알 수 있다.
-
-<br>
-
-##<a name="touppercase"></a>문자열 변환 함수
-
-입력받은 문자열중 같은 문자가 몇번 나오는지를 파악하는 [문제](https://www.acmicpc.net/problem/1152)를 풀다가 자주 사용하는 문자열 변환 함수를 정리해보았다.
-
-위 문제에서 사용한 문자열 메서드는 `toUpperCase()` 이다. 문자열 전체를 대문자로 변환하는 메서드이다.
-
-| methods         | doing                            |
-| --------------- | -------------------------------- |
-| `toUpperCase()` | 문자열 전체를 대문자로 변환한다. |
-| `toLowerCase()` | 문자열 전체를 소문자로 변환한다. |
-| `trim()`        | 문자열 앞 뒤의 공백을 제거한다.  |
-
-문자열 메서드끼리는 중복 사용도 가능하다.
-
-![](http://www.mediafire.com/convkey/d469/mxdlxuexldnhqzmzg.jpg)
 
 <br>
 
