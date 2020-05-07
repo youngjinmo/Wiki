@@ -15,6 +15,7 @@
 - [bash모드로 컨테이너 진입](#exec-imageid-bash)
 - [컨테이너 삭제](#rm-container)
 - [이미지 삭제](#rmi-image)
+- [도커 컴포즈](#compose)
 
 <br>
 
@@ -200,7 +201,7 @@ $ docker rm [컨테이너-이름]
 $ docker rmi [이미지-이름]
 ~~~
 
-컨테이너와 마찬가지로  `,` 로 구분해서 복수의 이미지를 삭제 가능하다.
+컨테이너와 마찬가지로 `,` 로 구분해서 복수의 이미지를 삭제 가능하다.
 
 <br>
 
@@ -213,5 +214,53 @@ $ docker rmi -f [이미지-이름]
 ~~~
 
 해당 이미지를 통해 생성된 컨테이너와 이미지를 동시에 강제삭제된다.
+
+<br>
+
+## <a name="compose"></a>도커 컴포즈
+
+도커 컴포즈란 다수의 컨테이너를 운용하기 위한 도구라고 한다. ELK를 공부하려던 중 Elastic Search와 Logstash, Kibana 3개의 컨테이너를 연동하고 한꺼번에 실행할 수 있는 도구라고 알게되었다.
+
+도커 컴포즈는 3가지 절차로 진행된다.
+
+1. `Dockerfile` : 앱 환경 설정
+
+2. `docker-compose.yml` : 앱과 실행되는 서비스 설정
+
+3. 도커 컴포즈로 앱 실행
+
+   ~~~
+   $ docker-compose up
+   ~~~
+
+4. 도커 컴포즈로 실행된 스택, 데이터 삭제하기
+
+   ~~~
+   $ docker-compose down -v
+   ~~~
+
+   
+
+**docker-compose.yml 작성 폼**
+
+~~~
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+    - "5000:5000"
+    volumes:
+    - .:/code
+    - logvolume01:/var/log
+    links:
+    - redis
+  redis:
+    image: redis
+volumes:
+  logvolume01: {}
+~~~
+
+출처 : https://cloudstudying.kr/lectures/306
 
 <br>
