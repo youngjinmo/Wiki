@@ -24,6 +24,7 @@
   - [호스트네임 변경하기](#hostname)
   - [wget으로 파일다운로드](#wget)
   - [계정 생성하기](#adduser)
+  - [사용자 목록 조회하는 4가지 방법](#passwd)
   - [우분투 패스워드 설정하기](#password)
 - [Vim Editor](#vim)
   - [입력 명령어](#vi-input)
@@ -406,6 +407,34 @@ $ su - [new-user]
 
 
 출처 : <a href="https://linuxize.com/post/how-to-create-a-sudo-user-on-ubuntu/" target="_blank">Linuxize - How To Create a Sudo User on Ubuntu</a>
+
+<br>
+
+## <a name="passwd"></a>사용자 목록 조회하는 4가지 방법
+
+사용자 목록확인
+
+```
+$ cat /etc/passwd
+```
+
+사용자 아이디만 조회하기
+
+~~~
+$ cut -f1 -d: /etc/passwd
+~~~
+
+`ADDUSER` 를 통해 등록된 계정만 보기
+
+~~~
+$ grep /bin/bash /etc/passwd
+~~~
+
+`ADDUSER` 를 통해 등록된 계정의 아이디만 조회하기
+
+~~~
+$ grep /bin/bash /etc/passwd | cut -f1 -d:
+~~~
 
 <br>
 
