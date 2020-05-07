@@ -24,6 +24,7 @@
   - [호스트네임 변경하기](#hostname)
   - [wget으로 파일다운로드](#wget)
   - [계정 생성하기](#adduser)
+  - [사용자 목록 조회하는 4가지 방법](#passwd)
   - [우분투 패스워드 설정하기](#password)
 - [Vim Editor](#vim)
   - [입력 명령어](#vi-input)
@@ -406,6 +407,42 @@ $ su - [new-user]
 
 
 출처 : <a href="https://linuxize.com/post/how-to-create-a-sudo-user-on-ubuntu/" target="_blank">Linuxize - How To Create a Sudo User on Ubuntu</a>
+
+<br>
+
+## <a name="passwd"></a>사용자 목록 조회하는 4가지 방법
+
+사용자 목록확인
+
+```
+$ cat /etc/passwd
+```
+
+<img src="https://lh3.googleusercontent.com/B_sIq46sRMQadkLDSFSxY0FgRvj_a1PJXQeXjlI1hAPT6mLI-6Irwfx7TSk0zsPkGKi6gn23cYuTHgCsg_Ml8meo5Wt9HVusWE_Ke7LpSRQsh9NvEhlp1b2Wt3kcraGtPUOmLR-z3SmqHDdR6TB0ydsorSEYxlQ57obyLLeHqYb3LKMebIqkDanxmOSW7MaimTuAHirf7Bgwps1g0hXrKK9cNTv6hDXbT6R9LSm3LuWOL0o_CFcEEHKfVU6N1F__FS6qzklSztCRjqM3SnacQAh0kpRFB73STlSvLKsPAlVPqrSAL7nM1okin6Tdctg4RfaxBwu1IpDL25Q8QZKzyVPh7VqAtPiz72jcgsrNGg3PVraR0YNag08ZM78-bR3ZTKkWcG5S1nL1ZEE8Ysatrw9Z9TsfUJXXYmhRn56MGc01SAOmW5AxCQ6JLPPvvfVC437qGZat7g3wM_mEmIrJwTGEfrfJejuo-KoTB4duBDg49pY2AbWatNeBN_X40YZ1OKbG8X29zoUDbUKQX8aZjUya_a-gkMCLWrjY4ARQIrSAapT8NrKSiJIGOccbSG_Fr5a699mvuSNKCunzSetcgAf_5VMKpHI4VN6TnZQYPgtmICu30J725W8J03WSpTssdFgcDLEd-pOzv6lfDZFYfZCumCt7xZsiqDLhjk4uGatdHsCvt1eYtnoixWzWQCWQCGdpBjE3-uBgtV45i5wjEnC1WpO1cdGgbQ661dM2RMvgQB10chzM-ZA=w720-h326-no" style="width: 90%;" />
+
+사용자 아이디만 조회하기
+
+~~~
+$ cut -f1 -d: /etc/passwd
+~~~
+
+<img src="https://lh3.googleusercontent.com/PYp8-zbWHN4Ekk6hq0tMH_OxkzhM-JGWH7uUg6xm12v6X1nN9Jywy4NB9UMJ6LrYnxL7_J9InB2hLxinoiT8i5Qw7MXLGDMas1-FiJ7YitCXVLOjC_6rk1ZO--VEj9q6guDcdEVg9LLsFpduoXiE5jZ2tPkgWJnbuoilBs4iFJMv7LQh0OqMJDhQGjCVjz7T9uUIj-NZVfKBJLQM6mktZAELs4pxjFTCRPUWxyuEEObbvOZaOqj85eBC1Q51ud_9-wkL_Hy4rIln4KWibZohhD-zFIkHd9_d18kuBXo01RmCXPsjzdT9VvYnJu-AM2cP6fSGXIIWjoldkQM_uTntK5CviPfHotH3MvOkEV9sFLU8rLbMIc0ofnwCHEp5GtggxYVQwIyluQ-Lri6GWGofDJwNwVwT2ydccnFUzDn5trKQqWbDlJyf7upIzkDkuWExhkIbuHxxAvj-fKTk7bkC6PhbBsz4NCo1h_GInwS9XEvMwTnN_QE_YhtRE0JdIH1z5QYkN_OSjcatfL0Bb4uo47Rn1iGR4NTgORXQNlUkDYjYRFvUDhV7EzJjLzJ6EHtSlYoHQjdz_CE4sGuThlw3neCzwjmlwUnC3DqFR6eHJZwqfwsDmmTkoDzUQBLg3enaz3Faki67VF3UelRfVHMAprvDc15bR1pto-Cz71AaV2Nf-WBrBybtgdM0yuZ8RZirv-25KEdmtSv12LjK8fQSfy0GE0QOOg6JA1MJX4PpQod2_7X1frO8zA8=w720-h327-no" style="width: 90%;" />
+
+`ADDUSER` 를 통해 등록된 계정만 보기
+
+~~~
+$ grep /bin/bash /etc/passwd
+~~~
+
+![](https://lh3.googleusercontent.com/9ApoQTs5aoZQYamnvysQEOvbMX5EGdb6-HQHyHxmN_BlTVwtaiHaqtwU80B-jMYfcrUw0wqEcyd3KeIoROlOUKIMbFF7U0xJwY-l1shygAmJD82qH4xGikcyVpjcUWI4QbgoLmZlvrWQf_sIM5x0kQzehz2Dm2i5s_XiIVrgjUtUuxXOCUEc395lAIzhMfc8MwdBQog_t77XkQtWFM46ySwTWELNgH1MIKWBlWya6zvedeYMPhpTvJLDPhk9tuxZWiyIwexfHyQjKUKd9Vzjty0U4yGYPhqNZhDZ2WwaceSndw6YZBcz7l2vUYann2eHmorokhilD2ZCBDq-RzZxidstZMMNNCY60FayzyEggm-xtKsD1JjKvroKuHNozAq5iIrX3Te_3BHXftiyKY9Aa2vXD39cZd3RZe7_7aTYxujg29M5chbN-20fQHmYVEzDleFmFX8nefpsho7hzN2De8NWP7HfA5nOBDO9KtAwXYYaOLYvVSPxp61Z65I3mo7TulaQtrHFuFco4MajZ4yU2LErqT3TXdXwjUg4E7RNjjHotM3LvnIFcjYDf69-lahKtnRTi677jq0lcBYS6SBUfd9yDiq8YmnE-wW9NowC31fdqQGeqBMqjoUYmWmQ_txRzTCVElpSqoN0grBLkoBf0DNrlm4hdEwNuQU1rYe-XBzy0WOyhYAHNz3JqudU2iBU4GiMeNhqBpDR4Ih--eRkEgCvKuGrfJJGwQGOkQoNPqmUkzdk3nroHQA=w720-h137-no)
+
+`ADDUSER` 를 통해 등록된 계정의 아이디만 조회하기
+
+~~~
+$ grep /bin/bash /etc/passwd | cut -f1 -d:
+~~~
+
+![](https://lh3.googleusercontent.com/UgfjiFcWOwsNBUeqOox3I2WPsQAop4ABiIIWr5scTkYw-ADp9GTMF21FZiuvI5JNH4JXQE7w-FkYDY0w66zwwbryXqmPSsrtid3DRUjc8RkyuoTMA7W2Uw37raPLfZSSfzRyYxh6e3KsID3Ry1g4IBaZ4KtNCga75m1WFlNSIMaQWIyNej-ifUsMgR0dJ4ULJlhbhSlV3j_Bj-F724Su9wE0V55S_YflKWRcg7TZ2fgU647Dlypn3upgdRZ-nN8KmeureIunZWYEvuekQPFDRJLKjXLGHj4PsksvmNA-6Ve6XZLhsZYzgbYr5iUqrnyo2jeMxeO9Ubzth4ZDO5E5f0Z-N7hSv8mpLebg933M2t8LdB54ZyPaI6Qqs_GrV8rHYUHszCbCJ5yvBX-112_GqibLToR2POlkTveYBwBUQTsMvsjdGHBztLacKGLznxdME9We7bkD6l201oZrU5UPZYNtPYbE1l__lhH5BlGO6DnvtvTz5osm40erDni0FrZsCU5udKoWs-APm0SELYcrOVB9YVMlPq_D9UpyEX0b6HXcjWAe5USyXBhiRNHumW2Bhtc8PvCiXxh-5HjgUSpZwOK77xpW-MK_RbuPlUq56Y1DMUqmHHQkVdKknNcIr2Fw9UFqH97wxvPD0mFbdVw9dTR_sKBQEv5D1PCHKKXHKf1avnFR8bpDYE1VZr7nF8NXA5VPDPkTc7FntCyhlcGY7BoSueWfADon5k7G_N_5GQ_dqH3BzS70Eho=w720-h159-no)
 
 <br>
 

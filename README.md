@@ -166,6 +166,7 @@
                 <li><a href="DevOps/Linux.md#hostname" target="_blank">호스트네임 변경하기</a></li>
                 <li><a href="DevOps/Linux.md#wget" target="_blank">wget으로 파일다운로드</a></li>
                 <li><a href="DevOps/Linux.md#adduser" target="_blank">계정 생성하기</a></li>
+                <li><a href="DevOps/Linux.md#passwd" target="_blank">사용자 목록 조회하는 4가지 방법</a></li>
                 <li><a href="DevOps/Linux.md#password" target="_blank">우분투 패스워드 설정하기</a></li>
               </ul>
             </details>
