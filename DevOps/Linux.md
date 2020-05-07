@@ -410,6 +410,7 @@ $ su - [new-user]
 
 <br>
 
+<<<<<<< HEAD
 ## <a name="passwd"></a>사용자 목록 조회하는 4가지 방법
 
 사용자 목록확인
@@ -562,7 +563,7 @@ sh ~/.vim_runtime/install_basic_vimrc.sh
 
 vim 에디터 모드에서 `v` 를 입력하면, 커서가 있는 위치에서 드래그를 할 수 있다. `V` 를 입력하면, 한 줄씩 드래그가 가능하다.
 
-<img src="https://lh3.googleusercontent.com/xSBXHEvkTJbcfJA7U9KKzABXI9SxoioUqgJiuRA3r_fJdtKV7cgfgSnsXsULMLbKzdUDCAzjIxX54fMzvMyGGZdVUyfr5ikkHQos80sTTlAv0f1LcwAdo3S3ZdEDq0MFmtEscru3QVTiaWz79romKG2K1y0R24bTl9SGZyRfoIxdP8_dm8Zjmec1RZRQHTHdjjqSc2RQwQbJCsbD0HDciPQBnfHIBmgjdXrgCDsZRuGXApoOdmvPBc5-kHAhTjMhA_tMS37sj-zJ_YEm-2dQpbhnElEFJqmQkPsOK98axPnWub27i1eEmgJveyMtm6lTu5p6Da610C5HBRWzHdts5-9akJC9gFhZONPkqMNhmjJBBR6pX-s67AnZKCq5pfHdZa7-TEKoAK2xbTp_I4hHAGCgEbAdTfKJsuqyQUHQzWO6ERvkV8BL6__1gEAgHAcpJplgb04foaJ3N8wWp_nscqRJSL44n10GVgEIxXq-fTeE7qY6a8AngQh4NwbnqX5AnpMOK1dUO18hYKXvfINeBaCyNd_9Fe1DMb2kqiJ4ifYDRqV3-26vdvZXeo-wvGNtYCG6HohfFVtvm2uFgTyFHAm8esXv1RHImrH_RFxalTLWjUVCeToOeS6nloSHBRgXsJEVoBYbJWuRkvnqbd202GtKiiKVcq9mjOXyMtXiXKJaQphjAfzvsXW6iajeJlbVw8X0KXfN4CYjtfNG8zlSjTlXJD-tAQwIr6kOXEjjHvWkw_aCnw=w702-h396-no" style="zoom:50%;" />
+<img src="https://lh3.googleusercontent.com/xSBXHEvkTJbcfJA7U9KKzABXI9SxoioUqgJiuRA3r_fJdtKV7cgfgSnsXsULMLbKzdUDCAzjIxX54fMzvMyGGZdVUyfr5ikkHQos80sTTlAv0f1LcwAdo3S3ZdEDq0MFmtEscru3QVTiaWz79romKG2K1y0R24bTl9SGZyRfoIxdP8_dm8Zjmec1RZRQHTHdjjqSc2RQwQbJCsbD0HDciPQBnfHIBmgjdXrgCDsZRuGXApoOdmvPBc5-kHAhTjMhA_tMS37sj-zJ_YEm-2dQpbhnElEFJqmQkPsOK98axPnWub27i1eEmgJveyMtm6lTu5p6Da610C5HBRWzHdts5-9akJC9gFhZONPkqMNhmjJBBR6pX-s67AnZKCq5pfHdZa7-TEKoAK2xbTp_I4hHAGCgEbAdTfKJsuqyQUHQzWO6ERvkV8BL6__1gEAgHAcpJplgb04foaJ3N8wWp_nscqRJSL44n10GVgEIxXq-fTeE7qY6a8AngQh4NwbnqX5AnpMOK1dUO18hYKXvfINeBaCyNd_9Fe1DMb2kqiJ4ifYDRqV3-26vdvZXeo-wvGNtYCG6HohfFVtvm2uFgTyFHAm8esXv1RHImrH_RFxalTLWjUVCeToOeS6nloSHBRgXsJEVoBYbJWuRkvnqbd202GtKiiKVcq9mjOXyMtXiXKJaQphjAfzvsXW6iajeJlbVw8X0KXfN4CYjtfNG8zlSjTlXJD-tAQwIr6kOXEjjHvWkw_aCnw=w702-h396-no" style="zoom:70%;" />
 
 <br>
 
@@ -690,4 +691,3 @@ $ exit
 위 링크로 접속하면 방금 녹화한 영상을 확인할 수 있다.
 
 <br>
-
