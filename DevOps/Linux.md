@@ -108,23 +108,32 @@ $ ln -s [target] [symbolic_link_name]
 
 - 경로 Desktop/test 에서 용량 3mb 미만의 파일을 콘솔에 출력할 때 다음과 같이 명령한다.
 
-  - `$ find Desktop/test -size -3M -type f`
-
-&nbsp;
+  ~~~
+  $ $ find Desktop/test -size -3M -type f
+  ~~~
+  
+    
 
 - 경로 Desktop/test 에서 용량 10mb이상의 디렉토리를 `ls -l` 형태로 출력할 때 다음과 같이 명령한다.
 
-  - `$ find Desktop/test -size +10M -type d -exec ls -l {} \;`
+  ~~~
+  $ find Desktop/test -size +10M -type d -exec ls -l {} \;
+  ~~~
 
- &nbsp;
+ 
 
 - 파일명 중간에 'guide'이 포함된 파일을 찾으려고 할 때.
-  - `$ find /Desktop -name '*guide*' `
+  ~~~
+  $ find /Desktop -name '*guide*'
+  ~~~
 
- &nbsp;
+
 
 - 폴더명 중간에 'tomcat'이 포함된 폴더를 찾으려고 할 때.
-  - `$ find /Desktop -name '*tomcat*' -type d `
+  
+  ~~~
+  $ find /Desktop -name '*tomcat*' -type d
+  ~~~
 
 <br>
 
