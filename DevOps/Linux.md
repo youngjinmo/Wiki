@@ -379,7 +379,7 @@ $ sudo apt-get install wget
 
 ## <a name="adduser"></a>계정 생성하기
 
-입력하고 싶은 **[new-user]**을 추가한다.
+입력하고 싶은 <b>[new-user]</b>을 추가한다.
 
 ~~~
 $ adduser [new-user]
@@ -402,7 +402,7 @@ $ usermod -aG sudo [new-user]
 이제 sudo 권한으로 생성된 계정으로 전환한다.
 
 ~~~
-$ su - [new-user]
+$ sudo su - [new-user]
 ~~~
 
 
