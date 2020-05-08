@@ -18,7 +18,6 @@
 - [awscli 설치하기](#awscli)
 - [Apache2 웹서버 실행](#start-apache2)
 - [키페어(.pem) 자동으로 읽어오기](#autoload-pem)
-- [Ubuntu EC2에 JDK 설치하기](#install-jdk-ubuntu)
 - [Amazon Linux에 Java 설치하기](#install-jdk-amazonlinux)
 - [Java 설치 경로 찾기](#which)
 - [Amazon Linux에 메이븐 설치하기](#install-maven)
@@ -232,22 +231,6 @@ $ chmod 700 ~/.ssh/config
 ```
 $ ssh 서비스명
 ```
-
-<br>
-
-## <a name="install-jdk-ubuntu"></a>Ubuntu EC2에 JDK 설치하기
-
-- ~~~
-  $ sudo apt install dafault-jdk
-  ~~~
-
-- 구버전 설치할 경우, [Oracle Java Archive](https://www.oracle.com/technetwork/java/archive-139210.html)에서 버전을 찾아서 설치.
-
-- ~~~
-  $ ssh -i [aws-public-key].pem ubuntu@[ip-port]
-  ~~~
-
-- AWS 서버를 실행할 때마다 ip주소가 바뀐다. 바뀐 ip주소를 입력해야 정상적으로 AWS 웹서버에 접속할 수 있다.
 
 <br>
 

@@ -26,6 +26,7 @@
   - [계정 생성하기](#adduser)
   - [사용자 목록 조회하는 4가지 방법](#passwd)
   - [우분투 패스워드 설정하기](#password)
+  - [JDK 설치하기](#install-jdk)
 - [Vim Editor](#vim)
   - [입력 명령어](#vi-input)
   - [이동 명령어](#vi-move)
@@ -344,7 +345,7 @@ AWS 사용환경을 도커 컨테이너로 옮기면서, 도커에서 SSH 키페
 $ sudo apt-get install wget
 ~~~
 
-
+## 
 
 이후의 과정은 다음과 같다.
 
@@ -410,7 +411,6 @@ $ su - [new-user]
 
 <br>
 
-<<<<<<< HEAD
 ## <a name="passwd"></a>사용자 목록 조회하는 4가지 방법
 
 사용자 목록확인
@@ -465,6 +465,87 @@ $ passwd [user]
 
 ~~~
 $ passwd
+~~~
+
+<br>
+
+## <a name="install-jdk"></a>JDK 설치하기
+
+JDK를 설치하는 방법은 2가지가 있는데, default-jdk를 설치하는 경우와 add-apt-repository를 이용하여 원하는 버전의 jdk를 직접 설치하는 경우이다.
+
+jdk를 설치하기 전, jdk구버전을 깨끗하게 지우고 시작하는 방법부터 알아보자.
+
+### JDK 삭제하기
+
+openjdk라는 이름의 패키지들을 삭제하는 명령어이다.
+
+~~~
+$ sudo apt-get remove openjdk*
+~~~
+
+마찬가지로 oracle도 삭제해준다.
+
+~~~
+$ sudo apt-get remove oracle*
+~~~
+
+openjdk와 oracle을 삭제함으로써 더이상 사용되지 않는 패키지들을 autoremove를 통해 깔끔히 제거한다.
+
+~~~
+$ sudo apt-get autoremove --purge
+$ sudo apt-get autoclean
+~~~
+
+<br>
+
+### default-jdk
+
+default-jdk를 설치하는 경우를 알아보자. 작성시점인 2020년 5월 기준, Ubuntu 18.04.3 에서 default-jdk를 설치하면 jdk 11이 설치된다.
+
+~~~
+$ sudo apt-get update -y
+$ sudo apt-get install default-jdk -y
+~~~
+
+참고로 `-y` 옵션은 설치과정에서 묻는 [Y/n]에 대해 미리 Y를 입력하라는 옵션이다
+
+<br>
+
+### add-apt-repository 사용하여 원하는 버전의 jdk 설치
+
+add-apt-repository는 파이썬 기반의 스크립트라고 하는데 이걸 사용하기 위해서는 software-properties-common을 먼저 설치해야한다.
+
+~~~
+$ sudo apt install software-properties-common
+~~~
+
+이제 add-apt-repository를 사용할 수 있게 되었다. jdk 설치파일 소스 리스트를 추가해보자.
+
+~~~
+$ sudo add-apt-repository ppa:openjdk-r/ppa
+~~~
+
+이후 apt-get을 업데이트하면, 설치한 jdk 리스트를 조회할 수 있다.
+
+~~~
+$ sudo apt-get update -y
+$ apt-cache pkgnames | grep jdk
+~~~
+
+<img src="https://lh3.googleusercontent.com/_rZTBGyYXCEYGTqLqiyYS_lEF4dnv5CjNN9jiB3hdxVs0EhNjVHgHlOPgvkBpf6AHmGsxbRNRvxGTPoSydmVgbZEvJIPgbFpUb0Hr9ULne9qL5KQE6sijNEx8Q109DJWp5MS-NhChcimA3eQP0EwkjkERfG5zKK_hNL2mKf4H4Ub-EXS7tCE9cyEfTr7sKeNYbRoWPt6uBH-sOwWacUUf93HU0qGs60h_2ti2X036DAIgWIVmUxv-HSrR93Bu-Co9thaih2SoBfeG-kAed5xEoGXGETQTAFl8BmDQ6xLQDq4vFZ151rIrdb2mQNO6QgV_pz9EpfS5QvGKMQ3NzWV6HqrR_ZAsbY4sQh0obgmxpkcKg0TxmUCQux7Hplq1pZSDIKm2Li1eFcAOjrd_O0jsgj0-x_sPtuW0e2V3-WXBnA941I3TxinI_danmhQa1SMgKEsyYbG7pes4COuq63i-03pfS3Wx8Q_b0h4d_i_KY7KVqWhJdcDdZB9FylK0wYEeYN-cb5CKKUo41Bxkec60gqwHtJH3LEAtbD2FaGOz-qd4uiGc236rhpFb1mF0XIXPE8wPRUPwDAsXpa2iuAss5LFKWgl2MUcxLFogmkIFac-7-Ya4QILjI2xuQNwbYRK9JcJ4SvA0A7owwmyvN1_Jrt1q0YvJXPFwvPWh6bBdvLFnBeVrMCjtoNuvn9h0jt3Ehvjs6m-DK-FCZPIzMV1I1kzuCA-OXxx_C6arKF8LdZOEh7vm--qQGI=w999-h924-no?authuser=1" style="width: 80%" />
+
+
+
+원하는 버전의 jdk를 설치한다.
+
+~~~
+$ apt-get install openjdk-8-jdk
+~~~
+
+버전확인을 해서 원하는 버전의 jdk가 잘 설치되었는지 확인해보자.
+
+~~~
+$ java -version
 ~~~
 
 <br>

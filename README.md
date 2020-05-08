@@ -168,6 +168,7 @@
                 <li><a href="DevOps/Linux.md#adduser" target="_blank">계정 생성하기</a></li>
                 <li><a href="DevOps/Linux.md#passwd" target="_blank">사용자 목록 조회하는 4가지 방법</a></li>
                 <li><a href="DevOps/Linux.md#password" target="_blank">우분투 패스워드 설정하기</a></li>
+                <li><a href="DevOps/Linux.md#install-jdk" target="_blank">JDK 설치하기</a></li>
               </ul>
             </details>
           </li>
@@ -229,7 +230,6 @@
           <li><a href="DevOps/AWS.md#awscli" target="_blank">awscli 설치하기</a></li>
           <li><a href="DevOps/AWS.md#start-apache2" target="_blank">Apache2 웹서버 실행</a></li>
           <li><a href="DevOps/AWS.md#autoload-pem" target="_blank">키페어(.pem) 자동으로 읽어오기</a></li>
-          <li><a href="DevOps/AWS.md#install-jdk-ubuntu" target="_blank">Ubuntu EC2에 JDK 설치하기</a></li>
           <li><a href="DevOps/AWS.md#install-jdk-amazonlinux" target="_blank">Amazon Linux에 Java 설치하기</a></li>
           <li><a href="DevOps/AWS.md#which" target="_blank">Java 설치 경로 찾기</a></li>
           <li><a href="DevOps/AWS.md#install-maven" target="_blank">Amazon Linux에 메이븐 설치하기</a></li>
