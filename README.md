@@ -164,6 +164,7 @@
                 <li><a href="DevOps/Linux.md#change-localtime" target="_blank">서버시간 변경하기</a></li>
                 <li><a href="DevOps/Linux.md#setup-locale" target="_blank">UTF-8 인코딩 설정(한국어 설정)</a></li>
                 <li><a href="DevOps/Linux.md#sudo-su" target="_blank">sudo 권한 설정하기</a></li>
+                <li><a href="DevOps/Linux.md#passwd" target="_blank">계정 비밀번호 설정하기</a></li>
                 <li><a href="DevOps/Linux.md#hostname" target="_blank">호스트네임 변경하기</a></li>
                 <li><a href="DevOps/Linux.md#wget" target="_blank">wget으로 파일다운로드</a></li>
                 <li><a href="DevOps/Linux.md#adduser" target="_blank">계정 생성하기</a></li>

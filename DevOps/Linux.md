@@ -22,6 +22,7 @@
   - [서버시간 변경하기](#change-localtime)
   - [UTF-8 인코딩설정](#setup-locale)
   - [sudo 권한 설정하기](#sudo-su)
+  - [계정 비밀번호 설정하기](#passwd)
   - [호스트네임 변경하기](#hostname)
   - [wget으로 파일다운로드](#wget)
   - [계정 생성하기](#adduser)
@@ -321,6 +322,30 @@ $ sudo su - [user-name]
 패스워드를 입력하면 `sudo` 권한이 최종적으로 우분투계정에 sudo 권한 설정이 끝난다.
 
 ![](https://lh3.googleusercontent.com/B6TH5dmvU6sSrFIvF0uTECkobfG9nicD1SPY5YA1APAOVZ49ODzJpN8F4Qg_BcGbmDkKese4zMcXO3MlxrqDdUSn-c-yYgmXllxmy5YdwKqRiEPRcY1XICePm6vxP1r2_g6Wbjh6JmWpnvHYP_rla9NQkJLhlCjC4ppb390gV8O3muE7YDZlf3a0cHIcDSeF7aoihRLPDnMbgu2CkEpY6m9y0bQojBmKYohDNo0_q8cIrtr_jU5PfRtikbnzjb_vhIGcPHvz8jXa7cGDDNz832FJvDOyUo8Dtqjb209kGf278MrNeFhQbQUY9rw5fMPhMY4uljcj9glx_1jKkTOTiXItiwnVTAMabOpjomPuorYITLTkMOr6kye30KfL8LP669gy__-duR8B0hvQ7pdMFHrYXVydg-hlN3Dav_QLcMbyQqCQoRa9YeQZEtJ0adtP2X2Shlq8e6GlFZKsiOd0tD9AMI_5ztZBdsbpaLUVmuK22rM0ta-ZOqWfjWmZWGOJVW_3uP6F5pPdnWm8WymNbxBHeYppkD9prEWYc-Vr70Rqu_W6pJ5q_ekaDNkWN9lnMhVLvNjRRhlPpfS432VYyu1hDnVlYpbh9nsuD-g7_NeHLfBGMLEv_btzm2NAj5R8_MzGIaBhqAkG5MU8_QHie5V0D-sd-CKp2yaBfCZSN92WPyj8ulkqEDKS6oV_q7SXuBAxnwFYhLxVALuHK4yjq_8JvXxsxxu98n1z3kHomvXxuSZ-Euk8xzgX=w1436-h178-no)
+
+<br>
+
+## <a name="passwd"></a>계정 비밀번호 설정하기
+
+현재 다른 계정으로 리눅스를 사용중이라면, root 계정으로 전환한다.
+
+~~~bash
+$ exit
+~~~
+
+비밀번호를 변경해줄 passwd 를 설치한다.
+
+~~~bash
+$ yum update -y && yum install passwd -y
+~~~
+
+패스워드 변경을 시도한다.
+
+~~~bash
+$ sudo passwd
+~~~
+
+패스워드를 2번 제대로 입력하면 사용가능한 패스워드가 설정된다.
 
 <br>
 
