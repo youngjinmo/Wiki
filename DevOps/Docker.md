@@ -67,27 +67,6 @@ $ docker images
 
 
 
-가져온 이미지를 통해 로컬에 컨테이너를 설치한다.
-
-```
-$ docker run -it --name [container-name] -p 80:80 [image:tag]
-```
-
-위에서 각 명령어는 다음과 같다.
-
-- `--name` : 컨테이너의 이름을 지정합니다.
-- `-i` : interactive, 컨테이너의 입력 및 출력 등 <u>상호작용</u>하겠다는 키워드
-- `-t` : pseudo-tty로 터미널과 같은 환경을 사용하겠다는 키워드
-- `-p` : Host의 포트를 컨테이너의 포트로 오픈합니다. (listen)
-  - `-p <host-port>:<container-port>`
-  - Host의 포트를 지정하지 않으면 임의의 포트로 할당됩니다.
-
-
-
-마지막으로 컨테이너를 시작하면 된다.
-
-<br>
-
 ### 빠르게 이미지를 내려받고 컨테이너를 실행하는 법.
 
 `docker run [image-id]`
@@ -116,9 +95,20 @@ $ docker tag [image-ID] [new-image-name:tag]
 
 ## <a name="create-container"></a>컨테이너 생성하기
 
-~~~
-$ docker create -it --name [컨테이너-이름] [이미지-이름]:[tag] /bin/bash
-~~~
+가져온 이미지를 통해 로컬에 컨테이너를 생성한다.
+
+```
+$ docker create -i -t --name [container-name] -p 80:80 [image:tag]
+```
+
+위에서 각 명령어는 다음과 같다.
+
+- `--name` : 컨테이너의 이름을 지정합니다.
+- `-i` : interactive, 컨테이너의 입력 및 출력 등 <u>상호작용</u>하겠다는 키워드
+- `-t` : pseudo-tty로 터미널과 같은 환경을 사용하겠다는 키워드
+- `-p` : Host의 포트를 컨테이너의 포트로 오픈합니다. (listen)
+  - `-p <host-port>:<container-port>`
+  - Host의 포트를 지정하지 않으면 임의의 포트로 할당됩니다.
 
 <br>
 
@@ -201,7 +191,7 @@ $ docker rm [컨테이너-이름]
 $ docker rmi [이미지-이름]
 ~~~
 
-컨테이너와 마찬가지로 `,` 로 구분해서 복수의 이미지를 삭제 가능하다.
+컨테이너와 마찬가지로 `,` 로 구분해서 복수의 이미지를 삭제 가능하다.  이미지 기반으로 컨테이나 동작중이라면, 이미지를 삭제할 수 없다. 이 때엔 먼저 컨테이너부터 중지/삭제하고, 이미지를 삭제해야한다.
 
 <br>
 
