@@ -150,6 +150,7 @@
               <summary><a href="DevOps/Linux.md#commands" target="_blank">명령어</a></summary>
               <ul>
                 <li><a href="DevOps/Linux.md#shell-kernel" target="_blank">Shell과 Kernel</a></li>
+                <li><a href="DevOps/Linux.md#check-os" target="_blank">운영체제 확인</a></li>
                 <li><a href="DevOps/Linux.md#uname-m" target="_blank">비트(32/64) 확인</a></li>
                 <li><a href="DevOps/Linux.md#mv" target="_blank">파일 이동(mv)</a></li>
                 <li><a href="DevOps/Linux.md#symboliclink" target="_blank">Symbolic Link</a></li>

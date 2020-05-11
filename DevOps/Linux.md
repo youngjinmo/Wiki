@@ -8,6 +8,7 @@
 
 - [명령어](#commands)
   - [Shell과 Kernel](#shell-kernel)
+  - [운영체제 확인](#check-os)
   - [비트(32/64) 확인](#uname-m)
   - [파일 이동 (mv)](#mv)
   - [Symbolic Link](#symboliclink)
@@ -59,6 +60,25 @@
 커널과 쉘을 구분하면, 다양한 쉘을 만들어 낼 수 있다. 이렇게 되면 개발자의 선호에 따라 다양하고 편리하게 쉘을 사용할 수 있다.
 
 출처 : <a href="https://www.youtube.com/watch?v=HYQ65yUlJDg&list=PLuHgQVnccGMBT57a9dvEtd6OuWpugF9SH&index=20&t=0s" target="_blank">생활코딩 - Linux Shell 1. Intro</a>
+
+<br>
+
+## <a name="check-os"></a>운영체제 확인
+
+Ubuntu의 경우,
+
+~~~
+$ cat /etc/issue/
+~~~
+
+centOS의 경우,
+
+~~~
+$ cat /etc/centos-release
+$ rpm --query centos-release
+~~~
+
+
 
 <br>
 
