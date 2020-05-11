@@ -207,8 +207,8 @@
           <li><a href="DevOps/Docker.md#create-image" target="_blank">이미지 설치하기</a></li>
           <li><a href="DevOps/Docker.md#rename-image" target="_blank">이미지 이름 변경</a></li>
           <li><a href="DevOps/Docker.md#create-container" target="_blank">컨테이너 생성하기</a></li>
+            <li><a href="DevOps/Docker.md#container-name" target="_blank">컨테이너 이름 지정하기</a></li>
           <li><a href="DevOps/Docker.md#change-container" target="_blank">컨테이너 이름 변경</a></li>
-          <li><a href="DevOps/Docker.md#hostname" target="_blank">호스트네임 지정하기</a></li>
           <li><a href="DevOps/Docker.md#control-container" target="_blank">컨테이너 시작/중단하기</a></li>
           <li><a href="DevOps/Docker.md#images" target="_blank">도커 이미지 조회하기</a></li>
           <li><a href="DevOps/Docker.md#ps" target="_blank">도커 컨테이너 조회하기</a></li>

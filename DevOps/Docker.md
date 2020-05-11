@@ -7,8 +7,8 @@
 - [이미지 설치하기](#create-image)
 - [이미지 이름 변경](#rename-image)
 - [컨테이너 생성하기](#create-container)
+- [컨테이너  이름 지정하기](#container-name)
 - [컨테이너 이름 변경](#change-container)
-- [호스트네임 지정하기](#hostname)
 - [컨테이너 시작/중단하기](#control-container)
 - [도커 이미지 조회하기](#images)
 - [도커 컨테이너 조회하기](#ps)
@@ -45,7 +45,7 @@
 
 먼저 원격 Docker Hub에서 설치할 이미지를 조회한다.
 
-```
+```bash
 $ docker search [imageID:tag]
 ```
 
@@ -53,7 +53,7 @@ $ docker search [imageID:tag]
 
 여기서 official 이미지를 다운받거나 starts가 많은 컨테이너 일수록 신뢰도가 높은 이미지를 다운받으면 된다. 가져오는 방식은 다음과 같다.
 
-```
+```bash
 $ docker pull [imageID:tag]
 ```
 
@@ -61,7 +61,7 @@ $ docker pull [imageID:tag]
 
 로컬에 설치된 도커 이미지를 확인한다.
 
-```
+```bash
 $ docker images
 ```
 
@@ -81,13 +81,13 @@ $ docker images
 
 생성한 이미지의 이름을 변경하는 법은 다음과 같다.
 
-```
+```bash
 $ docker tag [image-name:tag] [new-image-name:tag]
 ```
 
 또는
 
-```
+```bash
 $ docker tag [image-ID] [new-image-name:tag]
 ```
 
@@ -97,34 +97,26 @@ $ docker tag [image-ID] [new-image-name:tag]
 
 가져온 이미지를 통해 로컬에 컨테이너를 생성한다.
 
-```
+```bash
 $ docker create -i -t --name [container-name] -p 80:80 [image:tag]
 ```
 
 위에서 각 명령어는 다음과 같다.
 
 - `--name` : 컨테이너의 이름을 지정합니다.
-- `-i` : interactive, 컨테이너의 입력 및 출력 등 <u>상호작용</u>하겠다는 키워드
-- `-t` : pseudo-tty로 터미널과 같은 환경을 사용하겠다는 키워드
-- `-p` : Host의 포트를 컨테이너의 포트로 오픈합니다. (listen)
+- `-i` : interactive, 표준입력인 STDIN(Standard input)을 항상 유지하겠다는 내용의 옵션입니다.
+- `-t` : Pseudo-TTY를 허용한다는 옵션입니다. Pseudo-TTY(teletypewriter)란 유사 터미널을 의미합니다.
+- `-p` : Host의 포트를 컨테이너의 포트로 오픈(listen)합니다.
   - `-p <host-port>:<container-port>`
   - Host의 포트를 지정하지 않으면 임의의 포트로 할당됩니다.
 
 <br>
 
-## <a name="change-container"></a>컨테이너 이름 변경
-
-~~~
-$ docker rename [old-name] [new-name]
-~~~
-
-<br>
-
-## <a name="hostname"></a>호스트네임 지정하기
+## <a name="container-name"></a>컨테이너  이름 지정하기
 
 위의 명령어에서 몇 가지를 추가하면, 호스트네임을 지정할 수 있다.
 
-~~~
+~~~bash
 $ docker create -it --name [컨테이너-이름] --rm -h [host-name] -it [image-name] 
 ~~~
 
@@ -132,9 +124,17 @@ $ docker create -it --name [컨테이너-이름] --rm -h [host-name] -it [image-
 
 <br>
 
+## <a name="change-container"></a>컨테이너 이름 변경
+
+~~~bash
+$ docker rename [old-name] [new-name]
+~~~
+
+<br>
+
 ## <a name="control-container"></a>컨테이너 시작/중단하기
 
-```
+```bash
 $ docker start [c컨테이너-이름]
 $ docker stop [컨테이너-이름]
 ```
@@ -143,7 +143,7 @@ $ docker stop [컨테이너-이름]
 
 ## <a name="images"></a>도커 이미지 조회하기
 
-~~~
+~~~bash
 $ docker images
 ~~~
 
@@ -153,13 +153,13 @@ $ docker images
 
 실행중인 컨테이너 조회하기
 
-~~~
+~~~bash
 $ docker ps
 ~~~
 
 전체 컨테이너 조회하기
 
-~~~
+~~~bash
 $ docker ps -a
 ~~~
 
@@ -167,7 +167,7 @@ $ docker ps -a
 
 ## <a name="exec-imageid-bash"></a>bash 모드로 컨테이너 진입
 
-```
+```bash
 $ docker exec -it [컨테이너-이름] bash
 ```
 
@@ -177,7 +177,7 @@ $ docker exec -it [컨테이너-이름] bash
 
 ## <a name="rm-container"></a>컨테이너 삭제하기
 
-~~~
+~~~bash
 $ docker rm [컨테이너-이름]
 ~~~
 
@@ -187,7 +187,7 @@ $ docker rm [컨테이너-이름]
 
 ## <a name="rmi-image"></a>이미지 삭제하기
 
-~~~
+~~~bash
 $ docker rmi [이미지-이름]
 ~~~
 
@@ -199,7 +199,7 @@ $ docker rmi [이미지-이름]
 
 이미지를 통해 생성된 컨테이너가 존재한다면, 이미지 삭제가 불가능하다. 컨테이너를 먼저 삭제하고, 이미지를 삭제해야 한다. 그러나 이를 동시에 할 수 있다.
 
-~~~
+~~~bash
 $ docker rmi -f [이미지-이름]
 ~~~
 
@@ -219,13 +219,13 @@ $ docker rmi -f [이미지-이름]
 
 3. 도커 컴포즈로 앱 실행
 
-   ~~~
+   ~~~bash
    $ docker-compose up
    ~~~
 
 4. 도커 컴포즈로 실행된 스택, 데이터 삭제하기
 
-   ~~~
+   ~~~bash
    $ docker-compose down -v
    ~~~
 
@@ -233,7 +233,7 @@ $ docker rmi -f [이미지-이름]
 
 **docker-compose.yml 작성 폼**
 
-~~~
+~~~yml
 version: '3'
 services:
   web:
@@ -254,3 +254,4 @@ volumes:
 출처 : https://cloudstudying.kr/lectures/306
 
 <br>
+
