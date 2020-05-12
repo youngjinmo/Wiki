@@ -156,15 +156,15 @@
                 <li><a href="DevOps/Linux.md#symboliclink" target="_blank">Symbolic Link</a></li>
                 <li><a href="DevOps/Linux.md#find" target="_blank">find - 파일/디렉토리 찾기</a></li>
                 <li><a href="DevOps/Linux.md#grep" target="_blank">grep - 문서내 검색</a></li>
-                <li><a href="DevOps/Linux.md#save-output" target="_blank">터미널 결과 출력 저장</a></li>
+                <li><a href="DevOps/Linux.md#save-output" target="_blank">콘솔 결과 출력 저장</a></li>
                 <li><a href="DevOps/Linux.md#combine-commands" target="_blank">복수의 명령어 동시실행</a></li>
                 <li><a href="DevOps/Linux.md#caffeinate" target="_blank">슬립모드 진입방지 (caffeinate)</a></li>
                 <li><a href="DevOps/Linux.md#ubuntu-reboot" target="_blank">시스템 재부팅</a></li>
                 <li><a href="DevOps/Linux.md#ifconfig" target="_blank">ip주소 확인하기</a></li>
                 <li><a href="DevOps/Linux.md#change-localtime" target="_blank">서버시간 변경하기</a></li>
                 <li><a href="DevOps/Linux.md#setup-locale" target="_blank">UTF-8 인코딩 설정(한국어 설정)</a></li>
-                <li><a href="DevOps/Linux.md#sudo-su" target="_blank">계정 전환하기</a></li>
                 <li><a href="DevOps/Linux.md#passwd" target="_blank">계정 비밀번호 설정하기</a></li>
+                <li><a href="DevOps/Linux.md#sudo-su" target="_blank">계정 전환하기</a></li>
                 <li><a href="DevOps/Linux.md#hostname" target="_blank">호스트네임 변경하기</a></li>
                 <li><a href="DevOps/Linux.md#wget" target="_blank">wget으로 파일다운로드</a></li>
                 <li><a href="DevOps/Linux.md#adduser" target="_blank">계정 생성하기</a></li>

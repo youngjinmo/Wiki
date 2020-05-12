@@ -14,15 +14,15 @@
   - [Symbolic Link](#symboliclink)
   - [find - 파일/디렉토리 찾기](#find)
   - [grep - 문서내 검색](#grep)
-  - [터미널 결과 출력 저장](#save-output)
+  - [콘솔 결과 출력 저장](#save-output)
   - [복수의 명령어 동시실행](#combine-commands)
   - [슬립모드 진입방지 \(caffeinate)](#caffeinate)
   - [시스템 재부팅](#ubuntu-reboot)
   - [ip주소 확인하기](#ifconfig)
   - [서버시간 변경하기](#change-localtime)
   - [UTF-8 인코딩설정](#setup-locale)
-  - [계정 전환하기](#sudo-su)
   - [계정 비밀번호 설정하기](#passwd)
+  - [계정 전환하기](#sudo-su)
   - [호스트네임 변경하기](#hostname)
   - [wget으로 파일다운로드](#wget)
   - [계정 생성하기](#adduser)
@@ -303,14 +303,6 @@ $ source .bash_profile
 
 <br>
 
-## <a name="sudo-su"></a>계정 전환하기
-
-~~~bash
-$ sudo su - [user-name]
-~~~
-
-<br>
-
 ## <a name="passwd"></a>계정 비밀번호 설정하기
 
 현재 다른 계정으로 리눅스를 사용중이라면, root 계정으로 전환한다.
@@ -332,6 +324,41 @@ $ sudo passwd
 ~~~
 
 패스워드를 2번 제대로 입력하면 사용가능한 패스워드가 설정된다.
+
+<br>
+
+## <a name="sudo-su"></a>계정 전환하기
+
+계정을 생성하고, 계정의 비밀번호까지 설정했다면, 이제 root 권한을 부여해야 한다. 그래야 계정을 전환한 뒤에 sudo를 사용할 수 있다.
+
+root 권한은 `/etc/sudoers` 파일을 수정함으로써 부여할 수 있다.
+
+~~~bash
+$ sudo vi /etc/sudoers
+~~~
+
+sudoers를 열어서 아래 내려가다 보면 아래와 같은 목록을 발견할 수 있다. 여기에 sudo 권한을 줄 계정을 추가하자.
+
+~~~bash
+## Next comes the main part: which users can run what software on
+## which machines (the sudoers file can be shared between multiple
+## systems).
+## Syntax:
+##
+##      user    MACHINE=COMMANDS
+##
+## The COMMANDS section may have other options added to it.
+##
+## Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+[user] ALL=(ALL)       ALL
+~~~
+
+그리고 `:wq!` 을 눌러서 나가고 이제 계정을 전환한다.
+
+~~~bash
+$ sudo su - [user]
+~~~
 
 <br>
 
