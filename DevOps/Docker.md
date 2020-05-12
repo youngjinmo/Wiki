@@ -7,7 +7,6 @@
 - [이미지 설치하기](#create-image)
 - [이미지 이름 변경](#rename-image)
 - [컨테이너 생성하기](#create-container)
-- [컨테이너  이름 지정하기](#container-name)
 - [컨테이너 이름 변경](#change-container)
 - [컨테이너 시작/중단하기](#control-container)
 - [도커 이미지 조회하기](#images)
@@ -109,18 +108,6 @@ $ docker create -i -t --name [container-name] -p 80:80 [image:tag]
 - `-p` : Host의 포트를 컨테이너의 포트로 오픈(listen)합니다.
   - `-p <host-port>:<container-port>`
   - Host의 포트를 지정하지 않으면 임의의 포트로 할당됩니다.
-
-<br>
-
-## <a name="container-name"></a>컨테이너  이름 지정하기
-
-위의 명령어에서 몇 가지를 추가하면, 호스트네임을 지정할 수 있다.
-
-~~~bash
-$ docker create -it --name [컨테이너-이름] --rm -h [host-name] -it [image-name] 
-~~~
-
-그럼 내가 지정한 이름의 호스트네임을 갖는 컨테이너를 생성할 수 있다.
 
 <br>
 
