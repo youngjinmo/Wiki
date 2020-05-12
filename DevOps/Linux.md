@@ -9,6 +9,7 @@
 - [명령어](#commands)
   - [Shell과 Kernel](#shell-kernel)
   - [운영체제 확인](#check-os)
+  - [리눅스 커널 확인](#uname-r)
   - [비트(32/64) 확인](#uname-m)
   - [파일 이동 (mv)](#mv)
   - [Symbolic Link](#symboliclink)
@@ -78,6 +79,14 @@ centOS의 경우,
 ~~~bash
 $ cat /etc/centos-release
 $ rpm --query centos-release
+~~~
+
+<br>
+
+## <a name="uname-r"></a>리눅스 커널 확인
+
+~~~bash
+$ uname -r
 ~~~
 
 <br>

@@ -375,6 +375,10 @@ $ curl -X POST "localhost:9200/test/_update/1?pretty" -H 'Content-Type: applicat
 
 <br>
 
+<br>
+
+<br>
+
 테스트를 위한 간단한 source 삽입
 
 PUT
