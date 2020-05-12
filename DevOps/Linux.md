@@ -21,12 +21,13 @@
   - [ip주소 확인하기](#ifconfig)
   - [서버시간 변경하기](#change-localtime)
   - [UTF-8 인코딩설정](#setup-locale)
-  - [sudo 권한 설정하기](#sudo-su)
+  - [계정 전환하기](#sudo-su)
   - [계정 비밀번호 설정하기](#passwd)
   - [호스트네임 변경하기](#hostname)
   - [wget으로 파일다운로드](#wget)
   - [계정 생성하기](#adduser)
   - [사용자 목록 조회하는 4가지 방법](#passwd)
+  - [계정 삭제하기](#userdel)
   - [우분투 패스워드 설정하기](#password)
   - [JDK 설치하기](#install-jdk)
 - [Vim Editor](#vim)
@@ -68,24 +69,22 @@
 
 Ubuntu의 경우,
 
-~~~
+~~~bash
 $ cat /etc/issue/
 ~~~
 
 centOS의 경우,
 
-~~~
+~~~bash
 $ cat /etc/centos-release
 $ rpm --query centos-release
 ~~~
-
-
 
 <br>
 
 ## <a name="uname-m"></a>비트(32/64) 확인
 
-~~~
+~~~bash
 $ uname -m
 ~~~
 
@@ -97,13 +96,13 @@ $ uname -m
 
 파일을 이동할 때 사용하는 쉘 명령어이다.
 
-~~~
+~~~bash
 $ mv path/old/mv.txt path/new/mv.txt
 ~~~
 
 오랫동안 위의 명령어로만 사용했는데 최근 [트위터](https://twitter.com/__ditto/status/1251342498032578560)에서 아래의 명령어를 알게되었다!
 
-~~~
+~~~bash
 $ mv path/{old/mv.txt, new/mv.txt}
 ~~~
 
@@ -115,7 +114,7 @@ $ mv path/{old/mv.txt, new/mv.txt}
 
 심볼릭 링크는 디렉토리 또는 파일에 더 빠르게 접근하기 위한 별명을 설정하는 일과 같다. `디렉토리 --심볼릭링크`
 
-```
+```bash
 $ ln -s [target] [symbolic_link_name]
 ```
 
@@ -129,7 +128,7 @@ $ ln -s [target] [symbolic_link_name]
 
 - 경로 Desktop/test 에서 용량 3mb 미만의 파일을 콘솔에 출력할 때 다음과 같이 명령한다.
 
-  ~~~
+  ~~~bash
   $ $ find Desktop/test -size -3M -type f
   ~~~
   
@@ -137,14 +136,14 @@ $ ln -s [target] [symbolic_link_name]
 
 - 경로 Desktop/test 에서 용량 10mb이상의 디렉토리를 `ls -l` 형태로 출력할 때 다음과 같이 명령한다.
 
-  ~~~
+  ~~~bash
   $ find Desktop/test -size +10M -type d -exec ls -l {} \;
   ~~~
 
  
 
 - 파일명 중간에 'guide'이 포함된 파일을 찾으려고 할 때.
-  ~~~
+  ~~~bash
   $ find /Desktop -name '*guide*'
   ~~~
 
@@ -152,7 +151,7 @@ $ ln -s [target] [symbolic_link_name]
 
 - 폴더명 중간에 'tomcat'이 포함된 폴더를 찾으려고 할 때.
   
-  ~~~
+  ~~~bash
   $ find /Desktop -name '*tomcat*' -type d
   ~~~
 
@@ -162,7 +161,7 @@ $ ln -s [target] [symbolic_link_name]
 
 유닉스를 위해 만들어진 텍스트 검색 기능의 명령어이다. <i>**g**rep | **r**egular **e**xpression | **p**rint</i>의 약자라고 한다.
 
-```
+```bash
 $ grep [pattern] [file]
 ```
 
@@ -203,7 +202,7 @@ $ grep [pattern] [file]
 
 <h2><a name="save-output"></a>터미널 결과 출력</h2>
 
-```
+```bash
 $ ls -al > "file.txt"
 ```
 
@@ -213,7 +212,7 @@ $ ls -al > "file.txt"
 
 <h2><a name="combine-commands"></a>복수의 명령어 실행하기</h2>
 
-```
+```bash
 $ command1 && command2
 ```
 
@@ -221,7 +220,7 @@ $ command1 && command2
 
 또는 `;` 로 구분하는 방법이 있다.
 
-```
+```bash
 $ command1; command2; command3;
 ```
 
@@ -231,7 +230,7 @@ $ command1; command2; command3;
 
 맥OS에서 잠자기모드 진입을 방지하는 앱이 있다. 맥 사용자라면 누구나 아는 Caffein이라는 앱인데, 터미널 명령어 하나면 이 앱처럼 맥이 슬립모드에 진입하는걸 막는 기능을 사용할 수 있다.
 
-```
+```bash
 $ caffeinate
 ```
 
@@ -245,7 +244,7 @@ $ caffeinate
 
 Ubuntu EC2에 접속했는데, 이런 메세지를 발견했다. 커널의 보안을 위해서 업데이트해야할 패키지들이 있으니 시스템을 재부팅하라는 메세지인 것 같다. 
 
-```
+```bash
 $ sudo reboot
 ```
 
@@ -253,8 +252,8 @@ $ sudo reboot
 
 ## <a name="ifconfig"></a>ip주소 확인하기
 
-~~~
-curl ifconfig.me
+~~~bash
+$ curl ifconfig.me
 ~~~
 
 ip주소를 쉽게 커맨드라인을 통해 확인할 수 있다.
@@ -263,7 +262,7 @@ ip주소를 쉽게 커맨드라인을 통해 확인할 수 있다.
 
 ## <a name="change-localtime"></a>서버시간 변경하기
 
-```
+```bash
 $ date
 ```
 
@@ -271,7 +270,7 @@ $ date
 
 이제 이 서버의 시간을 우리나라 시간으로 변경해보겠다.
 
-```
+```bash
 $ sudo rm /etc/localtime
 $ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 ```
@@ -280,14 +279,14 @@ $ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 ## <a name="setup-locale"></a>UTF-8 인코딩 설정(한국어 설정)
 
-```
+```bash
 $ sudo locale-gen ko_KR.EUC-KR ko_KR.UTF-8
 $ sudo dpkg-reconfigure locales
 ```
 
 그리고 `.bash_profile` 을 생성해서 아래의 명령어를 입력해둔다.
 
-```
+```bash
 $ vim .bash_profile
 
 LANG="ko_KR.UTF-8"
@@ -296,7 +295,7 @@ LANGUAGE="ko_KR:ko:en_US:en"
 
 마지막으로 아래 명령어로 위에서 입력한 `.bash_profile` 을 적용? 한다고 한다. 
 
-```
+```bash
 $ source .bash_profile
 ```
 
@@ -304,24 +303,11 @@ $ source .bash_profile
 
 <br>
 
-## <a name="sudo-su"></a>sudo 권한 설정하기
+## <a name="sudo-su"></a>계정 전환하기
 
-먼저 현재 사용하고 있는 우분투계정을 알아야 한다.
-
-~~~
-$ whoami
-[user-name]
-~~~
-
-여기서 출력되는 우분투계정에 `sudo` 권한을 설정하는 것이다.
-
-~~~
+~~~bash
 $ sudo su - [user-name]
 ~~~
-
-패스워드를 입력하면 `sudo` 권한이 최종적으로 우분투계정에 sudo 권한 설정이 끝난다.
-
-![](https://lh3.googleusercontent.com/B6TH5dmvU6sSrFIvF0uTECkobfG9nicD1SPY5YA1APAOVZ49ODzJpN8F4Qg_BcGbmDkKese4zMcXO3MlxrqDdUSn-c-yYgmXllxmy5YdwKqRiEPRcY1XICePm6vxP1r2_g6Wbjh6JmWpnvHYP_rla9NQkJLhlCjC4ppb390gV8O3muE7YDZlf3a0cHIcDSeF7aoihRLPDnMbgu2CkEpY6m9y0bQojBmKYohDNo0_q8cIrtr_jU5PfRtikbnzjb_vhIGcPHvz8jXa7cGDDNz832FJvDOyUo8Dtqjb209kGf278MrNeFhQbQUY9rw5fMPhMY4uljcj9glx_1jKkTOTiXItiwnVTAMabOpjomPuorYITLTkMOr6kye30KfL8LP669gy__-duR8B0hvQ7pdMFHrYXVydg-hlN3Dav_QLcMbyQqCQoRa9YeQZEtJ0adtP2X2Shlq8e6GlFZKsiOd0tD9AMI_5ztZBdsbpaLUVmuK22rM0ta-ZOqWfjWmZWGOJVW_3uP6F5pPdnWm8WymNbxBHeYppkD9prEWYc-Vr70Rqu_W6pJ5q_ekaDNkWN9lnMhVLvNjRRhlPpfS432VYyu1hDnVlYpbh9nsuD-g7_NeHLfBGMLEv_btzm2NAj5R8_MzGIaBhqAkG5MU8_QHie5V0D-sd-CKp2yaBfCZSN92WPyj8ulkqEDKS6oV_q7SXuBAxnwFYhLxVALuHK4yjq_8JvXxsxxu98n1z3kHomvXxuSZ-Euk8xzgX=w1436-h178-no)
 
 <br>
 
@@ -349,11 +335,25 @@ $ sudo passwd
 
 <br>
 
+## <a name="userdel"></a>계정 삭제하기
+
+~~~bash
+$ userdel -r [user-name]
+~~~
+
+그리고 다시 계정을 확인해보면 계정이 삭제된걸 알 수 있다.
+
+~~~bash
+$ cat /etc/passwd
+~~~
+
+<br>
+
 ## <a name="hostname"></a>호스트네임 변경하기
 
 터미널에서 아래 순서대로 명령어를 입력한다.
 
-~~~
+~~~bash
 $ sudo vim /etc/hostname
 ~~~
 
@@ -361,7 +361,7 @@ $ sudo vim /etc/hostname
 
 
 
-~~~
+~~~bash
 $ sudo vim /etc/hosts
 ~~~
 
@@ -371,21 +371,17 @@ $ sudo vim /etc/hosts
 
 이를 적용하려면 우분투를 종료하고 다시 켜야한다.
 
-~~~
+~~~bash
 $ sudo reboot
 ~~~
 
-
-
 바뀐 호스트네임을 확인해본다.
 
-~~~
+~~~bash
 $ hostname
 ~~~
 
 ![](https://lh3.googleusercontent.com/EOuji_KjIgPw2TqJNazo5rbTDfu6Yr10faVEMjq0BgRDcgWUnWDkMWglAZGwIlMIO7BANshH8EpQy6sB77ykL7oFAicMyc5ysBA_gI6obnc0wO_DNkKO4JY5_x6NkzTIbHpBUddpM8D5qYmKdXZsNc8NjXwd1Ui7fhG_28vZOO6iUmMi5Sd9lQTZhJchOVu5RMk9albijFGoJoW4P2lFEt8NT3yRmeErkojrwM7t-ZHS7o-nbcCq1RjYffGPrI7b_Ff51ja4tniQhE6W4-6SBEtu8g7j7KvxV3rF58WSnqGEIKB1E5H8z6hdfSdqGlD6DFq3QScg7TcRyVs4axRMwwa4-S_NwRQEOae4l-W-rPEgmUIMbTRtKzbrpvREFoHUfuWSTsyxzHi28Ky0KW1ORXEyQncwszL4zi-EyQLL8om6IMK5fEXvxufm2_gB9Vb4F9W0iAdiKiMxr_pwAzGcMvfhkq3wCZg9p8nn6zAYHL-RLfW9Y1cArmOWzTFFhhSN8kEbhYuqOi2Lfb1OwRBHrQtoTvV5ef0wokxkwGC_qiIHIR-ROWxUORwQNbFurvFb3UmKAn4AwS_pudUmD_NXpbU4dSZUh2nZghk-A4nXS8KQaVJ3KV1xYGTpjuFVTMnTuL4yNlnOdtpGGgLnofXhXekhXX5mXUq5KQeLwBn_UWwJ7lu0_XI12QPktYTf9qm2A36FNFTHXrGZjn4RvWZSKufILW2Ri8IBhWsVaXj7exu_55CtVQ=w674-h117-no)
-
-<br>
 
 <br>
 
@@ -395,7 +391,7 @@ $ hostname
 
 AWS 사용환경을 도커 컨테이너로 옮기면서, 도커에서 SSH 키페어를 저장해두고, 사용하고 싶어서 `wget`을 사용하게 되었다. 만약 우분투에서 `wget` 를 사용할 수 없다면, 설치하자
 
-~~~
+~~~bash
 $ sudo apt-get install wget
 ~~~
 
@@ -411,17 +407,22 @@ $ sudo apt-get install wget
    ![](https://lh3.googleusercontent.com/qtDCQlHyq9uZsWldOiOvcsh_TnSWKek5EGefoGCIXXbKXthN9EhN5Y7Yrn1YzCJnq9VzvYAU7PNe5z5Iplvgm36TiIMjGrpk95QdubwlgtKmyrB2RtWtUw3wITdEInI6_hqTn9UGJyy7EB9m3gqSNrWU_FXkq4ySzC29PiUDthEdRSDzPyLD_NseectgCblVCrdDYdml1tzLreRWT9zyhTzO3goDGVx7ho0s9d04mwd0atbaPx5sZya9SJRmmR-5CMBVQ2VIVwY0M6t6F0uufFqQRTHTiNXWrD8Q-aik8ds4rLqIqF3G_31h4nvtb2VOpVNnc57yieHZy7nJA0GEXnaFVeIJLIlnUpnHm2lhwJH8W61zUFDEYGyh4ZvaeIKurWvuu8urhQvths8dJjYSAcpeVP_iJvDEA1Zg4_nof3yTcxwV4EvcWylK63xKIhoXDblVdzpXXPITUfc5xBteAU473DpuryxNGT6RRY54qT5xj547xCMYlA5x-1vKU60gwKPK4ZvSk2g0RjbVd8Oq_dHySCXzlEcDXrja5Jtv6ZiuityWGpDivcuZQANjoYA9AdopdJOf38q_OgBs3ihTGYBorGYOdHtkBO8iFbECYmcAvaZKGc7b9SecSNve9DkxyhAvs0o9URVkagnB1iorBYGcGjCD_BtPSgJLzFYb8vjApnMRp62QT24egBvrvTNf1qVJ3mDOwRDZsjj3vZn3PSkjWtDyRIVgViILTPf-U8ZA04ftzg=w1013-h500-no)
 
 4. 클립보드에 담긴 url중 id부분만 아래의 명령어에 붙여서 명령어를 완성한다.
-   `wget https://drive.google.com/uc?id=[from-gdrive]`
-
+   ~~~bash
+	$ wget https://drive.google.com/uc?id=[from-gdrive]
+	~~~
+	
 5. 위 명령어로 바로 명령하면, 파일 이름이 id값으로 이상하게 다운받아진다. 파일의 이름을 지정하면서 다운받고자 한다면 `-O` 키워드를 사용하여 이름을 지정한다.
-   `wget -O aws-keypair.zip https://drive.google.com/uc?id=[from-gdrive]`
+	~~~
+	$ wget -O aws-keypair.zip https://drive.google.com/uc?id=[from-gdrive]
+	~~~
 
 6. 다운로드가 완성되면 `unzip` 키워드로 압축파일을 해제한다.
-   `unzip aws-keypair.zip`
+	~~~
+	$ unzip aws-keypair.zip
+	~~~
 
    1. 만약 `unzip` 패키지가 설치되지 않았다면, 이것도 설치하면 된다.
-
-      ~~~
+      ~~~bash
       $ sudo apt-get install unzip
       ~~~
 
@@ -435,7 +436,7 @@ $ sudo apt-get install wget
 
 입력하고 싶은 <b>[new-user]</b>을 추가한다.
 
-~~~
+~~~bash
 $ adduser [new-user]
 ~~~
 
@@ -447,7 +448,7 @@ $ adduser [new-user]
 
 생성된 계정을 sudo group에 추가하는 작업이다.
 
-~~~
+~~~bash
 $ usermod -aG sudo [new-user]
 ~~~
 
@@ -455,7 +456,7 @@ $ usermod -aG sudo [new-user]
 
 이제 sudo 권한으로 생성된 계정으로 전환한다.
 
-~~~
+~~~bash
 $ sudo su - [new-user]
 ~~~
 
@@ -469,7 +470,7 @@ $ sudo su - [new-user]
 
 사용자 목록확인
 
-```
+```bash
 $ cat /etc/passwd
 ```
 
@@ -477,7 +478,7 @@ $ cat /etc/passwd
 
 사용자 아이디만 조회하기
 
-~~~
+~~~bash
 $ cut -f1 -d: /etc/passwd
 ~~~
 
@@ -485,7 +486,7 @@ $ cut -f1 -d: /etc/passwd
 
 `ADDUSER` 를 통해 등록된 계정만 보기
 
-~~~
+~~~bash
 $ grep /bin/bash /etc/passwd
 ~~~
 
@@ -493,7 +494,7 @@ $ grep /bin/bash /etc/passwd
 
 `ADDUSER` 를 통해 등록된 계정의 아이디만 조회하기
 
-~~~
+~~~bash
 $ grep /bin/bash /etc/passwd | cut -f1 -d:
 ~~~
 
@@ -505,19 +506,19 @@ $ grep /bin/bash /etc/passwd | cut -f1 -d:
 
 root 계정의 패스워드 설정하기
 
-~~~
+~~~bash
 $ sudo passwd
 ~~~
 
  root 계정에서 다른 계정의 패스워드 설정하기
 
-~~~
+~~~bash
 $ passwd [user]
 ~~~
 
 현재 로그인된 계정의 패스워드 설정하기
 
-~~~
+~~~bash
 $ passwd
 ~~~
 
@@ -533,19 +534,19 @@ jdk를 설치하기 전, jdk구버전을 깨끗하게 지우고 시작하는 방
 
 openjdk라는 이름의 패키지들을 삭제하는 명령어이다.
 
-~~~
+~~~bash
 $ sudo apt-get remove openjdk*
 ~~~
 
 마찬가지로 oracle도 삭제해준다.
 
-~~~
+~~~bash
 $ sudo apt-get remove oracle*
 ~~~
 
 openjdk와 oracle을 삭제함으로써 더이상 사용되지 않는 패키지들을 autoremove를 통해 깔끔히 제거한다.
 
-~~~
+~~~bash
 $ sudo apt-get autoremove --purge
 $ sudo apt-get autoclean
 ~~~
@@ -556,7 +557,7 @@ $ sudo apt-get autoclean
 
 default-jdk를 설치하는 경우를 알아보자. 작성시점인 2020년 5월 기준, Ubuntu 18.04.3 에서 default-jdk를 설치하면 jdk 11이 설치된다.
 
-~~~
+~~~bash
 $ sudo apt-get update -y
 $ sudo apt-get install default-jdk -y
 ~~~
@@ -569,19 +570,19 @@ $ sudo apt-get install default-jdk -y
 
 add-apt-repository는 파이썬 기반의 스크립트라고 하는데 이걸 사용하기 위해서는 software-properties-common을 먼저 설치해야한다.
 
-~~~
+~~~bash
 $ sudo apt install software-properties-common
 ~~~
 
 이제 add-apt-repository를 사용할 수 있게 되었다. jdk 설치파일 소스 리스트를 추가해보자.
 
-~~~
+~~~bash
 $ sudo add-apt-repository ppa:openjdk-r/ppa
 ~~~
 
 이후 apt-get을 업데이트하면, 설치한 jdk 리스트를 조회할 수 있다.
 
-~~~
+~~~bash
 $ sudo apt-get update -y
 $ apt-cache pkgnames | grep jdk
 ~~~
@@ -592,13 +593,13 @@ $ apt-cache pkgnames | grep jdk
 
 원하는 버전의 jdk를 설치한다.
 
-~~~
+~~~bash
 $ apt-get install openjdk-8-jdk
 ~~~
 
 버전확인을 해서 원하는 버전의 jdk가 잘 설치되었는지 확인해보자.
 
-~~~
+~~~bash
 $ java -version
 ~~~
 
@@ -670,20 +671,20 @@ $ java -version
 
 루트 디렉토리로 이동한다.
 
-~~~
-cd -
+~~~bash
+$ cd -
 ~~~
 
 여기에서 basic vim 에디터에 필요한 설정파일을 clone한다.
 
-~~~
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+~~~bash
+$ git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 ~~~
 
 이제 <a href="https://en.wikipedia.org/wiki/Bourne_shell" target="_blank">sh</a> 명령어로 이를 현재 OS에 적용하는 명령어이다.
 
-~~~
-sh ~/.vim_runtime/install_basic_vimrc.sh
+~~~bash
+$ sh ~/.vim_runtime/install_basic_vimrc.sh
 ~~~
 
 
@@ -708,7 +709,7 @@ Ubuntu에서 자주 사용하는 패키지 툴이다. `apt-get` 패키지 툴을
 
 ### <a name="difference-between-update-upgrade"></a>apt-get update와 apt-get upgrade의 차이
 
-```
+```bash
 $ sudo apt-get update
 ```
 
@@ -717,7 +718,7 @@ $ sudo apt-get update
 
 
 
-```
+```bash
 $ sudo apt-get upgrade
 ```
 
@@ -731,13 +732,13 @@ $ sudo apt-get upgrade
 
 apt-get으로 패키지를 설치할 땐,
 
-~~~
+~~~bash
 $ sudo apt-get install [package-name]
 ~~~
 
 apt-get으로 패키지를 삭제할 땐,
 
-~~~
+~~~bash
 $ sudo apt-get remove [package-name]
 ~~~
 
@@ -755,18 +756,18 @@ $ sudo apt-get remove [package-name]
 
 **Ubuntu**
 
-~~~
-sudo apt-add-repository ppa:zanchey/asciinema
-sudo apt-get update
-sudo apt-get install asciinema
+~~~bash
+$ sudo apt-add-repository ppa:zanchey/asciinema
+$ sudo apt-get update
+$ sudo apt-get install asciinema
 ~~~
 
 
 
 **MacOS (Homebrew)**
 
-~~~
-brew install asciinema
+~~~bash
+$ brew install asciinema
 ~~~
 
 
@@ -777,7 +778,7 @@ asciinema를 통해 생성되는 파일(.cast)은 일반적인 미디어 플레�
 
 웹에서 회원가입이 끝났다면, 터미널로 다시 돌아가서 asciinema 로그인 상태를 전달하자.
 
-~~~
+~~~bash
 $ asciinema auth
 ~~~
 
@@ -795,7 +796,7 @@ $ asciinema auth
 
 저장할 때 파일의 명령을 지정하면서 저장하는 명령어는 다음과 같다.
 
-~~~
+~~~bash
 $ asciinema rec -t "new-file"
 ~~~
 
@@ -803,7 +804,7 @@ $ asciinema rec -t "new-file"
 
 녹화를 중지하고 싶으면 exit를 입력하면 된다.
 
-~~~
+~~~bash
 $ exit
 ~~~
 

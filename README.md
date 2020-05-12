@@ -163,12 +163,13 @@
                 <li><a href="DevOps/Linux.md#ifconfig" target="_blank">ip주소 확인하기</a></li>
                 <li><a href="DevOps/Linux.md#change-localtime" target="_blank">서버시간 변경하기</a></li>
                 <li><a href="DevOps/Linux.md#setup-locale" target="_blank">UTF-8 인코딩 설정(한국어 설정)</a></li>
-                <li><a href="DevOps/Linux.md#sudo-su" target="_blank">sudo 권한 설정하기</a></li>
+                <li><a href="DevOps/Linux.md#sudo-su" target="_blank">계정 전환하기</a></li>
                 <li><a href="DevOps/Linux.md#passwd" target="_blank">계정 비밀번호 설정하기</a></li>
                 <li><a href="DevOps/Linux.md#hostname" target="_blank">호스트네임 변경하기</a></li>
                 <li><a href="DevOps/Linux.md#wget" target="_blank">wget으로 파일다운로드</a></li>
                 <li><a href="DevOps/Linux.md#adduser" target="_blank">계정 생성하기</a></li>
                 <li><a href="DevOps/Linux.md#passwd" target="_blank">사용자 목록 조회하는 4가지 방법</a></li>
+                <li><a href="DevOps/Linux.md#userdel" target="_blank">계정 삭제하기</a></li>
                 <li><a href="DevOps/Linux.md#password" target="_blank">우분투 패스워드 설정하기</a></li>
                 <li><a href="DevOps/Linux.md#install-jdk" target="_blank">JDK 설치하기</a></li>
               </ul>
