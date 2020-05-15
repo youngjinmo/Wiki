@@ -246,9 +246,10 @@
     <details>
         <summary><a href="DevOps/Jenkins.md" target="_blank">Jenkins</a></summary>
         <ul>
-            <li><a href="DevOps/Jenkins.md#jenkins" target="_blank">Jenkins란?</a></li>
-            <li><a href="DevOps/Jenkins.md#install" target="_blank">설치하기</a></li>
-            <li><a href="DevOps/Jenkins.md#start" target="_blank">실행하기</a></li>
+            <li><a href="DevOps/Jenkins.md#overview" target="_blank">Jenkins란?</a></li>
+            <li><a href="DevOps/Jenkins.md#initialized" target="_blank">CentOS 실행하고 환경 구축하기</a></li>
+            <li><a href="DevOps/Jenkins.md#install" target="_blank">Jenkins 설치하기</a></li>
+            <li><a href="DevOps/Jenkins.md#start" target="_blank">Systemctl로 Jenkins 실행하기</a></li>
         </ul>
     </details>
     </li>
