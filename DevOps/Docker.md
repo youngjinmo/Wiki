@@ -14,7 +14,8 @@
 - [bash모드로 컨테이너 진입](#exec-imageid-bash)
 - [컨테이너 삭제](#rm-container)
 - [이미지 삭제](#rmi-image)
-- [도커 컴포즈](#compose)
+- [Docker Compose](#compose)
+- [Docker Volume](#volume)
 
 <br>
 
@@ -194,7 +195,7 @@ $ docker rmi -f [이미지-이름]
 
 <br>
 
-## <a name="compose"></a>도커 컴포즈
+## <a name="compose"></a>Docker Compose
 
 도커 컴포즈란 다수의 컨테이너를 운용하기 위한 도구라고 한다. ELK를 공부하려던 중 Elastic Search와 Logstash, Kibana 3개의 컨테이너를 연동하고 한꺼번에 실행할 수 있는 도구라고 알게되었다.
 
@@ -242,3 +243,34 @@ volumes:
 
 <br>
 
+## <a name="volume"></a>Docker Volume
+
+도커 볼륨은 컨테이너의 부모 컨테이너 역할을 하는 컨테이너이다. 도커 볼륨을 configure하면, 해당 볼륨을 공유하는 나머지 모든 컨테이너에도 영향을 줄 수 있다.
+
+
+
+도커 볼륨 생성
+
+~~~bash
+$ docker volume create --name [volume-name]
+~~~
+
+볼륨 확인
+
+~~~bash
+$ docker volume ls
+~~~
+
+볼륨을 공유하는 컨테이너 생성
+
+~~~bash
+$ docker create -it --name [container-name] -v [volume-name][dir-shared-volume] [image]
+~~~
+
+myVolume이라는 이름을 가진 볼륨을 공유하는 myContainer를 생성하려고 한다. 이미지는 centos를 사용할 것이며, 볼륨과 공유하는 컨테이너내 디렉토리는 `/root` 로 지정하는 예제 명령어이다.
+
+~~~bash
+$ docker create -it --name myContainer -v myVolume:/root/ centos
+~~~
+
+<br>
