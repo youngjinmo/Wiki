@@ -5,7 +5,7 @@
 - [IDE없이 컴파일하고, 실행하기](#run-compile-without-ide)
 - [기본형 타입과 참조형 타입](#java-type)
 - [접근제한자](#access-modifier)
-- [String 클래스](#string-methods)
+- [String 클래스 내장 메서드](#string-methods)
 - [클래스 타입 반환하기](#getclass)
 - [enum](#enum)
 - [Wrapper Class](#wrapper-class)
@@ -16,6 +16,7 @@
 - [length, length(), size()](#length)
 - [==과 equals()](#equals)
 - [객체 주소값 확인 ( identityHashCode() )](#identityHashCode)
+- [시스템 시간 불러오기 for 성능 테스트](#currentTimeMillis)
 - [삼항연산자](#ternary)
 - [switch문](#switch)
 - [Lombok](#lombok)
@@ -139,16 +140,16 @@ int num = 0; // 기본형 타입의 초기화는 이렇게 해야한다.
 
 <br>
 
-## <a name="string-methods"></a>String 클래스
+## <a name="string-methods"></a>String 클래스 내장 메서드
 
 String 클래스가 내장하고 있는 메서드들에 대해 정리해보았다.
 
 ### length()
 
 ~~~java
-/*
-  문자열 데이터의 길이를 반환하는 메서드이다.
-  파라미터는 존재하지 않는다.
+/**
+ * 문자열 데이터의 길이를 반환하는 메서드이다.
+ * 파라미터는 존재하지 않는다.
  */
 
 String str = "Hello Java";
@@ -159,9 +160,9 @@ System.out.println(str.length());
 ### concat()
 
 ~~~java
-/*
-  문자열과 문자열을 결합하는 메서드이다.
-  파라미터에 추가할 String형 데이터가 온다.
+/**
+ * 문자열과 문자열을 결합하는 메서드이다.
+ * 파라미터에 추가할 String형 데이터가 온다.
  */
 
 String str = "Hello ";
@@ -173,11 +174,11 @@ System.out.println(str.concat(lang));
 ### subString()
 
 ~~~java
-/*
-  문자열을 자르는 메서드이다.
-  파라미터에 어디부터 어디까지 자를지 문자열의 인덱스가 와야한다.
-  첫번째 파라미터가 시작 인덱스, 두번째 파라미터가 마지막 인덱스이며,
-  파라미터를 하나만 넣을경우, 입력받은 인덱스부터 마지막까지 문자열을 자른다.
+/**
+ * 문자열을 자르는 메서드이다.
+ * 파라미터에 어디부터 어디까지 자를지 문자열의 인덱스가 와야한다.
+ * 첫번째 파라미터가 시작 인덱스, 두번째 파라미터가 마지막 인덱스이며,
+ * 파라미터를 하나만 넣을경우, 입력받은 인덱스부터 마지막까지 문자열을 자른다.
  */
 
 String str = "Hello Java";
@@ -190,12 +191,12 @@ System.out.println(lang);
 ### indexOf()
 
 ~~~java
-/*
-  문자가 위치한 인덱스를 반환하는 메서드이다.
-  파라미터로 char형 문자를 입력받으며, 해당 문자와 일치하는 문자가 
-  문자열에 존재할 경우 인덱스를 반환한다. 
-  만약 2개 이상 문자가 발견될 경우, 가장 먼저 오는 문자의 인덱스를 반환한다.
-  문자가 존재하지 않는 경우엔 -1을 반환한다.
+/**
+ * 문자가 위치한 인덱스를 반환하는 메서드이다.
+ * 파라미터로 char형 문자를 입력받으며, 해당 문자와 일치하는 문자가 
+ * 문자열에 존재할 경우 인덱스를 반환한다. 
+ * 만약 2개 이상 문자가 발견될 경우, 가장 먼저 오는 문자의 인덱스를 반환한다.
+ * 문자가 존재하지 않는 경우엔 -1을 반환한다.
  */
 
 String str = "Hello Java";
@@ -206,10 +207,10 @@ System.out.println(str.indexOf('a'));
 ### charAt()
 
 ~~~java
-/*
-  indexOf()와 반대의 메서드이다.
-  인덱스에 위치한 문자를 반환하는 메서드이다.
-  파라미터로는 int형 인덱스를 입력받는다.
+/**
+ * indexOf()와 반대의 메서드이다.
+ * 인덱스에 위치한 문자를 반환하는 메서드이다.
+ * 파라미터로는 int형 인덱스를 입력받는다.
  */
 
 String str = "Hello Java";
@@ -220,12 +221,12 @@ System.out.println(str.charAt(1));
 ### isEmpty()
 
 ~~~java
-/*
-  해당 문자열이 빈 값인지 확인하는 메서드이다.
-  문자열의 길이가 0인지 비교하여 boolean값을 반환한다.
-  파라미터는 없다.
-  문자열의 길이가 0이면, true
-  문자열의 길이가 0이 아니면 false
+/**
+ * 해당 문자열이 빈 값인지 확인하는 메서드이다.
+ * 문자열의 길이가 0인지 비교하여 boolean값을 반환한다.
+ * 파라미터는 없다.
+ * 문자열의 길이가 0이면, true
+ * 문자열의 길이가 0이 아니면 false
  */
 
 String str = "Hello Java";
@@ -236,10 +237,10 @@ System.out.println(str.isEmpty());
 ### replace()
 
 ~~~java
-/*
-  문자열의 일부를 다른 문자열로 바꿔주는 메서드이다.
-  파라미터로는 2개를 가지며, 첫째 파라미터로 바꿀 문자열,
-  두번째 파라미터로 새로운 문자열을 입력한다.
+/**
+ * 문자열의 일부를 다른 문자열로 바꿔주는 메서드이다.
+ * 파라미터로는 2개를 가지며, 첫째 파라미터로 바꿀 문자열,
+ * 두번째 파라미터로 새로운 문자열을 입력한다.
  */
 
 String str = "Hello Java";
@@ -252,9 +253,9 @@ System.out.println(newStr);
 ### toUpperCase()
 
 ~~~java
-/*
-  문자열을 대문자로 바꿔주는 메서드이다.
-  파라미터에 대문자로 바꿔줄 String 데이터를 입력한다.
+/**
+ * 문자열을 대문자로 바꿔주는 메서드이다.
+ * 파라미터에 대문자로 바꿔줄 String 데이터를 입력한다.
  */
 
 String str = "hello java";
@@ -275,9 +276,9 @@ String newStr = str.subString(0, 1).toUpperCase();
 ### toLowerCase()
 
 ~~~java
-/*
-  문자열로 소문자로 바꿔주는 메서드이다.
-  파라미터에 소문자로 바꿔줄 String 데이터를 입력한다.
+/**
+ * 문자열로 소문자로 바꿔주는 메서드이다.
+ * 파라미터에 소문자로 바꿔줄 String 데이터를 입력한다.
  */
 
 String str = "HELLO JAVA";
@@ -290,9 +291,9 @@ System.out.println(strLo);
 ### trim()
 
 ~~~java
-/*
-  문자열 앞뒤의 공백을 제거해주는 메서드이다.
-  파라미터는 없다.
+/**
+ * 문자열 앞뒤의 공백을 제거해주는 메서드이다.
+ * 파라미터는 없다.
  */
 
 String str = "  Hellooo Java World   ";
@@ -305,9 +306,9 @@ System.out.println(trimStr);
 ### split()
 
 ~~~java
-/*
-  문자열을 잘라서 배열로 반환하는 메서드이다.
-  파라미터로 자를때 기준이 되는 문자열을 입력받는다.
+/**
+ * 문자열을 잘라서 배열로 반환하는 메서드이다.
+ * 파라미터로 자를때 기준이 되는 문자열을 입력받는다.
  */
 
 String str = "Hello Java";
@@ -320,10 +321,10 @@ System.out.println(Arrays.toString(arr));
 ### toCharArray()
 
 ~~~java
-/*
-  split("")과 같은 기능이지만, 반환하는 배열의 타입이 문자열 배열이 아니라
-  문자형(char[]) 배열이라는 차이가 있다.
-  파라미터는 없다.
+/**
+ * split("")과 같은 기능이지만, 반환하는 배열의 타입이 문자열 배열이 아니라
+ * 문자형(char[]) 배열이라는 차이가 있다.
+ * 파라미터는 없다.
  */
 
 String str = "Hello Java";
@@ -336,9 +337,9 @@ System.out.println(cArr);
 ### getBytes()
 
 ~~~java
-/*
-  byte 배열로 반환하는 메서드이다.
-  파라미터는 없다.
+/**
+ * byte 배열로 반환하는 메서드이다.
+ * 파라미터는 없다.
  */
 
 String str = "Hello Java";
@@ -449,7 +450,7 @@ Wrapper Class는 다음과 같은 기능을 수행한다.
 
 오토박싱과 반대로 객체 타입의 데이터를 기본형 타입 데이터로 자동 형변환
 
-
+오토박싱과 오토언박싱은 자바6부터 도입된 기능이라고 한다.
 
 ### References
 
@@ -521,10 +522,10 @@ class date_tutorial {
 **2. 두 줄 이상의 주석**
 
 ```java
-/*
-보통 IDE에서 /* 입력하고 엔터만 치면 자동으로 완성이 된다. 
-위아래 기호 사이에 이렇게 작성하면 장문의 주석도 작성이 가능하다.
-그러나 주석은 장황하지 않게 깔끔하게 쓰도록 하자.
+/**
+ * 보통 IDE에서 /* 입력하고 엔터만 치면 자동으로 완성이 된다. 
+ * 위아래 기호 사이에 이렇게 작성하면 장문의 주석도 작성이 가능하다.
+ * 그러나 주석은 장황하지 않게 깔끔하게 쓰도록 하자.
 \*
 ```
 
@@ -722,11 +723,41 @@ Java에서 길이를 반환하는 메서드 또는 프로퍼티는 `length`, `le
 
 <br>
 
-## <a name="identityHashCode"></a>객체 주소값 확인 ( identityHashCode() )
+## <a name="identityHashCode"></a>객체 주소값 확인 ( identityHashCode( ) )
 
 앞에서 산술연산자 ==와 `equals()` 함수를 통한 비교를 했는데, 객체 주소값을 직접 눈으로 보고싶다면(?) System 객체에 내장된 `identityHashCode()`를 이용하면 볼 수 있다.
 
 ![](https://lh3.googleusercontent.com/bAKOE9kOi5joQsKqOXh7s8ifHQAo0J3S_PzEBnegpxUTson5fVGwTCZ8PRgsw7jBYphPcMTFySDcvwjRAOaFXUhQKCchjS_P7edFuNQSXKB1cprtudSynLI5lvEqvlD8Zyemla3HxAbaQalT5znEK2Q5hpwrrNtL6Pcp4tF40jOjiXI6kUNEaNFvhJQp3_Oz72bATRaocohzkxw70JpX2IwmHMT7mt1YM9_txfYKxtD9KolPut2kGV9G5zrz7TqwrkZCTHkkZ9pMbXOthuxsl8qtFPtHndWNeDN5b3sDkGO6HHuc_YeLwnOn7i_5vhwQ_br8AcuHGxcWiYWEmJ4Ec5hhjoV_kgO1Z46PWG246XAkoIXxmRaye3fD9bXq8Yp_NHk8PoOtouj0h_cZSAJwNP36wB8FSi2XrUjnZXvZtA8xiA2iLXbQjydgWcBdFr5nlUzvmtHK3n2GpL_M3OVQwG_S3Vc7TJjzFIW92vAiIpel1z1hhOjC_u0dNu6aF35XqgOvrEw0-cX4oxMXLaIE_wCqkGRn5GROUH5qJFJBXgdkpGsiagz5xyn4hYlS8H1TNUW_80PY7L4Mr-lqFE5WGLCsQgOSPy-Xo8d2ZEqspBShqmLaYWp4kczl4DA10RCeai9WV06fxbKCuGl1dSEpBe8mAU2EQEW3I19A_3ghAfDUf9-5eA-6gRmiRALjXvdKjNd9otrN5lN-ebriqHEUbgn501YBbpP6fQnfU-GHYS_0fUrKEol4YFxh=w1372-h850-no)
+
+<br>
+
+## <a name="currentTimeMillis"></a>시스템 시간 불러오기 for 성능 테스트
+
+프로그램의 성능을 테스트하는 방법 중 하나가 프로그램의 실행시간을 확인하는 방법이다. 실행시간을 파악하려면, 프로그램이 시작되기 전 시간과 프로그램이 종류한 직후의 시간을 가져와서 둘을 연산`(종료시간-시작시간)`하면 된다.
+
+시간은 시스템에서 불러오는데, System 객체의 내장 메서드를 호출함으로써 시스템의 시간을 불러올 수 있다.
+
+**System.currentTimeMillis( )**
+
+~~~java
+public class DevAndy {
+   public static void main(String[] args){
+      
+      long startTime = System.currentTimeMillis();
+     
+      StringBuffer str = new StringBuffer();
+      for(int i = 0; i<10000; i++){
+         str.append("*");
+      }
+      System.out.println(str);
+     
+      long endTime = System.currentTimeMillis();
+      System.out.println("실행시간 : "+(endTime-startTime));
+   }
+}
+~~~
+
+long 타입으로 각각의 변수에 시스템 시간을 대입하고 프로그램이 종료한 직후에 연산처리해서 최종적인 프로그램 실행시간을 파악할 수 있다.
 
 <br>
 
