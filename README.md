@@ -15,17 +15,17 @@
         <ul>
           <li><a href="languages/java.md#fature" target="_blank">Java의 특징</a></li>
           <li><a href="languages/java.md#philosophy" target="_blank">Java의 철학</a></li>
-          <li><a href="languages/java.md#run-java-cli" target="_blank">IDE없이 컴파일, 실행하기</a></li>
+          <li><a href="languages/java.md#run-java-cli" target="_blank">터미널에서 컴파일, 실행하기</a></li>
           <li><a href="languages/java.md#java-type" target="_blank">기본형 타입과 참조형 타입</a></li>
           <li><a href="languages/java.md#access-modifier" target="_blank">접근제한자</a></li>
           <li><a href="languages/java.md#string-methods" target="_blank">String 클래스 내장 메서드</a></li>
           <li><a href="languages/java.md#getclass" target="_blank">클래스 타입 반환하기</a></li>
           <li><a href="languages/java.md#enum" target="_blank">enum</a></li>
           <li><a href="languages/java.md#wrapper-class" target="_blank">Wrapper Class</a></li>
+          <li><a href="languages/java.md#scanner" target="_blank">Scanner</a></li>
           <li><a href="languages/java.md#date" target="_blank">Date</a></li>
           <li><a href="languages/java.md#javadoc" target="_blank">JavaDoc</a></li>
           <li><a href="languages/java.md#math" target="_blank">Math</a></li>
-          <li><a href="languages/java.md#scanner" target="_blank">Scanner</a></li>
           <li><a href="languages/java.md#length" target="_blank">length, length(), size()</a></li>
           <li><a href="languages/java.md#equals" target="_blank">==과 equals()</a></li>
           <li><a href="languages/java.md#identityHashCode" target="_blank">객체 주소값 확인 ( identityHashCode() )</a></li>
@@ -34,7 +34,12 @@
           <li><a href="languages/java.md#switch" target="_blank">switch문</a></li>
           <li><a href="languages/java.md#for-loop" target="_blank">for문</a></li>
           <li><a href="languages/java.md#for-each" target="_blank">for each문</a></li>
-          <li><a href="languages/java.md#touppercase" target="_blank">문자열 변환 함수</a></li>
+          <li><a href="languages/java.md#collection-frameworks" target="_blank">컬렉션 프레임워크</a></li>
+          <ul>
+            <li><a href="languages/java.md#collection-set" target="_blank">Set</a></li>
+            <li><a href="languages/java.md#collection-list" target="_blank">List</a></li>
+            <li><a href="languages/java.md#collection-map" target="_blank">Map</a></li>
+          </ul>
           <li><a href="languages/java.md#lombok" target="_blank">Lombok</a></li>
           <li><a href="languages/java.md#javabean" target="_blank">JavaBean</a></li>
         </ul>

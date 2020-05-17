@@ -2,17 +2,17 @@
 
 - [Java의 특징](#feature)
 - [Java의 철학](#philosophy)
-- [IDE없이 컴파일하고, 실행하기](#run-compile-without-ide)
+- [터미널에서 컴파일하고, 실행하기](#run-compile-without-ide)
 - [기본형 타입과 참조형 타입](#java-type)
 - [접근제한자](#access-modifier)
 - [String 클래스 내장 메서드](#string-methods)
 - [클래스 타입 반환하기](#getclass)
 - [enum](#enum)
 - [Wrapper Class](#wrapper-class)
+- [Scanner](#scanner)
 - [Date](#java-date)
 - [Javadoc](#javadoc)
 - [Math](#math)
-- [Scanner](#scanner)
 - [length, length(), size()](#length)
 - [==과 equals()](#equals)
 - [객체 주소값 확인 ( identityHashCode() )](#identityHashCode)
@@ -21,6 +21,10 @@
 - [switch문](#switch)
 - [for문](#for-loop)
 - [for each문](#for-each)
+- [컬렉션 프레임워크](#collection-frameworks)
+  - [Set](#collection-set)
+  - [List](#collection-list)
+  - [Map](#collection-map)
 - [Lombok](#lombok)
 - [JavaBean](#javabean)
   - [JavaBean 규칙은 무엇이며, 왜?](#rule-and-why)
@@ -457,6 +461,41 @@ Wrapper Class는 다음과 같은 기능을 수행한다.
 ### References
 
 - [프로그래머스 - [자바 중급] java.lang 패키지/오토박싱](https://youtu.be/Eofo8_xZbfk)
+
+<br>
+
+## <a name="scanner"></a>Scanner
+
+Scanner 클래스는 입력을 받아주는 클래스이다.
+
+### `String` 형을 입력으로 받을 때.
+
+~~~java
+String str = new Scanner(System.in).next();
+
+// Scanner 인스턴스를 따로 생성했을 경우,
+Scanner sc = new Scanner(system.in);
+String str = sc.next();
+~~~
+
+### `int` 형을 입력으로 받을 때.
+
+~~~java
+int num = new Scanner(System.in).next();
+
+// Scanner 인스턴스를 따로 생성했을 경우,
+Scanner sc = new Scanner(system.in);
+int num = sc.nextInt();
+~~~
+
+### `char` 형을 입력으로 받을 때.
+
+~~~java
+Scanner sc = new Scanner(system.in);
+
+String s = sc.next();
+char c = s.charAt(0);
+~~~
 
 <br>
 
@@ -933,38 +972,162 @@ public class DevAndy {
 
 <br>
 
-## <a name="scanner"></a>Scanner
+## <a name="collection-frameworks"></a>컬렉션 프레임워크
 
-Scanner 클래스는 입력을 받아주는 클래스이다.
+## <a name="collection-set">Set</a>
 
-### `String` 형을 입력으로 받을 때.
-
-~~~java
-String str = new Scanner(System.in).next();
-
-// Scanner 인스턴스를 따로 생성했을 경우,
-Scanner sc = new Scanner(system.in);
-String str = sc.next();
-~~~
-
-### `int` 형을 입력으로 받을 때.
+Set 인터페이스는 Collection 인터페이스를 상속받는 자료구조 인터페이스이다.
 
 ~~~java
-int num = new Scanner(System.in).next();
-
-// Scanner 인스턴스를 따로 생성했을 경우,
-Scanner sc = new Scanner(system.in);
-int num = sc.nextInt();
+public interface Set<E> extends Collection<E>
 ~~~
 
-### `char` 형을 입력으로 받을 때.
+**중복이 없고, 순서도 없는** 자료구조 인터페이스이다.
+
+Set 인터페이스에서 사용할 수 있는 클래스로는 [HashSet](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html)과 [TreeSet](https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html)이 있다.
+
+Set은 값을 추가할때 `add()`를 이용하며, 반대로 값을 꺼낼때는(조회) `Iterator`라는 인터페이스를 사용해야 한다. Iterator에는 다음 element가 있는지 여부(boolean)를 반환오는 `hasNext()`와 element를 반환하는 `next()`, 마지막 element를 삭제하는 `remove()`가 존재한다.
+
+아래 코드는 String 문자열의 `Set`을 만들어서 문자열 데이터를 삽입하고, `Interator`를 사용하여 콘솔에 출력하는 코드이다.
 
 ~~~java
-Scanner sc = new Scanner(system.in);
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-String s = sc.next();
-char c = s.charAt(0);
+public class setExam {
+   public static void main(String[] args) {
+      Set<String> set = new HashSet<>();
+      boolean flag1 = set.add("hello");
+      boolean flag2 = set.add("world");
+      boolean flag3 = set.add("kami");
+      boolean flag4 = set.add("kami");
+		
+      System.out.println(set.size());
+     
+      Iterator<String> iter = set.iterator();
+     
+      while(iter.hasNext()){
+         System.out.println(iter.next());
+      }
+     
+     iter.remove();
+     System.out.println(set.size());
+   }
+}
 ~~~
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3eJUXK8lbcmdk8mhkX40bjWQKBtVxm_JNmRXBbF7lua4j8jOfer18bQZR6tUlzTfzKfwYuSfCfPblhz-BLbHfNG46TYuNbsP4KgtAGmdI7IGuenKGaefJkyQKINBpoNdAQEfHvEWwF21ykM6XTQDfyZug=w1868-h300-no?authuser=0)
+
+Set은 중복을 허용하지 않기 때문에 set.add("kami")를 두번 했음에도 불구하고, set에는 한번만 들어간걸 확인할 수 있다.
+
+그리고 hello, world, kami 순으로 add하였지만, 출력시엔 그 반대로 kami, world, hello로 출력되는걸로 보아 **Set 인터페이스는 FILO(First In Last Out)의 Stack 형태의 자료구조**로 추정된다.
+
+<br>
+
+## <a name="collection-list">List</a>
+
+List도 Set과 마찬가지로 Collection을 상속받는 자료구조 인터페이스이다. 
+
+~~~java
+public interface List<E> extends Collection<E>
+~~~
+
+List는 Array와 비슷한 자료구조 인터페이스이다. Array와 다른게 있다면, immutable하다는 특징이 있다는 것이다. Array는 선언시 지정한 크기를 벗어날 수 없지만, **List는 필요에 따라 크기가 유연하다**는 특징이 있다.
+
+List에서 자주 사용되는 클래스로는 [ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)와 [LinkedList](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html)가 있다.
+
+Set과 비교하면, Set은 중복을 허용하지 않는 인터페이스였다면, **List는 중복을 허용**하는 인터페이스이다.
+
+List는 `add()`로 값을 추가하고, 값을 꺼낼때는 `get()`을 이용해서 꺼낸다. 
+
+~~~java
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListExam {
+   public static void main(String[] args) {
+      List<String> list = new ArrayList<String>();
+		
+      list.add("devandy");
+      list.add("devandy");
+      list.add("devandy");
+      list.add("hello");
+      list.add("world");
+		
+      System.out.println(list.size());
+      for (int i = 0; i < list.size(); i++) {
+         System.out.println(list.get(i));
+      } 
+		
+      list.remove(list.size()-1);
+     
+      System.out.println("\n"+list.size());
+      for (int j = 0; j < list.size(); j++) {
+         System.out.println(list.get(j));
+      }
+   }
+}
+~~~
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3fFOwy_FSmP8NuNKK4V0UQsrQlCXhxbRbc2RRJMp3U5ROE_oly9VaKQy59jiwjOCWpTXyT4bB-CxGOjRWZItVtuhPrvMwfoBIC3se2qh6q1TAry1sCrTy9q4MKfj7pYDUGzNcxTg4sxdTIzJj7zdEsoow=w1440-h406-no?authuser=0)
+
+<br>
+
+## <a name="collection-map">Map</a>
+
+다른 콜렉션 프레임워크와 달리 key와 value이 한 쌍(`key : value`)으로 저장되는 인터페이스이다. 
+
+기본적으로 Map 인터페이스는 중복을 허용하지 않는다. 그러나 서로 다른 key를 가졌다면, value를 중복될수도 있다. 아래의 상황이 그 예이다.
+
+~~~java
+map.put("andy",20);
+map.put("bob",30);
+map.put("chris",20);
+map.put("chris",10); // 컴파일시 문제는 없지만, 값이 추가되지 않음. key는 중복될 수 없다.
+~~~
+
+자주 사용하는 클래스는 [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html), [HashTable](https://docs.oracle.com/javase/8/docs/api/java/util/Hashtable.html), [TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html)이 있다.
+
+~~~java
+public interface Map<K,V>
+~~~
+
+토트넘 선수단을 Map 인터페이스를 사용하여 저장하려고 한다. 선수 번호가 key, 선수 이름이 value로 지정했다.
+
+`put()`으로 추가하고, `remove()`로 삭제하고, `get(key)`로 조회했다.
+
+~~~java
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class mapExam {
+   public static void main(String[] args) {
+      Map<Integer, String> tot = new HashMap<Integer, String>();
+     
+      tot.put(1, "Hugo Lloris");
+      tot.put(3 , "Dnnay Rose");
+      tot.put(5 , "Jan Vertonghen");
+      tot.put(7 , "Heong-min Song");
+      tot.put(10 , "Harray Kane");
+      tot.put(27, "Lucas Moura");
+     
+      tot.remove(10);
+     
+      Iterator<Integer> keys = tot.keySet().iterator();
+      
+      while(keys.hasNext()){
+         int key = keys.next();
+         System.out.println(key+" : "+tot.get(key));
+      }
+   }
+}
+~~~
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3dByc3SYnIiaIUfKhxaa9I-h3u5x0MAxpU_UhysvNCeIY1ZaBvQq5dDp3C4spT8WFwmUJkGB6jKo4Eth9So78HX4Vt441WzgyvSOYHPny2T6nG8sg3vQ07fSlVA8TXEKYqbM6WcWtH3PgNb9YcyHZkD_A=w1440-h246-no?authuser=0)
+
+Map에 속한 자료구조 데이터는 Iterator 클래스를 사용해서 모든 element를 꺼낼 수 있다.
 
 <br>
 
@@ -972,7 +1135,7 @@ char c = s.charAt(0);
 
 자바에서 Model을 만들때, 멤버필드에 대한 Getter/Setter, toString과 멤버필드에 주입하는 생성자를 만드는 코드등 반복적으로 작성하게 되는 코드를 어노테이션으로 줄여주는 라이브러리이다.
 
-Maven/Gradle로 프로젝트를 진행하는 경우, MVNrepository에서 Dependency를 추가할 수 있다.
+Maven/Gradle로 프로젝트를 진행하는 경우, Mvn Repository에서 Dependency를 추가할 수 있다.
 
 **Lombok 적용 전**
 
