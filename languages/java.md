@@ -19,6 +19,8 @@
 - [시스템 시간 불러오기 for 성능 테스트](#currentTimeMillis)
 - [삼항연산자](#ternary)
 - [switch문](#switch)
+- [for문](#for-loop)
+- [for each문](#for-each)
 - [Lombok](#lombok)
 - [JavaBean](#javabean)
   - [JavaBean 규칙은 무엇이며, 왜?](#rule-and-why)
@@ -835,6 +837,102 @@ break을 어디에 작성하느냐에 따라 multiple 선택도 가능함을 알
 
 <br>
 
+## <a name="for-loop"></a>for문
+
+while문과 함께 자바에서 사용하는 반복문이다. 
+
+~~~java
+for(int i = 0; i < args.length; i++){
+   // iterator 변수 i가 돌 때마다 반복될 코드
+}
+~~~
+
+일반적인 방식의 for문이며, 3가지 조건이 들어간다. iteraotr의 시작 포인트, 반복을 마치는 포인트, 반복조건. 위의 코드는 iterator 변수 i가 0부터 인자(args)의 길이만큼 반복되며, 반복조건은 i++로 선언한 for문이다. 
+
+1부터 10을 더해서 결과를 출력하는 프로그램 코드이다.
+
+~~~java
+public class DevAndy {
+   public static void main(String[] args){
+      int result = 0;
+     	
+      for(int i=1; i<=10; i++) {
+         result += i;
+         System.out.println(i+" : "+result);
+      }
+     
+      System.out.println("총합 : "+result);
+   }
+}
+~~~
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3cqcRHRNhb6AghMl7eRbwvLKEcmNg9lQ6r5VSCnEp2kMvT6xgFdWzm0HZApMjc8HfKzKJaZO7dLA6vkXW1FQp6LAEyb8YP_DP__3jSvtEduaBRPB3RPIrxxqJL77lYtnl9ZqiD1G8NtBRl0vvtTfmkpVQ=w1440-h416-no?authuser=0)
+
+<br>
+
+## <a name="for-each"></a>for each문
+
+일반적으로 배열을 받는 for문은 아래처럼 작성할 수 있다.
+
+1부터 10까지 들어가있는 크기 10의 int형 배열 nums를 선언했다.
+nums와 크기가 똑같은 새로운 int형 배열 newArr을 선언했다.
+for문으로 nums에 있는 값에 2를 곱해서 newArr에 값으로 추가했다.
+그리고 Arrays 객체의 `toString()`을 사용하여 출력했다.
+
+~~~java
+import java.util.Arrays;
+
+public class DevAndy {
+   public static void main(String[] args) {
+      int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+      
+      int[] newArr = new int[nums.length];
+	  
+      for(int i=0; i<nums.length; i++) {
+         newArr[i] = nums[i]*2;
+      }
+     
+      System.out.println(Arrays.toString(newArr));
+   }
+}
+~~~
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3ebAwlMSv8WM_Jp6lDIQK7XdugtH84ibHz-E_6eEjdcgJeIv6a7iIHrvxcAhdVXnJdR7Vw0TRmzqPa7N2TPRN4e2q1ZC5GUsC6wMIABFacTILEKvC_W_Lmxy8tgW8NljPU2Eidf8iSZ_8gjS_TvbzHjhg=w1440-h176-no?authuser=0)
+
+<br>
+
+위의 코드처럼 배열을 받아서 다른 배열에 값을 부여할 땐 for each문을 사용해서 아래의 형식의 보다 단순한 조건절을 사용할 수 있다.
+
+~~~java
+for(int i : arr){
+   // iterator 변수 i가 반복될때마다 작동할 코드
+}
+~~~
+
+배열 arr의 0번째 element부터 마지막  element까지 자동으로 iterator의 반복구간이 자동으로 설정된다. for each문을 적용해서 코드를 수정해보았다.
+
+~~~java
+import java.util.Arrays;
+
+public class DevAndy {
+   public static void main(String[] args) {
+      int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+      
+      int[] newArr = new int[nums.length];
+	  
+      for(int i : nums) {
+         newArr[i] = nums[i]*2;
+      }
+     
+      System.out.println(Arrays.toString(newArr));
+   }
+}
+~~~
+
+결과는 똑같다.
+
+<br>
+
 ## <a name="scanner"></a>Scanner
 
 Scanner 클래스는 입력을 받아주는 클래스이다.
@@ -1023,7 +1121,7 @@ Argument가 몇개인지, 어떤 필드에 맵핑되는지를 찾아야한다. �
 
 <br>
 
-###<a name="create-javabean"></a>Bean 생성하는 법
+### <a name="create-javabean"></a>Bean 생성하는 법
 
 어노테이션을 이용해서 자바 빈을 생성할 수 있다.
 
@@ -1038,7 +1136,7 @@ Argument가 몇개인지, 어떤 필드에 맵핑되는지를 찾아야한다. �
 
 실제로 자바 빈을 생성하는 코드를 보자.
 
-`ApplicationConfg.java`
+**ApplicationConfg.java**
 
 ```java
 @Configuration
@@ -1064,7 +1162,7 @@ public class ApplicationConfig {
 
 
 
-`Player.java`
+**Player.java**
 
 ```java
 public class Player {
@@ -1104,7 +1202,7 @@ public class Player {
 
 
 
-`Main.java`
+**Main.java**
 
 ```java
 public class Main {
@@ -1119,7 +1217,5 @@ public class Main {
   }
 }
 ```
-
-
 
 <br>
