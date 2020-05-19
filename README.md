@@ -342,10 +342,24 @@
   <ul>
     <li>
       <details>
-        <summary><a href="CS/network/HTTP.md" target="_blank">HTTP</a></summary>
+        <summary><a href="CS/Network.md" target="_blank">네트워크</a></summary>
         <ul>
-          <li><a href="CS/network/HTTP.md#get-post" target="_blank">GET/POST</a></li>
-          <li><a href="CS/network/HTTP.md#uri-url" target="_blank">URI와 URL</a></li>
+          <li><a href="CS/Network.md#varieties-of-networks" target="_blank">네트워크 종류</a></li>
+          <ul>
+            <li><a href="CS/Network.md#sizes-of-networks" target="_blank">크기에 따른 네트워크 종류</a></li>
+          	<li><a href="CS/Network.md#shapes-of-networks" target="_blank">모양에 따른 네트워크 종류</a></li>
+          </ul>
+          <li><a href="CS/Network.md#network-architecture" target="_blank">네트워크 아키텍쳐</a></li>
+          <ul>
+            <li><a href="CS/Network.md#osi-7-layers" target="_blank">OSI 7계층</a></li>
+            <li><a href="CS/Network.md#application-layer" target="_blank">7계층, 응용 계층</a></li>
+          	<li><a href="CS/Network.md#presentation-layer" target="_blank">6계층, 표현 계층</a></li>
+            <li><a href="CS/Network.md#session-layer" target="_blank">5계층, 세션 계층</a></li>
+          	<li><a href="CS/Network.md#transport-layer" target="_blank">4계층, 전송 계층</a></li>
+            <li><a href="CS/Network.md#network-layer" target="_blank">3계층, 네트워크 계층</a></li>
+          	<li><a href="CS/Network.md#datalink-layer" target="_blank">2계층, 데이터링크 계층</a></li>
+            <li><a href="CS/Network.md#physical-layer" target="_blank">1계층, 물리 계층</a></li>
+          </ul>
         </ul>
       </details>
     </li>
@@ -409,6 +423,7 @@
     </li>
   </ul>
 </details>
+
 
 <br>
 
