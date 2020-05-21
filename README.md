@@ -422,10 +422,16 @@
       </ul>
       </details>
     </li>
+    <li>
+      <details>
+      <summary><a href="Others/dictionary.md" target="_blank">개발용어사전</a></summary>
+      <ul>
+        <li><a href="Others/dictionary.md#runtime" target="_blank">런타임</a></li>
+      </ul>
+      </details>
+    </li>
   </ul>
 </details>
-
-
 
 <br>
 
