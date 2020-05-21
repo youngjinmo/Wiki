@@ -6,6 +6,7 @@
 - [@GetMapping 어노테이션으로 다중맵핑하기](#get-mapping-multi)
 - [h2 데이터베이스 마이그레이션](#h2-databse)
 - [DB 에러발생 무시하고 프로젝트 실행하기](#datasource-autocofig)
+- [Gradle 버전확인하는 법](#gradlew-version)
 
 <br>
 
@@ -213,5 +214,17 @@ public class DevAndy {
 ~~~
 
 이렇게 하면, Datasource가 없어도, 즉 DB 연결을 필요로 하는 프로젝트인데, DB가 연결되지 않은 경우에도 프로젝트를 실행할 수 있다.
+
+<br>
+
+## <a name="gradlew-version"></a>Gradle 버전확인하는 법
+
+Gradle 프로젝트 디렉토리 내에서 아래의 명령어를 입력하면 Gradle의 버전 및 개발환경을 콘솔에 출력한다.
+
+~~~
+$ ./gradlew --version
+~~~
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3fwbH6tqvImZYqrGcBw-Hm6XnkHU5m7jalTIKoOHZXESRTolKdFRghMai1EQoYZSuyTP6QPKIa8U2yGi6HhGpL4xnWcjxrGp9XyWZBMPNEZ6qa7rKwE-SsjK1hiCxCQ6hnn_RNuEkAnQxdGyzgmWST5FQ=w585-h492-no?authuser=0)
 
 <br>
