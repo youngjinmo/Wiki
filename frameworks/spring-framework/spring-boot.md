@@ -7,6 +7,8 @@
 - [h2 데이터베이스 마이그레이션](#h2-databse)
 - [DB 에러발생 무시하고 프로젝트 실행하기](#datasource-autocofig)
 - [Gradle 버전확인하는 법](#gradlew-version)
+- [프로젝트에서 Gradle 버전 올리기](#upgrade-gradle)
+- [Unit Test](#unit-test)
 
 <br>
 
@@ -221,10 +223,38 @@ public class DevAndy {
 
 Gradle 프로젝트 디렉토리 내에서 아래의 명령어를 입력하면 Gradle의 버전 및 개발환경을 콘솔에 출력한다.
 
-~~~
+~~~bash
 $ ./gradlew --version
 ~~~
 
 ![](https://lh3.googleusercontent.com/pw/ACtC-3fwbH6tqvImZYqrGcBw-Hm6XnkHU5m7jalTIKoOHZXESRTolKdFRghMai1EQoYZSuyTP6QPKIa8U2yGi6HhGpL4xnWcjxrGp9XyWZBMPNEZ6qa7rKwE-SsjK1hiCxCQ6hnn_RNuEkAnQxdGyzgmWST5FQ=w585-h492-no?authuser=0)
+
+위의 방법은 프로젝트에 적용된 gradle 버전을 확인하는 방법이고, 운영체제에 있는 gradle 버전을 확인하는 방법은 다음과 같다.
+
+~~~bash
+$ gradle -v
+~~~
+
+<br>
+
+## <a name="upgrade-gradle"></a>프로젝트에서 gradle 버전 올리기
+
+프로젝트 디렉토리에 [gradle] - [wrapper] 하위에 gradle-wrapper.properties 라는 파일이 있다. 여기서 원하는 버전으로 변경후 gradle을 refresh하면 새로운 버전의 gradle로 변경된다.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3fRfZOwWUHdp5aDKfKZ_MgHKTCJGquZKIluhn6Fj99a40mk8cIkJUAPW2fT_DKE2py-GxZNjU-15SQ-raWuMM1JivslcDRdmueMiNw6Lp1wHIyErafahHQAXPTAarUTRMo3WiyAgxCGlvgtW9GWX5cOqQ=w1440-h480-no?authuser=0)
+
+<br>
+
+## <a name="unit-test"></a>Unit Test
+
+Unit Test의 FIRST 원칙
+
+- Fast 테스트 코드를 실행하는 일은 오래걸리면 안된다.
+- Independent 독립적으로 실행되어야 한다.
+- Repeatable 반복가능해야한다.
+- Self Validating 메뉴얼 없이 테스트 코드만 실행해도 성공/실패 여부를 알 수 있어야 한다.
+- Timely 바로 사용 가능해야 한다.
+
+출처 : https://brunch.co.kr/@springboot/207
 
 <br>
