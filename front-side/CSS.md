@@ -7,6 +7,7 @@
 - [word-break](#word-break)
 - [복수의 id에 CSS 적용](#apply-style-to-multiple-ids)
 - [margin과 padding 차이](#margin-and-padding)
+- [span 태그에 width 부여하기](#set-width-span)
 - [이미지 흑백 전환 효과주기](#mix-blend-mode)
 - [텍스트/이미지 정렬](#align)
 
@@ -58,6 +59,17 @@ HTML 문서의 스타일 코드를 적용할 때 class, id로 구분해서 스�
 위 이미지에서 빨간색 부분이 현재 CSS 코드를 적용중인 객체에 해당한다.
 
 `margin`은 이 객체의 바깥 부분을 조정하는 프로퍼티이며, `padding`은 객체 안쪽을 조정하는 프로퍼티이다.
+
+<br>
+
+## <a name="set-width-span"></a>span 태그에 width 부여하기
+
+~~~css
+span {
+	display: inline-block;
+	width: 170px; 
+}
+~~~
 
 <br>
 

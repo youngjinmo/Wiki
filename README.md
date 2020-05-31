@@ -301,6 +301,7 @@
           <li><a href="front-side/CSS.md#word-break" target="_blank">word-break</a></li>
           <li><a href="front-side/CSS.md#apply-style-to-multiple-ids" target="_blank">복수의 id에 CSS 적용</a></li>
           <li><a href="front-side/CSS.md#margin-and-padding" target="_blank">margin과 padding 차이</a></li>
+          <li><a href="front-side/CSS.md#set-width-span" target="_blank">span 태그에 width 부여하기</a></li>
           <li><a href="front-side/CSS.md#mix-blend-mode" target="_blank">이미지 흑백 전환 효과주기</a></li>
           <li><a href="front-side/CSS.md#align" target="_blank">텍스트/이미지 정렬</a></li>
         </ul>
