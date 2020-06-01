@@ -8,6 +8,7 @@
 - [DB 에러발생 무시하고 프로젝트 실행하기](#datasource-autocofig)
 - [Gradle 버전확인하는 법](#gradlew-version)
 - [프로젝트에서 Gradle 버전 올리기](#upgrade-gradle)
+- [Gradle 다운그레이드](#gradlew-which-version)
 - [Unit Test](#unit-test)
 
 <br>
@@ -242,6 +243,18 @@ $ gradle -v
 프로젝트 디렉토리에 [gradle] - [wrapper] 하위에 gradle-wrapper.properties 라는 파일이 있다. 여기서 원하는 버전으로 변경후 gradle을 refresh하면 새로운 버전의 gradle로 변경된다.
 
 ![](https://lh3.googleusercontent.com/pw/ACtC-3fRfZOwWUHdp5aDKfKZ_MgHKTCJGquZKIluhn6Fj99a40mk8cIkJUAPW2fT_DKE2py-GxZNjU-15SQ-raWuMM1JivslcDRdmueMiNw6Lp1wHIyErafahHQAXPTAarUTRMo3WiyAgxCGlvgtW9GWX5cOqQ=w1440-h480-no?authuser=0)
+
+<br>
+
+## <a name="gradle-which-version"></a>Gradle 다운그레이드
+
+이동욱님이 작성하신 스프링 부트와 AWS로 혼자구현하는 서비스를 보며 따라 만들어보는 중인데, gradle 버전의 차이로 책에서 작성한 코드가 컴파일 되지 않았다. 그래서 프로젝트 저장소에 등록된 이슈를 통해 gradle 버전을 동욱님이 책을 집필하시던 때의 버전과 맞추었다. 이 때 사용한 명령어는 다음과 같다.
+
+~~~bash
+$ ./gradlew wrapper --gradle-version 4.10.2
+~~~
+
+이 때 위의 명령어는 gradle 프로젝트 내부의 콘솔에서 입력해야한다. 꼭 다운그레이드 뿐 아니라 원하는 버전으로 gradle 버전을 변경할 수 있을것 같다.
 
 <br>
 
