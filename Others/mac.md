@@ -25,7 +25,11 @@
 
 터미널을 열고 아래 명령어를 붙여넣기하고 입력하면 homebrew가 설치된다. 엄청 간단하다.
 
-`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+~~~bash
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+~~~
+
+추가로 읽어보면 좋은 글([44Bits - 홈브류(Homebrew)란?](https://www.44bits.io/ko/keyword/homebrew))
 
 
 
@@ -33,11 +37,23 @@
 
 설치하고 싶은 패키지가 있다면, 먼저 패키지가 있는지 알아둬야 한다.
 
-`brew search [package-name]`
+~~~bash
+$ brew search [package-name]
+~~~
 
 있다면 `search` 대신 `install`로 바꾸어서 패키지를 설치하면 된다.
 
-`brew install [package-name]`
+~~~bash
+$ brew install [package-name]
+~~~
+
+
+
+패키지의 버전을 올리고 싶다면, `upgrade` 하면된다.
+
+~~~bash'
+$ brew upgrade [package-name]
+~~~
 
 
 
@@ -45,7 +61,13 @@
 
 기본적으로 패키지를 설치하기 전에 homebrew가 자동으로 업데이트를 진행하지만, 일단 알아두자.
 
-`brew update`
+~~~bash
+$ brew update
+~~~
+
+
+
+
 
 <br>
 
@@ -67,9 +89,11 @@
 
 ### 패키지로 디렉토리 한 눈에 보기
 
-현재 디렉토리를 터미널에서 계층적으로 구분해서 편하게 보려면 `tree .` 을 입력하면 된다.
+현재 디렉토리를 터미널에서 계층적으로 구분해서 편하게 보려면 `tree` 을 입력하면 된다.
 
 <img src="http://www.mediafire.com/convkey/0813/u5n9x04o217pgqezg.jpg" width="500" />
+
+모든 파일을 보려면 옵션으로 `-a`를, 디렉토리만 보려면 `-d` 를 커맨드에 함께 작성하면 된다.
 
 <br>
 
