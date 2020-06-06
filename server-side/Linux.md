@@ -135,33 +135,33 @@ $ ln -s [target] [symbolic_link_name]
 
 **리눅스에서 파일이나 디렉토리를 검색**할 때 사용하는 명령어이다.
 
-- 경로 Desktop/test 에서 용량 3mb 미만의 파일을 콘솔에 출력할 때 다음과 같이 명령한다.
+- 파일명 중간에 'guide'이 포함된 파일을 찾으려고 할 때.
+  ~~~bash
+  $ find /Desktop -name '*guide*' -type f
+  ~~~
+
+
+
+- 폴더명 중간에 'tomcat'이 포함된 폴더()를 찾으려고 할 때.
+  
+  ~~~bash
+  $ find /Desktop -name '*tomcat*' -type d
+  ~~~
+
+
+
+- 경로 Desktop/test 에서 용량 3mb 미만(`-size -3M`)의 파일(`-type f`)을 콘솔에 출력할 때 다음과 같이 명령한다.
 
   ~~~bash
   $ $ find Desktop/test -size -3M -type f
   ~~~
-  
+
     
 
-- 경로 Desktop/test 에서 용량 10mb이상의 디렉토리를 `ls -l` 형태로 출력할 때 다음과 같이 명령한다.
+- 경로 Desktop/test 에서 용량 10mb이상(`-size +10M`)의 디렉토리를 콘솔에 리스트로 출력할 때(`-exec ls -a {} \;`) 다음과 같이 명령한다.
 
   ~~~bash
   $ find Desktop/test -size +10M -type d -exec ls -l {} \;
-  ~~~
-
- 
-
-- 파일명 중간에 'guide'이 포함된 파일을 찾으려고 할 때.
-  ~~~bash
-  $ find /Desktop -name '*guide*'
-  ~~~
-
-
-
-- 폴더명 중간에 'tomcat'이 포함된 폴더를 찾으려고 할 때.
-  
-  ~~~bash
-  $ find /Desktop -name '*tomcat*' -type d
   ~~~
 
 <br>

@@ -150,61 +150,61 @@
   </ul>
 </details>
 <details>
-  <summary>DevOps</summary>
+  <summary>Server-Side</summary>
   <ul>
     <li>
       <details>
-        <summary><a href="DevOps/Linux.md" target="_blank">Linux</a></summary>
+        <summary><a href="server-side/Linux.md" target="_blank">Linux</a></summary>
         <ul>
           <li>
             <details>
-              <summary><a href="DevOps/Linux.md#commands" target="_blank">명령어</a></summary>
+              <summary><a href="server-side/Linux.md#commands" target="_blank">명령어</a></summary>
               <ul>
-                <li><a href="DevOps/Linux.md#shell-kernel" target="_blank">Shell과 Kernel</a></li>
-                <li><a href="DevOps/Linux.md#check-os" target="_blank">운영체제 확인</a></li>
-                <li><a href="DevOps/Linux.md#uname-m" target="_blank">비트(32/64) 확인</a></li>
-                <li><a href="DevOps/Linux.md#mv" target="_blank">파일 이동(mv)</a></li>
-                <li><a href="DevOps/Linux.md#symboliclink" target="_blank">Symbolic Link</a></li>
-                <li><a href="DevOps/Linux.md#find" target="_blank">find - 파일/디렉토리 찾기</a></li>
-                <li><a href="DevOps/Linux.md#grep" target="_blank">grep - 문서내 검색</a></li>
-                <li><a href="DevOps/Linux.md#save-output" target="_blank">콘솔 결과 출력 저장</a></li>
-                <li><a href="DevOps/Linux.md#combine-commands" target="_blank">복수의 명령어 동시실행</a></li>
-                <li><a href="DevOps/Linux.md#caffeinate" target="_blank">슬립모드 진입방지 (caffeinate)</a></li>
-                <li><a href="DevOps/Linux.md#ubuntu-reboot" target="_blank">시스템 재부팅</a></li>
-                <li><a href="DevOps/Linux.md#ifconfig" target="_blank">ip주소 확인하기</a></li>
-                <li><a href="DevOps/Linux.md#change-localtime" target="_blank">서버시간 변경하기</a></li>
-                <li><a href="DevOps/Linux.md#setup-locale" target="_blank">UTF-8 인코딩 설정(한국어 설정)</a></li>
-                <li><a href="DevOps/Linux.md#passwd" target="_blank">계정 비밀번호 설정하기</a></li>
-                <li><a href="DevOps/Linux.md#sudo-su" target="_blank">계정 전환하기</a></li>
-                <li><a href="DevOps/Linux.md#hostname" target="_blank">호스트네임 변경하기</a></li>
-                <li><a href="DevOps/Linux.md#wget" target="_blank">wget으로 파일다운로드</a></li>
-                <li><a href="DevOps/Linux.md#adduser" target="_blank">계정 생성하기</a></li>
-                <li><a href="DevOps/Linux.md#passwd" target="_blank">사용자 목록 조회하는 4가지 방법</a></li>
-                <li><a href="DevOps/Linux.md#userdel" target="_blank">계정 삭제하기</a></li>
-                <li><a href="DevOps/Linux.md#password" target="_blank">우분투 패스워드 설정하기</a></li>
-                <li><a href="DevOps/Linux.md#install-jdk" target="_blank">JDK 설치하기</a></li>
+                <li><a href="server-side/Linux.md#shell-kernel" target="_blank">Shell과 Kernel</a></li>
+                <li><a href="server-side/Linux.md#check-os" target="_blank">운영체제 확인</a></li>
+                <li><a href="server-side/Linux.md#uname-m" target="_blank">비트(32/64) 확인</a></li>
+                <li><a href="server-side/Linux.md#mv" target="_blank">파일 이동(mv)</a></li>
+                <li><a href="server-side/Linux.md#symboliclink" target="_blank">Symbolic Link</a></li>
+                <li><a href="server-side/Linux.md#find" target="_blank">find - 파일/디렉토리 찾기</a></li>
+                <li><a href="server-side/Linux.md#grep" target="_blank">grep - 문서내 검색</a></li>
+                <li><a href="server-side/Linux.md#save-output" target="_blank">콘솔 결과 출력 저장</a></li>
+                <li><a href="server-side/Linux.md#combine-commands" target="_blank">복수의 명령어 동시실행</a></li>
+                <li><a href="server-side/Linux.md#caffeinate" target="_blank">슬립모드 진입방지 (caffeinate)</a></li>
+                <li><a href="server-side/Linux.md#ubuntu-reboot" target="_blank">시스템 재부팅</a></li>
+                <li><a href="server-side/Linux.md#ifconfig" target="_blank">ip주소 확인하기</a></li>
+                <li><a href="server-side/Linux.md#change-localtime" target="_blank">서버시간 변경하기</a></li>
+                <li><a href="server-side/Linux.md#setup-locale" target="_blank">UTF-8 인코딩 설정(한국어 설정)</a></li>
+                <li><a href="server-side/Linux.md#passwd" target="_blank">계정 비밀번호 설정하기</a></li>
+                <li><a href="server-side/Linux.md#sudo-su" target="_blank">계정 전환하기</a></li>
+                <li><a href="server-side/Linux.md#hostname" target="_blank">호스트네임 변경하기</a></li>
+                <li><a href="server-side/Linux.md#wget" target="_blank">wget으로 파일다운로드</a></li>
+                <li><a href="server-side/Linux.md#adduser" target="_blank">계정 생성하기</a></li>
+                <li><a href="server-side/Linux.md#passwd" target="_blank">사용자 목록 조회하는 4가지 방법</a></li>
+                <li><a href="server-side/Linux.md#userdel" target="_blank">계정 삭제하기</a></li>
+                <li><a href="server-side/Linux.md#password" target="_blank">우분투 패스워드 설정하기</a></li>
+                <li><a href="server-side/Linux.md#install-jdk" target="_blank">JDK 설치하기</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary><a href="DevOps/Linux.md#vim" target="_blank">Vim</a></summary>
+              <summary><a href="server-side/Linux.md#vim" target="_blank">Vim</a></summary>
               <ul>
-                <li><a href="DevOps/Linux.md#vi-input" target="_blank">입력 명령어</a></li>
-            		<li><a href="DevOps/Linux.md#vi-move" target="_blank">이동 명령어</a></li>
-      					<li><a href="DevOps/Linux.md#vi-filestatus" target="_blank">파일 상태 명령어</a></li>
-								<li><a href="DevOps/Linux.md#vimrc" target="_blank">IDE처럼 사용을 위한 Vim 셋팅하기</a></li>
-                <li><a href="DevOps/Linux.md#vim-v" target="_blank">한 글자/한 줄씩 드래그 하기</a></li>
+                <li><a href="server-side/Linux.md#vi-input" target="_blank">입력 명령어</a></li>
+            		<li><a href="server-side/Linux.md#vi-move" target="_blank">이동 명령어</a></li>
+      					<li><a href="server-side/Linux.md#vi-filestatus" target="_blank">파일 상태 명령어</a></li>
+								<li><a href="server-side/Linux.md#vimrc" target="_blank">IDE처럼 사용을 위한 Vim 셋팅하기</a></li>
+                <li><a href="server-side/Linux.md#vim-v" target="_blank">한 글자/한 줄씩 드래그 하기</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary><a href="DevOps/Linux.md#apt-get" target="_blank">패키지 관리툴 (apt-get)</a></summary>
+              <summary><a href="server-side/Linux.md#apt-get" target="_blank">패키지 관리툴 (apt-get)</a></summary>
               <ul>
-                <li><a href="DevOps/Linux.md#difference-between-update-upgrade" target="_blank">update와 upgrade의 차이</a></li>
-                <li><a href="DevOps/Linux.md#install-remove" target="_blank">apt-get 패키지 설치/삭제하기</a></li>
-                <li><a href="DevOps/Linux.md#asciinema" target="_blank">터미널 녹화기 asciinema</a></li>
+                <li><a href="server-side/Linux.md#difference-between-update-upgrade" target="_blank">update와 upgrade의 차이</a></li>
+                <li><a href="server-side/Linux.md#install-remove" target="_blank">apt-get 패키지 설치/삭제하기</a></li>
+                <li><a href="server-side/Linux.md#asciinema" target="_blank">터미널 녹화기 asciinema</a></li>
               </ul>
             </details>
           </li>
@@ -213,55 +213,69 @@
     </li>
     <li>
       <details>
-        <summary><a href="DevOps/AWS.md" target="_blank">AWS</a></summary>
+        <summary><a href="server-side/AWS.md" target="_blank">AWS</a></summary>
         <ul>
-          <li><a href="DevOps/AWS.md#region" target="_blank">Region과 Availability zone</a></li>
-          <li><a href="DevOps/AWS.md#ec2" target="_blank">EC2 인스턴스의 기능</a></li>
-          <li><a href="DevOps/AWS.md#ssh-i" target="_blank">터미널로 EC2 인스턴스 SSH 접속</a></li>
-          <li><a href="DevOps/AWS.md#locale-ko-utf8" target="_blank">EC2 언어 설정</a></li>
-          <li><a href="DevOps/AWS.md#setpasswd" target="_blank">Amazon Linux 비밀번호 변경/설정하기</a></li>
-          <li><a href="DevOps/AWS.md#awscli" target="_blank">awscli 설치하기</a></li>
-          <li><a href="DevOps/AWS.md#start-apache2" target="_blank">Apache2 웹서버 실행</a></li>
-          <li><a href="DevOps/AWS.md#autoload-pem" target="_blank">키페어(.pem) 자동으로 읽어오기</a></li>
-          <li><a href="DevOps/AWS.md#install-jdk-amazonlinux" target="_blank">Amazon Linux에 Java 설치하기</a></li>
-          <li><a href="DevOps/AWS.md#which" target="_blank">Java 설치 경로 찾기</a></li>
-          <li><a href="DevOps/AWS.md#install-maven" target="_blank">Amazon Linux에 메이븐 설치하기</a></li>
-          <li><a href="DevOps/AWS.md#java-build" target="_blank">Java 프로그램 빌드하기 (maven/gradle)</a></li>
-          <li><a href="DevOps/AWS.md#java-jar" target="_blank">Java 프로그램 실행하기 (jar파일 실행)</a></li>
-          <li><a href="DevOps/AWS.md#redirect-8080" target="_blank">포트번호 8080으로 리다이렉트 하기</a></li>
-          <li><a href="DevOps/AWS.md#tmux" target="_blank">터미널 백그라운드에서 서버 실행하기(tmux)</a></li>
+          <li><a href="server-side/AWS.md#region" target="_blank">Region과 Availability zone</a></li>
+          <li><a href="server-side/AWS.md#ec2" target="_blank">EC2 인스턴스의 기능</a></li>
+          <li><a href="server-side/AWS.md#ssh-i" target="_blank">터미널로 EC2 인스턴스 SSH 접속</a></li>
+          <li><a href="server-side/AWS.md#locale-ko-utf8" target="_blank">EC2 언어 설정</a></li>
+          <li><a href="server-side/AWS.md#setpasswd" target="_blank">Amazon Linux 비밀번호 변경/설정하기</a></li>
+          <li><a href="server-side/AWS.md#awscli" target="_blank">awscli 설치하기</a></li>
+          <li><a href="server-side/AWS.md#start-apache2" target="_blank">Apache2 웹서버 실행</a></li>
+          <li><a href="server-side/AWS.md#autoload-pem" target="_blank">키페어(.pem) 자동으로 읽어오기</a></li>
+          <li><a href="server-side/AWS.md#install-jdk-amazonlinux" target="_blank">Amazon Linux에 Java 설치하기</a></li>
+          <li><a href="server-side/AWS.md#which" target="_blank">Java 설치 경로 찾기</a></li>
+          <li><a href="server-side/AWS.md#install-maven" target="_blank">Amazon Linux에 메이븐 설치하기</a></li>
+          <li><a href="server-side/AWS.md#java-build" target="_blank">Java 프로그램 빌드하기 (maven/gradle)</a></li>
+          <li><a href="server-side/AWS.md#java-jar" target="_blank">Java 프로그램 실행하기 (jar파일 실행)</a></li>
+          <li><a href="server-side/AWS.md#redirect-8080" target="_blank">포트번호 8080으로 리다이렉트 하기</a></li>
+          <li><a href="server-side/AWS.md#tmux" target="_blank">터미널 백그라운드에서 서버 실행하기(tmux)</a></li>
         </ul>
       </details>
     </li>
     <li>
       <details>
-        <summary><a href="DevOps/Docker.md" target="_blank">Docker</a></summary>
+        <summary><a href="server-side/Docker.md" target="_blank">Docker</a></summary>
         <ul>
-          <li><a href="DevOps/Docker.md#intro" target="_blank">도커?</a></li>
-          <li><a href="DevOps/Docker.md#installation" target="_blank">도커 설치</a></li>
-          <li><a href="DevOps/Docker.md#create-image" target="_blank">이미지 설치하기</a></li>
-          <li><a href="DevOps/Docker.md#rename-image" target="_blank">이미지 이름 변경</a></li>
-          <li><a href="DevOps/Docker.md#create-container" target="_blank">컨테이너 생성하기</a></li>
-          <li><a href="DevOps/Docker.md#change-container" target="_blank">컨테이너 이름 변경</a></li>
-          <li><a href="DevOps/Docker.md#control-container" target="_blank">컨테이너 시작/중단하기</a></li>
-          <li><a href="DevOps/Docker.md#images" target="_blank">도커 이미지 조회하기</a></li>
-          <li><a href="DevOps/Docker.md#ps" target="_blank">도커 컨테이너 조회하기</a></li>
-          <li><a href="DevOps/Docker.md#exec-imageid-bash" target="_blank">bash모드로 컨테이너 진입</a></li>
-          <li><a href="DevOps/Docker.md#rm-container" target="_blank">컨테이너 삭제</a></li>
-          <li><a href="DevOps/Docker.md#rmi-image" target="_blank">이미지 삭제</a></li>
-          <li><a href="DevOps/Docker.md#compose" target="_blank">Docker Compose</a></li>
-            <li><a href="DevOps/Docker.md#volume" target="_blank">Docker Volume</a></li>
+          <li><a href="server-side/Docker.md#intro" target="_blank">도커?</a></li>
+          <li><a href="server-side/Docker.md#installation" target="_blank">도커 설치</a></li>
+          <li><a href="server-side/Docker.md#create-image" target="_blank">이미지 설치하기</a></li>
+          <li><a href="server-side/Docker.md#rename-image" target="_blank">이미지 이름 변경</a></li>
+          <li><a href="server-side/Docker.md#create-container" target="_blank">컨테이너 생성하기</a></li>
+          <li><a href="server-side/Docker.md#change-container" target="_blank">컨테이너 이름 변경</a></li>
+          <li><a href="server-side/Docker.md#control-container" target="_blank">컨테이너 시작/중단하기</a></li>
+          <li><a href="server-side/Docker.md#images" target="_blank">도커 이미지 조회하기</a></li>
+          <li><a href="server-side/Docker.md#ps" target="_blank">도커 컨테이너 조회하기</a></li>
+          <li><a href="server-side/Docker.md#exec-imageid-bash" target="_blank">bash모드로 컨테이너 진입</a></li>
+          <li><a href="server-side/Docker.md#rm-container" target="_blank">컨테이너 삭제</a></li>
+          <li><a href="server-side/Docker.md#rmi-image" target="_blank">이미지 삭제</a></li>
+          <li><a href="server-side/Docker.md#compose" target="_blank">Docker Compose</a></li>
+            <li><a href="server-side/Docker.md#volume" target="_blank">Docker Volume</a></li>
         </ul>
       </details>
     </li>
     <li>
     <details>
-        <summary><a href="DevOps/Jenkins.md" target="_blank">Jenkins</a></summary>
+        <summary><a href="server-side/Jenkins.md" target="_blank">Jenkins</a></summary>
         <ul>
-            <li><a href="DevOps/Jenkins.md#overview" target="_blank">Jenkins란?</a></li>
-            <li><a href="DevOps/Jenkins.md#initialized" target="_blank">CentOS 실행하고 환경 구축하기</a></li>
-            <li><a href="DevOps/Jenkins.md#install" target="_blank">Jenkins 설치하기</a></li>
-            <li><a href="DevOps/Jenkins.md#start" target="_blank">Systemctl로 Jenkins 실행하기</a></li>
+            <li><a href="server-side/Jenkins.md#overview" target="_blank">Jenkins란?</a></li>
+            <li><a href="server-side/Jenkins.md#initialized" target="_blank">CentOS 실행하고 환경 구축하기</a></li>
+            <li><a href="server-side/Jenkins.md#install" target="_blank">Jenkins 설치하기</a></li>
+            <li><a href="server-side/Jenkins.md#start" target="_blank">Systemctl로 Jenkins 실행하기</a></li>
+        </ul>
+    </details>
+    </li>
+    <li>
+    <details>
+        <summary><a href="server-side/ELK.md" target="_blank">ELK</a></summary>
+        <ul>
+            <li><a href="server-side/ELK.md#overview" target="_blank">ELK 개념및 구성</a></li>
+          	<ul>
+            	<li><a href="server-side/ELK.md#overview-es">Elastic Search</a></li>
+              <li><a href="server-side/ELK.md#overview-kibana">Kibana</a></li>
+              <li><a href="server-side/ELK.md#overview-beats">Beats</a></li>
+          	</ul>
+            <li><a href="server-side/ELK.md#features" target="_blank">ElasticSearch 주요개념</a></li>
         </ul>
     </details>
     </li>
@@ -291,7 +305,7 @@
       <details>
         <summary><a href="front-side/html.md" target="_blank">HTML</a></summary>
         <ul>
-          <li><a href="front-side/html.md#datails" target="_blank">details</a></li>
+          <li><a href="front-side/html.md#details" target="_blank">details</a></li>
         </ul>
       </details>
     </li>
