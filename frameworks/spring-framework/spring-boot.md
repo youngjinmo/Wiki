@@ -81,7 +81,33 @@ public @interface SpringBootApplication {
 
 <br>
 
-`@SpringBootApplication` 어노테이션은 위 3가지 어노테이션의 조합이다.
+`@SpringBootApplication` 어노테이션은 위 3가지 **어노테이션의 조합**이다.
+
+<br>
+
+### SpringBootApplication <span style="color: red;">패키지 경로</span> 주의할 것!
+
+또 하나, 패키지 hierarchy를 구성하면서 SpringBootApplication 실행 클래스를 다른 경로로 둔 실수를 공유한다.
+
+아래 이미지가 처음 작성한 프로젝트 패키지 경로이다.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3c0Hkc7PJIePEHW-hfUZuhzz587GdEmdalBU37y2AKBkUb5AjF5rYowQwuyo-Ismdt1hZh2zrYyFclOOJHZ1aBU9z2uQiM-HDD-3E1EsnF8fomRxpXG153VLkYqkXJZxSqr11G4qa4vF5osRgNUjg4B5w=w720-h480-no?authuser=0)
+
+위의 패키지 구조로 톰캣을 실행해서 postman으로 api를 확인했다. 
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3dbuFEH9OuQJHg_B3vzDYh9DzKCxTejY8EYRj88Scv9-v_C0Gc8Ub9bA2XWnDNPFw96k1q4E9mpG69aT8DD7p72dzsvO-LP83p4r-IQjWB7bK5URD8gS2WTxmNnHOot_M7D1EnZMXRAqW5NcuoyfxN9qw=w1442-h903-no?authuser=0)
+
+그런데 index페이지가 작동하고, 나머지 페이지는 모두 404 에러가 발생했다. 컨트롤러가 리소스를 제대로 못찾고 있는 것이다.
+
+아무리 찾아도 이해를 못하다가 다른 분이 작성한 프로젝트의 패키지 경로를 보고 내가 잘못 생성했음을 인지했다. 이번엔 계층구조를 아래처럼 수정해보았다.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3ey8sxu7uKzX79qr_KYDn3FgNPBFU366cDpi9a3r1mfnm_M_iraKM2oy5jiGmIwRAKTqSMe8G9ea9JFEOqMCvpmfAq2SgR3h0j38agC0Pym4sHp4EwoL-fhMgVHWTC6sCcKdRVFGZ8_oe419oR7JcwUFw=w720-h480-no?authuser=0)
+
+그리고 톰캣을 다시 실행해서 postman으로 확인했다.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3cMBKPol7vETGyScZSSYVstRXi7etY4mMXyzRZiQYfi40BgvRqIV-uU8ZyEbXRw2Yo83eeUF5RaospGXyjpJhZj29vFLm0xE5SxSEQV-AFLeyDH1f4x7GRossMoF12SIivjTSKPlxrV0hi5IIHyxYh-sA=w1442-h903-no?authuser=0)
+
+패키지 계층 구조를 달리하니 API가 정상적으로 작동하는 것을 확인했다.
 
 <br>
 

@@ -1,4 +1,4 @@
-# TIL
+# Wiki
 
 ![image](resources/image.jpg)
 
