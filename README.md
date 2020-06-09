@@ -136,6 +136,7 @@
           		<summary><a href="server-side/spring/junit5.md" target="_blank">JUnit 5</a></summary>
               <ul>
                 <li><a href="server-side/spring/junit5.md#components" target="_blank">JUnit 5의 구성</a></li>
+                <li><a href="server-side/spring/junit5.md#run-test" target="_blank">테스트 실행하기</a></li>
                 <li><a href="server-side/spring/junit5.md#annotations" target="_blank">기본 어노테이션</a></li>
               </ul>
             </details>

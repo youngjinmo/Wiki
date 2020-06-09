@@ -1,4 +1,4 @@
-#JUnit 5
+# JUnit 5
 
 평소 유튜브에서 구독중인 박재성님으로부터 TDD(Test Driven Development)에 대한 중요성을 많이 들었고, 항상 관심은 있었지만 실행을 하지 못하고 있었다. 그러다가 이동욱님이 집필하신 스프링부트와 AWS로 혼자 구현하는 웹 서비스를 읽으면서 TDD를 제대로 배우고, 경험해야겠다는 생각이 들었다. 
 
@@ -13,7 +13,9 @@
 ## ToC
 
 - [JUnit 5의 구성](#components)
+- [테스트 실행하기](#run-test)
 - [기본어노테이션](#annotaions)
+- [테스트 코드 이름 설정하기](#generate-name)
 
 <br>
 
@@ -55,6 +57,24 @@ Spring Boot 2.2 부터는 spring-boot-start-test를 통해 JUnit5가 기본제�
     <scope>test</scope>
 </dependency>
 ~~~
+
+<br>
+
+## <a name="run-test"></a>테스트 실행하기
+
+의미없는 클래스 하나를 작성하고, 해당 클래스에 마우스 커서를 올려두고, 우클릭을 하면 아래와 같이 테스트 클래스를 생성할 수 있다.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3efJk4qADiopPkU6voVLZX3lacfFesHpfWyzSzTHTK820-F0si9Xmt-m4KSIAp920COrXuD9PJ6-n71Emz4yc_9odXLiVyAgt7d6vDu_uulnFphPblvu-IyEe4ppaZUVLGNxp1S6Y4no3C4jm4KyxlaEw=w1442-h1189-no?authuser=0)
+
+또는 단축키를 이용하여 빠르게 테스트를 생성할 수도 있다.
+
+Intelli J, 맥(MacOS)환경에서는 Command + Shift + T를 입력하면 된다.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3dE5LXghicQ0INo-qKGP9UAvJL5LUXsVfQsPqEvx9hEIkK8ZPut27YhzrLSQMuiOLho6iCfO40lMosPKsqgybbG11luBKV_5nfDEXq_XWXnnYRXA8CPhFShY9pym7MqrbSomBPkaTdMuaXGrnZrR26bvg=w1137-h721-no?authuser=0)
+
+그럼 이렇게 테스트 클래스 이름을 설정하는 창이 뜨는데, 일반적으로 클래스 이름 뒤에 Test를 붙여서 테스트 클래스를 만든다.
+
+<img src="https://lh3.googleusercontent.com/pw/ACtC-3coc4LG_iImBLtqeCPtDnncq8O4CbtZuigrYx67oKKrOCr_uKUjnXQNPlH-El7DNX-CPkgKpiEnOdA61FRGuww1kknEGwR3tjoYzWoH78MsBYhcIx34tWJne50q6tKqkhh_DscspebCakOi5k5fgbuIlA=w1103-h919-no?authuser=0" style="zoom:50%;" />
 
 <br>
 
