@@ -100,7 +100,94 @@ Intelli J, 맥(MacOS)환경에서는 Command + Shift + T를 입력하면 된다.
 
 <br>
 
-## DisplayNameGeneration
+위의 어노테이션들이 각각 어떻게 실행되는지 직접 테스트 코드를 생성하고, 실행해보자.
+
+~~~java
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+class HelloTestTest {
+
+    @Test
+    void create_test_1(){
+        HelloTest helloTest = new HelloTest();
+        assertNotNull(helloTest);
+        System.out.println("Create1");
+    }
+
+    @Test
+    void create_test_2(){
+        System.out.println("Create2");
+    }
+
+    // 모든 테스트가 시작되기 전에 한 번 실행.
+    // static void 로만 사용 가능
+    @BeforeAll
+    static void before_all(){
+        System.out.println("BeforeAll");
+    }
+
+    // 모든 테스트가 실행된 이후에 한 번 실행.
+    @AfterAll
+    static void after_all(){
+        System.out.println("AfterAll");
+    }
+
+    // 모든 테스트를 실행할 때, 각각의 테스트가 실행하기 전에 1회 실행
+    @BeforeEach
+    void before_each(){
+        System.out.println("BeforeEach");
+    }
+
+  	// 모든 테스트를 실행할 때, 각각의 테스트가 실행하기 후에 1회 실행
+    @AfterEach
+    void after_each(){
+        System.out.println("AfterEach");
+    }
+
+}
+~~~
+
+위의 테스트 코드를 실행하면 콘솔에 아래와 같이 출력된다.
+
+~~~
+BeforeAll
+
+BeforeEach
+Create1
+AfterEach
 
 
+BeforeEach
+Create2
+AfterEach
+
+AfterAll
+
+Process finished with exit code 0
+~~~
+
+`@BeforeAll`는 모든 테스트 코드가 실행되기 전에 실행된걸 확인할 수 있으며, 반대로 `@AfterAll` 은 모든 테스트 코드가 끝나고 마지막에 실행되는걸 확인할 수 있다.
+
+`@BeforeEach` 는 테스트 메서드가 실행되기 전에 각각 1회씩, 그리고 `@AfterEach`는 테스트 메서드가 실행된 후에 1회씩 실행된걸 확인할 수 있다.
+
+<br>
+
+## <a name="generate-name"></a>테스트 코드 이름 설정하기
+
+테스트로 이름을 설정하는 방법은 두 가지가 있다. 클래스 위에 명시함으로써 해당 클래스내 모든 테스트 메서드의 이름을 설정하는 방법과 각 테스트 메서드마다 임의로 이름을 설정하는 방법이다.
+
+먼저 클래스에 설정하는 방법을 알아보자. 
+
+클래스 위에 `@DisplayNameGeneration()` 을 입력하면, 테스트 메서드마다 이름을 설정하는데 강의에선 파라미터로 `DisplayNameGenerator.ReplaceUnderscores.class`를 주입하여 `_`로 구분한 영역을 공백으로 치환하여 테스트를 실행해준다.
+
+아직 `@DisplayNameGeneration()`을 적용하기 전의 모습이다.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3dIXjwZUhS_QT7Gft7wmtVT3Xpx61I0NJhB8bQylMNylJAz5boGOH2gFWPPbojCcBuUdlbTW6aPV1vczH_2grxxLwbP69SJmpyCZ7sigCZPg7EMnimvGHo2pr96jgWsYVstCGjxWYalXFl2DQWMIhI4xA=w1442-h1158-no?authuser=0)
+
+
+
+ `@DisplayNameGeneration()` 을 적용하고 나서는 테스트 메서드의 이름에서 `_` 가 공백으로 바뀌어 가독성이 조금 더 향상된걸 확인할 수 있다.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3evyIg7Q7DY9O2zo0exQrcFIScRGE8C2NbPVrLSFn9ez6bVNTYeqcTxJ08TIy-35nr2ET2MhlplgX7F_njQ7u8HquDcg2o5Jc62VwPkKtgtlNTpTXkj0KOOsidxGAhISiv297-biksAdTLPOAgwDkjEtQ=w1442-h903-no?authuser=0)
 
