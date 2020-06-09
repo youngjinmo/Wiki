@@ -34,7 +34,7 @@
           <li><a href="languages/java.md#switch" target="_blank">switch문</a></li>
           <li><a href="languages/java.md#for-loop" target="_blank">for문</a></li>
           <li><a href="languages/java.md#for-each" target="_blank">for each문</a></li>
-          <li><a href="languages/java.md#collection-frameworks" target="_blank">컬렉션 프레임워크</a></li>
+          <li><a href="languages/java.md#collection-server-side" target="_blank">컬렉션 프레임워크</a></li>
           <ul>
             <li><a href="languages/java.md#collection-set" target="_blank">Set</a></li>
             <li><a href="languages/java.md#collection-list" target="_blank">List</a></li>
@@ -93,50 +93,50 @@
   </ul>
 </details>
 <details>
-  <summary>Frameworks</summary>
+  <summary>Server-Side</summary>
   <ul>
     <li>
       <details>
-      <summary><a href="https://github.com/youngjinmo/TIL/tree/master/frameworks/spring">Spring Framework</a></summary>
+      <summary><a href="https://github.com/youngjinmo/TIL/tree/master/server-side/spring">Spring Framework</a></summary>
       	<ul>
     			<li>
           	<details>
-          		<summary><a href="frameworks/spring/spring-boot.md" target="_blank">Spring Boot</a></summary>
+          		<summary><a href="server-side/spring/spring-boot.md" target="_blank">Spring Boot</a></summary>
               <ul>
-                <li><a href="frameworks/spring/spring-boot.md#feature" target="_blank">Spring Boot 특징</a></li>
-                <li><a href="frameworks/spring/spring-boot.md#config" target="_blank">Spring Boot auto-configuration</a></li>
-                <li><a href="frameworks/spring/spring-boot.md#error" target="_blank">에러페이지 핸들링</a></li>
-                <li><a href="frameworks/spring/spring-boot.md#get-mapping-multi" target="_blank">@GetMapping 어노테이션으로 다중맵핑하기</a></li>
-                <li><a href="frameworks/spring/spring-boot.md#h2-databse" target="_blank">h2 데이터베이스 마이그레이션</a></li>
-                <li><a href="frameworks/spring/spring-boot.md#datasource-autocofig" target="_blank">DB 에러발생 무시하고 프로젝트 실행하기</a></li>
-                <li><a href="frameworks/spring/spring-boot.md#gradlew-version" target="_blank">Gradle 버전확인하는 법</a></li>
-                <li><a href="frameworks/spring/spring-boot.md#upgrade-gradle" target="_blank">프로젝트에서 Gradle 버전 올리기</a></li>
-                <li><a href="frameworks/spring/spring-boot.md#gradle-which-version" target="_blank">Gradle 다운그레이드</a></li>
+                <li><a href="server-side/spring/spring-boot.md#feature" target="_blank">Spring Boot 특징</a></li>
+                <li><a href="server-side/spring/spring-boot.md#config" target="_blank">Spring Boot auto-configuration</a></li>
+                <li><a href="server-side/spring/spring-boot.md#error" target="_blank">에러페이지 핸들링</a></li>
+                <li><a href="server-side/spring/spring-boot.md#get-mapping-multi" target="_blank">@GetMapping 어노테이션으로 다중맵핑하기</a></li>
+                <li><a href="server-side/spring/spring-boot.md#h2-databse" target="_blank">h2 데이터베이스 마이그레이션</a></li>
+                <li><a href="server-side/spring/spring-boot.md#datasource-autocofig" target="_blank">DB 에러발생 무시하고 프로젝트 실행하기</a></li>
+                <li><a href="server-side/spring/spring-boot.md#gradlew-version" target="_blank">Gradle 버전확인하는 법</a></li>
+                <li><a href="server-side/spring/spring-boot.md#upgrade-gradle" target="_blank">프로젝트에서 Gradle 버전 올리기</a></li>
+                <li><a href="server-side/spring/spring-boot.md#gradle-which-version" target="_blank">Gradle 다운그레이드</a></li>
               </ul>
             </details>
           </li>
           <li>
           	<details>
-          		<summary><a href="frameworks/spring/spring-security.md" target="_blank">Spring Security</a></summary>
+          		<summary><a href="server-side/spring/spring-security.md" target="_blank">Spring Security</a></summary>
               <ul>
-                <li><a href="frameworks/spring/spring-security.md#oatuh2" target="_blank">OAuth2</a></li>
+                <li><a href="server-side/spring/spring-security.md#oatuh2" target="_blank">OAuth2</a></li>
               </ul>
             </details>
           </li>
           <li>
             <details>
-              <summary><a href="frameworks/spring/jpa.md" target="_blank">JPA</a></summary>
+              <summary><a href="server-side/spring/jpa.md" target="_blank">JPA</a></summary>
               <ul>
-                <li><a href="frameworks/spring/jpa.md#hibernate" target="_blank">Hibernate</a></li>
+                <li><a href="server-side/spring/jpa.md#hibernate" target="_blank">Hibernate</a></li>
               </ul>
             </details>
           </li>
           <li>
           	<details>
-          		<summary><a href="frameworks/spring/junit5.md" target="_blank">JUnit 5</a></summary>
+          		<summary><a href="server-side/spring/junit5.md" target="_blank">JUnit 5</a></summary>
               <ul>
-                <li><a href="frameworks/spring/junit5.md#components" target="_blank">JUnit 5의 구성</a></li>
-                <li><a href="frameworks/spring/junit5.md#annotations" target="_blank">기본 어노테이션</a></li>
+                <li><a href="server-side/spring/junit5.md#components" target="_blank">JUnit 5의 구성</a></li>
+                <li><a href="server-side/spring/junit5.md#annotations" target="_blank">기본 어노테이션</a></li>
               </ul>
             </details>
           </li>
@@ -145,22 +145,17 @@
     </li>
     <li>
       <details>
-        <summary><a href="frameworks/django.md" target="_blank">Django</a></summary>
+        <summary><a href="server-side/django.md" target="_blank">Django</a></summary>
         <ul>
-          <li><a href="frameworks/django.md#mtv" target="_blank">MTV</a></li>
-          <li><a href="frameworks/django.md#virtualenv" target="_blank">virtualenv</a></li>
-          <li><a href="frameworks/django.md#start-django" target="_blank">Django 실행환경 구성하기</a></li>
-          <li><a href="frameworks/django.md#startproject" target="_blank">start project</a></li>
-          <li><a href="frameworks/django.md#migrate" target="_blank">데이터베이스 마이그레이션</a></li>
-          <li><a href="frameworks/django.md#runserver" target="_blank">서버 실행하기</a></li>
+          <li><a href="server-side/django.md#mtv" target="_blank">MTV</a></li>
+          <li><a href="server-side/django.md#virtualenv" target="_blank">virtualenv</a></li>
+          <li><a href="server-side/django.md#start-django" target="_blank">Django 실행환경 구성하기</a></li>
+          <li><a href="server-side/django.md#startproject" target="_blank">start project</a></li>
+          <li><a href="server-side/django.md#migrate" target="_blank">데이터베이스 마이그레이션</a></li>
+          <li><a href="server-side/django.md#runserver" target="_blank">서버 실행하기</a></li>
         </ul>
       </details>
     </li>
-  </ul>
-</details>
-<details>
-  <summary>Server-Side</summary>
-  <ul>
     <li>
       <details>
         <summary><a href="server-side/Linux.md" target="_blank">Linux</a></summary>
