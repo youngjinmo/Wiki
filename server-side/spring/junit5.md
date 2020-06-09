@@ -191,3 +191,10 @@ Process finished with exit code 0
 
 ![](https://lh3.googleusercontent.com/pw/ACtC-3evyIg7Q7DY9O2zo0exQrcFIScRGE8C2NbPVrLSFn9ez6bVNTYeqcTxJ08TIy-35nr2ET2MhlplgX7F_njQ7u8HquDcg2o5Jc62VwPkKtgtlNTpTXkj0KOOsidxGAhISiv297-biksAdTLPOAgwDkjEtQ=w1442-h903-no?authuser=0)
 
+<br>
+
+이번엔 각 메서드마다 테스트 이름을 설정하는 방법인데, 백기선님께서는 `@DisplayNameGeneration()` 보다 `@DisplayName()`을 사용하는걸 추천하셨다.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3fco-Zk-uU2Va5yfaLfCTZFnbdhraD9FaQuUQPp1pmvxbRmA1gfQTToIn9_mlCfSjxWo_NUm-35R_qFKtfbByWKCdprSyn3Uy6fSW93KnOunnmWTUTzZbbJEneQXC0AnvXZYD4O71NtLG4n1rRgiNXDpQ=w1442-h944-no?authuser=0)
+
+`@DisplayName`을 사용하니까 훨씬 직관적으로 표현할 수 있는것 같다.
