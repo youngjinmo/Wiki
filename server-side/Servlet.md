@@ -6,7 +6,7 @@
 
 일반적으로 JSP 와 같은 템플릿 엔진으로 웹 페이지를 구성하고, 프로그래밍 로직은 서블릿으로 구현한다.
 
-### Servlet 만들어보기
+## <a name="tutorial"></a>Servlet 만들어보기
 
 **프로젝트(Dynamic Web Project) 생성하기**
 
@@ -22,7 +22,7 @@
 
 ![](https://lh3.googleusercontent.com/pw/ACtC-3d7U5AOmeMcSWTnBMQk0-S2cDNLYNYeMa74m4yWO1v4TwSuKAdgBXWgusWOWlBAJrPt2ow6yjvY6VVDAo5cvrnp3yzlECxyCegqVGXT5qnvQ03SwsTcPqtVWCslGwuwUNroepVnWpse4c0mFEWrJ-fXrg=w1442-h731-no?authuser=0)
 
- 프로젝트가 생성되었으니 이제 프로젝트에서 서블릿 클래스를 생성할 차례이다. src 디렉토리 하위에 패키지를 하나 생성하고(생성하지 않아도 상관은 없다. default package가 생성될 것이다.) 생성된 패키지 하위에 [New] - [Web] - [Servlet]을 선택해서 서블릿 클래스를 생성한다. 
+ 프로젝트가 생성되었으니 이제 프로젝트에서 서블릿 클래스를 생성할 차례이다. src 디렉토리 하위에 패키지를 하나 생성하고(생성하지 않아도 상관은 없다. default package가 생성될 것이다.) 생성된 패키지 하위에 **[New] - [Web] - [Servlet]**을 선택해서 서블릿 클래스를 생성한다. 
 
 
 
@@ -53,7 +53,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 }
 ~~~
 
-그리고 서버를 실행하면, 브라우저가 자동으로 실행되며 다음과 같은 화면을 뿌려줄 것이다.
+그리고 서버를 실행하면, 브라우저가 자동으로 실행되며 다음과 같은 화면을 뿌려줄 것이다. 서버를 실행할 때 어떤 서버에서 실행할지 실행환경을, 즉 WAS를 물어보는데 이 때 서버를 선택하고 Next로 넘어가면 된다. 아래 Always user thie server 라는 체크박스를 체크하면, 다음부터 서블릿을 실행하면 자동으로 해당 WAS로 서블릿을 실행하게 된다. 
 
 ![](https://lh3.googleusercontent.com/pw/ACtC-3fyvjOK-IiC_a3kqWJ8ExHTcV4hP0Y-vttBTsg7tIgiv2me8cqnk96tQzmODde_v23teU-3Rnx9FRy4DkGAffzOzTphHO6Pf2ZMo673j2WxFXMUtx7fbTtyGgMUUgcyG0lJsoTZdtWx2nMZjPpUHtZAkw=w1442-h828-no?authuser=0)
 
@@ -71,7 +71,29 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 http://localhost:8080/{project-name}/{class-name}
 ~~~
 
-위의 주소로 입력하면, 내장 톰캣 서버가 해당 요청에 맞는 응답을 뿌려주는 건데, 아까 java 소스에서`@WebServlet("/HelloServlet")` 이라는 어노테이션을 봤을텐데, 이 URI로 요청이 들어오면, doGet()이 실행되며 웹 서버가 응답을 하게 된 것이다.
+위의 주소로 입력하면, 내장 톰캣 서버가 해당 요청에 맞는 응답을 클라이언트로 response하는 건데, 이 과정은 다음과 같다.
+
+서블릿 클래스에서`@WebServlet("/HelloServlet")` 이라는 어노테이션을 작성하면, 어노테이션의 파라미터로 들어간 URI("/HelloServlet")로 접속을 하면, 서블릿 클래스에 작성된 로직이 실행되는 것이다. 그리고 이 서블릿 클래스 중에서도 `doGet()`에 작성된 로직이 웹 서버에 요청되면서 아까 PrinterWriter 객체로 작성한 html 코드가 브라우저로 반환된 것이다.
+
+
+
+**파라미터 추가하기**
+
+URI에 인자값을 붙여서 응답받을 수도 있다. `doGet()`에서 **HttpServletRequest** 객체의 `getParameter()`를 이용하면 URI로 넘어오는 인자값을 서버에서 받아서 처리할 수 있게 된다.
+
+~~~java
+String name = request.getParameter("name");
+~~~
+
+위의 코드를 doGet()에 추가하고, 다시 서버를 실행한 뒤 브라우저 창에 아래처럼 URL을 요청해보자 
+
+~~~
+http://localhost:8080/{project-name}/{class-name}?name={your-name}
+~~~
+
+그럼 이렇게 요청받은 인자값을 서버에서 받아서 다시 화면에 출력한 걸 확인할 수 있다.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3c2y7yWuFE2xynmetTmsFmQc3KGwF1YIWbpIbpZwEVS6MDrb_DUR1SaPDG0DYkACXKCve2UpCF2QEJBiBGWIASe8HyjjyxjOYbH6xpE0uONEKhv_naItNbUPTX1ophkwFwhamZ4QzPRfq4hL6X3XgQYug=w1120-h348-no?authuser=0)
 
 
 
