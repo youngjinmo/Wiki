@@ -5,6 +5,7 @@
 - [Homebrew](#homebrew)
 - [tree 패키지](#package-tree)
 - [Xcode 대신 Command Line Tools 사용하기](#commandlinetools)
+- [스크린샷](#screenshots)
 - [xcrun error](#xcrun-error)
 - [특정포트 사용중인 프로세스 종료하기](#killproc)
 - [한글 깨진 파일 UTF-8 변환해서 복구하기 (iconv)](#iconv)
@@ -106,6 +107,22 @@ xcode-select --install
 ~~~
 
 출처 : [백투더맥 - Xcode없이 맥에 '명령어 라인도구(Command Line Tools)'를 설치하는 방법](https://macnews.tistory.com/4243)
+
+<br>
+
+## <a name="screenshots"></a>스크린샷
+
+### 전체 스크린샷하기
+
+<img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/accessories/Keyboards/mac-key-combo-diagram-shift-command-3.png" style="zoom:50%; display:block; margin-left:0px;" />
+
+### 화면 일부 스크린샷하기
+
+<img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/accessories/Keyboards/mac-key-combo-diagram-shift-command-4.png" style="zoom:50%; display:block; margin-left:0px;" />
+
+### 윈도우(창) 기준으로 스크린샷하기
+
+<img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/accessories/Keyboards/mac-key-combo-diagram-shift-command-4-space.png" style="zoom:50%; display:block; margin-left:0px;" />
 
 <br>
 
