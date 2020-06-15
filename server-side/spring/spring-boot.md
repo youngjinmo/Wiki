@@ -2,6 +2,7 @@
 
 - [SpringBoot 특징](#feature)
 - [Spring Boot auto-configuration](#config)
+- [빌드툴(Maven/Gradle)이 하는 일](#build-tools)
 - [에러페이지 핸들링](#error)
 - [@GetMapping 어노테이션으로 다중맵핑하기](#get-mapping-multi)
 - [h2 데이터베이스 마이그레이션](#h2-databse)
@@ -111,6 +112,29 @@ public @interface SpringBootApplication {
 
 <br>
 
+## <a name="build-tools"></a>빌드툴(Maven/Gradle)이 하는 일
+
+Maven, Gradle같은 빌드 툴은 아래의 역할을 순차적으로 수행한다.
+
+- **Manage libraries.**
+  - 프로그램에 필요한 라이브러리들을 관리한다.
+- **Build program. (Compile source into binary)**
+  - 프로그램을 컴파일하고, 지정된 디렉토리에 resource를 모아서 프로그램을 빌드한다. 이 때 필요한 라이브러리가 있을 경우, 파일을 설치하기도 한다.
+- **Test and run.**
+  - 빌드가 끝나면 프로그램의 실행 전, 테스트를 진행한다. 테스트가 끝나면, 비로서 프로그램을 실행한다. 
+- **Deployment**
+  - 빌드한 프로그램을 배포하는 기능을 제공한다.
+
+
+
+**같이 읽어보면 좋을 글**
+
+- [Stackoverflow - What is a build tool?](https://stackoverflow.com/questions/7249871/what-is-a-build-tool)
+
+- [별의역사 - 빌드 툴(Build Tool)](https://starrykss.tistory.com/276)
+
+<br>
+
 ## <a name="error"></a>에러페이지 핸들링 (a.k.a 404 페이지 커스터마이징)
 
 솔직히 이걸 현재의 수준으로 작성해도 될지 자신없으나.. 일단 **"기록"**에 의미를 두며 남겨본다. 혹시나 다른 분들이 이 부분을 보시게된다면, 그냥 건너띄시거나 구글에서 다른 글을 자세히 읽어보시길 꼭 권한다.
@@ -217,8 +241,6 @@ spring.datasource.username=sa
 spring.datasource.password=
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ~~~
-
-
 
 이제 데이터베이스가 사용가능하며, `localhost:8080/h2-console` 에서 대시보드를 이용할 수도 있다.
 

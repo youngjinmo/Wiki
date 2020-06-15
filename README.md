@@ -113,6 +113,7 @@
               <ul>
                 <li><a href="server-side/spring/spring-boot.md#feature" target="_blank">Spring Boot 특징</a></li>
                 <li><a href="server-side/spring/spring-boot.md#config" target="_blank">Spring Boot auto-configuration</a></li>
+                <li><a href="server-side/spring/spring-boot.md#build-tools" target="_blank">빌드툴(Maven/Gradle)이 하는 일</a></li>
                 <li><a href="server-side/spring/spring-boot.md#error" target="_blank">에러페이지 핸들링</a></li>
                 <li><a href="server-side/spring/spring-boot.md#get-mapping-multi" target="_blank">@GetMapping 어노테이션으로 다중맵핑하기</a></li>
                 <li><a href="server-side/spring/spring-boot.md#h2-databse" target="_blank">h2 데이터베이스 마이그레이션</a></li>
