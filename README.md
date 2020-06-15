@@ -335,6 +335,15 @@
         </ul>
       </details>
     </li>
+    <li>
+      <details>
+        <summary><a href="front-side/ajax.md" target="_blank">Ajax</a></summary>
+        <ul>
+          <li><a href="front-side/ajax.md#status" target="_blank">HttpStatus 코드를 반환하고 싶을때</a></li>
+          <li><a href="front-side/ajax.md#text" target="_blank">html 코드를 반환하고 싶을 때</a></li>
+        </ul>
+      </details>
+    </li>
   </ul>
 </details>
 <details>
