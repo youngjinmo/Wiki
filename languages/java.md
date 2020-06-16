@@ -10,7 +10,8 @@
 - [enum](#enum)
 - [Wrapper Class](#wrapper-class)
 - [Scanner](#scanner)
-- [Date](#java-date)
+- [Date](#date)
+- [Calendar](#calendar)
 - [Javadoc](#javadoc)
 - [Math](#math)
 - [length, length(), size()](#length)
@@ -499,7 +500,7 @@ char c = s.charAt(0);
 
 <br>
 
-## <a name="java-date"></a>Date 객체
+## <a name="date"></a>Date 객체
 
 날짜를 출력하는 객체이다.
 
@@ -534,13 +535,57 @@ class date_tutorial {
     SimpleDateFormat clock = 
       new SimpleDateFormat("a hh시 mm분 ss초");
     
-    System.out.println("서버 실행한 날짜는 "+date.format(day));
-    System.out.println("서버 실행한 시각은 "+clock.format(day));
+    String serverDate = date.format(day);
+    String serverClock = clock.format(day);
+    
+    System.out.println("서버 실행한 날짜는 "+serverDate);
+    System.out.println("서버 실행한 시각은 "+serverClock);
   }
 }
 ```
 
 ![](http://www.mediafire.com/convkey/78db/kx7v4ezlus1w9xnzg.jpg)
+
+<br>
+
+## <a name="calendar"></a>Calendar
+
+`Calendar` 객체는 `date` 객체가 갖고있지 않은 지역화를 해결하기 위해 jdk1.1에 추가된 클래스이다. 
+
+~~~java
+Calendar cal = Calendar.getInstance();
+~~~
+
+`Calendar`에서 날짜 타입을 사용하기 위해서는 `Calendar.get()`을 사용해야 한다.
+
+이를 이용하여 오늘 날짜를 알아내는 방법은 다음과 같다.
+
+~~~java
+int year = cal.get(Calendar.YEAR);
+int month = cal.get(Calendar.MONTH)+1;
+int day = cal.get(Calendar.DAY_OF_MONTH);
+
+String today = year+"년 "+month+"월 "+day+"일";
+System.out.println("오늘날짜는 "+today+"입니다.");
+~~~
+
+<img src="https://lh3.googleusercontent.com/pw/ACtC-3fGjy3BTpbL7mhKdnmk0UyfmtyAbnP5Uy7Knf2pDFgTDmh0ToAWK8McvEsMNZN6olqFOBGtMDuxbejzGm4S9Pc_dArVwz8aiDIwT1f_cHKjEgZvg4nYmbsYWtaLnSfMNCvOok7rP_dWCuQSd10L7Xt7LQ=w1086-h854-no?authuser=0" style="zoom:50%;" />
+
+
+
+연산을 할 수도 있는데, 위에서 가져온 현재 날짜에서 100 일 뒤의 날짜를 연산해보겠다.
+
+~~~java
+cal.add(cal.DATE, -100);
+int year = cal.get(Calendar.YEAR);
+int month = cal.get(Calendar.MONTH)+1;
+int day = cal.get(Calendar.DAY_OF_MONTH);
+
+String afterHundred = year+"년 "+month+"월 "+day+"일";
+System.out.println("오늘로부터 100일 뒤는 "+afterHundred+"입니다.");
+~~~
+
+<img src="https://lh3.googleusercontent.com/pw/ACtC-3fsjQEVHR08buNbvm9Iuy-tnZ8e5XFLwDleRavsrmLrD_3i9X9QmZlnfkk66Oa52S5VCf8v7sh_t3Q_Xtl9dFaG8It-BuM8CeDeavtKk-3gnfV1xSd8ONgQ_mQKA4g106T417kI_3mIedW-SBdq7gi2ug=w1366-h604-no?authuser=0" style="zoom:50%;" />
 
 <br>
 

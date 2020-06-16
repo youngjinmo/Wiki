@@ -24,6 +24,7 @@
           <li><a href="languages/java.md#wrapper-class" target="_blank">Wrapper Class</a></li>
           <li><a href="languages/java.md#scanner" target="_blank">Scanner</a></li>
           <li><a href="languages/java.md#date" target="_blank">Date</a></li>
+          <li><a href="languages/java.md#calendar" target="_blank">Calendar</a></li>
           <li><a href="languages/java.md#javadoc" target="_blank">JavaDoc</a></li>
           <li><a href="languages/java.md#math" target="_blank">Math</a></li>
           <li><a href="languages/java.md#length" target="_blank">length, length(), size()</a></li>
