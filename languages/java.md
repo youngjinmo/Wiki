@@ -985,8 +985,6 @@ public class DevAndy {
 
 <img src="https://lh3.googleusercontent.com/pw/ACtC-3fwT2lcpmOz7AI6nZoxHA0je5piINwQA-sbF7966RnJKuXD1oA7t9n7Gz6PnjcMUzOY4mE8eLoh-EduYkGzuJAIYssbP_uSenZwkisRjKZuX3EAn2ZQ4Hih75J7d7tMzWF58ik83xPASCEaG3CQaTAN9w=w784-h262-no?authuser=0" style="zoom:50%;" />
 
-<br>
-
 위의 코드처럼 배열을 받아서 다른 배열에 값을 부여할 땐 for each문을 사용해서 아래의 형식의 보다 단순한 조건절을 사용할 수 있다.
 
 ~~~java
@@ -1069,6 +1067,8 @@ public class setExam {
 Set은 중복을 허용하지 않기 때문에 set.add("kami")를 두번 했음에도 불구하고, set에는 한번만 들어간걸 확인할 수 있다.
 
 그리고 hello, world, kami 순으로 add하였지만, 출력시엔 그 반대로 kami, world, hello로 출력되는걸로 보아 **Set 인터페이스는 FILO(First In Last Out)의 Stack 형태의 자료구조**로 추정된다.
+
+추가로 컬렉션 프레임워크(Set, List, Map)에서는 `size()` 로 길이를 반환받을 수 있다.
 
 <br>
 

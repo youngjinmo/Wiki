@@ -2,7 +2,7 @@
 
 ![analytics](https://ga-beacon.appspot.com/UA-55365769-4/chromeskel_a/readme)
 
-![unsplash](https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80)
+<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2100&amp;q=80" alt="unsplash" style="zoom:10%;" />
 
 *Today I learned.*
 
