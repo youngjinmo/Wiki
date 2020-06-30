@@ -88,6 +88,8 @@ Local은 다시 3가지로 구분될 수 있는데, working directory와 staging
 
 ![](http://www.mediafire.com/convkey/e69e/gusd02c4xmmcvelzg.jpg)
 
+> 만약 변경사항이 있는 모든 파일을 staging하고 싶다면, <code>git add -A</code> 명령어로 한번에 staging이 가능하다.
+
 file_01.java 파일을 커밋하고 `git status` 를 확인해보니 file_01.java 파일이 사라진걸 확인할 수 있다. 커밋에 file_01.java 파일의 최신 변경사항이 반영되었기 때문에 Untracked files 목록에서 사라진 것이다. 
 
 Untracked files들은 아직 커밋을 만들지않아서 git에서 추적(tracking)하지 못하는 파일들이다.
