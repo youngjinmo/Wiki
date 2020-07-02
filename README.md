@@ -103,6 +103,10 @@
         <summary><a href="server-side/Servlet.md" target="_blank">Servlet</a></summary>
         <ul>
           <li><a href="server-side/Servlet.md#tutorial" target="_blank">Servlet 만들어보기</a></li>
+          <li><a href="server-side/Servlet.md#request-with-parameter" target="_blank">파라미터 담아서 요청하기</a></li>
+          <li><a href="server-side/Servlet.md#comparison-2-with-3" target="_blank">Servlet 2.x대와 3.x대의 차이</a></li>
+          <li><a href="server-side/Servlet.md#lifecycle" target="_blank">Lifecycle</a></li>
+          <li><a href="server-side/Servlet.md#httpservlet" target="_blank">HttpServletRequest와 HttpServletResponse</a></li>
         </ul>
       </details>
     </li>
@@ -476,3 +480,4 @@
     </li>
   </ul>
 </details>
+
