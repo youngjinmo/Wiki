@@ -10,8 +10,8 @@
 
 - [Servlet 만들어보기](#tutorial)
 - [파라미터 담아서 요청하기](#request-with-parameter)
-- [Servlet 2.x대와 3.x대의 차이](#comparison-2-with-3)
 - [Lifecycle](#lifecycle)
+- [Servlet 2.x대와 3.x대의 차이](#comparison-2-with-3)
 - [HttpServletRequest와 HttpServletResponse](#httpservlet)
 
 <br>
@@ -128,37 +128,6 @@ out.printWriter("Hello, "+name);
 
 <br>
 
-## <a name="comparison-2-with-3"></a>Servlet 2.x대와 3.x대의 차이
-
-Servlet 버전 2.0과 3.0의 작성법이 다르다고 한다. 3.0에선 `HttpServlet`을 상속받고, 어노테이션 `@WebServlet()`을 작성함으로써 간단하게 작성이 가능하지만, 2.0에선 XML 기반으로 작성해야했다.
-
-**Servlet 2.xx**
-
-~~~xml
-<servlet>
-	<description></description>
-  <display-name>myServlet</display-name>
-  <servlet-name>myServlet</servlet-name>
-  <servlet-class>edwith.myServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name></servlet-name>
-  <url-pattern>/helloservlet</url-pattern>
-</servlet-mapping>
-~~~
-
-**Servlet 3.xx**
-
-~~~java
-@WebServlet("/helloservlet")
-public class helloservlet extends HttpServlet {
-	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException { ... }
-  protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException { ... }
-}
-~~~
-
-<br>
-
 ## <a name="lifecycle"></a>Lifecycle
 
 서블릿의 생명주기 관련 메서드는 3가지가 있다. [HttpServlet](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServlet.html)의 메서드를 오버라이딩해서 확인할 수 있다.
@@ -223,7 +192,38 @@ public class LifecycleServlet extends HttpServlet {
 
 즉, destroy()가 호출되는 경우는 WAS가 죽거나 웹 애플리케이션이 종료되는 시점이다.
 
+<br>
 
+## <a name="comparison-2-with-3"></a>Servlet 2.x대와 3.x대의 차이
+
+Servlet 버전 2.0과 3.0의 작성법이 다르다고 한다. 3.0에선 `HttpServlet`을 상속받고, 어노테이션 `@WebServlet()`을 작성함으로써 간단하게 작성이 가능하지만, 2.0에선 XML 기반으로 작성해야했다.
+
+**Servlet 2.xx**
+
+~~~xml
+<servlet>
+	<description></description>
+  <display-name>myServlet</display-name>
+  <servlet-name>myServlet</servlet-name>
+  <servlet-class>edwith.myServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name></servlet-name>
+  <url-pattern>/helloservlet</url-pattern>
+</servlet-mapping>
+~~~
+
+**Servlet 3.xx**
+
+~~~java
+@WebServlet("/helloservlet")
+public class helloservlet extends HttpServlet {
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException { ... }
+  protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException { ... }
+}
+~~~
+
+<br>
 
 ## <a name="httpservlet"></a>HttpServletRequest와 HttpServletResponse
 
