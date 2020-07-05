@@ -22,6 +22,8 @@
 - [switch문](#switch)
 - [for문](#for-loop)
 - [for each문](#for-each)
+- [Enumeration 인터페이스](#enumeration)
+- [Iterator 인터페이스](#iterator)
 - [컬렉션 프레임워크](#collection-frameworks)
   - [Set](#collection-set)
   - [List](#collection-list)
@@ -1014,6 +1016,38 @@ public class DevAndy {
 ~~~
 
 결과는 똑같다.
+
+<br>
+
+## <a name="enumeration"></a>Enumeration 인터페이스
+
+[Enumeration](https://docs.oracle.com/javase/7/docs/api/java/util/Enumeration.html) 인터페이스는 Java 8에서 Iterator 인터페이스가 추가되기 전까지 사용하던 것이라고 한다. Enumeration 인터페이스는 배열의 각 element들을 한 순간에 하나씩 처리할 수 있는 메서드를 제공하는 컬렉션이다. 
+
+### Enumeration 인터페이스의 주요 메서드
+
+- **hasMoreElements()** : boolean
+  - element가 더 남아있는지 boolean 값을 반환한다.
+- **nextElement()** : E
+  - 다음 element를 열거형(E)으로 반환한다.
+
+Java 8부터 Enumeration을 대체할 수 있는 [Iterator](#iterator) 인터페이스가 추가되었다. [오라클 공식문서](https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html)에서는 아래와 같은 이유로 Enumeration 인터페이스 대신 Iterator 인터페이스를 쓰라고 권하고 있다.
+
+> NOTE : The functionality of this interface is duplicated byu the Iterator interface. In addition, Iterator adds an optional remove operation, and has shorter method names. New implementatinos should consider using iterator in preference to Enumeration.
+
+<br>
+
+## <a name="iterator"></a> Iterator 인터페이스
+
+[Iterator](https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html) 인터페이스는 [컬렉션 프레임워크](#collection-frameworks")에서 사용하는 인터페이스이다. [Enumeration](#enumeration) 인터페이스와 비슷하지만, remove 메서가 존재한다는 점에서 다른 특징이 존재한다.
+
+### Iterator 인터페이스의 주요 메서드
+
+- **hasNext()** : boolean
+  - 다음에 처리할 element가 남아있는 boolean 값을 반환한다.
+- **next()** : E
+  - 다음 element를 열거형(E)로 반환한다.
+- **remove()** : void
+  - element를 삭제한다.
 
 <br>
 

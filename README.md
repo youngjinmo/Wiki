@@ -37,6 +37,8 @@
           <li><a href="languages/java.md#switch" target="_blank">switch문</a></li>
           <li><a href="languages/java.md#for-loop" target="_blank">for문</a></li>
           <li><a href="languages/java.md#for-each" target="_blank">for each문</a></li>
+          <li><a href="languages/java.md#enumeration" target="_blank">Enumeration 인터페이스</a></li>
+          <li><a href="languages/java.md#iterator" target="_blank">Iterator 인터페이스</a></li>
           <li><a href="languages/java.md#collection-server-side" target="_blank">컬렉션 프레임워크</a></li>
           <ul>
             <li><a href="languages/java.md#collection-set" target="_blank">Set</a></li>
@@ -480,4 +482,5 @@
     </li>
   </ul>
 </details>
+
 
