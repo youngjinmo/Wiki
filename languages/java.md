@@ -1030,7 +1030,7 @@ public class DevAndy {
 - **nextElement()** : E
   - 다음 element를 열거형(E)으로 반환한다.
 
-Java 8부터 Enumeration을 대체할 수 있는 [Iterator](#iterator) 인터페이스가 추가되었다. [오라클 공식문서](https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html)에서는 아래와 같은 이유로 Enumeration 인터페이스 대신 Iterator 인터페이스를 쓰라고 권하고 있다.
+Java 1.2부터 Enumeration을 대체할 수 있는 [Iterator](#iterator) 인터페이스가 추가되었다. [오라클 공식문서](https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html)에서는 아래와 같은 이유로 Enumeration 인터페이스 대신 Iterator 인터페이스를 쓰라고 권하고 있다.
 
 > NOTE : The functionality of this interface is duplicated byu the Iterator interface. In addition, Iterator adds an optional remove operation, and has shorter method names. New implementatinos should consider using iterator in preference to Enumeration.
 
