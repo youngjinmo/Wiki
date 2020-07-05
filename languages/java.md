@@ -1038,7 +1038,7 @@ Java 8부터 Enumeration을 대체할 수 있는 [Iterator](#iterator) 인터페
 
 ## <a name="iterator"></a> Iterator 인터페이스
 
-[Iterator](https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html) 인터페이스는 [컬렉션 프레임워크](#collection-frameworks")에서 사용하는 인터페이스이다. [Enumeration](#enumeration) 인터페이스와 비슷하지만, remove 메서가 존재한다는 점에서 다른 특징이 존재한다.
+[Iterator](https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html) 인터페이스는 [컬렉션 프레임워크](#collection-frameworks")에서 사용하는 인터페이스이다. [Enumeration](#enumeration) 인터페이스와 비슷하지만, `remove()`가 존재한다는 점에서 다른 특징이 존재한다.
 
 ### Iterator 인터페이스의 주요 메서드
 
@@ -1065,7 +1065,7 @@ public interface Set<E> extends Collection<E>
 
 Set 인터페이스에서 사용할 수 있는 클래스로는 [HashSet](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html)과 [TreeSet](https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html)이 있다.
 
-Set은 값을 추가할때 `add()`를 이용하며, 반대로 값을 꺼낼때는(조회) `Iterator`라는 인터페이스를 사용해야 한다. Iterator에는 다음 element가 있는지 여부(boolean)를 반환오는 `hasNext()`와 element를 반환하는 `next()`, 마지막 element를 삭제하는 `remove()`가 존재한다.
+Set은 값을 추가할때 `add()`를 이용하며, 반대로 값을 꺼낼때는(조회) [Iterator](#iterator)라는 인터페이스를 사용해야 한다.
 
 아래 코드는 String 문자열의 `Set`을 만들어서 문자열 데이터를 삽입하고, `Interator`를 사용하여 콘솔에 출력하는 코드이다.
 
