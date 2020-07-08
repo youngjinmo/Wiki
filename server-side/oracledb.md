@@ -1,4 +1,4 @@
-# SQL (oracle)
+# Oracle DBMS
 
 - [데이터베이스 개요](#overview)
 - [데이터베이스의 장단점](#prosncons)
