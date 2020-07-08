@@ -442,7 +442,7 @@
       <details>
       <summary><a href="Others/Errors.md" target="_blank">Errors</a></summary>
       <ul>
-        <li><a href="Others/Errors.md#reimport-gradle" target="_blank">Gradle이 정상적으로 작동하지 않을때</a></li>
+        <li><a href="Others/Errors.md#mysql-8-grant" target="_blank">MySQL 8 버전에서 계정 생성과 동시에 권한을 주려고 하는데 ERROR 1064가 발생할 때.</a></li>
       </ul>
       </details>
     </li>
@@ -482,5 +482,6 @@
     </li>
   </ul>
 </details>
+
 
 
