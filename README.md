@@ -241,6 +241,9 @@
           <li><a href="server-side/mysql.md#mysql-u-root-p" target="_blank">mysql 실행하기</a></li>
           <li><a href="server-side/mysql.md#create" target="_blank">데이터 베이스 생성하기</a></li>
           <li><a href="server-side/mysql.md#create-user" target="_blank">사용자 생성하기</a></li>
+          <li><a href="server-side/mysql.md#mysql-h-u-p" target="_blank">root아닌 사용자로 데이터베이스 접근하기</a></li>
+          <li><a href="server-side/mysql.md#show-users" target="_blank">MySQL 전체 사용자 조회하기</a></li>
+          <li><a href="server-side/mysql.md#delete-from-where-user" target="_blank">사용자 삭제하기</a></li>
           <li><a href="server-side/mysql.md#privileges" target="_blank">데이터베이스 권한 설정</a></li>
           <li><a href="server-side/mysql.md#use" target="_blank">데이터베이스 선택하기</a></li>
         </ul>
