@@ -239,13 +239,26 @@
       	<summary><a href="server-side/mysql.md" target="_blank">MySQL</a></summary>
         <ul>
           <li><a href="server-side/mysql.md#mysql-u-root-p" target="_blank">mysql 실행하기</a></li>
-          <li><a href="server-side/mysql.md#create" target="_blank">데이터 베이스 생성하기</a></li>
-          <li><a href="server-side/mysql.md#create-user" target="_blank">사용자 생성하기</a></li>
-          <li><a href="server-side/mysql.md#mysql-h-u-p" target="_blank">root아닌 사용자로 데이터베이스 접근하기</a></li>
-          <li><a href="server-side/mysql.md#show-users" target="_blank">MySQL 전체 사용자 조회하기</a></li>
-          <li><a href="server-side/mysql.md#delete-from-where-user" target="_blank">사용자 삭제하기</a></li>
-          <li><a href="server-side/mysql.md#privileges" target="_blank">데이터베이스 권한 설정</a></li>
-          <li><a href="server-side/mysql.md#use" target="_blank">데이터베이스 선택하기</a></li>
+          <li><a href="server-side/mysql.md#manage-db" target="_blank">데이터베이스 생성 및 삭제</a></li>
+          <ul>
+            <li><a href="server-side/mysql.md#show-db" target="_blank">데이터베이스 조회하기</a></li>
+            <li><a href="server-side/mysql.md#create-db" target="_blank">데이터베이스 생성하기</a></li>
+            <li><a href="server-side/mysql.md#use-db" target="_blank">데이터베이스 선택하기</a></li>
+            <li><a href="server-side/mysql.md#drop-db" target="_blank">데이터베이스 삭제하기</a></li>
+          </ul>
+          <li><a href="server-side/mysql.md#manage-user" target="_blank">사용자 생성 및 삭제</a></li>
+          <ul>
+            <li><a href="server-side/mysql.md#show-users" target="_blank">MySQL 전체 사용자 조회하기</a></li>
+            <li><a href="server-side/mysql.md#create-user" target="_blank">사용자 생성하기</a></li>
+            <li><a href="server-side/mysql.md#delete-user" target="_blank">사용자 삭제하기</a></li>
+          	<li><a href="server-side/mysql.md#join-db-user-created" target="_blank">생성한 사용자로 데이터베이스 접속하기</a></li>
+          </ul>
+          <li><a href="server-side/mysql.md#manage-privileges" target="_blank">데이터베이스 권한 설정</a></li>
+          <ul>
+            <li><a href="server-side/mysql.md#grant-all" target="_blank">권한 부여하기</a></li>
+            <li><a href="server-side/mysql.md#show-grants" target="_blank">권한 조회하기</a></li>
+            <li><a href="server-side/mysql.md#revoke-all" target="_blank">권한 삭제하기</a></li>
+          </ul>
         </ul>
       </details>
     </li>
@@ -497,6 +510,7 @@
     </li>
   </ul>
 </details>
+
 
 
 
