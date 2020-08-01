@@ -28,6 +28,7 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [stash](#stash)
 - [HEAD가 바라보는 커밋 변경하기](#git-checkout-from-head)
 - [원격 저장소 변경하기](#set-url)
+- [특정 브랜치만 clone하기](#clone-specific-branch)
 - [Fork](#fork)
 - [PR](#pr)
 - [.gitignore](#gitignore)
@@ -48,8 +49,6 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 <img src="https://d1lss44hh2trtw.cloudfront.net/assets/editorial/2018/02/kingdom-come-deliverance-how-to-save-your-game-re.jpg" style="zoom:80%;" />
 
 RPG 게임을 하다가 어려운 스테이지를 앞두고 미리 게임을 저장하는 일과도 같다.
-
-
 
 Git의 작업 흐름도와 각각 작업에 따른 명령어는 다음과 같다.
 
@@ -158,7 +157,7 @@ staging area에서 working directory로 돌리는 방법에 관한 방법이다.
 
 `git add .` 명령어로 작업한 파일 전체를 staging area에 올려두었는데, 이 중 커밋되면 안되는 파일을 발견했다. 이 땐 아래의 명령어를 통해 staging된 파일을 working directory로 복귀시킬 수 있다.
 
-```
+```bash
 $ git restore --staged "file path"
 ```
 
@@ -172,7 +171,7 @@ file_02.java 파일을 staging area에 올려두었다가 다시 untracking file
 
 `git add .` 로 여러개의 파일이 올라갔는데, 모두 unstaing하고 싶다면?
 
-~~~
+~~~bash
 $ git restore --staged *
 ~~~
 
@@ -184,7 +183,7 @@ Source Tree 같은 GUI 기반의 프로그램을 이용하면, 쉽게 git log를
 
 먼저 git log를 한 줄로 보는 방법이다. 
 
-~~~
+~~~bash
 $ git log --all --oneline
 ~~~
 
@@ -194,7 +193,7 @@ $ git log --all --oneline
 
 
 
-~~~
+~~~bash
 $ git log --all --oneline --graph --decorate
 ~~~
 
@@ -206,7 +205,7 @@ $ git log --all --oneline --graph --decorate
 
 ## <a name="create-branch"></a>브랜치 생성하기
 
-```git
+```bash
 $ git branch unit-Test
 ```
 
@@ -218,7 +217,7 @@ $ git branch unit-Test
 
 로컬 저장소의 모든 브랜치를 확인하고 싶다면,
 
-```git
+```bash
 $ git branch
 ```
 
@@ -226,7 +225,7 @@ $ git branch
 
 원격 저장소 브랜치까지 모두 확인하고 싶다면,
 
-```git
+```bash
 $ git branch -a
 ```
 
@@ -236,7 +235,7 @@ $ git branch -a
 
 ## <a name="move-branch"></a>브랜치 이동하기
 
-```git
+```bash
 $ git checkout master
 ```
 
@@ -246,7 +245,7 @@ $ git checkout master
 
 ## <a name="delete-branch"></a>브랜치 삭제하기
 
-```git
+```bash
 $ git branch -D unit-Test
 ```
 
@@ -254,7 +253,7 @@ $ git branch -D unit-Test
 
 ## <a name="delete-origin-branch"></a>원격 저장소 브랜치 삭제하기
 
-```git
+```bash
 $ git push origin --delete unit-Test
 ```
 
@@ -268,13 +267,13 @@ $ git push origin --delete unit-Test
 
 만약 이름을 변경하길 원하는 브랜치가 선택되어 있다면, 
 
-```git
+```bash
 $ git branch -m new-name
 ```
 
 현재 선택된 브랜치가 아닌 다른 브랜치의 이름을 변경하고자 한다면,
 
-```git
+```bash
 $ git branch -m old-name new-name
 ```
 
@@ -282,13 +281,13 @@ $ git branch -m old-name new-name
 
 원격 저장소에서 적용하기
 
-```git
+```bash
 $ git push origin :old-name
 ```
 
 변경된 새 브랜치 원격 저장소에 적용하기
 
-```git
+```bash
 $ git push --set-upstream origin new-name
 ```
 
@@ -302,13 +301,13 @@ $ git push --set-upstream origin new-name
 
 중복된 내용의 커밋이 존재할 경우, 이를 하나의 커밋으로 합치면 깔끔하게 `git log` 를  볼 수 있다.
 
-~~~
+~~~bash
 $ git rebase -i HEAD~~
 ~~~
 
 위의 명령어는 최신 노드 기준 2개의 커밋을 rebase하는 명령어이다. 만약 3개의 커밋을 정리하고자 한다면 아래와 같이 작성하면 된다.
 
-~~~
+~~~bash
 $ git rebase -i HEAD~3
 ~~~
 
@@ -320,7 +319,7 @@ $ git rebase -i HEAD~3
 
 ![](https://lh3.googleusercontent.com/wrFBPeM9IcBuWy-V82zcjWlkh4sBp7kCH76Eg5DQSNadJ7rr7Sd6OLkOXRBhrw5bqLLgqXzkufijOF-xsHlsv0dW84EhtFstG4DhfbIXssexZm-XRaimxLIJRCrUtWYHoFCahV5n6WJylBUttblKcy9z-vc3iDH2MSfzkBBtFpEtM5cpoSzifPUHFPyv3TskpfAv2PD1bSAVkphlkCb7gf-226wtqxcp8A_Q96zEtX1NtF0iELXu0QL3MhT6bUuZe0caq7XxDieGCU322GMqfo05bmYLgZF7qQnBy_98cN7S1MnsvZBvv5cZTaH-DeoF4aSfS4BPjnTx2v9IQg96TFHP4sKevjG5xKpxyjSYFu5KG-vtc8eSdB_adpCDzWou569iYOkaA_nIQNJwhNlgQjSuKqCJl07TXD62CtLaiSdSM1UBT-oMVOgSXDJ9kvZDtAsNz7GE4foIQnrYVarlOCqwfVn2_6ZFsTOPG4MLu_PLYHbgIS65BfO_m5VZ7e6Bvx4fbp3I1TYr9G1doOWSTlH9n8V02gZaWUUfnfmR5m6hb7RHaHsJHr92gbND0U0JVtBO_Qp2X2g_836yet9QGIKoUwta9HcRw4qwjwLnquB6ImztoYYXmuCxsg9azhytQUqAuEysm9-pGe7-1-kB7lhaLc_9lCs1dgZHHLkRrIa0W2gWrPOUXg-otco2NFwOlzx6OYKW4b4dqqSvtHmtJIEPPACc-5vAAGa4Cms0JMp7gSo8Ow=w385-h206-no)
 
-~~~
+~~~bash
 $ git rebase -i HEAD~~
 ~~~
 
@@ -350,7 +349,7 @@ HEAD를 바라보는 기준으로 2개의 커밋이 출력되었는데 `commit -
 
 이 상태에서 **rebase**를 시도했다.
 
-~~~
+~~~bash
 $ git rebase HEAD~~
 ~~~
 
@@ -368,7 +367,7 @@ git log를 확인해보니 순서가 제대로 변경되었음을 확인할 수 
 
 ## <a name="rebase-change-commit-m"></a>커밋메세지 변경하기 with rebase
 
-~~~
+~~~bash
 $ git rebase -i HEAD~~
 ~~~
 
@@ -382,7 +381,7 @@ $ git rebase -i HEAD~~
 
 위의 메세지대로 커밋 메세지를 작성하는 명령어를 입력한다.
 
-~~~
+~~~bash
 $ git commit ---amend -m "new commit message"
 ~~~
 
@@ -394,7 +393,7 @@ $ git commit ---amend -m "new commit message"
 
 ## <a name="commit-amend"></a>최신 커밋 메세지 수정하기
 
-~~~
+~~~bash
 $ git commit --amend
 ~~~
 
@@ -402,7 +401,7 @@ $ git commit --amend
 
 ## <a name="diff-head"></a>최신 커밋과 현재 status 비교
 
-~~~
+~~~bash
 $ git diff HEAD
 ~~~
 
@@ -410,7 +409,7 @@ $ git diff HEAD
 
 ## <a name="diff-head-before"></a>최신 커밋과 그 이전 커밋 비교
 
-~~~
+~~~bash
 $ git diff HEAD HEAD^
 ~~~
 
@@ -478,7 +477,7 @@ $ git checkout 8b2da
 
 다시 돌아오고자 한다면 브랜치로 `checkout` 하여 최신 커밋으로 돌아올 수 있다.
 
-~~~
+~~~bash
 $ git checkout [branch-]
 ~~~
 
@@ -493,7 +492,7 @@ $ git checkout [branch-]
 로컬 저장소가 바라보고 있는 원격 저장소의 url을 보는 방법은 다음의 명령어로 확인가능하다.
 
 ```shell
-git remote -v
+$ git remote -v
 ```
 
 그게 현재 로컬 저장소가 바라보는 원격 저장소의 url인데 이걸 바꾸려면 다음의 명령어로 바꿀 수 있다.
@@ -505,7 +504,7 @@ git remote set-url origin https://github.com/youngjinmo/youngjinmo.github.io.git
 저장소를 처음만들고, 원격 저장소에 지정할 때의 명령어는 아래와 같다. 아직 지정해둔 원격 저장소가 없을 때엔  `remote`와 `origin` 사이에 `add`를, 지정해둔 원격 저장소 주소를 바꾸고 싶을 땐 `set-url`을 붙이는 차이가 있다.
 
 ```shell
-git remote add origin https://github.com/youngjinmo/youngjinmo.github.io.git
+$ git remote add origin https://github.com/youngjinmo/youngjinmo.github.io.git
 ```
 
 
@@ -513,8 +512,24 @@ git remote add origin https://github.com/youngjinmo/youngjinmo.github.io.git
 그리고 변경사항을 푸쉬하면 제대로 이동되었음을 확인할 수 있다.
 
 ```shell
-git push -u origin master
+$ git push -u origin master
 ```
+
+<br>
+
+## <a name="clone-specific-branch"></a>특정 브랜치만 clone하기
+
+~~~bash
+$ git clone -b {branch-name} --single-branch {repository-url} 
+~~~
+
+레포지토리의 브랜치 확인
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3czKsTCC07wrgVnFkoPf5m6kVPT0kJ1xjYYKE9ihDr7f1tOf8pGosFO94XOo21kofZlgnmRM3d7ZR6KPpmm21sFlLHY_dx1-dKpZBLYAjVBI5HXgoXt_rruH8BwLGpsaqo-6RxS-oMFPrL3-0poi70d2w=w488-h740-no?authuser=0)
+
+커맨드라인에서 gh-pages 브랜치만 clone.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3fRhgGcktqYOb11_i4on9m98ql-QEXMMDh34Jyh_AH-hyJmlDRTawgYLVQ7f8eg5cd_GaaA1Jsy_KfrxKMQT-R75T7dPlcvWN4-n7JiEFZrbZeYWoFpwAd0CgMezXWSpywzOxZP7uqbyPuCQimKgRqL6w=w850-h411-no?authuser=0)
 
 <br>
 
@@ -607,7 +622,7 @@ vi에디터로 `.gitignore` 파일을 생성한다. 그리고 버전관리 하�
 
 로컬에서 커맨드라인으로 git을 관리하기 위해서는 계정이 필요하다.
 
-~~~
+~~~bash
 $ git config --global user.name "이름"
 $ git config --global user.email "이메일"
 $ git config --global user.password "패스워드"
@@ -617,7 +632,7 @@ git config를 저장하는 가장 쉬운방법이지만, 보안으로는 가장 
 
 아래의 명령어를 입력하면, 현재의 쉘에 저장된 credential을 바로 확인할 수 있다.
 
-~~~
+~~~bash
 $ git config --list
 ~~~
 
@@ -633,7 +648,7 @@ Github Credential이란 Github의 계정정보를 말한다.
 
 터미널 명령어는 다음과 같다.
 
-```
+```bash
 $ git config credential.helper store
 $ git push https://github.com/repo.git
 $ Username for 'https://github.com' : your github email
@@ -662,25 +677,25 @@ SSH는 암호화되어 통신하기 때문에 통신이 노출되더라도 안�
 
 터미널에서 아래 명령어를 입력한다.
 
-~~~
+~~~bash
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ~~~
 
 그럼 key pair가 생성된다.
 
-~~~
+~~~bash
 > Generating public/private rsa key pair.
 ~~~
 
 이후에 프롬프트(Terminal)에 입력을 요구하는 메세지가 출력된다.
 
-~~~
+~~~bash
 > Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
 ~~~
 
 엔터를 입력하고, 
 
-~~~
+~~~bash
 > Enter passphrase (empty for no passphrase): [Type a passphrase]
 > Enter same passphrase again: [Type passphrase again]
 ~~~
@@ -693,7 +708,7 @@ $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 그리고 터미널에 아래의 명령어를 입력하여 `ssh-agent` 를 실행한다.
 
-~~~
+~~~bash
 $ eval "$(ssh-agent -s)"
 > Agent pid 59566
 ~~~
@@ -706,7 +721,7 @@ pid는 리눅스, 맥 등의 유닉스 관련 대부분의 OS 커널에서 사�
 
 그리고 시에라 버전 10.12.2 이상의 맥을 사용한다면, `~/.ssh/config` 를 수정해주어야 한다.
 
-~~~
+~~~bash
 Host *
    AddKeysToAgent yes
    UseKeychain yes
@@ -719,7 +734,7 @@ Host *
 
 `ssh-agent`는 리눅스 또는 유닉스 계열의 OS에서 로그인이 필요할 때 자동으로 config 를 도와준다고 한다.
 
-~~~
+~~~bash
 $ ssh-add -K ~/.ssh/id_rsa
 ~~~
 
@@ -729,7 +744,7 @@ $ ssh-add -K ~/.ssh/id_rsa
 
 생성한 키(`~/.ssh/id_rsa.pub`)를 복사한다.
 
-~~~
+~~~bash
 $ pbcopy < ~/.ssh/id_rsa.pub
 ~~~
 
@@ -833,13 +848,13 @@ MIT 라이센스는 미국 매사추세츠공과대학교(MIT)에서 해당 대�
 
 ### <a name="gitmessage-create"></a>gitmessage.txt 생성
 
-~~~
+~~~bash
 $ vim ~/.gitmessage.txt
 ~~~
 
 vim 에디터가 열리면 여기서 템플릿을 만들면 된다. 필자는 이렇게 작성했다.
 
-~~~txt
+~~~bash
 # 제목은 최대 50글자까지 아래에 작성: ex) <feat>: Add OAuth2
 
 # 본문은 아래에 작성
@@ -872,7 +887,7 @@ vim 에디터가 열리면 여기서 템플릿을 만들면 된다. 필자는 �
 
 ### <a name="gitmessage-set-editor"></a>vim을 git editor로 지정
 
-~~~
+~~~bash
 $ git config --global core.editor vim
 ~~~
 
@@ -882,7 +897,7 @@ $ git config --global core.editor vim
 
 ### <a name="gitmessage-set-template"></a>위에서 작성한 gitmessage를 템플릿으로 지정
 
-~~~
+~~~bash
 $ git config --global commit.template ~/.gitmessage.txt
 ~~~
 

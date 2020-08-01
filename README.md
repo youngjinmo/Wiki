@@ -1,7 +1,5 @@
 # Wiki
 
-![analytics](https://ga-beacon.appspot.com/UA-55365769-4/chromeskel_a/readme)
-
 <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2100&amp;q=80" alt="unsplash" style="zoom:10%;" />
 
 *Today I learned.*
@@ -238,7 +236,13 @@
     	<details>
       	<summary><a href="server-side/mysql.md" target="_blank">MySQL</a></summary>
         <ul>
-          <li><a href="server-side/mysql.md#mysql-u-root-p" target="_blank">mysql 실행하기</a></li>
+          <li><a href="server-side/mysql.md#mysql-u-root-p" target="_blank">MySQL 실행하기</a></li>
+          <ul>
+            <li><a href="server-side/mysql.md#begin-mysql" target="_blank">MySQL 접속하기</a></li>
+            <li><a href="server-side/mysql.md#select-version" target="_blank">MySQL 버전 및 현재날짜 확인하기</a></li>
+            <li><a href="server-side/mysql.md#exit" target="_blank">MySQL 종료하기</a></li>
+            <li><a href="server-side/mysql.md#quit-c" target="_blank">쿼리 입력중에 종료하기</a></li>
+          </ul>
           <li><a href="server-side/mysql.md#manage-db" target="_blank">데이터베이스 생성 및 삭제</a></li>
           <ul>
             <li><a href="server-side/mysql.md#show-db" target="_blank">데이터베이스 조회하기</a></li>
@@ -405,6 +409,7 @@
         <li><a href="vcs/git.md#stash" target="_blank">stash</a></li>
         <li><a href="vcs/git.md#git-checkout-from-head" target="_blank">HEAD가 바라보는 커밋 변경하기</a></li>
         <li><a href="vcs/git.md#set-url" target="_blank">원격 저장소 변경하기</a></li>
+        <li><a href="vcs/git.md#clone-specific-branch" target="_blank">특정 브랜치만 clone하기</a></li>
         <li><a href="vcs/git.md#fork" target="_blank">Fork</a></li>
         <li><a href="vcs/git.md#pr" target="_blank">PR</a></li>
         <li><a href="vcs/git.md#gitignore" target="_blank">.gitignore</a></li>
