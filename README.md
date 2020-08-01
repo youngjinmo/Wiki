@@ -1,10 +1,10 @@
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdevyoungjin%2FWiki)](https://hits.seeyoufarm.com)
+
 # Wiki
 
-<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2100&amp;q=80" alt="unsplash" style="zoom:10%;" />
-
-*Today I learned.*
-
 오늘 제가 배운 내용을 정리하는 공간입니다.
+
+<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2100&amp;q=80" alt="unsplash" style="zoom:10%;" />
 
 <details>
   <summary>Languages</summary>
