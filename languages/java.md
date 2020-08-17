@@ -444,18 +444,24 @@ public class Main {
 
 기본형 데이터타입의 객체화를 가능하게 도와주는 클래스. `java.lang` 패키지 안에 포함되어있다.
 
-- 기본형 타입 : `int`
-- 객체형 타입 : `Integer`
+- 기본형 타입 예 : `int`
+- 객체형 타입 예 : `Integer`
+
+~~~java
+int a = 5;
+Integer b = new Integere();
+
+int c = b;      // auto-unboxing
+Integer d = a;  // auto-boxing
+~~~
 
 
-
-Wrapper Class는 다음과 같은 기능을 수행한다.
-
-<img src="http://www.mediafire.com/convkey/e0bf/3kqk5j823suxigbzg.jpg" />
 
 **오토 박싱 (Auto Boxing)**
 
-기본 타입 데이터를 객체 타입의 데이터로 자동 형변환해주는 기능
+기본 타입 데이터를 객체 타입의 데이터로 자동 형변환해주는 기능이다.
+
+
 
 **오토 언박싱 (Auto Unboxing)**
 

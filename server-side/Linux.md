@@ -16,6 +16,7 @@
   - [find - 파일/디렉토리 찾기](#find)
   - [grep - 문서내 검색](#grep)
   - [콘솔 결과 출력 저장](#save-output)
+  - [커맨드 히스토리](#history)
   - [복수의 명령어 동시실행](#combine-commands)
   - [슬립모드 진입방지 \(caffeinate)](#caffeinate)
   - [시스템 재부팅](#ubuntu-reboot)

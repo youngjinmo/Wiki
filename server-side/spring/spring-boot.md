@@ -3,6 +3,7 @@
 - [SpringBoot 특징](#feature)
 - [Spring Boot auto-configuration](#config)
 - [빌드툴(Maven/Gradle)이 하는 일](#build-tools)
+- [어노테이션](#annotaions)
 - [에러페이지 핸들링](#error)
 - [@GetMapping 어노테이션으로 다중맵핑하기](#get-mapping-multi)
 - [h2 데이터베이스 마이그레이션](#h2-databse)
@@ -132,6 +133,136 @@ Maven, Gradle같은 빌드 툴은 아래의 역할을 순차적으로 수행한�
 - [Stackoverflow - What is a build tool?](https://stackoverflow.com/questions/7249871/what-is-a-build-tool)
 
 - [별의역사 - 빌드 툴(Build Tool)](https://starrykss.tistory.com/276)
+
+<br>
+
+## <a name="annotations"></a>어노테이션
+
+스프링 프레임워크에서 어노테이션이 하는 역할
+
+XML을 분리하는 역할을 수행한다. 
+
+결합도를 낮추고 유지보수성을 높이기 위해 xml로 설정하였으나 xml이 너무 많아지면 오히려 유지보수성이 낮아지는 아이러니한 상황이 발생할 수 있다. 
+
+어노테이션은 유지보수성에 방점을 둔다.
+
+어노테이션을 한 문장으로 정의한다면, 클래스와 필드, 메서드 등의 애플리케이션 요소의 다양한 종류의 정보를 주입하는 방법이라고 할 수 있다.
+
+
+
+### 스프링에서 자주 사용하는 어노테이션
+
+**의존성 주입용도**
+
+- @Required
+  - setter 메서드에 사용하는 어노테이션이다.
+  - bean property 구성시 XML 설정파일에 반드시 property를 채우도록 하는 어노테이션이다. 만약 이를 지키지 않을시, BeanInitializationException이 발생한다.
+- @Autowired
+  - org.springframework.beans.factory.annotation.Autowired
+  - Type에 따라 알아서 Bean을 주입한다.
+    - type을 먼저 확인하고, type을 찾지 못하면 name에 따라 주입한다.
+    - name으로 강제하려면 @Qualifier를 함께 명시하면 됨.
+  - bean을 주입하는 3가지 방법
+    - @Autowired
+    - setter
+    - 생성자 (@AllArgsConstructor)
+- @Inject
+  - @Autowired와 비슷한 역할을 한다.
+
+**컨트롤러 관련**
+
+- @Controller
+
+- @RestController
+
+  - = @Controller + @ResponseBody
+
+  - @ResponseBody 어노테이션을 모든 메서드에 적용하는 어노테이션이다.
+
+  - 메서드의 반환 결과를 JSON 형태로 반환한다.
+
+  - @RequestMapping 이 기본적으로 @ResponseBody 의미를 가정한다.
+
+  - @Controller와 @RestController의 차이
+
+    - @Controller는 API와 View를 동시에 사용하는 경우에 사용하는 어노테이션.
+    - @RestController는 View가 필요없는 API만 지원하는 서비스에 사용하는 어노테이션.
+
+    
+
+- @RequestMapping
+
+- @PathVariable
+
+- @RequestBody
+
+- @RequestParam
+
+- @ResponseBody
+
+**데이터 접근 관련**
+
+- @Service
+
+- @Repository
+
+- @Entity
+
+  - 실제 DB의 테이블과 매칭될 클래스를 명시
+  - DTO 클래스와 Entity 클래스를 분리하는 이유
+    - 테이블과 매핑되는 Entity 클래스가 변경되면 여러 클래스에 영향을 끼치게 되는 반면 View와 통신하는 DTO 클래스는 자주 변경되므로 이 둘을 분리하는 것이 좋다.
+    - DTO 클래스 = View Layer
+    - Entity 클래스 = DB Layer
+
+- @Table
+
+  - Entity 클래스에 매핑할 테이블 정보를 알려준다.
+  - @Table 어노테이션 생략시, 클래스 이름이 테이블 이름으로 매핑된다.
+
+- @Id
+
+  - 테이블의 PK필드
+
+- @GeneratedValue
+
+  - PK의 생성규칙이다.
+
+    
+
+
+
+
+
+- @Component
+  - 해당 클래스가 Controller/Service/Repository로 사용됨을 Spring에 알려주는 어노테이션.
+  - @Component는 아래의 어노테이션으로 구체화 할 수 있다.
+    - @Controller
+    - @Serivce
+    - @Repository
+- @Qualifier
+  - 같은 타입의 빈이 두개 이상 존재할 경우에 스프링이 어떤 빈을 주입해야 할지 알 수 없어서 스프링 컨테이너를 초기화하는 과정에서 예외를 발생시킨다.
+- @Transactional
+  - 메서드 내에서 Exception이 발생하면 해당 메서드에서 이루어진 모든 DB 작업을 초기화(Rollback)한다.
+  - 즉 모든 커밋이 정상적일때에만 커밋이 이루어진다.
+  - DB를 등록/수정/삭제하는 Service 메서드에 필수적으로 필요한 어노테이션.
+- @Resource
+- @Scope
+- @PostConstruct
+- @PreDestory
+- @RequestHeader
+- @CookieValue
+- @ModelAttribute
+- @SessionAttibute
+- @InitBinder
+- @ControllerAdvice
+
+**참고 문서**
+
+- [이재민 - Spring Framework Annotation](https://medium.com/@2xel/spring-framework-annotation-%EA%B0%9C%EB%85%90-c26c15716538)
+- [평범한개발자노트 - 스프링 어노테이션 종류](https://cornswrold.tistory.com/8)
+- [Aaaalpooo - 많이쓰는 스프링 프레임워크 어노테이션 정리](https://medium.com/@aaaalpooo/%EB%A7%8E%EC%9D%B4-%EC%93%B0%EB%8A%94-spring-framework-annotation-%EC%A0%95%EB%A6%AC-summary-of-annotations-frequently-used-in-spring-framework-935e1c1a4877)
+- [권희정 - Spring Annotation의 종류와 그 역할](https://gmlwjd9405.github.io/2018/12/02/spring-annotation-types.html)
+- [Spring Framework Guru](https://springframework.guru/spring-framework-annotations/)
 
 <br>
 
