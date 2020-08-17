@@ -153,6 +153,7 @@
                 <li><a href="server-side/Linux.md#symboliclink" target="_blank">Symbolic Link</a></li>
                 <li><a href="server-side/Linux.md#find" target="_blank">find - 파일/디렉토리 찾기</a></li>
                 <li><a href="server-side/Linux.md#grep" target="_blank">grep - 문서내 검색</a></li>
+                <li><a href="server-side/Linux.md#history">커맨드 히스토리</a></li>
                 <li><a href="server-side/Linux.md#save-output" target="_blank">콘솔 결과 출력 저장</a></li>
                 <li><a href="server-side/Linux.md#combine-commands" target="_blank">복수의 명령어 동시실행</a></li>
                 <li><a href="server-side/Linux.md#caffeinate" target="_blank">슬립모드 진입방지 (caffeinate)</a></li>
@@ -442,6 +443,7 @@
             <li><a href="CS/Network.md#network-layer" target="_blank">3계층, 네트워크 계층</a></li>
           	<li><a href="CS/Network.md#datalink-layer" target="_blank">2계층, 데이터링크 계층</a></li>
             <li><a href="CS/Network.md#physical-layer" target="_blank">1계층, 물리 계층</a></li>
+            <li><a href="CS/Network.md#http" target="_blank">HTTP</a></li>
           </ul>
         </ul>
       </details>

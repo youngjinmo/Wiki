@@ -209,7 +209,21 @@ $ grep [pattern] [file]
 
 <br>
 
-<h2><a name="save-output"></a>터미널 결과 출력</h2>
+[커맨드 히스토리](#history)
+
+## <a name="history"></a>커맨드 히스토리
+
+지금까지 입력한 모든 커맨드 명령어를 조회할 수 있다. `grep` 과 함께 사용하면, 특정 명령어만 조회하는 것도 가능하다.
+
+~~~bash
+$ history
+~~~
+
+![](https://media.giphy.com/media/MF72hgCOMQbsDYK7Uz/giphy.gif)
+
+<br>
+
+## <a name="save-output"></a>터미널 결과출력
 
 ```bash
 $ ls -al > "file.txt"
