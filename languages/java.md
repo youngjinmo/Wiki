@@ -449,7 +449,7 @@ public class Main {
 
 ~~~java
 int a = 5;
-Integer b = new Integere();
+Integer b = new Integer();
 
 int c = b;      // auto-unboxing
 Integer d = a;  // auto-boxing
