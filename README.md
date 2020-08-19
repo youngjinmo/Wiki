@@ -31,6 +31,7 @@
           <li><a href="languages/java.md#equals" target="_blank">==과 equals()</a></li>
           <li><a href="languages/java.md#identityHashCode" target="_blank">객체 주소값 확인 ( identityHashCode() )</a></li>
           <li><a href="languages/java.md#currentTimeMillis" target="_blank">시스템 시간 불러오기 for 성능 테스트</a></li>
+          <li><a href="languages/java.md#base64" target="_blank">Base64로 인코딩하기</a></li>
           <li><a href="languages/java.md#ternary" target="_blank">삼항연산자</a></li>
           <li><a href="languages/java.md#switch" target="_blank">switch문</a></li>
           <li><a href="languages/java.md#for-loop" target="_blank">for문</a></li>
@@ -517,6 +518,7 @@
     </li>
   </ul>
 </details>
+
 
 
 

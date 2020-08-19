@@ -18,6 +18,7 @@
 - [==과 equals()](#equals)
 - [객체 주소값 확인 ( identityHashCode() )](#identityHashCode)
 - [시스템 시간 불러오기 for 성능 테스트](#currentTimeMillis)
+- [Base64로 인코딩하기](#base64)
 - [삼항연산자](#ternary)
 - [switch문](#switch)
 - [for문](#for-loop)
@@ -854,6 +855,38 @@ public class DevAndy {
 ~~~
 
 long 타입으로 각각의 변수에 시스템 시간을 대입하고 프로그램이 종료한 직후에 연산처리해서 최종적인 프로그램 실행시간을 파악할 수 있다.
+
+<br>
+
+## <a name="base64"></a>Base64로 인코딩하기
+
+Java8을 공부하다가 알게된 Base64 라는 유틸. 이 유틸을 이용하면, byte 문자를 인코딩할 수 있다고 한다.
+
+~~~java
+import java.util.Base64;
+
+public class EncodeByBase64Util {
+    public static void main(String[] args){
+        String email = "dev.youngjinmo@gmail.com";
+        
+        Base64.Encoder encode = Base64.getEncoder();
+        String encodedEmail = encode.encodeToString(email.getBytes());
+        
+        System.out.println("email : "+email);
+        System.out.println("encoded email : "+encodedEmail);
+    }
+}
+~~~
+
+~~~
+// 출력 결과
+email : dev.youngjinmo@gmail.com
+encodedEmail : ZGV2LnlvdW5namlubW9AZ21haWwuY29t
+~~~
+
+String형 변수 `encodeEmail` 선언 코드를 설명하면, `Base64` 유틸을 통해 생성한 인스턴스 `encode`를 이용하여 인코딩한 결과를 String으로 바꿔주는 내장메서드 `encodeToString()`을 호출한다. 
+
+이 때에 파라미터에 인코딩할 대상을 넣으면 되는데, `Base64`는 byte 문자를 인코딩하기 때문에 `getBytes()`를 이용하여 String 데이터를 byte 코드로 변환하여 파라미터에 넣어준다.
 
 <br>
 
