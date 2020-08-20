@@ -443,6 +443,8 @@ public class Main {
 
 ## <a name="wrapper-class"></a>Wrapper Class
 
+<img src="https://t1.daumcdn.net/cfile/tistory/226EB83E5299533F08" alt="출처 : https://hyeonstorage.tistory.com/168" style="zoom:80%;" />
+
 기본형 데이터타입의 객체화를 가능하게 도와주는 클래스. `java.lang` 패키지 안에 포함되어있다.
 
 - 기본형 타입 예 : `int`
@@ -456,7 +458,7 @@ int c = b;      // auto-unboxing
 Integer d = a;  // auto-boxing
 ~~~
 
-
+<br>
 
 **오토 박싱 (Auto Boxing)**
 
