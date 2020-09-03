@@ -25,6 +25,7 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [최신 커밋 메세지 변경하기](#commit-amend)
 - [최신 커밋과 현재 status 비교](#diff-head)
 - [최신 커밋과 그 이전 커밋 비교](#diff-head-before)
+- [브랜치간 비교(diff)](#diff-branches)
 - [stash](#stash)
 - [HEAD가 바라보는 커밋 변경하기](#git-checkout-from-head)
 - [원격 저장소 변경하기](#set-url)
@@ -411,6 +412,14 @@ $ git diff HEAD
 
 ~~~bash
 $ git diff HEAD HEAD^
+~~~
+
+<br>
+
+## <a name="diff-branches"></a>브랜치간 비교(diff)
+
+~~~bash
+$ git diff origin/master origin/branch_02
 ~~~
 
 <br>
