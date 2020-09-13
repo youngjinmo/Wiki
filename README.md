@@ -480,6 +480,7 @@
       <summary><a href="Others/Errors.md" target="_blank">Errors</a></summary>
       <ul>
         <li><a href="Others/Errors.md#mysql-8-grant" target="_blank">MySQL 8 버전에서 계정 생성과 동시에 권한을 주려고 하는데 ERROR 1064가 발생할 때.</a></li>
+          <li><a href="Others/Errors.md#autocrlf" target="_blank">git에서 staging시 warning:LF will be replaced by CRLF 경고</a></li>
       </ul>
       </details>
     </li>
@@ -519,6 +520,7 @@
     </li>
   </ul>
 </details>
+
 
 
 

@@ -21,3 +21,33 @@
   FLUSH PRIVILEGS;
   ```
 
+<br>
+
+## <a name="autocrlf"></a>git에서 staging시 warning:LF will be replaced by CRLF 경고
+
+커밋을 못하는 치명적인 오류는 아니고, 그냥 경고인것 같은데 뭘 경고하는지를 몰라서 구글링을 해보았다.
+
+현재 개발하고 있는 스프링부트 프로젝트를 맥OS와 윈도우에서 번갈아가며 작업하다보니 발생한 이슈로 보여진다. Whitespace 에러라고 하는데, 맥OS와 같은 Unix 시스템에서는 한 줄의 끝이 LF(Line Feed)로 이루어지는 반면, 윈도우에서는 줄 하나가 CR(Carriage Return)과 LF(Line Feed), CRLF라고 한다.
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3fvgXjIyNdSU9oVyNOFaqupB6FMSRTK38GEwAOHwBPi3TzgH0OU7Njw49K_REW8gglqS_3lTXxlMFkGwrNlfUZPq2pYnKB5iByqS6VeYin3mVx6m4xlYxfZqvp4ZbGBVGu0lCub2tdk8-y8I9Y47QX-8w=w840-h152-no?authuser=0)
+
+큰 이슈는 아니기에 그냥 넘어가도 되지만, 이를 해결하는 방법이 있다고 한다.
+
+git에 존재하는 `core.autocrlf`라는 기능을 활성화시키면, CRLF는 LF로, LF는 CRLF로 변환해준다고 한다.
+
+**For Windows User**
+
+~~~bash
+git config --global core.autocrlf true
+~~~
+
+**For Mac/Linux User**
+
+~~~bash
+git config --global core.autocrlf true input
+~~~
+
+
+
+
+
