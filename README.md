@@ -421,6 +421,7 @@
         <li><a href="vcs/git.md#add-ssh" target="_blank">Github에 SSH 등록하기</a></li>
         <li><a href="vcs/git.md#license" target="_blank">레파지토리 라이센스</a></li>
         <li><a href="vcs/git.md#gitmessage" target="_blank">커밋 템플릿 만들기</a></li>
+        <li><a href="vcs/git.md#core-quotepath-false" target="_blank">status에서 한글깨지는 현상 해결</a></li>
       </ul>
       </details>
 <details>

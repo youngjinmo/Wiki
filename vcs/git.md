@@ -38,6 +38,7 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [Github에 SSH 등록하기](#add-ssh)
 - [레파지토리 라이센스](#license)
 - [커밋 템플릿 만들기](#gitmessage)
+- [status에서 한글깨지는 현상 해결](#core-quotepath-false)
 
 <br>
 
@@ -919,3 +920,21 @@ $ git config --global commit.template ~/.gitmessage.txt
 ![](https://lh3.googleusercontent.com/6NE5lo6P5RNQEPI5XZ4iu3cLaHrOkL0ufrYzny6zqYA9W3npq6gJap_a4QvBJABkEPtasps5MR2ugv_ADCrtdEgHD4KOD8S7ifWHM_uGXrS08EYxxSEb3IVgHrFoFGRRYhU07bruP63tTXw5tk9VOqfL4N6rHZEsg_Ju-Smfks2e8fSsAj0Kc3FFSrp9qTVnb_Faqeiji8d8cK4l1VD_8JLHVvCL-VMpomacxNaFOy4XqwUXOVcPfDSui4LKmQ9DPXB6XumOvVPt7VRtZ09gDru6-L2vxFvXj2zgwozATgp-TOiTOOa1b0Ip8YT14ocuuXlJRg7Oe3HxzfZhcgusgc7vMQu7k9hlMTAAL64peB_DTtQ_b8VNwoewS1ewtgGnSdBqWmkXnrw1Dru3IWdnRhy7zR-wKaMG4QGmyUi0EwMqdsTpnZxWzUv_tVKYLLoEkXUdP7HYHyv8u5UIFj6oCQKbs4NfUpImeyppMQMPHHN4vg7RxkoC2cP-0_BoKYJaqbk5a5fYpU05hYlZRFJ83qSVTPTN-NcVey0prcKJ-337caZoziYcpDa7iBoehLXv3pItRDXld911lqbeb_BfVVHfwifJQhnsBj6lTxntJJE9B1NtwTV7NVLA2o6N7izK04-Bpp3oRAY3bJS3cJEbh_d6GbsJVvMUGCLzD0ifZ7q1kXHblNX2pRMWTcJcb4zPV1qUzhDMVq1vJmspdmvicpNn_gB67q6gcvfbQG1B6eiIrHNx=w669-h155-no)
 
 <br>
+
+## <a name="core-quotepath-false"></a> status에서 한글깨지는 현상 해결
+
+윈도우에서 git bash를 이용하다가 발견한 현상이다. 우연히 블로깅을 하다가 이걸 해결하는 방법을 찾게되어 정리한다.
+
+![](https://user-images.githubusercontent.com/33862991/93334848-87f8cd80-f860-11ea-8f00-2300c4b89362.PNG)
+
+공식문서를 보면, 이런 현상이 발생하는 이유는 파일명에 unusual한 문자열이 있을 경우, 이를 "/"와 함께 해당 문자열을 닫아버리기 때문에 발생하는 현상이라고 한다. uncasual하다는건 해당값의 bytes가 0x80보다 클 경우라고 하는데, UTF-8이 이 경우에 해당하는듯하다. 
+
+아무튼 이런 기능을 담당하는게 `core.quotepath` 인데 이걸 비활성화하면 한글을 다시 출력할 수 있다.
+
+```bash
+$ git config --global core.quotepath false
+```
+
+![](https://user-images.githubusercontent.com/33862991/93334869-8e874500-f860-11ea-9ea6-e5d2ae9c1b18.PNG)
+
+출처 : [Git Documentation - config core.quotepath](https://git-scm.com/docs/git-config#Documentation/git-config.txt-corequotePath)
