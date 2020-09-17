@@ -12,6 +12,7 @@
 - [도커 이미지 조회하기](#images)
 - [도커 컨테이너 조회하기](#ps)
 - [bash모드로 컨테이너 진입](#exec-imageid-bash)
+- [컨테이너 포트 매핑 확인하기](#docker-port)
 - [컨테이너 삭제](#rm-container)
 - [이미지 삭제](#rmi-image)
 - [Docker Compose](#compose)
@@ -160,6 +161,16 @@ $ docker exec -it [컨테이너-이름] bash
 ```
 
 위의 명령어를 통해 도커의 컨테이너 내부에 <a href="https://ko.wikipedia.org/wiki/%EB%B0%B0%EC%8B%9C_(%EC%9C%A0%EB%8B%89%EC%8A%A4_%EC%85%B8">bash 모드</a>로 진입할 수 있다.
+
+<br>
+
+## <a name="docker-port"></a>컨테이너 포트 매핑 확인하기
+
+컨테이너가 몇번 포트로 매핑되어있는지 확인할 수 있다.
+
+~~~bash
+$ docker port [컨테이너-이름]
+~~~
 
 <br>
 

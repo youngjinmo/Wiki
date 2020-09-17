@@ -304,6 +304,7 @@
           <li><a href="server-side/Docker.md#images" target="_blank">도커 이미지 조회하기</a></li>
           <li><a href="server-side/Docker.md#ps" target="_blank">도커 컨테이너 조회하기</a></li>
           <li><a href="server-side/Docker.md#exec-imageid-bash" target="_blank">bash모드로 컨테이너 진입</a></li>
+          <li><a href="server-side/Docker.md#docker-port">컨테이너 포트 매핑 확인하기</a></li>  
           <li><a href="server-side/Docker.md#rm-container" target="_blank">컨테이너 삭제</a></li>
           <li><a href="server-side/Docker.md#rmi-image" target="_blank">이미지 삭제</a></li>
           <li><a href="server-side/Docker.md#compose" target="_blank">Docker Compose</a></li>
