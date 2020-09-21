@@ -201,36 +201,37 @@
     </li>
     <li>
       <details>
-      <summary><a href="server-side/oracledb.md.md" target="_blank">Oracle DBMS</a></summary>
+      <summary><a href="server-side/oracledb.md" target="_blank">Oracle DBMS</a></summary>
         <ul>
-          <li><a href="server-side/oracledb.md.md#overview" target="_blank">데이터베이스 개요</a></li>
-          <li><a href="server-side/oracledb.md.md#proscons" target="_blank">데이터베이스의 장단점</a></li>
+          <li><a href="server-side/oracledb.md.#overview" target="_blank">데이터베이스 개요</a></li>
+          <li><a href="server-side/oracledb.md#proscons" target="_blank">데이터베이스의 장단점</a></li>
           <ul>
-            <li><a href="server-side/oracledb.md.md#pros" target="_blank">장점</a></li>
-            <li><a href="server-side/oracledb.md.md#cons" target="_blank">단점</a></li>
+            <li><a href="server-side/oracledb.md#pros" target="_blank">장점</a></li>
+            <li><a href="server-side/oracledb.md#cons" target="_blank">단점</a></li>
           </ul>
-          <li><a href="server-side/oracledb.md.md#term" target="_blank">데이터베이스 관련 용어</a></li>
+          <li><a href="server-side/oracledb.md#term" target="_blank">데이터베이스 관련 용어</a></li>
           <ul>
-            <li><a href="server-side/oracledb.md.md#ddl" target="_blank">DDL</a></li>
-            <li><a href="server-side/oracledb.md.md#dml" target="_blank">DML</a></li>
-            <li><a href="server-side/oracledb.md.md#dcl" target="_blank">DCL</a></li>
-            <li><a href="server-side/oracledb.md.md#dbms" target="_blank">DBMS</a></li>
-            <li><a href="server-side/oracledb.md.md#rdbms" target="_blank">RDBMS</a></li>
+            <li><a href="server-side/oracledb.md#ddl" target="_blank">DDL</a></li>
+            <li><a href="server-side/oracledb.md#dml" target="_blank">DML</a></li>
+            <li><a href="server-side/oracledb.md#dcl" target="_blank">DCL</a></li>
+            <li><a href="server-side/oracledb.md#dbms" target="_blank">DBMS</a></li>
+            <li><a href="server-side/oracledb.md#rdbms" target="_blank">RDBMS</a></li>
           </ul>
-          <li><a href="server-side/oracledb.md.md#show-all-tables" target="_blank">오라클에서 전체 테이블 조회하기</a></li>
-          <li><a href="server-side/oracledb.md.md#create-account" target="_blank">오라클 DB 계정 생성하고 전환하기</a></li>
-          <li><a href="server-side/oracledb.md.md#drop-account" target="_blank">오라클 DB 계정 삭제하기</a></li>
-          <li><a href="server-side/oracledb.md.md#create-table" target="_blank">테이블 생성하기</a></li>
-          <li><a href="server-side/oracledb.md.md#desc" target="_blank">데이터 구조 조회하기 (DESC)</a></li>
-          <li><a href="server-side/oracledb.md.md#insert-into-table" target="_blank">데이터 삽입하기</a></li>
-          <li><a href="server-side/oracledb.md.md#drop-table" target="_blank">테이블 삭제하기</a></li>
-          <li><a href="server-side/oracledb.md.md#show-all-columns" target="_blank">테이블 전체 컬럼 조회</a></li>
-          <li><a href="server-side/oracledb.md.md#show-specific-columns" target="_blank">선택적 데이터 조회</a></li>
-          <li><a href="server-side/oracledb.md.md#show-columns-while-condition" target="_blank">조건에 따른 데이터 조회</a></li>
-          <li><a href="server-side/oracledb.md.md#select-order" target="_blank">정렬하여 조회하기 (이름순으로 조회시, 동명이면 생일순)</a></li>
-          <li><a href="server-side/oracledb.md.md#limit" target="_blank">데이터 출력 수 결정하기 (LIMIT)</a></li>
-          <li><a href="server-side/oracledb.md.md#distinct" target="_blank">중복제거 조회 (DISTINCT)</a></li>
-          <li><a href="server-side/oracledb.md.md#sql-math" target="_blank">연산처리</a></li>
+          <li><a href="server-side/oracledb.md#show-all-tables" target="_blank">오라클에서 전체 테이블 조회하기</a></li>
+          <li><a href="server-side/oracledb.md#v-version" target="_blank">오라클 버전 확인하기</a></li>
+          <li><a href="server-side/oracledb.md#create-account" target="_blank">오라클 DB 계정 생성하고 전환하기</a></li>
+          <li><a href="server-side/oracledb.md#drop-account" target="_blank">오라클 DB 계정 삭제하기</a></li>
+          <li><a href="server-side/oracledb.md#create-table" target="_blank">테이블 생성하기</a></li>
+          <li><a href="server-side/oracledb.md#desc" target="_blank">데이터 구조 조회하기 (DESC)</a></li>
+          <li><a href="server-side/oracledb.md#insert-into-table" target="_blank">데이터 삽입하기</a></li>
+          <li><a href="server-side/oracledb.md#drop-table" target="_blank">테이블 삭제하기</a></li>
+          <li><a href="server-side/oracledb.md#show-all-columns" target="_blank">테이블 전체 컬럼 조회</a></li>
+          <li><a href="server-side/oracledb.md#show-specific-columns" target="_blank">선택적 데이터 조회</a></li>
+          <li><a href="server-side/oracledb.md#show-columns-while-condition" target="_blank">조건에 따른 데이터 조회</a></li>
+          <li><a href="server-side/oracledb.md#select-order" target="_blank">정렬하여 조회하기 (이름순으로 조회시, 동명이면 생일순)</a></li>
+          <li><a href="server-side/oracledb.md#limit" target="_blank">데이터 출력 수 결정하기 (LIMIT)</a></li>
+          <li><a href="server-side/oracledb.md#distinct" target="_blank">중복제거 조회 (DISTINCT)</a></li>
+          <li><a href="server-side/oracledb.md#sql-math" target="_blank">연산처리</a></li>
         </ul>
       </details>
     </li>

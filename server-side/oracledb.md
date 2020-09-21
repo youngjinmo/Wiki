@@ -11,6 +11,7 @@
   - [DBMS](#dbms)
   - [RDBMS](#rdbms)
 - [오라클에서 전체 테이블 조회하기](#show-all-tables)
+- [오라클 버전 확인하기](#v-version)
 - [오라클 DB 계정 생성하고 전환하기](#create-account)
 - [오라클 DB 계정 삭제하기](#drop-account)
 - [테이블 생성하기](#create-table)
@@ -265,6 +266,15 @@ FROM
 실행결과이다.
 
 ![](https://lh3.googleusercontent.com/O-Xad05myu5pRNQ-La3nOgF5UkK5iMRspt4JO9szKtgOgsPPkDcIHCR_ZC6TohJkrFT1Gw0bYb36YRwlPvKfR9kILMVvcmXUbcnRh-L4hG70hZu3iDdibPzuHx0DS9Vl30OKY9Um5Xv8_Io5moiVJNwoDmUAUJZbQxXRoImQ86p9Ka5b409m1UCngDZNm7QS1f7osPh-U5QzkyudKotGapHNwTwv-ETse2fp1erL_rjpuLyD1GhrV_iP3uAb9Ztq7F2HQBAQK27ijBJixiihX-b5kf1I7hPTuY9CxzvkyT_xorRT-FBaatbUeAZKaaJtTBkJgruStuB26cfyq6NCHv57-c31RgegaawH0MHhLCLdEwQCQlDj_H7gffqM7WMgw6mDqYteif42HoP68SQlZ_r9ANBvVyew0H9q6hn4YLl5uHlDF-xpAtBx3m2BmieOvu5pqqb6gL_lVsJxdxR48tABknXO-nI5RveDG3JeQI3BE2sv8O1OD8YFW32OC4sxbG-kIMmNBCtG6AMtSEJmyW9SrQX3G1AV_D01_JxrN2wcN4Z3RqTzzbtC-J3zyptX5jKMhrT3DGeSQxxTBdk9mn3wTobTs8OCDytVjtE5skeNRYKkozw12UTRulOtIArn2F242rtl8NgWwSPzxWlUlLjkZsiDfEl5IUYw_UMII6vm8Te3RtCO0sGIIizVlHkbWiqjCOJrNYCnj0hmMZaBCO6bX6D3WUKTGbuv9ANabxH74DACuA=w910-h576-no)
+
+<br>
+
+## <a name="v-version"></a>오라클 버전 확인하기
+
+~~~bash
+SELECT *
+FROM v$version
+~~~
 
 <br>
 
