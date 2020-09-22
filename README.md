@@ -1,5 +1,3 @@
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdevyoungjin%2FWiki)](https://hits.seeyoufarm.com)
-
 # Wiki
 
 오늘 제가 배운 내용을 정리하는 공간입니다.
@@ -219,6 +217,7 @@
           </ul>
           <li><a href="server-side/oracledb.md#show-all-tables" target="_blank">오라클에서 전체 테이블 조회하기</a></li>
           <li><a href="server-side/oracledb.md#v-version" target="_blank">오라클 버전 확인하기</a></li>
+            <li><a href="server-side/oracledb.md#dba_users-grant-role" target="_blank">오라클 계정, 시스템권한, 롤 확인하기</a></li>
           <li><a href="server-side/oracledb.md#create-account" target="_blank">오라클 DB 계정 생성하고 전환하기</a></li>
           <li><a href="server-side/oracledb.md#drop-account" target="_blank">오라클 DB 계정 삭제하기</a></li>
           <li><a href="server-side/oracledb.md#create-table" target="_blank">테이블 생성하기</a></li>

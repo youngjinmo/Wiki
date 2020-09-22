@@ -12,6 +12,7 @@
   - [RDBMS](#rdbms)
 - [오라클에서 전체 테이블 조회하기](#show-all-tables)
 - [오라클 버전 확인하기](#v-version)
+- [오라클 계정, 시스템권한, 롤 확인하기](#dba_users-grant-role)
 - [오라클 DB 계정 생성하고 전환하기](#create-account)
 - [오라클 DB 계정 삭제하기](#drop-account)
 - [테이블 생성하기](#create-table)
@@ -275,6 +276,50 @@ FROM
 SELECT *
 FROM v$version
 ~~~
+
+<br>
+
+## <a name="dba_users-grant-role"></a>오라클 계정, 시스템권한, 롤 확인하기
+
+**오라클 계정 확인하기**
+
+~~~sql
+SELECT *
+FROM DBA_USERS;
+~~~
+![](https://user-images.githubusercontent.com/33862991/93837915-e5f33e00-fcc2-11ea-9d25-c379ccbd2f6e.PNG)
+
+~~~sql
+SELECT *
+FROM ALL_USERS;
+~~~
+![](https://user-images.githubusercontent.com/33862991/93837918-e7246b00-fcc2-11ea-97ca-d900659733f9.PNG)
+
+**계정에 부여된 시스템 권한 확인**
+
+~~~sql
+SELECT * 
+FROM DBA_SYS_PRIVX
+WHERE GRANTEE = 'ACCOUNT'  -- SYSTEM
+~~~
+![](https://user-images.githubusercontent.com/33862991/93837921-e7bd0180-fcc2-11ea-96e0-5060edc162cf.PNG)
+
+**계정에 부여된 롤 확인**
+
+~~~sql
+SELECT * 
+FROM DBA_ROLE_PRIVS
+WHERE GRANTEE = 'ACCOUNT'  -- DBA
+~~~
+![](https://user-images.githubusercontent.com/33862991/93837926-eab7f200-fcc2-11ea-9cab-13c01a67c2ad.PNG)
+
+**사용자가 소유한 모든 테이블 확인**
+
+~~~sql
+SELECT *
+FROM USER_TABLES;
+~~~
+![](https://user-images.githubusercontent.com/33862991/93837928-eab7f200-fcc2-11ea-9f53-db3566596a41.PNG)
 
 <br>
 
