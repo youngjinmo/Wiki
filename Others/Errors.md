@@ -2,7 +2,9 @@
 
 하루에도 수십번씩 만나는 다양한 에러들을 한 번쯤은 사전처럼 정리하고 싶다는 생각이 들었는데, 더이상 미루기 싫어서 시작해본다.
 
-**에러 목록들**
+- [MySQL 8 버전에서 계정 생성과 동시에 권한을 주려고 하는데 ERROR 1064가 발생할 때.](#mysql-8-grant)
+- [git에서 staging시 warning:LF will be replaced by CRLF 경고](#autocrlf)
+- [ Eclipse 실행 오류 발생할 때](#eclipse-launch-error)
 
 ## <a name="mysql-8-grant"></a>MySQL 8 버전에서 계정 생성과 동시에 권한을 주려고 하는데 ERROR 1064가 발생할 때.
 
@@ -47,7 +49,52 @@ git config --global core.autocrlf true
 git config --global core.autocrlf true input
 ~~~
 
+<br>
 
+## <a name="eclipse-launch-error"></a> Eclipse 실행 오류 발생할 때
 
+![출처 : 일상, IT블로그](https://user-images.githubusercontent.com/33862991/93956845-02a87800-fd8e-11ea-8321-bac8e8e232af.PNG)
 
+JDK 버전을 올렸을 때, Eclipse가 jdk를 찾지못해서 발생하는 현상이다.
+
+이 땐 먼저 jdk 버전을 확인한다. cmd 창을 열어서 아래 명령어를 조회한다.
+
+~~~bash
+$ java -version
+~~~
+
+ jdk version이 업데이트 전의 버전을 바라보고 있다면, 환경변수 설정부터 변경한다.
+
+1. [내 PC] 마우스 우클릭
+
+2. 속성
+
+3. 고급 시스템 설정
+
+4. [고급] 탭에서 환경변수 클릭
+
+5. 시스템 변수의 Path 변경
+
+6. 1. Java 설치경로(bin 디렉토리까지)를 작성한다.
+   2. C:\Program Files\jdk1.8.0\bin
+
+7. cmd에서 java -version을 확인한다.
+
+[출처 : 몽고's 개발블로그 - 이클립스 실행이 되지 않을 경우, 환경변수를 등록해주자](https://mongodev.tistory.com/28)
+
+jdk 버전이 제대로 출력된다면, 환경설정 문제는 아니다.
+
+eclipse 설정에서 아직 jdk 업그레이드 전의 버전을 바라보기 때문에 발생하는 현상이다.
+
+~~~
+C:\Users\DevAndy\eclipse\jee-2020-06\eclipse
+~~~
+
+여기서 이클립스 설정파일을 연다.
+
+![출처 : 일상, IT블로그](https://user-images.githubusercontent.com/33862991/93956841-01774b00-fd8e-11ea-965c-9fc76c8a875c.PNG)
+
+[출처 : eclipse 실행오류 고치기](https://m.blog.naver.com/PostView.nhn?blogId=pgh7092&logNo=221130560840&proxyReferer=https:%2F%2Fwww.google.com%2F)
+
+<br>
 
