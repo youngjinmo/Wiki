@@ -199,7 +199,7 @@
     </li>
     <li>
       <details>
-      <summary><a href="server-side/oracledb.md" target="_blank">Oracle DBMS</a></summary>
+      <summary><a href="server-side/oracledb.md" target="_blank">Oracle RDBMS</a></summary>
         <ul>
           <li><a href="server-side/oracledb.md.#overview" target="_blank">데이터베이스 개요</a></li>
           <li><a href="server-side/oracledb.md#proscons" target="_blank">데이터베이스의 장단점</a></li>
@@ -231,6 +231,8 @@
           <li><a href="server-side/oracledb.md#limit" target="_blank">데이터 출력 수 결정하기 (LIMIT)</a></li>
           <li><a href="server-side/oracledb.md#distinct" target="_blank">중복제거 조회 (DISTINCT)</a></li>
           <li><a href="server-side/oracledb.md#sql-math" target="_blank">연산처리</a></li>
+          <li><a href="server-side/oracledb.md#nvl" target="_blank">NVL 함수</a></li>
+          <li><a href="server-side/oracledb.md#concat" target="_blank">concat 연산자</a></li>
         </ul>
       </details>
     </li>
@@ -523,6 +525,7 @@
     </li>
   </ul>
 </details>
+
 
 
 

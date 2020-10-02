@@ -27,6 +27,8 @@
 - [데이터 출력 수 결정하기 (LIMIT)](#limit)
 - [중복제거 조회 (DISTINCT)](#distinct)
 - [연산처리](#sql-math)
+- [NVL 함수](#nvl)
+- [concat 연산자](#concat)
 
 <br>
 
@@ -225,7 +227,7 @@ CREATE TABLE ManchesterUnited(
 ##<a name="desc"></a>데이터 구조 조회하기 (DESC)
 
 ~~~sql
-DESC (table_name);
+DESC table_name;
 ~~~
 
 <br>
@@ -246,7 +248,7 @@ VALUES (val1, val2, val3);
 ## <a name="drop-table"></a>테이블 삭제하기
 
 ~~~sql
-DROP (table_name);
+DROP table_name;
 ~~~
 
 <br>
@@ -256,10 +258,8 @@ DROP (table_name);
 `dept` 라는 테이블의 모든 컬럼을 조회하는 쿼리이다.
 
 ~~~sql
-SELECT
-   *
-FROM
-   dept;
+SELECT *
+FROM dept;
 ~~~
 
 
@@ -328,10 +328,8 @@ FROM USER_TABLES;
 `dept` 테이블내에 `dname`, `loc` 컬럼만 조회하고자 하는 쿼리이다.
 
 ~~~sql
-SELECT
-   dname, loc
-FROM
-   dept;
+SELECT dname, loc
+FROM   dept;
 ~~~
 
 실행 결과이다.
@@ -345,12 +343,9 @@ FROM
 `deptno` 컬럼이 30 이상인 데이터만 조회하는 쿼리이다.
 
 ~~~sql
-SELECT
-   dname, loc
-FROM
-   dept
-WHERE
-   deptno>=30;
+SELECT dname, loc
+FROM   dept
+WHERE  deptno >= 30;
 ~~~
 
 실행 결과이다.
@@ -448,5 +443,40 @@ FROM ANIMAL_INS;
 SELECT AVG(AGE)
 FROM ANIMAL_INS;
 ```
+
+<br>
+
+## <a name="nvl"></a>NVL 함수
+
+NVL함수는 null값을 0으로 치환하여 연산하고자 할 때 사용하는 함수이다.
+
+~~~sql
+SELECT sal, comm, sal+comm
+FROM emp;
+~~~
+
+comm이 null인 항목이 있을 경우 위의 쿼리를 조회해도 아무것도 출력이 안될수 있다.
+
+![](https://user-images.githubusercontent.com/33862991/94887076-45660080-04b0-11eb-8436-cd35796e46ea.png)
+
+~~~sql
+SELECT sal, nvl(comm,0), nvl(sal+comm,0)
+FROM emp;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94887080-472fc400-04b0-11eb-855b-70ded846e5c4.png)
+
+<br>
+
+## <a name="contat"></a>concat 연산자
+
+문자열 합치는 연산자이다.
+
+~~~sql
+SELECT ename || 's job is ' || job
+FROM emp;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94887893-69c2dc80-04b2-11eb-8a2a-6164b23c5a16.png)
 
 <br>
