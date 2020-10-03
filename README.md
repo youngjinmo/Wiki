@@ -227,12 +227,14 @@
           <li><a href="server-side/oracledb.md#show-all-columns" target="_blank">테이블 전체 컬럼 조회</a></li>
           <li><a href="server-side/oracledb.md#show-specific-columns" target="_blank">선택적 데이터 조회</a></li>
           <li><a href="server-side/oracledb.md#show-columns-while-condition" target="_blank">조건에 따른 데이터 조회</a></li>
-          <li><a href="server-side/oracledb.md#select-order" target="_blank">정렬하여 조회하기 (이름순으로 조회시, 동명이면 생일순)</a></li>
-          <li><a href="server-side/oracledb.md#limit" target="_blank">데이터 출력 수 결정하기 (LIMIT)</a></li>
-          <li><a href="server-side/oracledb.md#distinct" target="_blank">중복제거 조회 (DISTINCT)</a></li>
+          <li><a href="server-side/oracledb.md#select-order" target="_blank">정렬하기 (중복시 2번째 조건으로 정렬)</a></li>
+          <li><a href="server-side/oracledb.md#limit" target="_blank">LIMIT</a></li>
+          <li><a href="server-side/oracledb.md#distinct" target="_blank">DISTINCT</a></li>
           <li><a href="server-side/oracledb.md#sql-math" target="_blank">연산처리</a></li>
           <li><a href="server-side/oracledb.md#nvl" target="_blank">NVL 함수</a></li>
-          <li><a href="server-side/oracledb.md#concat" target="_blank">concat 연산자</a></li>
+          <li><a href="server-side/oracledb.md#concat" target="_blank">concat</a></li>
+          <li><a href="server-side/oracledb.md#where-between">WHERE - BETWEEN</a></li>
+          <li><a href="server-side/oracledb.md#where-in">WHERE - IN</a></li>
         </ul>
       </details>
     </li>

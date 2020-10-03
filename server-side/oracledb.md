@@ -23,12 +23,14 @@
 - [테이블 전체 컬럼 조회](#show-all-columns)
 - [선택적 데이터 조회](#show-specific-columns)
 - [조건에 따른 데이터 조회](#show-columns-while-condition)
-- [정렬하여 조회하기 (이름순으로 조회시, 동명이면 생일순)](#select-order)
-- [데이터 출력 수 결정하기 (LIMIT)](#limit)
-- [중복제거 조회 (DISTINCT)](#distinct)
+- [정렬하기 (중복시 2번째 조건으로 정렬)](#select-order)
+- [LIMIT](#limit)
+- [DISTINCT](#distinct)
 - [연산처리](#sql-math)
 - [NVL 함수](#nvl)
-- [concat 연산자](#concat)
+- [concat](#concat)
+- [WHERE - BETWEEN](#where-between)
+- [WHERE - IN](#where-in)
 
 <br>
 
@@ -468,7 +470,7 @@ FROM emp;
 
 <br>
 
-## <a name="contat"></a>concat 연산자
+## <a name="contat"></a>concat
 
 문자열 합치는 연산자이다.
 
@@ -480,3 +482,68 @@ FROM emp;
 ![](https://user-images.githubusercontent.com/33862991/94887893-69c2dc80-04b2-11eb-8a2a-6164b23c5a16.png)
 
 <br>
+
+## <a name="where-between"></a>WHERE - BETWEEN
+
+WHERE 조건으로 숫자 범위를 지정할때 사용하는 연산자이다.
+
+~~~sql
+SELECT  empno, ename, sal
+FROM    emp
+WHERE   sal > 2000 OR sal < 1000;
+~~~
+
+위의 쿼리에서 WHERE 절은 BETWEEN을 이용하여 아래처럼 작성할수도 있다.
+
+~~~sql
+SELECT  empno, ename, sal
+FROM    emp
+WHERE   sal BETWEEN 1000 AND 2000;
+~~~
+
+그러나 BETWEEN은 <, >가 아닌 **<=, >= 을 모두 포함** 하므로 주의해야한다.
+
+아래의 쿼리는 서로 같은 결과를 출력하지 않는다.
+
+~~~sql
+SELECT  empno, ename, sal
+FROM    emp
+WHERE   sal >= 800 AND sal < 3000
+ORDER BY sal ASC;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94983387-4b75e300-057d-11eb-9ac1-524a1ff0e3da.PNG)
+
+~~~sql
+SELECT  empno, ename, sal
+FROM    emp
+WHERE   sal BETWEEN 800 AND 3000
+ORDER BY sal ASC;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94983388-4ca71000-057d-11eb-8a33-5b1fa8c63579.PNG)
+
+<br>
+
+## <a name="where-in"></a>WHERE - IN
+
+WHERE 조건절에서 특정 컬럼에 대해 여러 조건을 조회할 경우에 `IN` 키워드를 이용하여 간단하게 조회할 수 있다.
+
+~~~sql
+SELECT  empno, ename, job
+FROM    emp
+WHERE 	job = 'CLERK' AND job = 'SALESMAN' AND job = 'ANALYST'
+ORDER BY job ASC;
+~~~
+
+위의 쿼리를 바꾸면 다음과 같다.
+
+~~~sql
+SELECT  empno, ename, job
+FROM    emp
+WHERE job IN ('CLERK', 'SALESMAN', 'ANALYST')
+ORDER BY job ASC;
+~~~
+
+
+
