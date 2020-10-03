@@ -1,4 +1,4 @@
-# Oracle DBMS
+# Oracle RDBMS
 
 - [데이터베이스 개요](#overview)
 - [데이터베이스의 장단점](#prosncons)
@@ -23,12 +23,29 @@
 - [테이블 전체 컬럼 조회](#show-all-columns)
 - [선택적 데이터 조회](#show-specific-columns)
 - [조건에 따른 데이터 조회](#show-columns-while-condition)
-- [정렬하기 (중복시 2번째 조건으로 정렬)](#select-order)
+- [ORDER BY (중복시 2번째 조건으로 정렬)](#select-order)
 - [LIMIT](#limit)
 - [DISTINCT](#distinct)
 - [연산처리](#sql-math)
-- [NVL 함수](#nvl)
-- [concat](#concat)
+- [숫자 함수]()
+  - [abs](#abs)
+  - [floor](#floor)
+  - [round](#round)
+  - [trunc](#trunc)
+  - [mod](#mod)
+- [문자열 함수]()
+  - [lower](#lower)
+  - [upper](#upper)
+  - [initcap](#initcap)
+  - [concat](#concat)
+  - [length](#length)
+  - [substr](#substr)
+  - [instr](#instr)
+  - [lpad, rpad](#lpad-rpad)
+  - [trim](#trim)
+  - [replace](#replace)
+- [NUL - NVL](#null-nvl)
+- [IS NULL](#isnull)
 - [WHERE - BETWEEN](#where-between)
 - [WHERE - IN](#where-in)
 
@@ -356,7 +373,7 @@ WHERE  deptno >= 30;
 
 <br>
 
-## <a name="select-order"></a>정렬하여 조회하기 (이름순으로 조회시, 동명이면 생일순)
+## <a name="select-order"></a>ORDER BY (중복시 2번째 조건으로 정렬)
 
 이름(`NAME`) 순으로 조회할 때, 이름이 같을 경우, 생일(`BIRTH_DATE`)이 빠른 순으로 조회할 때 사용하는 쿼리이다.
 
@@ -374,7 +391,7 @@ ORDER BY
 
 <br>
 
-## <a name="limit"></a>데이터 조회 수 결정하기 (LIMIT)
+## <a name="limit"></a>LIMIT
 
 조회하는 데이터의 갯수를 결정할 때 사용하는 쿼리이다.
 
@@ -389,7 +406,7 @@ LIMIT 1;
 
 <br>
 
-## <a name="distinct"></a>중복제거 조회하기 (DISTINCT)
+## <a name="distinct"></a>DISTINCT
 
 조회 조건에서 중복을 제거하고 조회할 때 사용하는 쿼리이다.
 
@@ -448,13 +465,233 @@ FROM ANIMAL_INS;
 
 <br>
 
-## <a name="nvl"></a>NVL 함수
+## <a name="number-functions"></a> 숫자함수
+
+### <a name="abs"></a>abs
+
+절대값을 구하는 함수
+
+~~~sql
+SELECT -10, abs(-10)
+FROM dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94988088-ae7b7000-05a5-11eb-9783-00263a585545.PNG)
+
+### <a name="floor"></a>floor
+
+소수점이하를 버리는 함수
+
+~~~sql
+SELECT 12.3456, floor(12.3456)
+FROM dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94988089-af140680-05a5-11eb-92e1-57dac8137af4.PNG)
+
+### <a name="round"></a>round
+
+반올림하는 함수
+
+~~~sql
+SELECT  12.3456, round(12.3456)
+FROM 	dual;
+~~~
+
+`round` 함수는 반올림 자릿수도 결정할 수 있다.
+
+~~~sql
+SELECT 12.3456, round(12.3456), round(12.3456, 2), round(12.3456, -1)
+FROM dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94988212-8cceb880-05a6-11eb-9096-aca13a82e337.PNG)
+
+### <a name="trunc"></a>trunc
+
+특정 자릿수를 버리는 함수이다.
+
+~~~sql
+SELECT 1234.5678, trunc(1234.5678), trunc(1234.5678, -2), trunc(1234.5678, 2)
+FROM dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94988326-53e31380-05a7-11eb-9ab3-b6640113ab92.PNG)
+
+### <a name="mod"></a>mod
+
+나머지를 구하는 함수이다.
+
+~~~sql
+SELECT 10, mod(10, 3)
+FROM dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94988411-e71c4900-05a7-11eb-8e53-d7c98616340a.PNG)
+
+<br>
+
+## <a name="string-functions"></a> 문자열 함수
+
+### <a name="lower"></a>lower
+
+소문자로 변환하여 출력하는 함수이다.
+
+~~~sql
+SELECT 	'ABcDEf', lower('ABcDEf')
+FROM	dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94988654-c9e87a00-05a9-11eb-960f-5c4b37b69512.PNG)
+
+### <a name="upper"></a>upper
+
+대문자로 변환하여 출력하는 함수이다.
+
+~~~sql
+SELECT 	'aBcdeF', upper('aBcdeF')
+FROM	dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94988656-cbb23d80-05a9-11eb-91d3-5c0ece74beed.PNG)
+
+### <a name="initcap"></a>initcap
+
+첫글자만 대문자로 반환하고, 나머지 문자는 소문자로만 반환하는 함수이다.
+
+~~~sql
+SELECT  'abcDEf', initcap('abcDEf')
+FROM    dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94988721-4d09d000-05aa-11eb-90ae-fdaf79894fe2.PNG)
+
+### <a name="concat"></a>concat
+
+문자열을 결합하는 함수이다.
+
+~~~sql
+SELECT  concat(concat(concat('Person name is ',ename), ', his job is '), job)
+FROM    emp;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94993978-9f111c80-05cf-11eb-8a65-633fbb48bb66.PNG)
+
+`concat` 연산자 대신 `||` 를 이용할 수도 있다. 개인적으론 이게 더 편한것 같다.
+
+~~~sql
+SELECT	'Person name is ' || ename || ', his job is ' || job
+FROM	emp;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94994032-f7e0b500-05cf-11eb-933a-7df70dc3adcc.PNG)
+
+<br>
+
+### <a name="length"></a>length
+
+문자열 길이를 반환하는 함수이다.
+
+~~~sql
+SELECT  length('안녕, 개발자앤디!')
+FROM	dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94994168-e77d0a00-05d0-11eb-9bb9-9433d3f4c892.PNG)
+
+<br>
+
+### <a name="substr"></a>substr
+
+문자열을 잘라내는 함수이다.
+
+~~~sql
+SELECT	substr('Hello world', 7)
+FROM	dual
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94994417-6cb4ee80-05d2-11eb-8d02-ebe399d98b4a.PNG)
+
+
+
+`substr` 의 인자로 숫자를 2개(n,m)를 주입하면, 문자열의 n번째부터 m번째까지 선택적으로 잘라서 반환이 가능하다.
+
+~~~sql
+SELECT  substr('Hello World', 0, 5)
+FROM	dual;
+~~~
+
+ ![](https://user-images.githubusercontent.com/33862991/94994967-fc0fd100-05d5-11eb-9026-88ddd251f09a.PNG)
+
+### <a name="instr"></a>instr
+
+문자열에서 검색하려는 문자열을 찾아서 문자열의 위치(인덱스)를 반환하는 함수이다.
+
+~~~sql
+SELECT 	instr('Hello World', 'll')
+FROM  	dual;
+~~~
+
+찾는 문자열이 문자열에 없으면, 0을 반환한다.
+
+![](https://user-images.githubusercontent.com/33862991/94995051-8fe19d00-05d6-11eb-895b-a6fe3f7ee3d8.PNG)
+
+사원의 이름중에 A라는 글자가 두번째 이후에 나타나는 사원의 이름을 조회하는 쿼리
+
+~~~sql
+SELECT  ename
+FROM    emp
+WHERE   instr(ename, 'A') >= 2;
+-- WHERE   ename NOT LIKE 'A%' AND ename LIKE '%A%';
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94995177-902e6800-05d7-11eb-8fdc-6a75b09545c0.PNG)
+
+### <a name="lpad-rpad"></a>lpad, rpad
+
+문자열의 왼쪽(`lpad`), 오른쪽(`rpad`)에 문자열을 채우는 함수이다.
+
+~~~sql
+SELECT  lpad('world', 10, '_'), rpad('비밀번호 ', 20, '*')
+FROM    dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94995660-a853b680-05da-11eb-9627-0f0ead1d278d.PNG)
+
+### <a name="trim"></a>trim
+
+공백을 제거하는 함수이다. 왼쪽 공백만 제거하려면, `lpad`, 오른쪽 공백만 제거하려면, `rpad`를 이용하면 된다.
+
+~~~sql
+SELECT trim('       hello world     '), 
+       ltrim('       hello world     '), 
+       rtrim('       hello world     ')
+FROM   dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94995754-5eb79b80-05db-11eb-8b22-cb1689accf79.PNG)
+
+### <a name="replace"></a>replace
+
+문자열의 일부를 다른 문자열로 교체하는 함수이다.
+
+~~~sql
+SELECT  'Hello world' as original, 
+        replace('Hello world', 'world', 'DevAndy') as changed
+FROM    dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/94995755-5fe8c880-05db-11eb-84cc-de13f1444d26.PNG)
+
+<br>
+
+## <a name="null-nvl"></a>NULL - NVL
 
 NVL함수는 null값을 0으로 치환하여 연산하고자 할 때 사용하는 함수이다.
 
 ~~~sql
-SELECT sal, comm, sal+comm
-FROM emp;
+SELECT  sal, comm, sal+comm
+FROM 	emp;
 ~~~
 
 comm이 null인 항목이 있을 경우 위의 쿼리를 조회해도 아무것도 출력이 안될수 있다.
@@ -462,24 +699,28 @@ comm이 null인 항목이 있을 경우 위의 쿼리를 조회해도 아무것�
 ![](https://user-images.githubusercontent.com/33862991/94887076-45660080-04b0-11eb-8436-cd35796e46ea.png)
 
 ~~~sql
-SELECT sal, nvl(comm,0), nvl(sal+comm,0)
-FROM emp;
+SELECT  sal, nvl(comm,0), nvl(sal+comm,0)
+FROM 	emp;
 ~~~
 
 ![](https://user-images.githubusercontent.com/33862991/94887080-472fc400-04b0-11eb-855b-70ded846e5c4.png)
 
 <br>
 
-## <a name="contat"></a>concat
+## <a name="isnull"></a>IS NULL
 
-문자열 합치는 연산자이다.
+컬럼의 값이 NULL인지 여부를 체크할 수 있다.  
+`emp` 테이블에는 커미션을 뜻하는 `comm`이라는 컬럼이 있는데, 이 컬럼에 **값이 없는 경우** 가 있다. 
+
+따라서 **커미션을 받지 않는 사원의 사원번호, 이름을 조회** 할 때 아래와 같은 쿼리로 조회할 수 있다.
 
 ~~~sql
-SELECT ename || 's job is ' || job
-FROM emp;
+SELECT  empno, ename, comm
+FROM    emp
+WHERE   comm IS NULL or comm = 0;
 ~~~
 
-![](https://user-images.githubusercontent.com/33862991/94887893-69c2dc80-04b2-11eb-8a2a-6164b23c5a16.png)
+반대로 NULL이 아닌 경우는 `IS NOT NULL` 키워드로 조회할 수 있다.
 
 <br>
 

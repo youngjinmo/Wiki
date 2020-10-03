@@ -231,8 +231,29 @@
           <li><a href="server-side/oracledb.md#limit" target="_blank">LIMIT</a></li>
           <li><a href="server-side/oracledb.md#distinct" target="_blank">DISTINCT</a></li>
           <li><a href="server-side/oracledb.md#sql-math" target="_blank">연산처리</a></li>
-          <li><a href="server-side/oracledb.md#nvl" target="_blank">NVL 함수</a></li>
-          <li><a href="server-side/oracledb.md#concat" target="_blank">concat</a></li>
+          <li><a href="server-side/oracledb.md#number-functions" target="_blank">숫자함수</a></li>
+            <ul>
+                <li><a href="server-side/oracledb.md#abs" target="_blank">abs</a></li>
+                <li><a href="server-side/oracledb.md#floor" target="_blank">floor</a></li>
+                <li><a href="server-side/oracledb.md#round" target="_blank">round</a></li>
+                <li><a href="server-side/oracledb.md#trunc" target="_blank">trunc</a></li>
+                <li><a href="server-side/oracledb.md#mod" target="_blank">mod</a></li>
+            </ul>
+          <li><a href="server-side/oracledb.md#string-functions" target="_blank">문자열 함수</a></li>
+            <ul>
+                <li><a href="server-side/oracledb.md#lower" target="_blank">lower</a></li>
+                <li><a href="server-side/oracledb.md#upper" target="_blank">upper</a></li>
+                <li><a href="server-side/oracledb.md#initcap" target="_blank">initcap</a></li>
+                <li><a href="server-side/oracledb.md#concat" target="_blank">concat</a></li>
+                <li><a href="server-side/oracledb.md#length" target="_blank">length</a></li>
+                <li><a href="server-side/oracledb.md#substr" target="_blank">substr</a></li>
+                <li><a href="server-side/oracledb.md#instr" target="_blank">instr</a></li>
+                <li><a href="server-side/oracledb.md#lpad-rpad" target="_blank">lpad, rpad</a></li>
+                <li><a href="server-side/oracledb.md#trim" target="_blank">trim</a></li>
+                <li><a href="server-side/oracledb.md#replace" target="_blank">replace</a></li>
+            </ul>
+          <li><a href="server-side/oracledb.md#null-nvl" target="_blank">NULL - NVL</a></li>
+          <li><a href="server-side/oracledb.md#isnull" target="_blank">IS NULL</a></li>
           <li><a href="server-side/oracledb.md#where-between">WHERE - BETWEEN</a></li>
           <li><a href="server-side/oracledb.md#where-in">WHERE - IN</a></li>
         </ul>
