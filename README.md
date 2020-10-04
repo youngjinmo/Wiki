@@ -262,8 +262,23 @@
           <li><a href="server-side/oracledb.md#group-by">GROUP BY</a></li>
           <li><a href="server-side/oracledb.md#having">HAVING</a></li>
           <li><a href="server-side/oracledb.md#join">JOIN</a></li>
-          <li><a href="server-side/oracledb.md#self-join">Selft Join</a></li>
-          <li><a href="server-side/oracledb.md#outer-join">Outer Join</a></li>
+            <ul>
+                <li><a href="server-side/oracledb.md#self-join">Selft Join</a></li>
+          		<li><a href="server-side/oracledb.md#outer-join">Outer Join</a></li>
+            </ul>
+          <li><a href="server-side/oracledb.md#subquery">서브쿼리</a></li>
+            <ul>
+                <li><a href="server-side/oracledb.md#in">IN</a></li>
+                <li><a href="server-side/oracledb.md#all">ALL</a></li>
+                <li><a href="server-side/oracledb.md#any-some">ANY, SOME</a></li>
+            </ul>
+          <li><a href="server-side/oracledb.md#outer-join">SET</a></li>
+            <ul>
+                <li><a href="server-side/oracledb.md#union">UNION</a></li>
+                <li><a href="server-side/oracledb.md#union-all">UNION ALL</a></li>
+                <li><a href="server-side/oracledb.md#outer-join">INTERSECT</a></li>
+                <li><a href="server-side/oracledb.md#outer-join">MINUS</a></li>
+            </ul>
           <li><a href="server-side/oracledb.md#insert" target="_blank">INSERT</a></li>
         </ul>
       </details>

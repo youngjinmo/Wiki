@@ -53,8 +53,17 @@
 - [GROUP BY](#group-by)
 - [HAVING](#having)
 - [JOIN](#join)
-- [Self Join](#self-join)
-- [Outer Join](#outer-join)
+  - [Self Join](#self-join)
+  - [Outer Join](#outer-join)
+- [서브쿼리](#subquery)
+  - [IN](#in)
+  - [ALL](#all)
+  - [ANY, SOME](#any-some)
+- [SET](#set)
+  - [UNION](#union)
+  - [UNION ALL](#union-all)
+  - [INTERSECT](#intersect)
+  - [MINUS](#minus)
 - [INSERT](#insert)
 
 <br>
@@ -1073,6 +1082,173 @@ WHERE		e1.mgr = e2.empno;
 ![](https://user-images.githubusercontent.com/33862991/95013302-73973c00-067a-11eb-9e9b-4a7cd4d6b88d.PNG)
 
 `WHERE` 조건에 따라 직속상관이 없는 KING은 출력되지 않았다.
+
+<br>
+
+## <a name="subquery"></a>서브쿼리
+
+~~~sql
+SELECT *
+FROM   table1
+WHERE  conditional = (SELECT conditional
+                      FROM	table2
+                      WHERE author = 'DEVANDY');
+~~~
+
+쿼리문 안의 쿼리문을 **서브쿼리** 라 한다.
+
+예제 쿼리를 보자. 'SMITH' 와 같은 부서에 근무하는 사원들의 번호, 이름, 급여액, 부서이름을 조회하는 쿼리이다.
+
+~~~sql
+SELECT      e.empno, e.ename, e.sal, d.dname
+FROM        emp e, dept d
+WHERE       e.deptno = d.deptno;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95014335-13f05f00-0681-11eb-9a57-f97b31afabcd.PNG)
+
+여기까지 작성했다면, 이제 'SMITH' 의 부서와 같은 부서라는 조건을 `WHERE` 절에 포함시켜야 한다. 이 때 서브쿼리를 이용한다.
+
+~~~SQL
+SELECT      e.empno, e.ename, e.sal, d.dname
+FROM        emp e, dept d
+WHERE       e.deptno = d.deptno 
+    AND e.deptno = (SELECT deptno 
+                    FROM emp 
+                    WHERE ename = 'SMITH');
+~~~
+
+서브쿼리로 'SMITH' 라는 이름의 사원의 deptno를 반환하고 반환된 deptno와 같은 deptno를 갖는 조건을  `WHERE` 에 포함시켰다. 
+
+![](https://user-images.githubusercontent.com/33862991/95014337-15218c00-0681-11eb-95e6-ed46dbae8edf.PNG)	
+
+<br>
+
+## 서브쿼리 연산자
+
+### <a name="in"></a>IN
+
+서브쿼리의 결과중 하나라도 일치하면 조건이 참.
+
+예제코드를 보자.  3000 이상의 급여를 받는 사원들과 같은 부서에 근무하는 사원의 사원번호, 이름, 급여를 조회하는 쿼리이다.
+
+~~~SQL
+SELECT      empno, ename, sal
+FROM        emp
+WHERE       deptno = (SELECT deptno 
+                      FROM emp 
+                      WHERE sal>=3000);
+~~~
+
+이렇게 하면, 아래와 같은 경고가 출력된다.
+
+![](https://user-images.githubusercontent.com/33862991/95015222-bf4fe280-0686-11eb-8dbf-d5efbd29e424.PNG)
+
+서브쿼리의 결과가 하나 이상의 결과가 출력되서 발생한 에러이다. 이 경우에 사용하는 서브쿼리 연산자가 `IN` 이다. `IN` 을 사용하면, 서브쿼리의 결과중 하나라도 일치하면, 일치하는 조건으로 결과를 출력한다.
+
+~~~sql
+SELECT      empno, ename, sal
+FROM        emp
+WHERE       deptno IN (SELECT deptno 
+                      FROM emp 
+                      WHERE sal>=3000);
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95015223-c0810f80-0686-11eb-9e1b-2d1c2e200b1d.PNG)
+
+<br>
+
+### <a name="all"></a>ALL 
+
+서브쿼리의 결과와 모두 일치해야 조건이 참.
+
+예제 코드를 보자. 각 부서별 급여 평균보다 더 많이 받는 사원의 사원번호, 이름, 급여를 조회하는 쿼리이다.
+
+~~~sql
+SELECT      empno, ename, sal
+FROM        emp
+WHERE       sal  > (SELECT avg(sal) FROM emp GROUP BY deptno);
+~~~
+
+이렇게만 하면, 에러를 유발한다.
+
+~~~sql
+SELECT avg(sal) FROM emp GROUP BY deptno;
+~~~
+
+이 쿼리의 결과가 `GROUP BY` 에 의해서 부서별로 출력되기 때문이다. 
+
+문제에 맞는 결과를 출력하기 위해서는 서브쿼리에서 출력되는 모든 컬럼보다 급여가 더 많은 조건이 충족되야 하므로 이 때 서브쿼리 연산자 `ALL`을 사용한다.
+
+~~~sql
+SELECT      empno, ename, sal
+FROM        emp
+WHERE       sal  > ALL (SELECT avg(sal) FROM emp GROUP BY deptno);
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95015573-97fa1500-0688-11eb-9c78-9a42d22c0fbb.PNG)
+
+위의 쿼리는 `ALL` 을 사용하지 않고, 서브쿼리 내에서 그룹함수 `MAX`를 이용하여 하나의 결과만 출력되도록 하여 사용할 수도 있다.
+
+~~~sql
+SELECT      empno, ename, sal
+FROM        emp
+WHERE       sal  > (SELECT max(avg(sal)) FROM emp GROUP BY deptno);
+~~~
+
+결과는 정확히 같다.
+
+### <a name="any-some"></a>ANY, SOME
+
+서브쿼리의 결과와 하나 이상 일치하면 조건이 참.
+
+<br>
+
+## <a name="set"></a>SET
+
+두 개의 `SELECT` 문을 통해 얻어온 결과에 대해 집합 연산을 할 수 있는 쿼리이다. 단, `SELECT` 문을 통해 가져온 컬럼의 형태가 완전히 일치해야 사용할 수 있다.
+
+![](https://dwgeek.com/wp-content/uploads/2019/12/Snowflake-Set-Operators.jpg)
+
+### <a name="union"></a>UNION
+
+2개의 쿼리에 대한 합집합 결과를 출력하는 쿼리이다.
+
+~~~sql
+SELECT   FROM   WHERE
+UNION
+SELECT   FROM   WHERE
+~~~
+
+### <a name="union-all"></a>UNION ALL
+
+중복된 데이터를 포함하는 합집합이다.
+
+~~~sql
+SELECT   FROM   WHERE
+UNION ALL
+SELECT   FROM   WHERE
+~~~
+
+### <a name="intersect"></a>INTERSECT
+
+교집합이다.
+
+~~~sql
+SELECT   FROM   WHERE
+INTERSECT
+SELECT   FROM   WHERE
+~~~
+
+### <a name="minus"></a>MINUS
+
+차집합이다.
+
+~~~sql
+SELECT   FROM   WHERE
+MINUS
+SELECT   FROM   WHERE
+~~~
 
 <br>
 
