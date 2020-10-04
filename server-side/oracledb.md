@@ -10,23 +10,23 @@
   - [DCL](#dcl)
   - [DBMS](#dbms)
   - [RDBMS](#rdbms)
-- [오라클에서 전체 테이블 조회하기](#show-all-tables)
 - [오라클 버전 확인하기](#v-version)
-- [오라클 계정, 시스템권한, 롤 확인하기](#dba_users-grant-role)
 - [오라클 DB 계정 생성하고 전환하기](#create-account)
 - [오라클 DB 계정 삭제하기](#drop-account)
+- [오라클 계정, 시스템권한, 롤 확인하기](#dba_users-grant-role)
 - [테이블 생성하기](#create-table)
-- [데이터 구조 조회하기 (DESC)](#desc)
-- [데이터 삽입하기](#insert-into-table)
-- [테이블 컬럼 데이터 타입 변경하기](#truncate)
 - [테이블 삭제하기](#drop-table)
-- [테이블 전체 컬럼 조회](#show-all-columns)
-- [선택적 데이터 조회](#show-specific-columns)
-- [조건에 따른 데이터 조회](#show-columns-while-condition)
+- [테이블 컬럼명 변경하기](#alter-table-rename)
+- [테이블 컬럼 타입 변경하기](#alter-table-modify)
+- [DESC](#desc)
+- [오라클에서 전체 테이블 조회하기](#show-all-tables)
+- [SELECT](#select)
+- [SELECT *](#select-all)
+- [WHERE](#where)
 - [ORDER BY (중복시 2번째 조건으로 정렬)](#select-order)
 - [LIMIT](#limit)
 - [DISTINCT](#distinct)
-- [연산처리](#sql-math)
+- [연산처리](#operation)
 - [숫자 함수]()
   - [abs](#abs)
   - [floor](#floor)
@@ -48,6 +48,9 @@
 - [IS NULL](#isnull)
 - [WHERE - BETWEEN](#where-between)
 - [WHERE - IN](#where-in)
+- [decode](#decode)
+- [CASE](#case)
+- [INSERT](#insert)
 
 <br>
 
@@ -173,22 +176,12 @@ Data Control Language
 
 <br>
 
-## <a name="show-all-tables"></a> 오라클에서 전체 테이블 조회하기
+## <a name="v-version"></a>오라클 버전 확인하기
 
-~~~sql
-SELECT
-   table_name, owner
-FROM
-   all_tables
-WHERE
-   owner='ACCOUNT'
-ORDER BY
-   owner, table_name;
+~~~bash
+SELECT *
+FROM v$version
 ~~~
-
-`SCOTT` 계정 내 테이블을 조회한 결과이다.
-
-![](https://lh3.googleusercontent.com/sl8bqkhkiHb20UhRuQJkvnXLnZQ--a1NMhb__fl4JJazAY7KA4Ey-2z5zW8_0a8LA0fsxDwffviyNBtecjS-GU0m9qxWTm3Jr7PoHwmDKB3D29P3jXRDZt600LM9PfjBBgbZQVtEho0qQA27s93kQzKUQSwXR6cWFduxTbw1WAVBs_ElqzXdHXOwchckxPNmXczBI9qqhwzdvyNspXYBaYcMXbczMxrA7usQXi_0L6h_p7KQGrL2AwD9NAkAQyHcqG0AXWMbpcLll_eNWi4uuvSYqvia-hv6Xw-29Ql_u0gJrR0T7N2X1GdghKA6c9ei411SiX-JhFTh3y0fJWA4Jx3FYEP7sg10GIKwvUHfnXXhn17avmlv7He2NJN1xeGUgnh37SpCtJVtRhuJFaM8KtwPkso_hgpWBhvntsYiIpsTS_ZcLYClJmy9v1IHLrAq5ntVPpGNrKqQnZeWRHbQ31aZFccfOitQb89NzL6I0Vig6fpz3eJmhF2bXGr50mieigbVPQDhO2p82BxOD_GVqMLZT6MDVnnD-SvAuippfy4aI5mNQ2oVD2D2MqHYRDhpp6h96WppP15g_7P5gG6O99fG7GkjOUNvg69s5DIZ1ScAByAAYwIpiQgKQuqt_g7nsCyjZhbIoe6mIAB7cm15DdcR52URBtKqoe0hopuGqgHq76UoPKC7iXrvKkeTj0mzr6vytDI9NC0bODOkd7jASA_ahtu7jFMVHKnA48vbTXjJ-4eJWw=w1266-h1012-no)
 
 <br>
 
@@ -224,6 +217,55 @@ DROP user 'ACCOUNT' cascade;
 
 <br>
 
+## <a name="dba_users-grant-role"></a>오라클 계정, 시스템권한, 롤 확인하기
+
+**오라클 계정 확인하기**
+
+~~~sql
+SELECT *
+FROM DBA_USERS;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/93837915-e5f33e00-fcc2-11ea-9d25-c379ccbd2f6e.PNG)
+
+~~~sql
+SELECT *
+FROM ALL_USERS;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/93837918-e7246b00-fcc2-11ea-97ca-d900659733f9.PNG)
+
+**계정에 부여된 시스템 권한 확인**
+
+~~~sql
+SELECT * 
+FROM DBA_SYS_PRIVX
+WHERE GRANTEE = 'ACCOUNT'  -- SYSTEM
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/93837921-e7bd0180-fcc2-11ea-96e0-5060edc162cf.PNG)
+
+**계정에 부여된 롤 확인**
+
+~~~sql
+SELECT * 
+FROM DBA_ROLE_PRIVS
+WHERE GRANTEE = 'ACCOUNT'  -- DBA
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/93837926-eab7f200-fcc2-11ea-9cab-13c01a67c2ad.PNG)
+
+**사용자가 소유한 모든 테이블 확인**
+
+~~~sql
+SELECT *
+FROM USER_TABLES;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/93837928-eab7f200-fcc2-11ea-9f53-db3566596a41.PNG)
+
+<br>
+
 ## <a name="create-table"></a>테이블 생성하기
 
 `position`, `name`, `back_number`, `registration_date` 컬럼을 갖는 테이블 `players`을 생성하겠다. back_number를 제외한 모든 컬럼에 `not null` 조건을 추가하여 반드시 기입하도록 하였고, 모든 데이터가 가변성을 위해 `char()` 대신 `varchar()` 를 데이터타입으로 주었다.
@@ -243,7 +285,49 @@ CREATE TABLE ManchesterUnited(
 
 <br>
 
-##<a name="desc"></a>데이터 구조 조회하기 (DESC)
+## <a name="drop-table"></a>테이블 삭제하기
+
+테이블을 삭제하는 쿼리이다.
+
+~~~sql
+DROP TABLE table_name;
+~~~
+
+<br>
+
+## <a name="alter-table-rename"></a> 테이블 컬럼명 변경하기
+
+~~~sql
+ALTER TABLE [table-name] RENAME COLUMN [old-column-name] TO [new-column-name]
+~~~
+
+아래는 예제 쿼리이다.
+
+~~~sql
+ALTER TABLE emp RENAME COLUMN job TO position;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95005369-7bcb8900-0632-11eb-807a-568f374054a5.PNG)
+
+![](https://user-images.githubusercontent.com/33862991/95005370-7cfcb600-0632-11eb-9855-1b0077f6505c.PNG)
+
+<br>
+
+## <a name="alter-table-modify"></a> 테이블 컬럼 타입 변경하기
+
+~~~sql
+ALTER TABLE [table-name] MODIFY [column-name] [column-datatype]
+~~~
+
+단 주의해야 할 점은, 데이터 타입을 변경하고자 하는 컬럼에 데이터가 들어가 있으면 쿼리가 작동하지 않는다.
+
+![](https://user-images.githubusercontent.com/33862991/95005372-7ec67980-0632-11eb-9e80-079a8e995021.PNG)
+
+<br>
+
+## <a name="desc"></a>DESC
+
+테이블에 대한 스키마를 확인하는 쿼리이다.
 
 ~~~sql
 DESC table_name;
@@ -251,98 +335,26 @@ DESC table_name;
 
 <br>
 
-## <a name="insert-into-table"></a>데이터 삽입하기
+## <a name="show-all-tables"></a> 오라클에서 전체 테이블 조회하기
 
 ~~~sql
-INSERT INTO players(col1, col2, col3)
-VALUES (val1, val2, val3);
+SELECT
+   table_name, owner
+FROM
+   all_tables
+WHERE
+   owner='ACCOUNT'
+ORDER BY
+   owner, table_name;
 ~~~
 
-실행결과이다.
+`SCOTT` 계정 내 테이블을 조회한 결과이다.
 
-![](https://lh3.googleusercontent.com/PkDNslNo3bKyZ3OP6t43EcwT9A9NtuufR-FmMXhAZm0zfHZu9oi0Ifd04dJDScyhoqWdFpw8zExi_g3aQkhbLpBpc-iyP-v8TKQSEx3NsYo1Vi6FW8FhaKHl7LOFtxrxfcicg0AVhfbDWtWsiL_exq5MJuddoRp35G_mDNC6YomLEHZXGjb7Ja9QOK8NpVfQXvlLBpr5Eaj0TbXHrjRgGxBfVI9s8tjyTrkmTjdig6S4H_ioJW3ieKjrmLIbB1St3b4so4j9K7WGzcFlHu_L9xSf94-UC6JT11S91GLWxhlxp4UL0oatJZHWx41mzC0VPQi67GjALG9zLjWJ2HEEO_gaCha1R53rBnMHpx-duB5JShEO2oUo6Swki0LatdJitrgq6Sxu6AhOGAlsouxXOnyOGUy_MH4-qAPybPZ0TpIlDaqWvvUM00czjBRwdGdYV-aVwkhOvgyPnEi6eI5Ol-KjvVMkdLHeWxOMZ6-qKdzgI2pailp0oxwUUOVmgPBpPdgihQzH6BUX4OLcf7F9B6tsLnzv3qm9W2nfFGYI-TEiuZRwXzFhT6SyJ0_Pb1JmrnN9UCrI5j-3ODHbuygeHyx5Uqrgpm5dWr1IPCTDweoNYPC0F1_9-Lsy3rv92trwi_x8G7rY3qKWal2VWnPszyKojiOgRNMl5J6DEL0hMU2qTyKv7mY0uty30IalSc14Fy-nj5zy7gndzjwt2ge8Y7e4uixiTiRHfNXJjInWxFSfb0W3bg=w1646-h642-no)
+![](https://lh3.googleusercontent.com/sl8bqkhkiHb20UhRuQJkvnXLnZQ--a1NMhb__fl4JJazAY7KA4Ey-2z5zW8_0a8LA0fsxDwffviyNBtecjS-GU0m9qxWTm3Jr7PoHwmDKB3D29P3jXRDZt600LM9PfjBBgbZQVtEho0qQA27s93kQzKUQSwXR6cWFduxTbw1WAVBs_ElqzXdHXOwchckxPNmXczBI9qqhwzdvyNspXYBaYcMXbczMxrA7usQXi_0L6h_p7KQGrL2AwD9NAkAQyHcqG0AXWMbpcLll_eNWi4uuvSYqvia-hv6Xw-29Ql_u0gJrR0T7N2X1GdghKA6c9ei411SiX-JhFTh3y0fJWA4Jx3FYEP7sg10GIKwvUHfnXXhn17avmlv7He2NJN1xeGUgnh37SpCtJVtRhuJFaM8KtwPkso_hgpWBhvntsYiIpsTS_ZcLYClJmy9v1IHLrAq5ntVPpGNrKqQnZeWRHbQ31aZFccfOitQb89NzL6I0Vig6fpz3eJmhF2bXGr50mieigbVPQDhO2p82BxOD_GVqMLZT6MDVnnD-SvAuippfy4aI5mNQ2oVD2D2MqHYRDhpp6h96WppP15g_7P5gG6O99fG7GkjOUNvg69s5DIZ1ScAByAAYwIpiQgKQuqt_g7nsCyjZhbIoe6mIAB7cm15DdcR52URBtKqoe0hopuGqgHq76UoPKC7iXrvKkeTj0mzr6vytDI9NC0bODOkd7jASA_ahtu7jFMVHKnA48vbTXjJ-4eJWw=w1266-h1012-no)
 
 <br>
 
-## <a name="drop-table"></a>테이블 삭제하기
-
-~~~sql
-DROP table_name;
-~~~
-
-<br>
-
-## <a name="show-all-columns"></a>테이블 전체 컬럼 조회
-
-`dept` 라는 테이블의 모든 컬럼을 조회하는 쿼리이다.
-
-~~~sql
-SELECT *
-FROM dept;
-~~~
-
-
-
-실행결과이다.
-
-![](https://lh3.googleusercontent.com/O-Xad05myu5pRNQ-La3nOgF5UkK5iMRspt4JO9szKtgOgsPPkDcIHCR_ZC6TohJkrFT1Gw0bYb36YRwlPvKfR9kILMVvcmXUbcnRh-L4hG70hZu3iDdibPzuHx0DS9Vl30OKY9Um5Xv8_Io5moiVJNwoDmUAUJZbQxXRoImQ86p9Ka5b409m1UCngDZNm7QS1f7osPh-U5QzkyudKotGapHNwTwv-ETse2fp1erL_rjpuLyD1GhrV_iP3uAb9Ztq7F2HQBAQK27ijBJixiihX-b5kf1I7hPTuY9CxzvkyT_xorRT-FBaatbUeAZKaaJtTBkJgruStuB26cfyq6NCHv57-c31RgegaawH0MHhLCLdEwQCQlDj_H7gffqM7WMgw6mDqYteif42HoP68SQlZ_r9ANBvVyew0H9q6hn4YLl5uHlDF-xpAtBx3m2BmieOvu5pqqb6gL_lVsJxdxR48tABknXO-nI5RveDG3JeQI3BE2sv8O1OD8YFW32OC4sxbG-kIMmNBCtG6AMtSEJmyW9SrQX3G1AV_D01_JxrN2wcN4Z3RqTzzbtC-J3zyptX5jKMhrT3DGeSQxxTBdk9mn3wTobTs8OCDytVjtE5skeNRYKkozw12UTRulOtIArn2F242rtl8NgWwSPzxWlUlLjkZsiDfEl5IUYw_UMII6vm8Te3RtCO0sGIIizVlHkbWiqjCOJrNYCnj0hmMZaBCO6bX6D3WUKTGbuv9ANabxH74DACuA=w910-h576-no)
-
-<br>
-
-## <a name="v-version"></a>오라클 버전 확인하기
-
-~~~bash
-SELECT *
-FROM v$version
-~~~
-
-<br>
-
-## <a name="dba_users-grant-role"></a>오라클 계정, 시스템권한, 롤 확인하기
-
-**오라클 계정 확인하기**
-
-~~~sql
-SELECT *
-FROM DBA_USERS;
-~~~
-![](https://user-images.githubusercontent.com/33862991/93837915-e5f33e00-fcc2-11ea-9d25-c379ccbd2f6e.PNG)
-
-~~~sql
-SELECT *
-FROM ALL_USERS;
-~~~
-![](https://user-images.githubusercontent.com/33862991/93837918-e7246b00-fcc2-11ea-97ca-d900659733f9.PNG)
-
-**계정에 부여된 시스템 권한 확인**
-
-~~~sql
-SELECT * 
-FROM DBA_SYS_PRIVX
-WHERE GRANTEE = 'ACCOUNT'  -- SYSTEM
-~~~
-![](https://user-images.githubusercontent.com/33862991/93837921-e7bd0180-fcc2-11ea-96e0-5060edc162cf.PNG)
-
-**계정에 부여된 롤 확인**
-
-~~~sql
-SELECT * 
-FROM DBA_ROLE_PRIVS
-WHERE GRANTEE = 'ACCOUNT'  -- DBA
-~~~
-![](https://user-images.githubusercontent.com/33862991/93837926-eab7f200-fcc2-11ea-9cab-13c01a67c2ad.PNG)
-
-**사용자가 소유한 모든 테이블 확인**
-
-~~~sql
-SELECT *
-FROM USER_TABLES;
-~~~
-![](https://user-images.githubusercontent.com/33862991/93837928-eab7f200-fcc2-11ea-9f53-db3566596a41.PNG)
-
-<br>
-
-## <a name="show-specific-columns"></a>선택적 데이터 조회
+## <a name="select"></a>SELECT
 
 `dept` 테이블내에 `dname`, `loc` 컬럼만 조회하고자 하는 쿼리이다.
 
@@ -357,7 +369,22 @@ FROM   dept;
 
 <br>
 
-## <a name="show-columns-while-condition"></a>조건에 따른 데이터 조회
+## <a name="select-all"></a>SELECT *
+
+테이블의 모든 컬럼을 조회하는 쿼리이다.
+
+~~~sql
+SELECT *
+FROM dept;
+~~~
+
+실행결과이다.
+
+![](https://lh3.googleusercontent.com/O-Xad05myu5pRNQ-La3nOgF5UkK5iMRspt4JO9szKtgOgsPPkDcIHCR_ZC6TohJkrFT1Gw0bYb36YRwlPvKfR9kILMVvcmXUbcnRh-L4hG70hZu3iDdibPzuHx0DS9Vl30OKY9Um5Xv8_Io5moiVJNwoDmUAUJZbQxXRoImQ86p9Ka5b409m1UCngDZNm7QS1f7osPh-U5QzkyudKotGapHNwTwv-ETse2fp1erL_rjpuLyD1GhrV_iP3uAb9Ztq7F2HQBAQK27ijBJixiihX-b5kf1I7hPTuY9CxzvkyT_xorRT-FBaatbUeAZKaaJtTBkJgruStuB26cfyq6NCHv57-c31RgegaawH0MHhLCLdEwQCQlDj_H7gffqM7WMgw6mDqYteif42HoP68SQlZ_r9ANBvVyew0H9q6hn4YLl5uHlDF-xpAtBx3m2BmieOvu5pqqb6gL_lVsJxdxR48tABknXO-nI5RveDG3JeQI3BE2sv8O1OD8YFW32OC4sxbG-kIMmNBCtG6AMtSEJmyW9SrQX3G1AV_D01_JxrN2wcN4Z3RqTzzbtC-J3zyptX5jKMhrT3DGeSQxxTBdk9mn3wTobTs8OCDytVjtE5skeNRYKkozw12UTRulOtIArn2F242rtl8NgWwSPzxWlUlLjkZsiDfEl5IUYw_UMII6vm8Te3RtCO0sGIIizVlHkbWiqjCOJrNYCnj0hmMZaBCO6bX6D3WUKTGbuv9ANabxH74DACuA=w910-h576-no)
+
+<br>
+
+## <a name="where"></a>WHERE
 
 `deptno` 컬럼이 30 이상인 데이터만 조회하는 쿼리이다.
 
@@ -373,7 +400,7 @@ WHERE  deptno >= 30;
 
 <br>
 
-## <a name="select-order"></a>ORDER BY (중복시 2번째 조건으로 정렬)
+## <a name="orderby"></a>ORDER BY (중복시 2번째 조건으로 정렬)
 
 이름(`NAME`) 순으로 조회할 때, 이름이 같을 경우, 생일(`BIRTH_DATE`)이 빠른 순으로 조회할 때 사용하는 쿼리이다.
 
@@ -419,7 +446,7 @@ FROM ANIMAL_INS;
 
 <br>
 
-## <a name="sql-math"></a>연산 처리
+## <a name="operation"></a>연산 처리
 
 현재까지 내가 알고있는 SQL에서 연산하는 방법은 세가지이다.
 
@@ -498,7 +525,9 @@ SELECT  12.3456, round(12.3456)
 FROM 	dual;
 ~~~
 
-`round` 함수는 반올림 자릿수도 결정할 수 있다.
+반올림 자릿수도 결정할 수 있다. 음수이면 십의 자리 몇번째까지를 반올림할지를, 양수이면 소숫점 몇번째까지를 반올림할지를 결정한다.
+
+예제 쿼리이다.
 
 ~~~sql
 SELECT 12.3456, round(12.3456), round(12.3456, 2), round(12.3456, -1)
@@ -511,6 +540,12 @@ FROM dual;
 
 특정 자릿수를 버리는 함수이다.
 
+함수의 인자값으로 하나만 넣으면 정수만 남기고 소숫점은 버린다. 두번째 인자값으로 버리는 범위를 지정할 수 있는데, 양수를 넣으면 버릴 소숫점 자릿수를 결정하며, 음수를 넣으면 십의 몇째자리까지 남길지를 결정한다. 
+
+예를 들어, `trunc(12.34, -1)` 이면, 일의자리까지 버리고 `1`을 반환하며, `trunc(12.34, -1)` 이면, 소숫점 한 자리수만 남기고 버려서 `12.3`을 반화한다.
+
+아래는 예제 쿼리이다.
+
 ~~~sql
 SELECT 1234.5678, trunc(1234.5678), trunc(1234.5678, -2), trunc(1234.5678, 2)
 FROM dual;
@@ -521,6 +556,12 @@ FROM dual;
 ### <a name="mod"></a>mod
 
 나머지를 구하는 함수이다.
+
+~~~sql
+mod(n, m) : n에 m을 나누고난 나머지 반환
+~~~
+
+예졔 쿼리이다.
 
 ~~~sql
 SELECT 10, mod(10, 3)
@@ -786,5 +827,76 @@ WHERE job IN ('CLERK', 'SALESMAN', 'ANALYST')
 ORDER BY job ASC;
 ~~~
 
+<br>
 
+## <a name="decode"></a>DECODE
 
+컬럼의 **<u>값에 따라 반환값을 결정</u>** 하는 함수이다. Java의 Switch문같은 느낌(?)의 함수같다.
+
+~~~sql
+DECODE(column, val1, result1,
+      		  val2, result2,
+      		  val3, result3)
+~~~
+
+deptno에 따라 각 부서 이름을 지정하여 반환하는 쿼리이다.
+
+~~~sql
+SELECT  empno, ename, 
+		decode(deptno, 10, '인사과', 
+               		20,'개발부', 
+               		30, '경영지원팀', 
+               		40, '생산부')
+FROM    emp;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95004617-bd573680-0628-11eb-839d-f58f3165c9a1.PNG)
+
+<br>
+
+## <a name="case"></a>CASE
+
+조건에 따라 반환값이 결정되는 함수
+
+[DECODE](#decode)가 Java에서 Switch문과 같았다면, 오라클에서 CASE는 Java의 if-else문과 유사하다. CASE는 **<u>조건에따라 값이 결정</u>** 된다.
+
+~~~sql
+CASE WHEN condition1 THEN result1
+	WHEN condition2 THEN result2
+	WHEN condition3 THEN result3
+END
+~~~
+
+`CASE`로 시작하여 `END`로 끝이나며, `WHEN`을 구분할때 `,` 를 사용하지 않는다.
+
+급여별 등급을 책정하는 쿼리이다.
+
+~~~sql
+-- 급여액별 등급을 가져온다.
+-- 1000 미만 : C등급
+-- 1000 이상 2000미만 : B등급
+-- 2000 이상 : A등급
+SELECT  empno, ename, 
+        CASE WHEN sal<1000 THEN 'C'
+            WHEN sal>=1000 AND sal<2000 THEN 'B'
+            WHEN sal>=2000 THEN 'A'
+        END as grade
+FROM    emp;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95004733-4e7add00-062a-11eb-90d6-36fdf33098b4.PNG)
+
+<br>
+
+## <a name="insert"></a>INSERT
+
+~~~sql
+INSERT INTO players(col1, col2, col3)
+VALUES (val1, val2, val3);
+~~~
+
+실행결과이다.
+
+![](https://lh3.googleusercontent.com/PkDNslNo3bKyZ3OP6t43EcwT9A9NtuufR-FmMXhAZm0zfHZu9oi0Ifd04dJDScyhoqWdFpw8zExi_g3aQkhbLpBpc-iyP-v8TKQSEx3NsYo1Vi6FW8FhaKHl7LOFtxrxfcicg0AVhfbDWtWsiL_exq5MJuddoRp35G_mDNC6YomLEHZXGjb7Ja9QOK8NpVfQXvlLBpr5Eaj0TbXHrjRgGxBfVI9s8tjyTrkmTjdig6S4H_ioJW3ieKjrmLIbB1St3b4so4j9K7WGzcFlHu_L9xSf94-UC6JT11S91GLWxhlxp4UL0oatJZHWx41mzC0VPQi67GjALG9zLjWJ2HEEO_gaCha1R53rBnMHpx-duB5JShEO2oUo6Swki0LatdJitrgq6Sxu6AhOGAlsouxXOnyOGUy_MH4-qAPybPZ0TpIlDaqWvvUM00czjBRwdGdYV-aVwkhOvgyPnEi6eI5Ol-KjvVMkdLHeWxOMZ6-qKdzgI2pailp0oxwUUOVmgPBpPdgihQzH6BUX4OLcf7F9B6tsLnzv3qm9W2nfFGYI-TEiuZRwXzFhT6SyJ0_Pb1JmrnN9UCrI5j-3ODHbuygeHyx5Uqrgpm5dWr1IPCTDweoNYPC0F1_9-Lsy3rv92trwi_x8G7rY3qKWal2VWnPszyKojiOgRNMl5J6DEL0hMU2qTyKv7mY0uty30IalSc14Fy-nj5zy7gndzjwt2ge8Y7e4uixiTiRHfNXJjInWxFSfb0W3bg=w1646-h642-no)
+
+<br>

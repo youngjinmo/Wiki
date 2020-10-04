@@ -215,22 +215,23 @@
             <li><a href="server-side/oracledb.md#dbms" target="_blank">DBMS</a></li>
             <li><a href="server-side/oracledb.md#rdbms" target="_blank">RDBMS</a></li>
           </ul>
-          <li><a href="server-side/oracledb.md#show-all-tables" target="_blank">오라클에서 전체 테이블 조회하기</a></li>
           <li><a href="server-side/oracledb.md#v-version" target="_blank">오라클 버전 확인하기</a></li>
-            <li><a href="server-side/oracledb.md#dba_users-grant-role" target="_blank">오라클 계정, 시스템권한, 롤 확인하기</a></li>
           <li><a href="server-side/oracledb.md#create-account" target="_blank">오라클 DB 계정 생성하고 전환하기</a></li>
           <li><a href="server-side/oracledb.md#drop-account" target="_blank">오라클 DB 계정 삭제하기</a></li>
+          <li><a href="server-side/oracledb.md#dba_users-grant-role" target="_blank">오라클 계정, 시스템권한, 롤 확인하기</a></li>
           <li><a href="server-side/oracledb.md#create-table" target="_blank">테이블 생성하기</a></li>
-          <li><a href="server-side/oracledb.md#desc" target="_blank">데이터 구조 조회하기 (DESC)</a></li>
-          <li><a href="server-side/oracledb.md#insert-into-table" target="_blank">데이터 삽입하기</a></li>
           <li><a href="server-side/oracledb.md#drop-table" target="_blank">테이블 삭제하기</a></li>
-          <li><a href="server-side/oracledb.md#show-all-columns" target="_blank">테이블 전체 컬럼 조회</a></li>
-          <li><a href="server-side/oracledb.md#show-specific-columns" target="_blank">선택적 데이터 조회</a></li>
-          <li><a href="server-side/oracledb.md#show-columns-while-condition" target="_blank">조건에 따른 데이터 조회</a></li>
-          <li><a href="server-side/oracledb.md#select-order" target="_blank">정렬하기 (중복시 2번째 조건으로 정렬)</a></li>
+          <li><a href="server-side/oracledb.md#alter-table-rename">테이블 컬럼명 변경하기</a></li>
+          <li><a href="server-side/oracledb.md#alter-table-modify">테이블 컬럼 타입 변경하기</a></li>
+          <li><a href="server-side/oracledb.md#desc" target="_blank">DESC</a></li>
+          <li><a href="server-side/oracledb.md#show-all-tables" target="_blank">오라클에서 전체 테이블 조회하기</a></li>
+          <li><a href="server-side/oracledb.md#select" target="_blank">SELECT</a></li>
+          <li><a href="server-side/oracledb.md#select-all" target="_blank">SELECT *</a></li>
+          <li><a href="server-side/oracledb.md#where" target="_blank">WHERE</a></li>
+          <li><a href="server-side/oracledb.md#orderby" target="_blank">ORDER BY (중복시 2번째 조건으로 정렬)</a></li>
           <li><a href="server-side/oracledb.md#limit" target="_blank">LIMIT</a></li>
           <li><a href="server-side/oracledb.md#distinct" target="_blank">DISTINCT</a></li>
-          <li><a href="server-side/oracledb.md#sql-math" target="_blank">연산처리</a></li>
+          <li><a href="server-side/oracledb.md#operation" target="_blank">연산처리</a></li>
           <li><a href="server-side/oracledb.md#number-functions" target="_blank">숫자함수</a></li>
             <ul>
                 <li><a href="server-side/oracledb.md#abs" target="_blank">abs</a></li>
@@ -256,6 +257,10 @@
           <li><a href="server-side/oracledb.md#isnull" target="_blank">IS NULL</a></li>
           <li><a href="server-side/oracledb.md#where-between">WHERE - BETWEEN</a></li>
           <li><a href="server-side/oracledb.md#where-in">WHERE - IN</a></li>
+          <li><a href="server-side/oracledb.md#decode">DECODE</a></li>
+          <li><a href="server-side/oracledb.md#case">CASE</a></li>
+          <li><a href="server-side/oracledb.md#group-function">그룹 함수</a></li>
+          <li><a href="server-side/oracledb.md#insert" target="_blank">INSERT</a></li>
         </ul>
       </details>
     </li>
@@ -548,6 +553,7 @@
     </li>
   </ul>
 </details>
+
 
 
 
