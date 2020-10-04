@@ -45,11 +45,16 @@
   - [trim](#trim)
   - [replace](#replace)
 - [NUL - NVL](#null-nvl)
-- [IS NULL](#isnull)
+- [IS NULL](#is-null)
 - [WHERE - BETWEEN](#where-between)
 - [WHERE - IN](#where-in)
-- [decode](#decode)
+- [DECODE](#decode)
 - [CASE](#case)
+- [GROUP BY](#group-by)
+- [HAVING](#having)
+- [JOIN](#join)
+- [Self Join](#self-join)
+- [Outer Join](#outer-join)
 - [INSERT](#insert)
 
 <br>
@@ -748,7 +753,7 @@ FROM 	emp;
 
 <br>
 
-## <a name="isnull"></a>IS NULL
+## <a name="is-null"></a>IS NULL
 
 컬럼의 값이 NULL인지 여부를 체크할 수 있다.  
 `emp` 테이블에는 커미션을 뜻하는 `comm`이라는 컬럼이 있는데, 이 컬럼에 **값이 없는 경우** 가 있다. 
@@ -885,6 +890,189 @@ FROM    emp;
 ~~~
 
 ![](https://user-images.githubusercontent.com/33862991/95004733-4e7add00-062a-11eb-90d6-36fdf33098b4.PNG)
+
+<br>
+
+## <a name="group-by"></a>GROUP BY
+
+전체 쿼리의 결과를 하나의 그룹으로 묶어서 그룹함수(`sum`, `avg`, `max`, `min`)를 사용할 수 있다.
+
+예를 들면,
+
+~~~sql
+SELECT sum(sal)
+FROM   emp;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95005923-057e5500-0639-11eb-8fa8-8d275ec081c5.PNG)
+
+사원테이블에서 급여총액을 구한 쿼리이다. 여기서 부서별 급여 총액을 반환하는 쿼리로 변경하려면, `GROUP BY`를 써서 다음과 같이 작성할 수 있다.
+
+~~~sql
+SELECT   sum(sal), deptno
+FROM	 emp
+GROUP BY deptno;
+~~~
+
+그럼 부서별로 나누어서 조회한 결과에서 그룹함수 sum을 적용한 결과를 반환하게 된다.
+
+![](https://user-images.githubusercontent.com/33862991/95005925-0616eb80-0639-11eb-84e8-20de7ed4c2d3.PNG)
+
+`GROUP BY` 를 사용하면, 이처럼 하나의 결과를 여러 그룹으로 나눠 그룹 각각의 총합과 평균등을 구할 수 있다.
+
+예제 쿼리이다. 각 부서별 사원들의 급여 평균을 구하는 쿼리이다. 부서별 급여를 구하기 위해서는 부서별로 `GROUP BY`를 한 후에 그룹함수`avg`를 사용하여 결과를 출력할 수 있다.
+
+~~~sql
+SELECT		trunc(avg(sal), 2), deptno
+FROM		emp
+GROUP BY	deptno
+ORDER BY	deptno;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95005832-e3d09e00-0637-11eb-839e-5cde86af8e51.PNG)
+
+<br>
+
+## <a name="having"></a> HAVING
+
+`GROUP BY` 로 묶인 그룹들에 대한 조건을 지정할 수 있는 쿼리이다. `HAVING`은 `GROUP BY`절의 조건절이라고 할 수 있다.
+
+예제 쿼리를 통해 알아보자. 부서별 평균 급여가 2000 이상인 부서의 급여 평균을 조회하는 쿼리이다.
+
+부서별 평균 급여를 먼저 조회해야하므로 `GROUP BY`를 사용하여 다음과 같은 쿼리를 작성할 수 있다.
+
+~~~sql
+SELECT      deptno, trunc(avg(sal), 2)
+FROM        emp
+GROUP BY    deptno
+ORDER BY    deptno;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95006011-24c9b200-063a-11eb-9438-21392a6adfbd.PNG)
+
+이제 여기서 부서별 평균 급여가 2000 이상인 조건을 추가해야한다. 이 때 `HAVING` 을 사용한다.
+
+~~~sql
+SELECT      deptno, trunc(avg(sal), 2)
+FROM        emp
+GROUP BY    deptno
+HAVING      avg(sal)>=2000
+ORDER BY    deptno;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95006012-25fadf00-063a-11eb-961a-a4b986171657.PNG)
+
+<br>
+
+## <a name="join"></a> JOIN
+
+두 개 이상의 테이블에 있는 컬럼 값을 한 번에 가져오기 위한 쿼리.
+
+~~~sql
+SELECT *
+FROM   emp, dept;
+~~~
+
+`FROM` 에서 테이블을 복수로 조회하면 JOIN을 사용하게 된다.
+
+![](https://user-images.githubusercontent.com/33862991/95006364-d539b500-063e-11eb-9bdd-858a290956b9.png)
+
+이렇게 `JOIN`을 사용할 땐, <span style="color: red;">**두 가지**</span> 를 <span style="color: red;"><b>주의</b></span>해야 한다.
+
+하나는 중복이 발생할 수 있으므로, `WHERE` 절에서 **중복을 제거하는 조건을 추가** 해야하며, 두번째로는 마찬가지로 복수의 테이블을 조회하다보면 같은 이름의 컬럼이 있을 수 있으므로 RDBMS가 어떤 테이블인지를 알 수 있도록 **테이블마다 별칭을 추가** 하여, 이 별칭으로 컬럼을 구분해야 한다.
+
+테이블마다 별칭을 추가한 쿼리이다.
+
+~~~sql
+SELECT   e.empno, e.ename, d.deptno, d.dname
+FROM	 emp e, dept e;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95006360-ceab3d80-063e-11eb-9ea3-bc0e9916c666.PNG)
+
+이렇게 하면 `emp` 테이블과 `dept` 테이블에 동시에 존재하는 `deptno` 컬럼을 구분해서 사용할 수 있게 된다. 그러나 이것만으로는 중복을 제거할 수 없다.
+
+`WHERE` 절을 사용하여 중복된 컬럼을 명시하면 쿼리 결과에서 중복이 제거된다.
+
+~~~sql
+SELECT   e.empno, e.ename, d.deptno, d.dname
+FROM	 emp e, dept e 
+WHERE	 e.deptno = d.deptno;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95006381-00240900-063f-11eb-9124-bc3482432ac1.PNG)
+
+조회된 컬럼 수가 줄어든걸 확인할 수 있다. `JOIN` 결과에서 중복이 제거된 것이다.
+
+<br>
+
+## <a name="self-join"></a>Self Join
+
+같은 테이블을 2번 `JOIN` 하는 것을 `Self Join`이라 한다.
+
+예제 코드를 바로 보도록 하자. emp 테이블의 스키마 구조는 다음과 같다.
+
+~~~
+EMPNO    NOT NULL NUMBER(4)    
+ENAME             VARCHAR2(10) 
+JOB               VARCHAR2(9)  
+MGR               NUMBER(4)    
+HIREDATE          DATE         
+SAL               NUMBER(7,2)  
+COMM              NUMBER(7,2)  
+DEPTNO            NUMBER(2) 
+~~~
+
+위와 같은 스키마를 갖는 emp 테이블에서 SMITH라는 이름의 사원번호, 이름, 직속상관 이름을 조회하려고 한다.
+
+~~~sql
+SELECT	empno, ename
+FROM 	emp
+WHERE	ename = 'SMITH'
+~~~
+
+여기서, 직속상관의 이름을 추가하려면 emp 테이블을 한 번 더 조회해야한다. 같은 테이블인 emp 테이블을 두번 조회하는 이유는 하나는 SMITH 사원에 대한 결과값을, 다른 하나는 SMITH 사원의 직속상관에 대한 결과값을 조회하기 위함이다.
+
+~~~sql
+SELECT	e1.empno, e1.ename, e2.ename AS mgrname
+FROM	emp e1, emp e2
+WHERE	e1.mgr = e2.empno
+	AND	e1.ename = 'SMITH';
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95009383-a8949600-065c-11eb-9d09-6c8ab8cd1334.PNG)
+
+<br>
+
+## <a name="outer-join"></a>Outer Join
+
+`JOIN` 조건에 포함되지 않는 컬럼까지 가져오는 JOIN 쿼리
+
+일반적인 JOIN과 똑같이 사용하지만, `WHERE` 절의 조건에서 결과가 부족한쪽의 컬럼에 `(+)` 를 붙혀서 사용한다.
+
+~~~sql
+SELECT 		e1.ename, e1.empno, e2.ename as mgr
+FROM		emp e1, emp e2
+WHERE		e1.mgr = e2.empno(+);
+~~~
+
+위의 쿼리는 사원의 이름, 사원번호, 직속상사의 이름을 출력하는 쿼리인데, Outer Join을 함으로써 `WHERE` 조건을 충족시키지 않는 컬럼도 출력할 수 있도록 하였다.
+
+즉 위의 쿼리에서는 직속상관이 없는 사원도 Outer Join으로 출력할 수 있게된 것이다.
+
+![](https://user-images.githubusercontent.com/33862991/95013301-71cd7880-067a-11eb-8198-d0dc17cda760.PNG)
+
+Outer Join을 하지않고, Join으로만 조회한 경우
+
+~~~sql
+SELECT 		e1.ename, e1.empno, e2.ename as mgr
+FROM		emp e1, emp e2
+WHERE		e1.mgr = e2.empno;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95013302-73973c00-067a-11eb-9e9b-4a7cd4d6b88d.PNG)
+
+`WHERE` 조건에 따라 직속상관이 없는 KING은 출력되지 않았다.
 
 <br>
 

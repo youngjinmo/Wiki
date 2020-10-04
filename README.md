@@ -254,12 +254,16 @@
                 <li><a href="server-side/oracledb.md#replace" target="_blank">replace</a></li>
             </ul>
           <li><a href="server-side/oracledb.md#null-nvl" target="_blank">NULL - NVL</a></li>
-          <li><a href="server-side/oracledb.md#isnull" target="_blank">IS NULL</a></li>
+          <li><a href="server-side/oracledb.md#is-null" target="_blank">IS NULL</a></li>
           <li><a href="server-side/oracledb.md#where-between">WHERE - BETWEEN</a></li>
           <li><a href="server-side/oracledb.md#where-in">WHERE - IN</a></li>
           <li><a href="server-side/oracledb.md#decode">DECODE</a></li>
           <li><a href="server-side/oracledb.md#case">CASE</a></li>
-          <li><a href="server-side/oracledb.md#group-function">그룹 함수</a></li>
+          <li><a href="server-side/oracledb.md#group-by">GROUP BY</a></li>
+          <li><a href="server-side/oracledb.md#having">HAVING</a></li>
+          <li><a href="server-side/oracledb.md#join">JOIN</a></li>
+          <li><a href="server-side/oracledb.md#self-join">Selft Join</a></li>
+          <li><a href="server-side/oracledb.md#outer-join">Outer Join</a></li>
           <li><a href="server-side/oracledb.md#insert" target="_blank">INSERT</a></li>
         </ul>
       </details>
