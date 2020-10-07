@@ -199,120 +199,120 @@
     </li>
     <li>
       <details>
-      <summary><a href="server-side/oracledb.md" target="_blank">Oracle RDBMS</a></summary>
+      <summary><a href="server-side/db/oracledb.md" target="_blank">Oracle RDBMS</a></summary>
         <ul>
-          <li><a href="server-side/oracledb.md.#overview" target="_blank">데이터베이스 개요</a></li>
-          <li><a href="server-side/oracledb.md#proscons" target="_blank">데이터베이스의 장단점</a></li>
+          <li><a href="server-side/db/oracledb.md.#overview" target="_blank">데이터베이스 개요</a></li>
+          <li><a href="server-side/db/oracledb.md#proscons" target="_blank">데이터베이스의 장단점</a></li>
           <ul>
-            <li><a href="server-side/oracledb.md#pros" target="_blank">장점</a></li>
-            <li><a href="server-side/oracledb.md#cons" target="_blank">단점</a></li>
+            <li><a href="server-side/db/oracledb.md#pros" target="_blank">장점</a></li>
+            <li><a href="server-side/db/oracledb.md#cons" target="_blank">단점</a></li>
           </ul>
-          <li><a href="server-side/oracledb.md#term" target="_blank">데이터베이스 관련 용어</a></li>
+          <li><a href="server-side/db/oracledb.md#term" target="_blank">데이터베이스 관련 용어</a></li>
           <ul>
-            <li><a href="server-side/oracledb.md#ddl" target="_blank">DDL</a></li>
-            <li><a href="server-side/oracledb.md#dml" target="_blank">DML</a></li>
-            <li><a href="server-side/oracledb.md#dcl" target="_blank">DCL</a></li>
-            <li><a href="server-side/oracledb.md#dbms" target="_blank">DBMS</a></li>
-            <li><a href="server-side/oracledb.md#rdbms" target="_blank">RDBMS</a></li>
+            <li><a href="server-side/db/oracledb.md#ddl" target="_blank">DDL</a></li>
+            <li><a href="server-side/db/oracledb.md#dml" target="_blank">DML</a></li>
+            <li><a href="server-side/db/oracledb.md#dcl" target="_blank">DCL</a></li>
+            <li><a href="server-side/db/oracledb.md#dbms" target="_blank">DBMS</a></li>
+            <li><a href="server-side/db/oracledb.md#rdbms" target="_blank">RDBMS</a></li>
           </ul>
-          <li><a href="server-side/oracledb.md#v-version" target="_blank">오라클 버전 확인하기</a></li>
-          <li><a href="server-side/oracledb.md#create-account" target="_blank">오라클 DB 계정 생성하고 전환하기</a></li>
-          <li><a href="server-side/oracledb.md#drop-account" target="_blank">오라클 DB 계정 삭제하기</a></li>
-          <li><a href="server-side/oracledb.md#dba_users-grant-role" target="_blank">오라클 계정, 시스템권한, 롤 확인하기</a></li>
-          <li><a href="server-side/oracledb.md#create-table" target="_blank">테이블 생성하기</a></li>
-          <li><a href="server-side/oracledb.md#drop-table" target="_blank">테이블 삭제하기</a></li>
-          <li><a href="server-side/oracledb.md#alter-table-rename">테이블 컬럼명 변경하기</a></li>
-          <li><a href="server-side/oracledb.md#alter-table-modify">테이블 컬럼 타입 변경하기</a></li>
-          <li><a href="server-side/oracledb.md#desc" target="_blank">DESC</a></li>
-          <li><a href="server-side/oracledb.md#show-all-tables" target="_blank">오라클에서 전체 테이블 조회하기</a></li>
-          <li><a href="server-side/oracledb.md#select" target="_blank">SELECT</a></li>
-          <li><a href="server-side/oracledb.md#select-all" target="_blank">SELECT *</a></li>
-          <li><a href="server-side/oracledb.md#where" target="_blank">WHERE</a></li>
-          <li><a href="server-side/oracledb.md#orderby" target="_blank">ORDER BY (중복시 2번째 조건으로 정렬)</a></li>
-          <li><a href="server-side/oracledb.md#limit" target="_blank">LIMIT</a></li>
-          <li><a href="server-side/oracledb.md#distinct" target="_blank">DISTINCT</a></li>
-          <li><a href="server-side/oracledb.md#operation" target="_blank">연산처리</a></li>
-          <li><a href="server-side/oracledb.md#number-functions" target="_blank">숫자함수</a></li>
+          <li><a href="server-side/db/oracledb.md#v-version" target="_blank">오라클 버전 확인하기</a></li>
+          <li><a href="server-side/db/oracledb.md#create-account" target="_blank">오라클 DB 계정 생성하고 전환하기</a></li>
+          <li><a href="server-side/db/oracledb.md#drop-account" target="_blank">오라클 DB 계정 삭제하기</a></li>
+          <li><a href="server-side/db/oracledb.md#dba_users-grant-role" target="_blank">오라클 계정, 시스템권한, 롤 확인하기</a></li>
+          <li><a href="server-side/db/oracledb.md#create-table" target="_blank">테이블 생성하기</a></li>
+          <li><a href="server-side/db/oracledb.md#drop-table" target="_blank">테이블 삭제하기</a></li>
+          <li><a href="server-side/db/oracledb.md#alter-table-rename">테이블 컬럼명 변경하기</a></li>
+          <li><a href="server-side/db/oracledb.md#alter-table-modify">테이블 컬럼 타입 변경하기</a></li>
+          <li><a href="server-side/db/oracledb.md#desc" target="_blank">DESC</a></li>
+          <li><a href="server-side/db/oracledb.md#show-all-tables" target="_blank">오라클에서 전체 테이블 조회하기</a></li>
+          <li><a href="server-side/db/oracledb.md#select" target="_blank">SELECT</a></li>
+          <li><a href="server-side/db/oracledb.md#select-all" target="_blank">SELECT *</a></li>
+          <li><a href="server-side/db/oracledb.md#where" target="_blank">WHERE</a></li>
+          <li><a href="server-side/db/oracledb.md#orderby" target="_blank">ORDER BY (중복시 2번째 조건으로 정렬)</a></li>
+          <li><a href="server-side/db/oracledb.md#limit" target="_blank">LIMIT</a></li>
+          <li><a href="server-side/db/oracledb.md#distinct" target="_blank">DISTINCT</a></li>
+          <li><a href="server-side/db/oracledb.md#operation" target="_blank">연산처리</a></li>
+          <li><a href="server-side/db/oracledb.md#number-functions" target="_blank">숫자함수</a></li>
             <ul>
-                <li><a href="server-side/oracledb.md#abs" target="_blank">abs</a></li>
-                <li><a href="server-side/oracledb.md#floor" target="_blank">floor</a></li>
-                <li><a href="server-side/oracledb.md#round" target="_blank">round</a></li>
-                <li><a href="server-side/oracledb.md#trunc" target="_blank">trunc</a></li>
-                <li><a href="server-side/oracledb.md#mod" target="_blank">mod</a></li>
+                <li><a href="server-side/db/oracledb.md#abs" target="_blank">abs</a></li>
+                <li><a href="server-side/db/oracledb.md#floor" target="_blank">floor</a></li>
+                <li><a href="server-side/db/oracledb.md#round" target="_blank">round</a></li>
+                <li><a href="server-side/db/oracledb.md#trunc" target="_blank">trunc</a></li>
+                <li><a href="server-side/db/oracledb.md#mod" target="_blank">mod</a></li>
             </ul>
-          <li><a href="server-side/oracledb.md#string-functions" target="_blank">문자열 함수</a></li>
+          <li><a href="server-side/db/oracledb.md#string-functions" target="_blank">문자열 함수</a></li>
             <ul>
-                <li><a href="server-side/oracledb.md#lower" target="_blank">lower</a></li>
-                <li><a href="server-side/oracledb.md#upper" target="_blank">upper</a></li>
-                <li><a href="server-side/oracledb.md#initcap" target="_blank">initcap</a></li>
-                <li><a href="server-side/oracledb.md#concat" target="_blank">concat</a></li>
-                <li><a href="server-side/oracledb.md#length" target="_blank">length</a></li>
-                <li><a href="server-side/oracledb.md#substr" target="_blank">substr</a></li>
-                <li><a href="server-side/oracledb.md#instr" target="_blank">instr</a></li>
-                <li><a href="server-side/oracledb.md#lpad-rpad" target="_blank">lpad, rpad</a></li>
-                <li><a href="server-side/oracledb.md#trim" target="_blank">trim</a></li>
-                <li><a href="server-side/oracledb.md#replace" target="_blank">replace</a></li>
+                <li><a href="server-side/db/oracledb.md#lower" target="_blank">lower</a></li>
+                <li><a href="server-side/db/oracledb.md#upper" target="_blank">upper</a></li>
+                <li><a href="server-side/db/oracledb.md#initcap" target="_blank">initcap</a></li>
+                <li><a href="server-side/db/oracledb.md#concat" target="_blank">concat</a></li>
+                <li><a href="server-side/db/oracledb.md#length" target="_blank">length</a></li>
+                <li><a href="server-side/db/oracledb.md#substr" target="_blank">substr</a></li>
+                <li><a href="server-side/db/oracledb.md#instr" target="_blank">instr</a></li>
+                <li><a href="server-side/db/oracledb.md#lpad-rpad" target="_blank">lpad, rpad</a></li>
+                <li><a href="server-side/db/oracledb.md#trim" target="_blank">trim</a></li>
+                <li><a href="server-side/db/oracledb.md#replace" target="_blank">replace</a></li>
             </ul>
-          <li><a href="server-side/oracledb.md#null-nvl" target="_blank">NULL - NVL</a></li>
-          <li><a href="server-side/oracledb.md#is-null" target="_blank">IS NULL</a></li>
-          <li><a href="server-side/oracledb.md#where-between">WHERE - BETWEEN</a></li>
-          <li><a href="server-side/oracledb.md#where-in">WHERE - IN</a></li>
-          <li><a href="server-side/oracledb.md#decode">DECODE</a></li>
-          <li><a href="server-side/oracledb.md#case">CASE</a></li>
-          <li><a href="server-side/oracledb.md#group-by">GROUP BY</a></li>
-          <li><a href="server-side/oracledb.md#having">HAVING</a></li>
-          <li><a href="server-side/oracledb.md#join">JOIN</a></li>
+          <li><a href="server-side/db/oracledb.md#null-nvl" target="_blank">NULL - NVL</a></li>
+          <li><a href="server-side/db/oracledb.md#is-null" target="_blank">IS NULL</a></li>
+          <li><a href="server-side/db/oracledb.md#where-between">WHERE - BETWEEN</a></li>
+          <li><a href="server-side/db/oracledb.md#where-in">WHERE - IN</a></li>
+          <li><a href="server-side/db/oracledb.md#decode">DECODE</a></li>
+          <li><a href="server-side/db/oracledb.md#case">CASE</a></li>
+          <li><a href="server-side/db/oracledb.md#group-by">GROUP BY</a></li>
+          <li><a href="server-side/db/oracledb.md#having">HAVING</a></li>
+          <li><a href="server-side/db/oracledb.md#join">JOIN</a></li>
             <ul>
-                <li><a href="server-side/oracledb.md#self-join">Selft Join</a></li>
-          		<li><a href="server-side/oracledb.md#outer-join">Outer Join</a></li>
+                <li><a href="server-side/db/oracledb.md#self-join">Selft Join</a></li>
+          		<li><a href="server-side/db/oracledb.md#outer-join">Outer Join</a></li>
             </ul>
-          <li><a href="server-side/oracledb.md#subquery">서브쿼리</a></li>
+          <li><a href="server-side/db/oracledb.md#subquery">서브쿼리</a></li>
             <ul>
-                <li><a href="server-side/oracledb.md#in">IN</a></li>
-                <li><a href="server-side/oracledb.md#all">ALL</a></li>
-                <li><a href="server-side/oracledb.md#any-some">ANY, SOME</a></li>
+                <li><a href="server-side/db/oracledb.md#in">IN</a></li>
+                <li><a href="server-side/db/oracledb.md#all">ALL</a></li>
+                <li><a href="server-side/db/oracledb.md#any-some">ANY, SOME</a></li>
             </ul>
-          <li><a href="server-side/oracledb.md#outer-join">SET</a></li>
+          <li><a href="server-side/db/oracledb.md#outer-join">SET</a></li>
             <ul>
-                <li><a href="server-side/oracledb.md#union">UNION</a></li>
-                <li><a href="server-side/oracledb.md#union-all">UNION ALL</a></li>
-                <li><a href="server-side/oracledb.md#outer-join">INTERSECT</a></li>
-                <li><a href="server-side/oracledb.md#outer-join">MINUS</a></li>
+                <li><a href="server-side/db/oracledb.md#union">UNION</a></li>
+                <li><a href="server-side/db/oracledb.md#union-all">UNION ALL</a></li>
+                <li><a href="server-side/db/oracledb.md#outer-join">INTERSECT</a></li>
+                <li><a href="server-side/db/oracledb.md#outer-join">MINUS</a></li>
             </ul>
-          <li><a href="server-side/oracledb.md#insert" target="_blank">INSERT</a></li>
+          <li><a href="server-side/db/oracledb.md#insert" target="_blank">INSERT</a></li>
         </ul>
       </details>
     </li>
     <li>
     	<details>
-      	<summary><a href="server-side/mysql.md" target="_blank">MySQL</a></summary>
+      	<summary><a href="server-side/db/mysql.md" target="_blank">MySQL</a></summary>
         <ul>
-          <li><a href="server-side/mysql.md#mysql-u-root-p" target="_blank">MySQL 실행하기</a></li>
+          <li><a href="server-side/db/mysql.md#mysql-u-root-p" target="_blank">MySQL 실행하기</a></li>
           <ul>
-            <li><a href="server-side/mysql.md#begin-mysql" target="_blank">MySQL 접속하기</a></li>
-            <li><a href="server-side/mysql.md#select-version" target="_blank">MySQL 버전 및 현재날짜 확인하기</a></li>
-            <li><a href="server-side/mysql.md#exit" target="_blank">MySQL 종료하기</a></li>
-            <li><a href="server-side/mysql.md#quit-c" target="_blank">쿼리 입력중에 종료하기</a></li>
+            <li><a href="server-side/db/mysql.md#begin-mysql" target="_blank">MySQL 접속하기</a></li>
+            <li><a href="server-side/db/mysql.md#select-version" target="_blank">MySQL 버전 및 현재날짜 확인하기</a></li>
+            <li><a href="server-side/db/mysql.md#exit" target="_blank">MySQL 종료하기</a></li>
+            <li><a href="server-side/db/mysql.md#quit-c" target="_blank">쿼리 입력중에 종료하기</a></li>
           </ul>
-          <li><a href="server-side/mysql.md#manage-db" target="_blank">데이터베이스 생성 및 삭제</a></li>
+          <li><a href="server-side/db/mysql.md#manage-db" target="_blank">데이터베이스 생성 및 삭제</a></li>
           <ul>
-            <li><a href="server-side/mysql.md#show-db" target="_blank">데이터베이스 조회하기</a></li>
-            <li><a href="server-side/mysql.md#create-db" target="_blank">데이터베이스 생성하기</a></li>
-            <li><a href="server-side/mysql.md#use-db" target="_blank">데이터베이스 선택하기</a></li>
-            <li><a href="server-side/mysql.md#drop-db" target="_blank">데이터베이스 삭제하기</a></li>
+            <li><a href="server-side/db/mysql.md#show-db" target="_blank">데이터베이스 조회하기</a></li>
+            <li><a href="server-side/db/mysql.md#create-db" target="_blank">데이터베이스 생성하기</a></li>
+            <li><a href="server-side/db/mysql.md#use-db" target="_blank">데이터베이스 선택하기</a></li>
+            <li><a href="server-side/db/mysql.md#drop-db" target="_blank">데이터베이스 삭제하기</a></li>
           </ul>
-          <li><a href="server-side/mysql.md#manage-user" target="_blank">사용자 생성 및 삭제</a></li>
+          <li><a href="server-side/db/mysql.md#manage-user" target="_blank">사용자 생성 및 삭제</a></li>
           <ul>
-            <li><a href="server-side/mysql.md#show-users" target="_blank">MySQL 전체 사용자 조회하기</a></li>
-            <li><a href="server-side/mysql.md#create-user" target="_blank">사용자 생성하기</a></li>
-            <li><a href="server-side/mysql.md#delete-user" target="_blank">사용자 삭제하기</a></li>
-          	<li><a href="server-side/mysql.md#join-db-user-created" target="_blank">생성한 사용자로 데이터베이스 접속하기</a></li>
+            <li><a href="server-side/db/mysql.md#show-users" target="_blank">MySQL 전체 사용자 조회하기</a></li>
+            <li><a href="server-side/db/mysql.md#create-user" target="_blank">사용자 생성하기</a></li>
+            <li><a href="server-side/db/mysql.md#delete-user" target="_blank">사용자 삭제하기</a></li>
+          	<li><a href="server-side/db/mysql.md#join-db-user-created" target="_blank">생성한 사용자로 데이터베이스 접속하기</a></li>
           </ul>
-          <li><a href="server-side/mysql.md#manage-privileges" target="_blank">데이터베이스 권한 설정</a></li>
+          <li><a href="server-side/db/mysql.md#manage-privileges" target="_blank">데이터베이스 권한 설정</a></li>
           <ul>
-            <li><a href="server-side/mysql.md#grant-all" target="_blank">권한 부여하기</a></li>
-            <li><a href="server-side/mysql.md#show-grants" target="_blank">권한 조회하기</a></li>
-            <li><a href="server-side/mysql.md#revoke-all" target="_blank">권한 삭제하기</a></li>
+            <li><a href="server-side/db/mysql.md#grant-all" target="_blank">권한 부여하기</a></li>
+            <li><a href="server-side/db/mysql.md#show-grants" target="_blank">권한 조회하기</a></li>
+            <li><a href="server-side/db/mysql.md#revoke-all" target="_blank">권한 삭제하기</a></li>
           </ul>
         </ul>
       </details>
