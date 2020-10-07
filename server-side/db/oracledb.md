@@ -56,6 +56,8 @@
 - [CASE](#case)
 - [GROUP BY](#group-by)
 - [HAVING](#having)
+- [OVER](#over)
+- [RANK](#rank)
 - [JOIN](#join)
   - [Self Join](#self-join)
   - [Outer Join](#outer-join)
@@ -868,7 +870,7 @@ DECODE(column, val1, result1,
       		  val3, result3)
 ~~~
 
-deptno에 따라 각 부서 이름을 지정하여 반환하는 쿼리이다.
+deptno에 따라 각 부서 이름을 지정하여 반환하는 쿼리이다. 즉  deptno가 10이면 '인사과', 20이면 '개발부'를 반환할 수 있다.
 
 ~~~sql
 SELECT  empno, ename, 
@@ -985,6 +987,66 @@ ORDER BY    deptno;
 ~~~
 
 ![](https://user-images.githubusercontent.com/33862991/95006012-25fadf00-063a-11eb-961a-a4b986171657.PNG)
+
+<br>
+
+## <a name="over"></a>OVER
+
+서브쿼리에서 `GROUP BY`를 사용했을 때의 단점을 해결하기 위해 사용되는 함수이다. `OVER()` 함수는 단독으로 쓰이기 보다 분석 함수(count, max, min, [rank](#rank))와 함께 사용되는 경우가 많다고 한다.
+
+예제 코드를 통해 `OVER()`가 어떻게 쓰이는지 알아보자.
+
+emp 테이블에서 사원번호, 사원이름, 급여, 부서번호를 조회하는데 여기에더해 각부서별 최고 급여를 함께 조회하려고 한다.
+
+```sql
+SELECT	empno, ename, sal, deptno
+FROM 	emp
+```
+
+![](https://user-images.githubusercontent.com/33862991/95311869-2eb51480-08c9-11eb-8de9-72fe42a28d9e.png)
+
+즉, 왼쪽처럼 출력되는 결과에서 오른쪽처럼 각부서별 최고 급여 컬럼을 추가하여 조회해야한다.
+
+~~~sql
+max(sal) OVER(PARTITION BY deptno) AS MAXSALBYDEPT
+~~~
+
+급여중 최고급여를 조회하는데 여기에 `OVER` 함수를 적용한다. 그리고 `OVER` 함수에 `PARTITION BY` 키워드를 사용하여 부서번호별 최고급여를 조회하는 것으로 조건을 설정하였다.
+`PARTITION BY`는 [GROUP BY](#group-by)와 같은 역할로 이해하면 좋다.
+
+~~~sql
+SELECT  empno, ename, sal, deptno, 
+		max(sal)OVER(PARTITION BY deptno) AS MAXSALBYDEPT
+FROM    emp;
+~~~
+
+<br>
+
+## <a name="rank"></a>RANK
+
+[OVER()](#over) 함수를 활용해서 순위를 출력하는 함수이다. 
+
+예제코드를 통해 알아보자. 
+emp 테이블에서 사원번호, 사원이름, 급여를 조회한다.
+
+```sql
+SELECT 	 empno, ename, sal
+FROM 	 emp
+ORDER BY sal;
+```
+
+![](https://user-images.githubusercontent.com/33862991/95313162-c8c98c80-08ca-11eb-8f1d-84023be70f0b.PNG)
+
+이렇게 조회하면, 급여 순으로 출력은 되지만, 순위는 클라이언트(SQL Developer)에서만 보이고 있다. 이 순위는 클라이언트에서만 보이고 데이터라고 할수는 없다.
+
+`RANK()` 함수를 사용하면, 이 순위마저 테이블에 삽입하여 출력할 수 있다.
+
+~~~sql
+SELECT	empno, ename, sal, RANK() OVER(ORDER BY sal) AS RANK
+FROM	emp
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95313164-c9622300-08ca-11eb-9d16-add531acf77f.PNG)
 
 <br>
 

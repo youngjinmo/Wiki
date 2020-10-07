@@ -201,7 +201,7 @@
       <details>
       <summary><a href="server-side/db/oracledb.md" target="_blank">Oracle</a></summary>
         <ul>
-          <li><a href="server-side/db/oracledb.md.#overview" target="_blank">데이터베이스 개요</a></li>
+          <li><a href="server-side/db/oracledb.md#overview" target="_blank">데이터베이스 개요</a></li>
           <li><a href="server-side/db/oracledb.md#proscons" target="_blank">데이터베이스의 장단점</a></li>
           <ul>
             <li><a href="server-side/db/oracledb.md#pros" target="_blank">장점</a></li>
@@ -267,6 +267,8 @@
           <li><a href="server-side/db/oracledb.md#case">CASE</a></li>
           <li><a href="server-side/db/oracledb.md#group-by">GROUP BY</a></li>
           <li><a href="server-side/db/oracledb.md#having">HAVING</a></li>
+          <li><a href="server-side/db/oracledb.md#over">OVER</a></li>
+          <li><a href="server-side/db/oracledb.md#rank">RANK</a></li>
           <li><a href="server-side/db/oracledb.md#join">JOIN</a></li>
             <ul>
                 <li><a href="server-side/db/oracledb.md#self-join">Selft Join</a></li>
