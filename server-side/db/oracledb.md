@@ -13,7 +13,11 @@
 - [오라클 버전 확인하기](#v-version)
 - [오라클 DB 계정 생성하고 전환하기](#create-account)
 - [오라클 DB 계정 삭제하기](#drop-account)
+- [현재 계정 조회하기](#select-current-user)
 - [오라클 계정, 시스템권한, 롤 확인하기](#dba_users-grant-role)
+   - [ 오라클 계정, 시스템권한, 롤 확인하기](#select-dba-users)
+   - [계정에 부여된 시스템 권한 확인](#select-dba-sys-privs)
+   - [계정에 부여된 롤 확인](#select-dba-role-privs)
 - [테이블 생성하기](#create-table)
 - [테이블 삭제하기](#drop-table)
 - [테이블 컬럼명 변경하기](#alter-table-rename)
@@ -229,11 +233,20 @@ DROP user 'ACCOUNT' cascade;
 
 ![](https://lh3.googleusercontent.com/ay0bsQUMdwRwN1g6scMjQ1dVQSYQnjpNA4bF-eWxYUlSEsvblrBdogKs4Kwv3__wRuDpPiPSnsTdAK5Hr3bb6aq56BY_YhdICgeYRwo87N5OmgWUWgZbL4GzXgsoPJiv6X86JpXnxm-5Dwoa84vRIe8RwPEOgactU_tMJVlkyT6cwlf6DbgzWsIBeMALJaWXLjTvaXcYF143eYTiCtvbSwdg6izBDTd_26OWdEAo_u_DJ2CWr7Nu4v5RL3IFW5kzrDpJlxOxhC5Bda0kA8fSi27HyHn-CXwhRaHhT8YgA52MALwT-jOb40Z2bmv0WvDS4-beU2KDn8uSoVnmBWTG3JxVpAj_JK_LIYHUnXzPZ6em6FPSxUB3MHM6oc-E2JbedNqcY56CS1A4C_4sVP_FTbfoQOWL3yBnLIovh41iaEQkaFCXmKjzmo4G5Tx7wVNuWetPi5Bf0T5G55WPBRDpiNGKp6vz_kRUbtBPRiZ9KJw0ziaFM-kyrkav_loLMNpqYWo1rIeiuyYnFWJWyWUMIYX8EKz5-8ohdj2tBxWuykjJedAGkal_fuqbwH_1H-iiVJfqwhRH2wi3MTxqKjMd0Z6iz7voeR0PuNMAVdS3uIHzhd5FMv4ATGNISU7Y4hHwqRAA0nmCmPlLXo0M46-OR5d0LrpOIAywP6GaBZITuyes5gckrp3TY02KCgPpUlJPj2ATrcf9EAuiHubfdoTGY0aRCiL3wT5ex5gvlnPKIF-RrD9JFg=w888-h200-no)
 
+## <a name="select-current-user"></a> 현재 계정 조회하기
+
+현재 접속한 계정을 조회하는 쿼리이다.
+
+~~~sql
+SELECT user
+FROM   dual;
+~~~
+
 <br>
 
 ## <a name="dba_users-grant-role"></a>오라클 계정, 시스템권한, 롤 확인하기
 
-**오라클 계정 확인하기**
+<a name="select-dba-users"></a>**현재 DB내 계정 목록 조회**
 
 ~~~sql
 SELECT *
@@ -249,17 +262,17 @@ FROM ALL_USERS;
 
 ![](https://user-images.githubusercontent.com/33862991/93837918-e7246b00-fcc2-11ea-97ca-d900659733f9.PNG)
 
-**계정에 부여된 시스템 권한 확인**
+<a name="select-dba-sys-privs"></a>**계정에 부여된 시스템 권한 확인**
 
 ~~~sql
 SELECT * 
-FROM DBA_SYS_PRIVX
+FROM DBA_SYS_PRIVS
 WHERE GRANTEE = 'ACCOUNT'  -- SYSTEM
 ~~~
 
 ![](https://user-images.githubusercontent.com/33862991/93837921-e7bd0180-fcc2-11ea-96e0-5060edc162cf.PNG)
 
-**계정에 부여된 롤 확인**
+<a name="select-dba-role-privs"></a>**계정에 부여된 롤 확인**
 
 ~~~sql
 SELECT * 
@@ -268,15 +281,6 @@ WHERE GRANTEE = 'ACCOUNT'  -- DBA
 ~~~
 
 ![](https://user-images.githubusercontent.com/33862991/93837926-eab7f200-fcc2-11ea-9cab-13c01a67c2ad.PNG)
-
-**사용자가 소유한 모든 테이블 확인**
-
-~~~sql
-SELECT *
-FROM USER_TABLES;
-~~~
-
-![](https://user-images.githubusercontent.com/33862991/93837928-eab7f200-fcc2-11ea-9f53-db3566596a41.PNG)
 
 <br>
 
@@ -365,6 +369,17 @@ ORDER BY
 `SCOTT` 계정 내 테이블을 조회한 결과이다.
 
 ![](https://lh3.googleusercontent.com/sl8bqkhkiHb20UhRuQJkvnXLnZQ--a1NMhb__fl4JJazAY7KA4Ey-2z5zW8_0a8LA0fsxDwffviyNBtecjS-GU0m9qxWTm3Jr7PoHwmDKB3D29P3jXRDZt600LM9PfjBBgbZQVtEho0qQA27s93kQzKUQSwXR6cWFduxTbw1WAVBs_ElqzXdHXOwchckxPNmXczBI9qqhwzdvyNspXYBaYcMXbczMxrA7usQXi_0L6h_p7KQGrL2AwD9NAkAQyHcqG0AXWMbpcLll_eNWi4uuvSYqvia-hv6Xw-29Ql_u0gJrR0T7N2X1GdghKA6c9ei411SiX-JhFTh3y0fJWA4Jx3FYEP7sg10GIKwvUHfnXXhn17avmlv7He2NJN1xeGUgnh37SpCtJVtRhuJFaM8KtwPkso_hgpWBhvntsYiIpsTS_ZcLYClJmy9v1IHLrAq5ntVPpGNrKqQnZeWRHbQ31aZFccfOitQb89NzL6I0Vig6fpz3eJmhF2bXGr50mieigbVPQDhO2p82BxOD_GVqMLZT6MDVnnD-SvAuippfy4aI5mNQ2oVD2D2MqHYRDhpp6h96WppP15g_7P5gG6O99fG7GkjOUNvg69s5DIZ1ScAByAAYwIpiQgKQuqt_g7nsCyjZhbIoe6mIAB7cm15DdcR52URBtKqoe0hopuGqgHq76UoPKC7iXrvKkeTj0mzr6vytDI9NC0bODOkd7jASA_ahtu7jFMVHKnA48vbTXjJ-4eJWw=w1266-h1012-no)
+
+<BR>
+
+계정 상관없이 DB내 모든 테이블 조회는 아래 쿼리로 조회할 수 있다.
+
+~~~sql
+SELECT *
+FROM USER_TABLES;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/93837928-eab7f200-fcc2-11ea-9f53-db3566596a41.PNG)
 
 <br>
 

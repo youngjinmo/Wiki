@@ -199,7 +199,7 @@
     </li>
     <li>
       <details>
-      <summary><a href="server-side/db/oracledb.md" target="_blank">Oracle RDBMS</a></summary>
+      <summary><a href="server-side/db/oracledb.md" target="_blank">Oracle</a></summary>
         <ul>
           <li><a href="server-side/db/oracledb.md.#overview" target="_blank">데이터베이스 개요</a></li>
           <li><a href="server-side/db/oracledb.md#proscons" target="_blank">데이터베이스의 장단점</a></li>
@@ -218,7 +218,13 @@
           <li><a href="server-side/db/oracledb.md#v-version" target="_blank">오라클 버전 확인하기</a></li>
           <li><a href="server-side/db/oracledb.md#create-account" target="_blank">오라클 DB 계정 생성하고 전환하기</a></li>
           <li><a href="server-side/db/oracledb.md#drop-account" target="_blank">오라클 DB 계정 삭제하기</a></li>
+          <li><a href="server-side/db/oracledb.md#select-current-user" target="_blank">현재 계정 조회하기</a></li>
           <li><a href="server-side/db/oracledb.md#dba_users-grant-role" target="_blank">오라클 계정, 시스템권한, 롤 확인하기</a></li>
+          <ul>
+              <li><a href="server-side/db/oracledb.md#select-dba-users" target="_blank">현재 DB내 계정 목록 조회</a></li>
+              <li><a href="server-side/db/oracledb.md#select-dba-sys-privs" target="_blank">계정에 부여된 시스템 권한 확인</a></li>
+              <li><a href="server-side/db/oracledb.md#select-dba-role-privs" target="_blank">계정에 부여된 롤 확인</a></li>
+          </ul>
           <li><a href="server-side/db/oracledb.md#create-table" target="_blank">테이블 생성하기</a></li>
           <li><a href="server-side/db/oracledb.md#drop-table" target="_blank">테이블 삭제하기</a></li>
           <li><a href="server-side/db/oracledb.md#alter-table-rename">테이블 컬럼명 변경하기</a></li>
@@ -573,6 +579,7 @@
     </li>
   </ul>
 </details>
+
 
 
 
