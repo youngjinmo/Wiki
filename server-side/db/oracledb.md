@@ -71,6 +71,7 @@
   - [INTERSECT](#intersect)
   - [MINUS](#minus)
 - [INSERT](#insert)
+- [DBMS_XPLAN.DISPLAY_CURSOR](#dbms-xplan-display-cursor)
 
 <br>
 
@@ -1339,5 +1340,23 @@ VALUES (val1, val2, val3);
 실행결과이다.
 
 ![](https://lh3.googleusercontent.com/PkDNslNo3bKyZ3OP6t43EcwT9A9NtuufR-FmMXhAZm0zfHZu9oi0Ifd04dJDScyhoqWdFpw8zExi_g3aQkhbLpBpc-iyP-v8TKQSEx3NsYo1Vi6FW8FhaKHl7LOFtxrxfcicg0AVhfbDWtWsiL_exq5MJuddoRp35G_mDNC6YomLEHZXGjb7Ja9QOK8NpVfQXvlLBpr5Eaj0TbXHrjRgGxBfVI9s8tjyTrkmTjdig6S4H_ioJW3ieKjrmLIbB1St3b4so4j9K7WGzcFlHu_L9xSf94-UC6JT11S91GLWxhlxp4UL0oatJZHWx41mzC0VPQi67GjALG9zLjWJ2HEEO_gaCha1R53rBnMHpx-duB5JShEO2oUo6Swki0LatdJitrgq6Sxu6AhOGAlsouxXOnyOGUy_MH4-qAPybPZ0TpIlDaqWvvUM00czjBRwdGdYV-aVwkhOvgyPnEi6eI5Ol-KjvVMkdLHeWxOMZ6-qKdzgI2pailp0oxwUUOVmgPBpPdgihQzH6BUX4OLcf7F9B6tsLnzv3qm9W2nfFGYI-TEiuZRwXzFhT6SyJ0_Pb1JmrnN9UCrI5j-3ODHbuygeHyx5Uqrgpm5dWr1IPCTDweoNYPC0F1_9-Lsy3rv92trwi_x8G7rY3qKWal2VWnPszyKojiOgRNMl5J6DEL0hMU2qTyKv7mY0uty30IalSc14Fy-nj5zy7gndzjwt2ge8Y7e4uixiTiRHfNXJjInWxFSfb0W3bg=w1646-h642-no)
+
+<br>
+
+## <a name="dbms-xplan-display-cursor"></a>DBMS_XPLAN.DISPLAY_CURSOR
+
+단일 SQL문에 대해 실제 수행된 실행계획을 보여주는 함수이다.
+
+~~~sql
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY_CURSOR(NULL, NULL, 'ALLSTATS LAST -ROWS +PREDICATE'));
+~~~
+
+SQL 쿼리를 실행한후, 위의 쿼리를 실행하면 방금 실행한 쿼리가 어떻게 실행되었는지를 보여주는 함수이다.
+
+SQL 튜닝과 관련한 함수인데, 아직 튜닝을 모르므로 여기까지만 정리.
+
+함께 보면 좋을 글
+
+- [DBMS_XPLAN.DISPLAY_CURSOR란?](http://www.gurubee.net/lecture/2137)
 
 <br>

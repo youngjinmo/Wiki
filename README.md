@@ -288,6 +288,7 @@
                 <li><a href="server-side/db/oracledb.md#outer-join">MINUS</a></li>
             </ul>
           <li><a href="server-side/db/oracledb.md#insert" target="_blank">INSERT</a></li>
+          <li><a href="server-side/db/oracledb.md#dbms-xplan-display-cursor" target="_blank">DBMS_XPLAN.DISPLAY_CURSOR</a></li>
         </ul>
       </details>
     </li>
