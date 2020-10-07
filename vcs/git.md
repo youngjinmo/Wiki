@@ -28,6 +28,7 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [브랜치간 비교(diff)](#diff-branches)
 - [stash](#stash)
 - [HEAD가 바라보는 커밋 변경하기](#git-checkout-from-head)
+- [Rebase로 변경된 커밋 히스토리 원격저장소에 반영하기](#git-push-force-with-lease)
 - [원격 저장소 변경하기](#set-url)
 - [특정 브랜치만 clone하기](#clone-specific-branch)
 - [Fork](#fork)
@@ -494,6 +495,22 @@ $ git checkout [branch-]
 ![](https://lh3.googleusercontent.com/yPpRimVz5pEIYL7katnPcJ3_4CSxWAayCNVpSVub8ExM1EfiJjCYhwTjbxCx5-nGM4QRN0nUIWnkaq1J-tVrYM37KRVcknZ_lXQd6aX1rWJ_zyj6lqrmOerv9GMhx-r5ymKlRaLgNi40BVZFYIi4MeeKGeByhCQKdcx_6ijj_wmCYhJCPHh4EVH-14t71tZz7IpLRCBEcf4-qEzpepziGI4jtfkjCztskPeGw_7rH1nwenEheXUk9nakf-DaSTcyzWJHk3wYNFzOwaSxgC5fVWNqUBinJxtL0NvC1VGEFw6vxUcv7tLoh89Y-sUisqVMpbCoowSaYl7-3Ojg-bWmopIKxpF3mp16e2HS9a6ymRmWnoANBv5RJ4iJG5ufyug7LoGivbx9AYOGmA3wAYFFU4uM3k84_SnRU5tMuxOf4WPTFqMbScwcBgvsmY8qHnrNwgVnWlYdPBNBilDas9R3bgkh95cEH4AefBoyOZTlJSAn3Wxu1K1kQGphnmQSL1O-VhDcae3sAIlW3eO-4p4P8JoMeCNhfHKVDj4SZTI4MqjUzRaJfRqRnxskEfoeiRN5poT_BlhaqJXiZF_CO84FOrtMAqzm-OpS_Aylovco8fdXSAIx16-xFGpQ8o0R5aqtOxOo5sZYkJv6vuep9km6nlsCwV7DyMzMDh2QstshxtmNqp9i_9WAeNDbd-ucIcgCbXwcbGlVt-eqO-NVis3f7NY35SEjjMh7yChs8OOoheJpglq8Pw=w540-h348-no)
 
 **test** 브랜치가 바라보는 최신 커밋으로 잘 돌아왔다.
+
+<br>
+
+## <a name="git-push-force-with-lease"></a>Rebase로 변경된 커밋 히스토리 원격저장소에 반영하기
+
+~~~bash
+$ git push --force-with-lease
+~~~
+
+일반적인 `git push --force` 와 달리 이 명령어는 overwrite하지 않고 원격저장소에 안전하게 커밋 히스토리를 적용한다고 한다. 
+
+Git 공식문서에서는 `--force-with-lease` 에 대해 다음과 같이 설명하고 있다.
+
+> `--force-with-lease` alone, without specifying the details, will protect all remote refs that are going to be updated by requiring their current value to be the same as the remote-tracking branch we have for them.
+
+출처 : [https://git-scm.com/docs/git-push](
 
 <br>
 

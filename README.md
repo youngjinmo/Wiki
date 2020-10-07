@@ -461,6 +461,7 @@
           <li><a href="vcs/git.md#diff-branches" target="_blank">브랜치간 비교(diff)</a></li>
         <li><a href="vcs/git.md#stash" target="_blank">stash</a></li>
         <li><a href="vcs/git.md#git-checkout-from-head" target="_blank">HEAD가 바라보는 커밋 변경하기</a></li>
+        <li><a href="vcs/git.md#git-push-force-with-lease" target="_blank">Rebase로 변경된 커밋 히스토리 원격저장소에 반영하기
         <li><a href="vcs/git.md#set-url" target="_blank">원격 저장소 변경하기</a></li>
         <li><a href="vcs/git.md#clone-specific-branch" target="_blank">특정 브랜치만 clone하기</a></li>
         <li><a href="vcs/git.md#fork" target="_blank">Fork</a></li>
