@@ -20,6 +20,7 @@
    - [계정에 부여된 롤 확인](#select-dba-role-privs)
 - [테이블 생성하기](#create-table)
 - [테이블 삭제하기](#drop-table)
+- [테이블은 남기고 데이터만 삭제하기](#truncate-table)
 - [테이블 컬럼명 변경하기](#alter-table-rename)
 - [테이블 컬럼 타입 변경하기](#alter-table-modify)
 - [DESC](#desc)
@@ -311,8 +312,18 @@ CREATE TABLE ManchesterUnited(
 테이블을 삭제하는 쿼리이다.
 
 ~~~sql
-DROP TABLE table_name;
+DROP TABLE [table_name];
 ~~~
+
+<br>
+
+## <a name="truncate-table"></a>테이블은 남기고 데이터만 삭제하기
+
+~~~sql
+TRUNCATE TABLE [table_name];
+~~~
+
+테이블은 남긴채, 테이블내 row만 삭제하는 쿼리이다.
 
 <br>
 

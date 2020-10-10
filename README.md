@@ -227,6 +227,7 @@
           </ul>
           <li><a href="server-side/db/oracledb.md#create-table" target="_blank">테이블 생성하기</a></li>
           <li><a href="server-side/db/oracledb.md#drop-table" target="_blank">테이블 삭제하기</a></li>
+          <li><a href="server-side/db/oracledb.md#truncate-table" target="_blank">테이블은 남기고 데이터만 삭제하기</a></li>
           <li><a href="server-side/db/oracledb.md#alter-table-rename">테이블 컬럼명 변경하기</a></li>
           <li><a href="server-side/db/oracledb.md#alter-table-modify">테이블 컬럼 타입 변경하기</a></li>
           <li><a href="server-side/db/oracledb.md#desc" target="_blank">DESC</a></li>
