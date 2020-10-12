@@ -225,6 +225,8 @@
               <li><a href="server-side/db/oracledb.md#select-dba-sys-privs" target="_blank">계정에 부여된 시스템 권한 확인</a></li>
               <li><a href="server-side/db/oracledb.md#select-dba-role-privs" target="_blank">계정에 부여된 롤 확인</a></li>
           </ul>
+          <li><a href="server-side/db/oracledb.md#dbms-xdb-gethttpport">오라클 포트 확인하기</a></li>
+          <li><a href="server-side/db/oracledb.md#dbms-xdb-sethttpport">오라클 포트 변경하기</a></li>
           <li><a href="server-side/db/oracledb.md#create-table" target="_blank">테이블 생성하기</a></li>
           <li><a href="server-side/db/oracledb.md#drop-table" target="_blank">테이블 삭제하기</a></li>
           <li><a href="server-side/db/oracledb.md#truncate-table" target="_blank">테이블은 남기고 데이터만 삭제하기</a></li>

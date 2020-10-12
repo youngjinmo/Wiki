@@ -18,6 +18,8 @@
    - [ 오라클 계정, 시스템권한, 롤 확인하기](#select-dba-users)
    - [계정에 부여된 시스템 권한 확인](#select-dba-sys-privs)
    - [계정에 부여된 롤 확인](#select-dba-role-privs)
+- [오라클 포트 확인하기](#dbms-xdb-gethttpport)
+- [오라클 포트 변경하기](#dbms-xdb-sethttpport)
 - [테이블 생성하기](#create-table)
 - [테이블 삭제하기](#drop-table)
 - [테이블은 남기고 데이터만 삭제하기](#truncate-table)
@@ -285,6 +287,25 @@ WHERE GRANTEE = 'ACCOUNT'  -- DBA
 ~~~
 
 ![](https://user-images.githubusercontent.com/33862991/93837926-eab7f200-fcc2-11ea-9cab-13c01a67c2ad.PNG)
+
+<br>
+
+## <a name="dbms-xdb-gethttpport"></a>오라클 포트 확인하기
+
+오라클 DB가 연결된 포트번호를 조회하는 쿼리이다.
+
+~~~sql
+SELECT dbms_xdb.gethttpport() 
+FROM dual;
+~~~
+
+<br>
+
+## <a name="dbms-xdb-sethttpport"></a>오라클 포트 변경하기
+
+~~~sql
+EXEC dbms_xdb.sethttpport(1521);
+~~~
 
 <br>
 
