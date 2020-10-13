@@ -708,7 +708,14 @@ FROM	dual;
 
 ### <a name="substr"></a>substr
 
-문자열을 잘라내는 함수이다.
+~~~sql
+SELECT		SUBSTR( 문자열, 시작인덱스, 마지막인덱스)
+FROM		table_name;
+~~~
+
+문자열을 잘라내는 함수이다. 문자열의 시작인덱스에서부터 마지막인덱스까지를 잘라낸다.
+
+
 
 ~~~sql
 SELECT	substr('Hello world', 7)
@@ -727,6 +734,17 @@ FROM	dual;
 ~~~
 
  ![](https://user-images.githubusercontent.com/33862991/94994967-fc0fd100-05d5-11eb-9026-88ddd251f09a.PNG)
+
+<br>
+
+문자열의 뒤부터 자를수도 있다.
+
+~~~sql
+SELECT	substr('Hello World', -5, 3)
+FROM	dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95826061-bccb4800-0d6c-11eb-99cd-bce1de695fce.PNG)
 
 ### <a name="instr"></a>instr
 
