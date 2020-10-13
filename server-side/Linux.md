@@ -12,7 +12,8 @@
   - [리눅스 커널 확인](#uname-r)
   - [비트(32/64) 확인](#uname-m)
   - [파일 이동 (mv)](#mv)
-  - [Symbolic Link](#symboliclink)
+  - [Symbolic Link](#ln-s)
+  - [ls - 파일/디렉토리 조회](#ls)
   - [find - 파일/디렉토리 찾기](#find)
   - [grep - 문서내 검색](#grep)
   - [콘솔 결과 출력 저장](#save-output)
@@ -120,7 +121,7 @@ $ mv path/{old/mv.txt, new/mv.txt}
 
 <br>
 
-## <a name="symboliclink"></a>심볼릭 링크 생성/사용하기
+## <a name="ln-s"></a>심볼릭 링크 생성/사용하기
 
 심볼릭 링크는 디렉토리 또는 파일에 더 빠르게 접근하기 위한 별명을 설정하는 일과 같다. `디렉토리 --심볼릭링크`
 
@@ -129,6 +130,29 @@ $ ln -s [target] [symbolic_link_name]
 ```
 
 <img src="http://www.mediafire.com/convkey/1fa6/at0glqvdxyrry4czg.jpg" width="700" />
+
+<br>
+
+## <a name="ls"></a>ls - 파일/디렉토리 조회
+
+파일을 조회할때 사용하는 명령어이다. 간단하게  아래의 명령어로 조회 할 수 있다.
+
+~~~bash
+$ ls
+~~~
+
+아래의 옵션을 통해 출력 결과를 다르게 할수도 있다.
+
+| option    | description      |
+| --------- | ---------------- |
+| -a, --all | 모든 파일을 출력 |
+| -d        | 폴더만 조회      |
+
+**폴더만 조회하는 명령어**
+
+~~~bash
+$ ls -d */
+~~~
 
 <br>
 

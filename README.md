@@ -149,7 +149,8 @@
                 <li><a href="server-side/Linux.md#check-os" target="_blank">운영체제 확인</a></li>
                 <li><a href="server-side/Linux.md#uname-m" target="_blank">비트(32/64) 확인</a></li>
                 <li><a href="server-side/Linux.md#mv" target="_blank">파일 이동(mv)</a></li>
-                <li><a href="server-side/Linux.md#symboliclink" target="_blank">Symbolic Link</a></li>
+                <li><a href="server-side/Linux.md#ln-s" target="_blank">Symbolic Link</a></li>
+                <li><a href="server-side/Linux.md#ls" target="_blank">ls - 파일/디렉토리 조회</a></li>
                 <li><a href="server-side/Linux.md#find" target="_blank">find - 파일/디렉토리 찾기</a></li>
                 <li><a href="server-side/Linux.md#grep" target="_blank">grep - 문서내 검색</a></li>
                 <li><a href="server-side/Linux.md#history">커맨드 히스토리</a></li>
