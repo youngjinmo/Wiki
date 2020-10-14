@@ -239,7 +239,7 @@
           <li><a href="server-side/db/oracledb.md#select-all" target="_blank">SELECT *</a></li>
           <li><a href="server-side/db/oracledb.md#where" target="_blank">WHERE</a></li>
           <li><a href="server-side/db/oracledb.md#orderby" target="_blank">ORDER BY (중복시 2번째 조건으로 정렬)</a></li>
-          <li><a href="server-side/db/oracledb.md#limit" target="_blank">LIMIT</a></li>
+          <li><a href="server-side/db/oracledb.md#rownum" target="_blank">ROWNUM</a></li>
           <li><a href="server-side/db/oracledb.md#distinct" target="_blank">DISTINCT</a></li>
           <li><a href="server-side/db/oracledb.md#operation" target="_blank">연산처리</a></li>
           <li><a href="server-side/db/oracledb.md#number-functions" target="_blank">숫자함수</a></li>
