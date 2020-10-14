@@ -149,7 +149,8 @@
                 <li><a href="server-side/Linux.md#check-os" target="_blank">운영체제 확인</a></li>
                 <li><a href="server-side/Linux.md#uname-m" target="_blank">비트(32/64) 확인</a></li>
                 <li><a href="server-side/Linux.md#mv" target="_blank">파일 이동(mv)</a></li>
-                <li><a href="server-side/Linux.md#symboliclink" target="_blank">Symbolic Link</a></li>
+                <li><a href="server-side/Linux.md#ln-s" target="_blank">Symbolic Link</a></li>
+                <li><a href="server-side/Linux.md#ls" target="_blank">ls - 파일/디렉토리 조회</a></li>
                 <li><a href="server-side/Linux.md#find" target="_blank">find - 파일/디렉토리 찾기</a></li>
                 <li><a href="server-side/Linux.md#grep" target="_blank">grep - 문서내 검색</a></li>
                 <li><a href="server-side/Linux.md#history">커맨드 히스토리</a></li>
@@ -238,7 +239,7 @@
           <li><a href="server-side/db/oracledb.md#select-all" target="_blank">SELECT *</a></li>
           <li><a href="server-side/db/oracledb.md#where" target="_blank">WHERE</a></li>
           <li><a href="server-side/db/oracledb.md#orderby" target="_blank">ORDER BY (중복시 2번째 조건으로 정렬)</a></li>
-          <li><a href="server-side/db/oracledb.md#limit" target="_blank">LIMIT</a></li>
+          <li><a href="server-side/db/oracledb.md#rownum" target="_blank">ROWNUM</a></li>
           <li><a href="server-side/db/oracledb.md#distinct" target="_blank">DISTINCT</a></li>
           <li><a href="server-side/db/oracledb.md#operation" target="_blank">연산처리</a></li>
           <li><a href="server-side/db/oracledb.md#number-functions" target="_blank">숫자함수</a></li>

@@ -31,7 +31,7 @@
 - [SELECT *](#select-all)
 - [WHERE](#where)
 - [ORDER BY (중복시 2번째 조건으로 정렬)](#select-order)
-- [LIMIT](#limit)
+- [ROWNUM](#rownum)
 - [DISTINCT](#distinct)
 - [연산처리](#operation)
 - [숫자 함수]()
@@ -145,7 +145,7 @@ Data Definition Language
 
 Data Manipulation Language
 
-테이블 등의 **데이터를 조작(추가/조회/수정/삭제)**하는 언어이다. 응용 프로그램과 데이터베이스 사이에서 실질적인 데이터 처리를 위해 사용된다.
+테이블 등의 **데이터를 조작(추가/조회/수정/삭제)** 하는 언어이다. 응용 프로그램과 데이터베이스 사이에서 실질적인 데이터 처리를 위해 사용된다.
 
 - **INSERT** : 추가
 - **SELECT** : 조회
@@ -308,6 +308,8 @@ FROM dual;
 ~~~sql
 EXEC dbms_xdb.sethttpport(1521);
 ~~~
+
+![](https://user-images.githubusercontent.com/33862991/95942290-c365c800-0e1d-11eb-9ed8-00b4a6d54ac2.PNG)
 
 <br>
 
@@ -486,18 +488,48 @@ ORDER BY
 
 <br>
 
-## <a name="limit"></a>LIMIT
+## <a name="rownum"></a>ROWNUM
 
-조회하는 데이터의 갯수를 결정할 때 사용하는 쿼리이다.
+조회하는 데이터의 갯수를 결정할 때 사용하는 쿼리이다. MySQL에서는 `LIMIT` 이라는 키워드로 활용할 수 있는데, 오라클에선 `ROWNUM` 으로 구현할 수 있다.
+
+만약 조회조건으로 `WHERE` 절을 사용할 일이 있다면, `ROWNUM`과 사용하기 위해서 [서브쿼리](#subquery) 사용이 필요하다.
+
+예제 쿼리를 보자. 입사일이 가장 빠른 3명을 조회하는 쿼리이다. 
 
 ```SQL
-SELECT NAME
-FROM ANIMAL_INS
-ORDER BY DATATIME ASC
-LIMIT 1;
+SELECT 		ename, hiredate
+FROM 		emp
+WHERE		ROWNUM <= 3
+ORDER BY 	hiredate;
 ```
 
-날짜(`DATETIME`)순으로 정렬했을 때, 데이터를 하나만 조회하는 쿼리이다. 즉 가장 최신 데이터를 조회한 것이다. `LIMIT`을 활용하면 최대값, 최소값도 구할 수 있다.
+![](https://user-images.githubusercontent.com/33862991/95941843-aa104c00-0e1c-11eb-9c87-cbaedf2a1b8a.PNG)
+
+그런데 위의 결과는 사실 의도와 다른 결과가 조회되었다. 
+
+`ORDER BY` 절이 사용된 위치가 `WHERE` 절이 실행된 뒤에 실행되었기 때문에 `emp` 테이블 전체에서 입사일 순으로 정렬한게 아니라 기본 정렬에서 `ROWNUM <= 1` 이라는 `WHERE` 절 조건이 적용된 쿼리 결과에 대한 `ORDER BY` 가 적용된 결과이다. 
+
+따라서 위의 쿼리는 서브쿼리를 사용해서 아래처럼 수정해야한다.
+
+~~~sql
+SELECT		ename, hiredate
+FROM		(SELECT ename, hiredate FROM emp ORDER BY hiredate)
+WHERE		rownum <= 3;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95941845-ab417900-0e1c-11eb-9e09-f29282fce80e.PNG)
+
+다른 결과가 출력되었다. 이게 처음 의도와 맞는 결과이다.
+
+여기에 조건을 추가하여보았다. `deptno=10` 인 사원들중 가장 입사일이 빠른 3명을 조회하는 쿼리이다.
+
+~~~sql
+SELECT 		ename, hiredate
+FROM 		(SELECT ename, hiredate FROM emp WHERE deptno=10 ORDER BY hiredate)
+WHERE		ROWNUM <= 3;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95941844-ab417900-0e1c-11eb-8b07-f7a2a9f83bc2.PNG)
 
 <br>
 
@@ -712,7 +744,14 @@ FROM	dual;
 
 ### <a name="substr"></a>substr
 
-문자열을 잘라내는 함수이다.
+~~~sql
+SELECT		SUBSTR( 문자열, 시작인덱스, 마지막인덱스)
+FROM		table_name;
+~~~
+
+문자열을 잘라내는 함수이다. 문자열의 시작인덱스에서부터 마지막인덱스까지를 잘라낸다.
+
+
 
 ~~~sql
 SELECT	substr('Hello world', 7)
@@ -731,6 +770,17 @@ FROM	dual;
 ~~~
 
  ![](https://user-images.githubusercontent.com/33862991/94994967-fc0fd100-05d5-11eb-9026-88ddd251f09a.PNG)
+
+<br>
+
+문자열의 뒤부터 자를수도 있다.
+
+~~~sql
+SELECT	substr('Hello World', -5, 3)
+FROM	dual;
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/95826061-bccb4800-0d6c-11eb-99cd-bce1de695fce.PNG)
 
 ### <a name="instr"></a>instr
 
