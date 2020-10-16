@@ -207,6 +207,8 @@ SELECT *
 FROM v$version
 ~~~
 
+![](https://user-images.githubusercontent.com/33862991/95680590-cbebb200-0c15-11eb-81ec-a459ee92d352.png)
+
 <br>
 
 ## <a name="create-account"></a> 오라클 DB 계정 생성하고 전환하기
@@ -347,6 +349,8 @@ TRUNCATE TABLE [table_name];
 ~~~
 
 테이블은 남긴채, 테이블내 row만 삭제하는 쿼리이다.
+
+![](https://wikidocs.net/images/page/4019/1.PNG)
 
 <br>
 
