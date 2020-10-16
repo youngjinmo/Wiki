@@ -74,6 +74,12 @@
   - [INTERSECT](#intersect)
   - [MINUS](#minus)
 - [INSERT](#insert)
+- [제약조건](#constraint)
+   - [NOT NULL](#constraint-notnull)
+   - [UNIQUE](#constraint-unique)
+   - [PK](#constraint-pk)
+   - [FK](#constraint-fk)
+   - [CHECK](#constraint-check)
 - [DBMS_XPLAN.DISPLAY_CURSOR](#dbms-xplan-display-cursor)
 
 <br>
@@ -85,8 +91,6 @@
 데이터베이스 자체만으로는 아무것도 할 수 없으며, 이를 활용할 수 있도록 돕는 데이터베이스 관리 시스템(DBMS, DataBase Management System)이 필요하다.
 
 >데이터베이스 자체는 화물(데이터)을 저장할 수 있는 창고 그 자체의 역할만 수행하고, 화물을 적재하거나 적재된 화물을 처리할 수  있는 능력은 없다. 이 때문에 DBMS라는 관리자들을 고용하여 화물을 적재하거나 이동시키는 등 여러가지 업무를 수행하도록 하는  것이다. - 나무위키 -
-
-
 
 관계형 데이터베이스를 위해 만들어진 언어가 **Structured Query Langue, SQL**이라고 한다. SQL를 통해 데이터를 추가/탐색/수정/삭제 할 수 있다.
 
@@ -1426,6 +1430,124 @@ VALUES (val1, val2, val3);
 실행결과이다.
 
 ![](https://lh3.googleusercontent.com/PkDNslNo3bKyZ3OP6t43EcwT9A9NtuufR-FmMXhAZm0zfHZu9oi0Ifd04dJDScyhoqWdFpw8zExi_g3aQkhbLpBpc-iyP-v8TKQSEx3NsYo1Vi6FW8FhaKHl7LOFtxrxfcicg0AVhfbDWtWsiL_exq5MJuddoRp35G_mDNC6YomLEHZXGjb7Ja9QOK8NpVfQXvlLBpr5Eaj0TbXHrjRgGxBfVI9s8tjyTrkmTjdig6S4H_ioJW3ieKjrmLIbB1St3b4so4j9K7WGzcFlHu_L9xSf94-UC6JT11S91GLWxhlxp4UL0oatJZHWx41mzC0VPQi67GjALG9zLjWJ2HEEO_gaCha1R53rBnMHpx-duB5JShEO2oUo6Swki0LatdJitrgq6Sxu6AhOGAlsouxXOnyOGUy_MH4-qAPybPZ0TpIlDaqWvvUM00czjBRwdGdYV-aVwkhOvgyPnEi6eI5Ol-KjvVMkdLHeWxOMZ6-qKdzgI2pailp0oxwUUOVmgPBpPdgihQzH6BUX4OLcf7F9B6tsLnzv3qm9W2nfFGYI-TEiuZRwXzFhT6SyJ0_Pb1JmrnN9UCrI5j-3ODHbuygeHyx5Uqrgpm5dWr1IPCTDweoNYPC0F1_9-Lsy3rv92trwi_x8G7rY3qKWal2VWnPszyKojiOgRNMl5J6DEL0hMU2qTyKv7mY0uty30IalSc14Fy-nj5zy7gndzjwt2ge8Y7e4uixiTiRHfNXJjInWxFSfb0W3bg=w1646-h642-no)
+
+<br>
+
+## <a name="constraint"></a>제약조건
+
+ 제약조건을 사용하면, 테이블에 저장하는 값에 대한 제한을 둘 수 있으며, 테이블에 대한 무결성을 보장받을 수 있다.
+
+### <a name="constraint-notnull"></a>NOT NULL
+
+`NULL`값이 들어가지 않는 제약조건이다.
+
+~~~sql
+CREATE TABLE test_01(
+	data1 number,
+    data2 number NOT NULL
+);
+
+INSERT INTO test_01
+VALUES(100,null);
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/96235288-91976180-0fd5-11eb-94b8-536da707f647.PNG)
+
+### <a name="constraint-unique"></a>UNIQUE
+
+`UNIQUE`는 컬럼에 있는 데이터와 중복될경우, `INSERT` 를 하지 못하는 제약조건이다.
+
+~~~sql
+CREATE TABLE test_02(
+	data1 number,
+    data2 number UNIQUE
+);
+
+INSERT INTO test_01
+VALUES(100,101);
+
+INSERT INTO test_01
+VALUES(101,102);
+
+INSERT INTO test_01
+VALUES(101,101);
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/96235819-34e87680-0fd6-11eb-97c5-ff88b448e3aa.PNG)
+
+### <a name="constraint-pk"></a>PK
+
+PK는 다음의 조건을 갖고있다.
+
+1. 중복을 허용하지 않는다.
+2. `NULL`을 허용하지 않는다.
+
+~~~SQL
+CREATE TABLE test_03(
+	data1 number,
+    data2 number 
+    CONSTRAINT TEST_03_DATA2_PK PRIMARY KEY 
+);
+
+INSERT INTO test_03
+VALUES(100, 200);
+
+INSERT INTO test_03
+VALUES(200, 300);
+
+INSERT INTO test_03
+VALUES(300, 300);
+
+INSERT INTO test_03
+VALUES(300, null);
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/96237771-aa554680-0fd8-11eb-8d1f-15da9176e1f2.jpg)
+
+### <a name="constraint-fk"></a>FK (REFERENCES)
+
+FK는 PK를 바라보는 키이다. 따라서 PK가 존재하지 않으면, 무결성 제약조건을 위반하여 `INSERT` 할 수 없다.
+
+~~~sql
+CREATE TABLE test_04(
+	data1 number NOT NULL,
+    data2 number
+    	CONSTRAINT TEST_04_DATA2_FK
+    	REFERENCES TEST_03(data2);
+);
+
+INSERT INTO test_04
+VALUES(100, 200);
+
+INSERT INTO test_04
+VALUES(100, 100);
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/96238652-b097f280-0fd9-11eb-85d9-83681676cdc1.PNG)
+
+### <a name="constraint-check"></a>CHECK
+
+IF문 처럼 조건문을 걸어두고, 조건을 충족하지 않으면 쿼리가 실행하지 않도록 만드는 제약조건이다.
+
+~~~sql
+CREATE TABLE test_05(
+    data1 number CONSTRAINT TEST_05_DATA1_CK
+    			CHECK(data1 BETWEEN 1 AND 10),
+    data2 number CONSTRAINT TEST_05_DATA2_CK
+    			CHECK(data2 IN (10,20,30))
+);
+
+INSERT INTO test_05
+VALUES(1, 10);
+
+INSERT INTO test_05
+VALUES(10, 40);
+
+INSERT INTO test_05
+VALUES(11, 10);
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/96239341-8a268700-0fda-11eb-91bb-6eb213b87843.PNG)
 
 <br>
 

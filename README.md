@@ -292,6 +292,14 @@
                 <li><a href="server-side/db/oracledb.md#outer-join">MINUS</a></li>
             </ul>
           <li><a href="server-side/db/oracledb.md#insert" target="_blank">INSERT</a></li>
+          <li><a href="server-side/db/oracledb.md#constraint" target="_blank">제약조건</a></li>
+            <ul>
+                <li><a href="server-side/db/oracledb.md#constraint-notnull" target="_blank">NOT NULL</a></li>
+                <li><a href="server-side/db/oracledb.md#constraint-unique" target="_blank">UNIQUE</a></li>
+                <li><a href="server-side/db/oracledb.md#constraint-pk" target="_blank">PK</a></li>
+                <li><a href="server-side/db/oracledb.md#constraint-fk" target="_blank">FK</a></li>
+                <li><a href="server-side/db/oracledb.md#constraint-check" target="_blank">CHECK</a></li>
+            </ul>
           <li><a href="server-side/db/oracledb.md#dbms-xplan-display-cursor" target="_blank">DBMS_XPLAN.DISPLAY_CURSOR</a></li>
         </ul>
       </details>
@@ -586,6 +594,7 @@
     </li>
   </ul>
 </details>
+
 
 
 
