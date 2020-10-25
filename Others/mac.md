@@ -11,6 +11,7 @@
 - [한글 깨진 파일 UTF-8 변환해서 복구하기 (iconv)](#iconv)
 - [맥 전원버튼 눌러도 안켜질때](#nopoweronmymac)
 - [ios 백업 데이터 저장 디렉토리 ](#ios-backup-directory)
+- [Undo/Redo 단축키](#undo-redo)
 
 <br>
 
@@ -220,3 +221,14 @@ iconv -f euc-kr -t utf-8 [file] > [new file]
 Library에서부터 **[Application Support]** -> **[MobileSync]** -> **[Backup]** 에 ios 백업 데이터가 저장된다.
 
 <br>
+
+## <a name="undo-redo"></a>Undo/Redo 단축키
+
+### Undo
+
+`cmd + z`
+
+### Redo
+
+`cmd + shift + z`
+

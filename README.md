@@ -571,6 +571,7 @@
         <li><a href="Others/mac.md#iconv">한글 깨진 파일 UTF-8 변환해서 복구하기 (iconv)</a></li>
         <li><a href="Others/mac.md#nopoweronmymac">맥 전원버튼 눌러도 안켜질때</a></li>
         <li><a href="Others/mac.md#ios-backup-directory">ios 백업 데이터 저장 디렉토리</a></li>
+        <li><a href="Others/mac.md#undo-redo">Undo/Redo 단축키</a></li>
       </ul>
       </details>
     </li>
