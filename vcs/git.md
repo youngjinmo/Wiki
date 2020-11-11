@@ -34,7 +34,8 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [Fork](#fork)
 - [PR](#pr)
 - [.gitignore](#gitignore)
-- [git config 설정](#config)
+- [git config 설정](#config-global)
+- [저장소별 계정 설정](#config-local)
 - [Github Credential 저장](#credential)
 - [Github에 SSH 등록하기](#add-ssh)
 - [레파지토리 라이센스](#license)
@@ -645,7 +646,7 @@ vi에디터로 `.gitignore` 파일을 생성한다. 그리고 버전관리 하�
 
 <br>
 
-## <a name="config"></a>git config 설정
+## <a name="config-global"></a>git config 설정
 
 로컬에서 커맨드라인으로 git을 관리하기 위해서는 계정이 필요하다.
 
@@ -666,6 +667,19 @@ $ git config --list
 ![](https://lh3.googleusercontent.com/ylZk8OqZsTmAcSjYPzFtx8_-3DSTG7cTG28pmk1DKxfQ9Bxf6h19M_Iq5im1-cdMUmpU3jSVFd78JAa8W4wHJ7_0SfQ4frGEbE2_jIMZ2wBU_CTstFP2TPlzXjJoJJ9J1OoNgdkFXQl4I8f0S8c6wqAWl4p-DnQtUrWIvTheeMBJ8PRdamb7KlSl9xsCGRUxLZ-R9HWBkPG2pvDwsvkZ9S_nSI7_hUXwh6QbST7STvPDKdywQ5XTwZ3OfeSWI_rlz0h3di5b7I2Xdr6LUoHFDoyxSbm7GKhyORnUg3e_WYrx1oXVJIoYISFMoBq_BIbKgooCyzLnv3X8D6YaK1bfQS6d71SMS3ZrXeN89zAZoSWFWCQPH8u_i1XT4qLEG9JK8dZkcBHgoL0EaKP_705HzOUVdk1DGrQ_kMazaUk3RzCVV_KAOU_zcC_7N6FsZJ3L2a9cPDLauGIaTyekC3ERtda6Wuf4Y3lqdT7ym0Q0qD43vcXvnG0VXwzmWZOZfvZlmp5Qff6VD4-FF3BAIm5LtgmfhTYfY719OGV5kTaHZ614tmE7vsNz3uYtT_2F1wcn0-mD6x4xWRAe_tFHiJIh3Ses743kAVBfrYdZu7G7TI9sKe02_eEN5k3h0pT045zKtIFRLbO_FcMB7RMARmp_eJ82wwHpjzFUHr8BtG6urdZQ3oQDd0wY_bo3Jdx1F_r0S0byZUNyIuT7AeKLIxvW53ebfOSk9yJdFRHN9mzAbvMbpiUohw=w551-h222-no)
 
 패스워드를 입력하지 않고 바로 확인할 수 있는 방법만큼 좋은 방식같지는 않다.
+
+<br>
+
+## <a name="config-local"></a>저장소별 계정 설정
+
+저장소별 config 설정을 다르게 할 수도 있다. 이땐 옵션명령어로 `--global` 대신 `--local` 을 사용하면 된다.
+
+~~~bash
+$ git config --local user.name "이름"
+$ git config --local user.email "이메일"
+~~~
+
+<br>
 
 ## <a name="credential"></a>Github Credential 저장
 
