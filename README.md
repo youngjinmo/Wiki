@@ -488,7 +488,8 @@
         <li><a href="vcs/git.md#fork" target="_blank">Fork</a></li>
         <li><a href="vcs/git.md#pr" target="_blank">PR</a></li>
         <li><a href="vcs/git.md#gitignore" target="_blank">.gitignore</a></li>
-        <li><a href="vcs/git.md#config" target="_blank">git config 설정</a></li>
+        <li><a href="vcs/git.md#config-global" target="_blank">git config 설정</a></li>
+        <li><a href="vcs/git.md#config-local" target="_blank">저장소별 계정 설정</a></li>
         <li><a href="vcs/git.md#credential" target="_blank">Github Credential 저장</a></li>
         <li><a href="vcs/git.md#add-ssh" target="_blank">Github에 SSH 등록하기</a></li>
         <li><a href="vcs/git.md#license" target="_blank">레파지토리 라이센스</a></li>
