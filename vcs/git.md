@@ -32,6 +32,8 @@ Git을 사용할 수 있는 GUI 기반의 응용 프로그램(<a href="https://w
 - [원격 저장소 변경하기](#set-url)
 - [특정 브랜치만 clone하기](#clone-specific-branch)
 - [Fork](#fork)
+- [Forked Repository, 원격 저장소와 동기화하기](#synchronize-forked-repository)
+
 - [PR](#pr)
 - [.gitignore](#gitignore)
 - [git config 설정](#config-global)
@@ -578,6 +580,51 @@ Fork는 다른 사람의 저장소를 내 저장소를 가져오는 기능이다
 ### Clone과 Fork의 차이
 
 Git 호스팅 서비스(Github, Gitlab)는 원격 저장소이다. 이런 원격 저장소에서 내 컴퓨터로 즉 로컬로 가져오는게 Clone이고, 원격저장소 내에서 내 이름의 저장소로 가져오는 행위는 Fork이다. 이 부분을 헷갈리지 않을 필요가 있다.
+
+<br>
+
+## <a name="synchronize-forked-repository"></a>Forked Repository, 원격 저장소와 동기화하기
+
+![](https://user-images.githubusercontent.com/33862991/99501859-b0678a00-29bf-11eb-935b-b563346b4629.png)
+
+Fork를 하면, Fork하는 시점의 커밋까지를 자신의 원격 저장소로 복제하게 된다. 위의 녹색 라인 기준으로 오른쪽 상태에 해당한다. Fork한 프로젝트를 작업하고자 한다면, Pull 해서 로컬에서 작업하면 된다. 
+
+그러나 이렇게 되면, 원래의 저장소(Upstream)에 변경사항이 발생했을 경우 이를 로컬에 적용하려면 어떻게 해야할까?
+
+우선 현재 로컬 저장소가 어떤 저장소들을 가리키는지 확인하자.
+
+~~~bash
+$ git remote -v
+~~~
+
+![](https://user-images.githubusercontent.com/33862991/99502279-3388e000-29c0-11eb-9c48-837084c35660.JPG)
+
+여기서 `origin` 은 로컬과 직접적으로 연결되어 push하면 커밋들이 이동하는 저장소이다. `upstream` 은 이 저장소가 fork하기 전 원래의 저장소를 의미한다.
+
+만약 `upstream` 저장소가 존재하지 않는다면, 이를 등록하면 된다.
+
+~~~bash
+$ git remote add upstream https://github.com/sarojaba/awesome-devblog.git
+~~~
+
+정상적으로 등록되었다면, 이제 원격 저장소의 최신 변경사항을 불러오면 된다.
+
+~~~bash
+$ git fetch upstream
+$ git merge upstream/master
+~~~
+
+`fetch` 는 현재 바라보고 있는 upstream 저장소에 최신 변경사항이 있는지 확인한다는 명령어이다. 
+
+이렇게하면 최신 변경사항을 가져올 수 있다.
+
+만약 로컬 저장소의 브랜치명과 upstream 저장소의 브랜치명이 서로 다를때 문제가 발생할 수 있다. 예를들어, 로컬 저장소의 브랜치명은 `master` 인데, upstream 저장소의 브랜치명이 `main` 으로 업데이트 되었다면, 어떻게 해야할까?
+
+로컬의 master 브랜치가 upstream 저장소의 main 브랜치임을 가리키면 된다.
+
+~~~bash
+$ git checkout -b master --track origin/main
+~~~
 
 <br>
 

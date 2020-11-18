@@ -486,6 +486,7 @@
         <li><a href="vcs/git.md#set-url" target="_blank">원격 저장소 변경하기</a></li>
         <li><a href="vcs/git.md#clone-specific-branch" target="_blank">특정 브랜치만 clone하기</a></li>
         <li><a href="vcs/git.md#fork" target="_blank">Fork</a></li>
+        <li><a href="vcs/git.md#synchronize-forked-repository" target="_blank">Forked Repository, 원격 저장소와 동기화하기</a></li>
         <li><a href="vcs/git.md#pr" target="_blank">PR</a></li>
         <li><a href="vcs/git.md#gitignore" target="_blank">.gitignore</a></li>
         <li><a href="vcs/git.md#config-global" target="_blank">git config 설정</a></li>
